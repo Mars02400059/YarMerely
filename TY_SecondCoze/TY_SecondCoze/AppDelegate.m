@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "MainTabBarViewController.h"
-
+#import "UserViewController.h"
 
 
 @interface AppDelegate ()
@@ -44,9 +44,11 @@ EMChatManagerDelegate
         _window.rootViewController = [[ViewController alloc] init];
     } else {
     
+        UserViewController *userViewController = [[UserViewController alloc] init];
+        _window.rootViewController = userViewController;
         
-        MainTabBarViewController *mainTabBarViewController = [[MainTabBarViewController alloc] init];
-        self.window.rootViewController = mainTabBarViewController;
+//        MainTabBarViewController *mainTabBarViewController = [[MainTabBarViewController alloc] init];
+//        self.window.rootViewController = mainTabBarViewController;
     
     }
     

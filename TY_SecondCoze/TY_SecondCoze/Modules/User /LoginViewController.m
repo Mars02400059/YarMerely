@@ -83,6 +83,7 @@
     [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:_nameTextField.text password:_passwoksTextField.text completion:^(NSDictionary *loginInfo, EMError *error) {
         if (!error && loginInfo) {
             NSLog(@"登录成功");
+
             MainTabBarViewController *mainTabBarViewController = [[MainTabBarViewController alloc] init];
             [self presentViewController:mainTabBarViewController animated:YES completion:nil];
         }
