@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) TYQTextField *nameTextField;
 
-@property (nonatomic, strong) TYQTextField *passwokTextField;
+@property (nonatomic, strong) TYQTextField *passwoksTextField;
 
 
 @end
@@ -57,11 +57,11 @@
     [self.view addSubview:_nameTextField];
     
     CGFloat passwokTextFieldY = nameTextFieldY + nameTextFieldHeight + 20;
-    self.passwokTextField = [[TYQTextField alloc] initWithFrame:CGRectMake(nameTextFieldX, passwokTextFieldY, nameTextFieldWidth, nameTextFieldHeight)];
-    _passwokTextField.backgroundColor = [UIColor grayColor];
-    _passwokTextField.secureTextEntry = YES;
-    _passwokTextField.placeholder = @"请输入密码";
-    [self.view addSubview:_passwokTextField];
+    self.passwoksTextField = [[TYQTextField alloc] initWithFrame:CGRectMake(nameTextFieldX, passwokTextFieldY, nameTextFieldWidth, nameTextFieldHeight)];
+    _passwoksTextField.backgroundColor = [UIColor grayColor];
+    _passwoksTextField.secureTextEntry = YES;
+    _passwoksTextField.placeholder = @"请输入密码";
+    [self.view addSubview:_passwoksTextField];
     
     TYQButton *loginButton = [TYQButton buttonWithType:UIButtonTypeCustom];
     loginButton.frame = CGRectMake(nameTextFieldX, passwokTextFieldY + nameTextFieldHeight + 50, nameTextFieldWidth, 45);
@@ -79,6 +79,14 @@
 }
 
 - (void)loginButtonAction:(TYQButton *)registerButton {
+    
+    [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:_nameTextField.text password:_passwoksTextField.text completion:^(NSDictionary *loginInfo, EMError *error) {
+        if (!error && loginInfo) {
+            NSLog(@"登录成功");
+            MainTabBarViewController *mainTabBarViewController = [[MainTabBarViewController alloc] init];
+            [self presentViewController:mainTabBarViewController animated:YES completion:nil];
+        }
+    } onQueue:nil];
     
     
 }

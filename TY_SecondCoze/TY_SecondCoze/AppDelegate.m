@@ -81,7 +81,9 @@ EMChatManagerDelegate
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     [[EaseMob sharedInstance] applicationWillTerminate:application];
-
+    // 移除代理
+    [[EaseMob sharedInstance].chatManager removeDelegate:self];
+    
 }
 
 @end
