@@ -24,6 +24,9 @@
 #import "TYQImageView.h"
 #import "TYQTextField.h"
 
+#import <MJRefresh.h>
+
+
 #define WIDTH self.view.frame.size.width
 #define HEIGHT self.view.frame.size.height
 
