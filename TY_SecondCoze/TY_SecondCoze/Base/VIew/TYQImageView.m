@@ -1,24 +1,25 @@
 //
-//  TYQLabel.m
-//  Tenyar
+//  TYQImageView.m
+//  TY_SecondCoze
 //
-//  Created by mars on 16/10/19.
+//  Created by mars on 16/10/21.
 //  Copyright © 2016年 TengYa. All rights reserved.
 //
 
-#import "TYQLabel.h"
+#import "TYQImageView.h"
 
-@implementation TYQLabel
+@implementation TYQImageView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-#warning 基类label添加了背景颜色
-        self.backgroundColor = [UIColor grayColor];
+#warning 图片添加了背景占位颜色
+        self.backgroundColor = [UIColor redColor];
     }
     return self;
 }
+
 
 
 /*
