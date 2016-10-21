@@ -26,6 +26,7 @@
 
 #import <MJRefresh.h>
 #import <FMDB.h>
+#import <MBProgressHUD.h>
 
 
 #define WIDTH self.view.frame.size.width
