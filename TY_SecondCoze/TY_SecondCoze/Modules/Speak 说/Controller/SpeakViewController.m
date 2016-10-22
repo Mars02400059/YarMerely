@@ -16,8 +16,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"说";
+    self.view.backgroundColor = [UIColor redColor];
+    
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

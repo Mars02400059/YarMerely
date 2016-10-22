@@ -15,7 +15,9 @@
     self = [super initWithFrame:frame];
     if (self) {
 #warning 图片添加了背景占位颜色
-        self.backgroundColor = [UIColor redColor];
+        
+    //self.backgroundColor = [UIColor redColor];
+        
     }
     return self;
 }

@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
     TYQLabel *label = [[TYQLabel alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 40)];
     label.textAlignment = NSTextAlignmentCenter;
     label.text = @"我是引导页";

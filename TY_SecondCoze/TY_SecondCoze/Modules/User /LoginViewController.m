@@ -37,20 +37,20 @@
     [leftButton addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:leftButton];
     
-    TYQLabel *titleLabel = [[TYQLabel alloc] initWithFrame:CGRectMake((self.view.width - 120) / 2, 15, 120, 40)];
+    TYQLabel *titleLabel = [[TYQLabel alloc] initWithFrame:CGRectMake((WIDTH - 120) / 2, 15, 120, 40)];
     titleLabel.text = @"登录";
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.font = [UIFont systemFontOfSize:21.f];
     [self.view addSubview:titleLabel];
     
-    TYQImageView *logoImageView = [[TYQImageView alloc] initWithFrame:CGRectMake(self.view.width / 2 - 60 , self.view.height / 6, 120, 120)];
+    TYQImageView *logoImageView = [[TYQImageView alloc] initWithFrame:CGRectMake(WIDTH / 2 - 60 , HEIGHT / 6, 120, 120)];
     logoImageView.layer.cornerRadius = logoImageView.width / 2;
     logoImageView.clipsToBounds = YES;
     [self.view addSubview:logoImageView];
     CGFloat nameTextFieldX = 40;
-    CGFloat nameTextFieldWidth = self.view.width - nameTextFieldX * 2;
+    CGFloat nameTextFieldWidth = WIDTH - nameTextFieldX * 2;
     CGFloat nameTextFieldHeight = 40;
-    CGFloat nameTextFieldY = self.view.height / 2;
+    CGFloat nameTextFieldY = HEIGHT / 2;
     self.nameTextField = [[TYQTextField alloc] initWithFrame:CGRectMake(nameTextFieldX, nameTextFieldY, nameTextFieldWidth, nameTextFieldHeight)];
     _nameTextField.backgroundColor = [UIColor grayColor];
     _nameTextField.placeholder = @"请输入用户名";
@@ -90,6 +90,12 @@
     } onQueue:nil];
     
     
+}
+
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [self.view endEditing:YES];
 }
 
 
