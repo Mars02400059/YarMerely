@@ -44,20 +44,42 @@ EMChatManagerDelegate
         _window.rootViewController = [[ViewController alloc] init];
     } else {
     
-        UserViewController *userViewController = [[UserViewController alloc] init];
-        _window.rootViewController = userViewController;
+        // 自动登录
+        BOOL isAutomatismLogin = [[EaseMob sharedInstance].chatManager isAutoLoginEnabled];
         
-//        MainTabBarViewController *mainTabBarViewController = [[MainTabBarViewController alloc] init];
-//        self.window.rootViewController = mainTabBarViewController;
-    
-    }
-    
+        if (isAutomatismLogin == NO) {
+            UserViewController *userViewController = [[UserViewController alloc] init];
+            _window.rootViewController = userViewController;
 
-    
-    
+        } else {
+            // 自动登录状态
+            
+        }
+    }
+
     return YES;
 }
 
+
+/*!
+ @method
+ @brief 用户自动登录完成后的回调
+ @discussion
+ @param loginInfo 登录的用户信息
+ @param error     错误信息
+ @result
+ */
+- (void)didAutoLoginWithInfo:(NSDictionary *)loginInfo error:(EMError *)error {
+#warning 先将自动登录功能关掉, 否则影响后续开发
+        // 自动登录制作完成
+#if 0
+    MainTabBarViewController *mainTabBarViewController = [[MainTabBarViewController alloc] init];
+    self.window.rootViewController = mainTabBarViewController;
+#endif
+    
+    
+
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
