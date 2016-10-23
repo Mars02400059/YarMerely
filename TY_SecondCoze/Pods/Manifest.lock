@@ -20,9 +20,13 @@ PODS:
   - FMDB/standard (2.6.2)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
+  - MLEmojiLabel (1.0.2):
+    - TTTAttributedLabel (~> 1.13.4)
+  - SDAutoLayout (2.1.7)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - TTTAttributedLabel (1.13.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -30,6 +34,8 @@ DEPENDENCIES:
   - FMDB (~> 2.6.2)
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.12)
+  - MLEmojiLabel (~> 1.0.2)
+  - SDAutoLayout (~> 2.1.7)
   - SDWebImage (~> 3.8.2)
 
 SPEC CHECKSUMS:
@@ -38,8 +44,11 @@ SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  MLEmojiLabel: 36d73c19f9975cbf9def24e5bc135263b0337fd8
+  SDAutoLayout: e9b36d04b8c0b504762a04d76fbbe5108944297a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
 
-PODFILE CHECKSUM: 29cca24b125ca51b8c29ac3eb18e3f89e5becc37
+PODFILE CHECKSUM: 7c234d273a75b2af3bdf9456831afe2123af3c99
 
 COCOAPODS: 1.0.1

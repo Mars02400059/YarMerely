@@ -25,8 +25,10 @@
 
 - (void)appendSubsView {
     
+#warning 背景图片
+    
     TYQImageView *backgroundImageV = [[TYQImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
-    backgroundImageV.image = [UIImage imageNamed:@"3.jpg"];
+    backgroundImageV.image = [UIImage imageNamed:@"000"];
     [self.view addSubview:backgroundImageV];
     
 #warning logo图片还没做, 记得添加背景图片
@@ -36,22 +38,33 @@
     logoImageView.clipsToBounds = YES;
     [self.view addSubview:logoImageView];
     
-    TYQLabel *titleLabel = [[TYQLabel alloc] initWithFrame:CGRectMake(0, HEIGHT / 2 - 50, WIDTH, 30)];
+    TYQLabel *titleLabel = [[TYQLabel alloc] initWithFrame:CGRectMake(0, HEIGHT / 10, WIDTH, 30)];
+    titleLabel.backgroundColor = [UIColor yellowColor];
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.font = [UIFont systemFontOfSize:22.f];
-#warning 题目太浮夸, 最好换掉
+titleLabel.font = [UIFont systemFontOfSize:22.f];
+#warning 题目太浮夸, 最好换掉(滚动动画)
     titleLabel.text = @"聊天交友  首选亚聊";
     [self.view addSubview:titleLabel];
     
+    
+    
+    
+    
+    
+    
     TYQButton *rigisterButton = [TYQButton buttonWithType:UIButtonTypeCustom];
-    rigisterButton.frame = CGRectMake((WIDTH - 70) / 2, HEIGHT / 5 * 3, 70, 30);
+    rigisterButton.frame = CGRectMake((WIDTH - 70) / 2 - 10, HEIGHT / 5 * 3, 100, 40);
+    rigisterButton.layer.cornerRadius = 10;
+    rigisterButton.layer.masksToBounds = YES;
     rigisterButton.backgroundColor = [UIColor cyanColor];
     [rigisterButton setTitle:@"注册" forState:UIControlStateNormal];
     [rigisterButton addTarget:self action:@selector(rigisterButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:rigisterButton];
     
     TYQButton *loginButton = [TYQButton buttonWithType:UIButtonTypeCustom];
-    loginButton.frame = CGRectMake((WIDTH - 70) / 2, HEIGHT / 5 * 3 + rigisterButton.height + 20, rigisterButton.width, rigisterButton.height);
+    loginButton.frame = CGRectMake((WIDTH - 70) / 2 - 10, HEIGHT / 5 * 3 + rigisterButton.height + 20, rigisterButton.width, rigisterButton.height);
+    loginButton.layer.cornerRadius = 10;
+    loginButton.layer.masksToBounds = YES;
     loginButton.backgroundColor = [UIColor cyanColor];
     [loginButton setTitle:@"登录" forState:UIControlStateNormal];
     [loginButton addTarget:self action:@selector(loginButtonAction:) forControlEvents:UIControlEventTouchUpInside];

@@ -8,6 +8,13 @@ target 'TY_SecondCoze' do
   # Pods for TY_SecondCoze
 
 
+
+pod 'MLEmojiLabel', '~> 1.0.2'
+
+
+pod 'SDAutoLayout', '~> 2.1.7'
+
+
  pod 'SDWebImage', '~> 3.8.2'
 
 

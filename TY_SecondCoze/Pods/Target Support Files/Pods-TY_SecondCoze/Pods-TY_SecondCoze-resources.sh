@@ -82,10 +82,18 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "EaseMobSDKFull/EaseMobSDKFull/resources/EaseMob.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "MLEmojiLabel/Classes/MLEmoji_Expression.plist"
+  install_resource "MLEmojiLabel/Classes/MLEmoji_ExpressionImage.plist"
+  install_resource "MLEmojiLabel/Classes/MLEmoji_Expression.bundle"
+  install_resource "MLEmojiLabel/Classes/MLEmoji_Expression.bundle/gifexpression.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "EaseMobSDKFull/EaseMobSDKFull/resources/EaseMob.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "MLEmojiLabel/Classes/MLEmoji_Expression.plist"
+  install_resource "MLEmojiLabel/Classes/MLEmoji_ExpressionImage.plist"
+  install_resource "MLEmojiLabel/Classes/MLEmoji_Expression.bundle"
+  install_resource "MLEmojiLabel/Classes/MLEmoji_Expression.bundle/gifexpression.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
