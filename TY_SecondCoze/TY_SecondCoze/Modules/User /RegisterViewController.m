@@ -32,7 +32,7 @@
     TYQButton *leftButton = [TYQButton buttonWithType:UIButtonTypeCustom];
     leftButton.frame = CGRectMake(0, 15, 70, 40);
     [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [leftButton setTitle:@"< 返回" forState:UIControlStateNormal];
+    [leftButton setTitle:@"〈 返回" forState:UIControlStateNormal];
     [leftButton addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:leftButton];
     
@@ -81,15 +81,32 @@
 //    [self.view endEditing:YES];
     
     [[EaseMob sharedInstance].chatManager asyncRegisterNewAccount:_nameTextField.text password:_passwoksTextField.text withCompletion:^(NSString *username, NSString *password, EMError *error) {
-        if (!error) {
+            if (!error) {
             
-            NSLog(@"注册成功");
-            [self dismissViewControllerAnimated:YES completion:nil];
+                NSLog(@"注册成功");
+                [self dismissViewControllerAnimated:YES completion:nil];
             
-        } else {
+            } else {
             
-            NSLog(@"Error : %@", error);
-        
+                NSString *titleStr;
+                NSString *messageStr;
+                if ([_nameTextField.text isEqualToString:@""]) {
+                    titleStr = @"请输入用户名";
+                    messageStr = nil;
+                } else if ([_passwoksTextField.text isEqualToString:@""]) {
+                    titleStr = @"请输入密码";
+                    messageStr = nil;
+                } else {
+                    titleStr = @"用户名已存在";
+                    messageStr = @"请更换用户名";
+                    _nameTextField.text = nil;
+                    _passwoksTextField.text = nil;
+                }
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:titleStr message:messageStr preferredStyle:UIAlertControllerStyleAlert];
+                [alertController addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:nil]];
+                
+                [self presentViewController:alertController animated:YES completion:nil];
+
         }
     } onQueue:nil];
 

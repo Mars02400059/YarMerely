@@ -33,7 +33,7 @@
     TYQButton *leftButton = [TYQButton buttonWithType:UIButtonTypeCustom];
     leftButton.frame = CGRectMake(0, 15, 70, 40);
     [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [leftButton setTitle:@"< 返回" forState:UIControlStateNormal];
+    [leftButton setTitle:@"〈 返回" forState:UIControlStateNormal];
     [leftButton addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:leftButton];
     
@@ -86,6 +86,28 @@
 
             MainTabBarViewController *mainTabBarViewController = [[MainTabBarViewController alloc] init];
             [self presentViewController:mainTabBarViewController animated:YES completion:nil];
+        } else {
+            
+            NSString *titleStr;
+            NSString *messageStr;
+            if ([_nameTextField.text isEqualToString:@""]) {
+                titleStr = @"请输入用户名";
+                messageStr = nil;
+            } else if ([_passwoksTextField.text isEqualToString:@""]) {
+                titleStr = @"请输入密码";
+                messageStr = nil;
+            } else {
+                titleStr = @"用户名或密码输入错误";
+                messageStr = @"请重新输入";
+                _nameTextField.text = nil;
+                _passwoksTextField.text = nil;
+            }
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:titleStr message:messageStr preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:nil]];
+
+            [self presentViewController:alertController animated:YES completion:nil];
+        
         }
     } onQueue:nil];
     
