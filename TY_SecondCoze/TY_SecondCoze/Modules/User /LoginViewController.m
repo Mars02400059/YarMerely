@@ -52,13 +52,11 @@
     CGFloat nameTextFieldHeight = 40;
     CGFloat nameTextFieldY = HEIGHT / 2;
     self.nameTextField = [[TYQTextField alloc] initWithFrame:CGRectMake(nameTextFieldX, nameTextFieldY, nameTextFieldWidth, nameTextFieldHeight)];
-    _nameTextField.backgroundColor = [UIColor grayColor];
     _nameTextField.placeholder = @"请输入用户名";
     [self.view addSubview:_nameTextField];
     
     CGFloat passwokTextFieldY = nameTextFieldY + nameTextFieldHeight + 20;
     self.passwoksTextField = [[TYQTextField alloc] initWithFrame:CGRectMake(nameTextFieldX, passwokTextFieldY, nameTextFieldWidth, nameTextFieldHeight)];
-    _passwoksTextField.backgroundColor = [UIColor grayColor];
     _passwoksTextField.secureTextEntry = YES;
     _passwoksTextField.placeholder = @"请输入密码";
     [self.view addSubview:_passwoksTextField];
@@ -83,7 +81,7 @@
     [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:_nameTextField.text password:_passwoksTextField.text completion:^(NSDictionary *loginInfo, EMError *error) {
         if (!error && loginInfo) {
             
-            [[EaseMob sharedInstance].chatManager setIsAutoLoginEnabled:YES];
+//            [[EaseMob sharedInstance].chatManager setIsAutoLoginEnabled:YES];
             
             MainTabBarViewController *mainTabBarViewController = [[MainTabBarViewController alloc] init];
             [self presentViewController:mainTabBarViewController animated:YES completion:nil];

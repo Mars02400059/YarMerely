@@ -44,6 +44,7 @@
 		41E37D641DBA109200FCAD08 /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E37D631DBA109100FCAD08 /* Unknown.png */; };
 		41E37D671DBA133A00FCAD08 /* TYQTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E37D661DBA133A00FCAD08 /* TYQTextField.m */; };
 		41E37D6C1DBA139100FCAD08 /* TextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E37D6B1DBA139100FCAD08 /* TextFieldView.m */; };
+		41FC7D231DBC853C00712714 /* TYQNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC7D221DBC853C00712714 /* TYQNavigationBarView.m */; };
 		4935D92B1DBB419B00BF55A7 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4935D92A1DBB419B00BF55A7 /* 2.png */; };
 		4935D92D1DBB470B00BF55A7 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4935D92C1DBB470B00BF55A7 /* 3.jpg */; };
 		49A8B39A1DBB82BD00FFF2A1 /* 00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B3991DBB82BD00FFF2A1 /* 00.jpg */; };
@@ -155,6 +156,8 @@
 		41E37D661DBA133A00FCAD08 /* TYQTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYQTextField.m; sourceTree = "<group>"; };
 		41E37D6A1DBA139100FCAD08 /* TextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldView.h; sourceTree = "<group>"; };
 		41E37D6B1DBA139100FCAD08 /* TextFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldView.m; sourceTree = "<group>"; };
+		41FC7D211DBC853C00712714 /* TYQNavigationBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYQNavigationBarView.h; sourceTree = "<group>"; };
+		41FC7D221DBC853C00712714 /* TYQNavigationBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYQNavigationBarView.m; sourceTree = "<group>"; };
 		4935D92A1DBB419B00BF55A7 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		4935D92C1DBB470B00BF55A7 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		49A8B3991DBB82BD00FFF2A1 /* 00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00.jpg; sourceTree = "<group>"; };
@@ -336,6 +339,8 @@
 				41E37D601DBA095700FCAD08 /* TYQImageView.m */,
 				41E37D651DBA133A00FCAD08 /* TYQTextField.h */,
 				41E37D661DBA133A00FCAD08 /* TYQTextField.m */,
+				41FC7D211DBC853C00712714 /* TYQNavigationBarView.h */,
+				41FC7D221DBC853C00712714 /* TYQNavigationBarView.m */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -915,6 +920,7 @@
 				410E5C351DB8530B005C2513 /* UIView+Frame.m in Sources */,
 				410E5C1B1DB852FF005C2513 /* TYQModel.m in Sources */,
 				410E5C1A1DB852FF005C2513 /* TYQViewController.m in Sources */,
+				41FC7D231DBC853C00712714 /* TYQNavigationBarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

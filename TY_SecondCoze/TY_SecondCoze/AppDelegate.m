@@ -45,16 +45,16 @@ EMChatManagerDelegate
     } else {
     
         // 自动登录
-        BOOL isAutomatismLogin = [[EaseMob sharedInstance].chatManager isAutoLoginEnabled];
+//        BOOL isAutomatismLogin = [[EaseMob sharedInstance].chatManager isAutoLoginEnabled];
         
-        if (isAutomatismLogin == NO) {
+//        if (isAutomatismLogin == NO) {
             UserViewController *userViewController = [[UserViewController alloc] init];
             _window.rootViewController = userViewController;
 
-        } else {
+//        } else {
             // 自动登录状态
             
-        }
+//        }
     }
 
     return YES;
@@ -75,6 +75,7 @@ EMChatManagerDelegate
 #if 0
     MainTabBarViewController *mainTabBarViewController = [[MainTabBarViewController alloc] init];
     self.window.rootViewController = mainTabBarViewController;
+    
 #endif
     
     
