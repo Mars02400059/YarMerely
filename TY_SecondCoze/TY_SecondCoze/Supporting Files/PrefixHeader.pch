@@ -28,6 +28,8 @@
 #import <FMDB.h>
 #import <MBProgressHUD.h>
 
+#import "SystemUnit.h"
+
 #define WIDTH [UIScreen mainScreen].bounds.size.width
 
 #define HEIGHT [UIScreen mainScreen].bounds.size.height

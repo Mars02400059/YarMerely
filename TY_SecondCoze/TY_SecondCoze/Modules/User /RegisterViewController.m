@@ -40,7 +40,7 @@ static CGFloat const nameTextFieldHeight = 40;
     
 #pragma mark --- 背景图片(还没添加)
     TYQImageView *backImageV = [[TYQImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
-//    backImageV.image = [UIImage imageNamed:@"3.jpg"];
+    backImageV.image = [UIImage imageNamed:@"3.jpg"];
     [self.view addSubview:backImageV];
     
     TYQButton *leftButton = [TYQButton buttonWithType:UIButtonTypeCustom];
@@ -173,7 +173,7 @@ static CGFloat const nameTextFieldHeight = 40;
     _nameTextField.frame = CGRectMake(nameTextFieldX, offY - 120 , WIDTH - nameTextFieldX * 2, nameTextFieldHeight);//UITextField位置的y坐标移动到offY
     _passwoksTextField.frame = CGRectMake(nameTextFieldX, offy - 65, WIDTH - nameTextFieldX * 2 , nameTextFieldHeight);
     _registerButton.frame = CGRectMake(nameTextFieldX, offL - 5, WIDTH - nameTextFieldX * 2, nameTextFieldHeight);
-   _logoImageView.alpha = 0.5;
+   _logoImageView.alpha = 0;
     [UIView commitAnimations];//开始动画效果
 }
 
