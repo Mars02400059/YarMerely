@@ -33,6 +33,9 @@
         CGFloat titleWidth = frame.size.height - 2 * titleX;
         CGFloat Height = frame.size.height - Y;
         
+        self.backColor = [[UIView alloc] initWithFrame:self.bounds];
+        [self addSubview:_backColor];
+        
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(titleX, Y, titleWidth, Height)];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.font = [UIFont systemFontOfSize:19.f];
@@ -68,16 +71,14 @@
     _titleLabel.textColor = titleColor;
 }
 
-- (void)setLeftButtonBackImage:(UIImage *)leftButtonBackImage {
-    _leftButtonBackImage = leftButtonBackImage;
-    [_leftButton setBackgroundImage:leftButtonBackImage forState:UIControlStateNormal];
+- (void)setLeftButtonImage:(UIImage *)leftButtonImage {
+    _leftButtonImage = leftButtonImage;
+    [_leftButton setImage:leftButtonImage forState:UIControlStateNormal];
 }
-
-- (void)setRightButtonBackImage:(UIImage *)rightButtonBackImage {
-    _rightButtonBackImage = rightButtonBackImage;
-    [_rightButton setBackgroundImage:rightButtonBackImage forState:UIControlStateNormal];
+- (void)setRightButtonImage:(UIImage *)rightButtonImage {
+    _rightButtonImage = rightButtonImage;
+    [_rightButton setImage:rightButtonImage forState:UIControlStateNormal];
 }
-
 - (void)leftButtonAction {
     [self.delegate tyq_navigationBarViewLeftButtonAction];
 }

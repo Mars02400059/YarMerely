@@ -53,7 +53,8 @@
 		41FC7D841DBDE2B500712714 /* 我的2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D831DBDE2B500712714 /* 我的2.png */; };
 		41FC7D8B1DBDEBE700712714 /* 说2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D891DBDEBE700712714 /* 说2.png */; };
 		41FC7D8C1DBDEBE700712714 /* 说1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D8A1DBDEBE700712714 /* 说1.png */; };
-		41FC7D8E1DBDF44B00712714 /* 设置.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D8D1DBDF44B00712714 /* 设置.png */; };
+		41FC7D931DBE22FC00712714 /* 设置.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D921DBE22FC00712714 /* 设置.png */; };
+		41FC7D951DBE2AAB00712714 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D941DBE2AAB00712714 /* back.png */; };
 		4935D92B1DBB419B00BF55A7 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4935D92A1DBB419B00BF55A7 /* 2.png */; };
 		4935D92D1DBB470B00BF55A7 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4935D92C1DBB470B00BF55A7 /* 3.jpg */; };
 		4941582F1DBD97EB00505112 /* 22.png in Resources */ = {isa = PBXBuildFile; fileRef = 4941582E1DBD97EB00505112 /* 22.png */; };
@@ -176,7 +177,8 @@
 		41FC7D831DBDE2B500712714 /* 我的2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的2.png"; sourceTree = "<group>"; };
 		41FC7D891DBDEBE700712714 /* 说2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "说2.png"; sourceTree = "<group>"; };
 		41FC7D8A1DBDEBE700712714 /* 说1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "说1.png"; sourceTree = "<group>"; };
-		41FC7D8D1DBDF44B00712714 /* 设置.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置.png"; sourceTree = "<group>"; };
+		41FC7D921DBE22FC00712714 /* 设置.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置.png"; sourceTree = "<group>"; };
+		41FC7D941DBE2AAB00712714 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		4935D92A1DBB419B00BF55A7 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		4935D92C1DBB470B00BF55A7 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		4941582E1DBD97EB00505112 /* 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 22.png; sourceTree = "<group>"; };
@@ -542,7 +544,6 @@
 		41FC7D6E1DBDE06900712714 /* Main Image */ = {
 			isa = PBXGroup;
 			children = (
-				41FC7D8D1DBDF44B00712714 /* 设置.png */,
 				41FC7D891DBDEBE700712714 /* 说2.png */,
 				41FC7D8A1DBDEBE700712714 /* 说1.png */,
 				41FC7D811DBDE2AB00712714 /* 我的1.png */,
@@ -555,9 +556,19 @@
 			name = "Main Image";
 			sourceTree = "<group>";
 		};
+		41FC7D8F1DBE212C00712714 /* Mine Image */ = {
+			isa = PBXGroup;
+			children = (
+				41FC7D941DBE2AAB00712714 /* back.png */,
+				41FC7D921DBE22FC00712714 /* 设置.png */,
+			);
+			name = "Mine Image";
+			sourceTree = "<group>";
+		};
 		49C51D841DB89970006A5126 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				41FC7D8F1DBE212C00712714 /* Mine Image */,
 				41FC7D6E1DBDE06900712714 /* Main Image */,
 				41E37D621DBA106B00FCAD08 /* User Image */,
 				49C51D851DB89981006A5126 /* Images */,
@@ -773,10 +784,11 @@
 				41FC7D8C1DBDEBE700712714 /* 说1.png in Resources */,
 				49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */,
 				410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */,
+				41FC7D951DBE2AAB00712714 /* back.png in Resources */,
 				410E5BDA1DB85159005C2513 /* Assets.xcassets in Resources */,
+				41FC7D931DBE22FC00712714 /* 设置.png in Resources */,
 				41FC7D801DBDE23B00712714 /* 联系人1.png in Resources */,
 				49C51D891DB899FC006A5126 /* 0.jpg in Resources */,
-				41FC7D8E1DBDF44B00712714 /* 设置.png in Resources */,
 				410E5BD81DB85159005C2513 /* Main.storyboard in Resources */,
 				41FC7D821DBDE2AB00712714 /* 我的1.png in Resources */,
 				49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */,

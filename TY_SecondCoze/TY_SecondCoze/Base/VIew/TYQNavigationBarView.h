@@ -6,7 +6,7 @@
 //  Copyright © 2016年 TengYa. All rights reserved.
 //
 
-#import "TYQView.h"
+#import <UIKit/UIKit.h>
 
 @protocol TYQNavigationBarViewDelegate <NSObject>
 // 点击左按钮的协议方法
@@ -16,9 +16,11 @@
 
 @end
 
-@interface TYQNavigationBarView : TYQView
+@interface TYQNavigationBarView : UIView
 // 点击按钮的协议
 @property (nonatomic, assign) id<TYQNavigationBarViewDelegate>delegate;
+// 背景View
+@property (nonatomic, strong) UIView *backColor;
 // 导航标题名字
 @property (nonatomic, copy) NSString *title;
 // 导航标题字体大小
@@ -26,9 +28,9 @@
 // 导航标题字体颜色
 @property (nonatomic, strong) UIColor *titleColor;
 // 左按钮背景图片
-@property (nonatomic, strong) UIImage *leftButtonBackImage;
+@property (nonatomic, strong) UIImage *leftButtonImage;
 // 右按钮背景图片
-@property (nonatomic, strong) UIImage *rightButtonBackImage;
+@property (nonatomic, strong) UIImage *rightButtonImage;
 
 
 @end

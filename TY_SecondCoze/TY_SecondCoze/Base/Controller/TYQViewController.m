@@ -20,6 +20,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.hidden = YES;
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     
     
@@ -29,7 +30,7 @@
 
     self.navigationBarView = [[TYQNavigationBarView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 64)];
     _navigationBarView.delegate = self;
-    self.navigationBarView.backgroundColor = [UIColor colorWithRed:0.35 green:0.80 blue:0.98 alpha:1.00];
+    self.navigationBarView.backColor.backgroundColor = [UIColor colorWithRed:0.35 green:0.80 blue:0.98 alpha:1.00];
     [self.view addSubview:_navigationBarView];
 }
 
