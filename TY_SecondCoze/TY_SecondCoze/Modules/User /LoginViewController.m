@@ -89,6 +89,7 @@
 //            [[EaseMob sharedInstance].chatManager setIsAutoLoginEnabled:YES];
             
             MainTabBarViewController *mainTabBarViewController = [[MainTabBarViewController alloc] init];
+            mainTabBarViewController.tabBar.tintColor = [UIColor colorWithRed:0.320 green:0.736 blue:0.909 alpha:1.000];
             [self presentViewController:mainTabBarViewController animated:YES completion:nil];
         } else {
             
