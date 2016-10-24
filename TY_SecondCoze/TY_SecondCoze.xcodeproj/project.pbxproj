@@ -47,6 +47,7 @@
 		41FC7D231DBC853C00712714 /* TYQNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC7D221DBC853C00712714 /* TYQNavigationBarView.m */; };
 		4935D92B1DBB419B00BF55A7 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4935D92A1DBB419B00BF55A7 /* 2.png */; };
 		4935D92D1DBB470B00BF55A7 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4935D92C1DBB470B00BF55A7 /* 3.jpg */; };
+		4941582F1DBD97EB00505112 /* 22.png in Resources */ = {isa = PBXBuildFile; fileRef = 4941582E1DBD97EB00505112 /* 22.png */; };
 		49A8B39A1DBB82BD00FFF2A1 /* 00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B3991DBB82BD00FFF2A1 /* 00.jpg */; };
 		49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39B1DBB855000FFF2A1 /* 000.png */; };
 		49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39D1DBB873A00FFF2A1 /* 1.png */; };
@@ -160,6 +161,7 @@
 		41FC7D221DBC853C00712714 /* TYQNavigationBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYQNavigationBarView.m; sourceTree = "<group>"; };
 		4935D92A1DBB419B00BF55A7 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		4935D92C1DBB470B00BF55A7 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		4941582E1DBD97EB00505112 /* 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 22.png; sourceTree = "<group>"; };
 		49A8B3991DBB82BD00FFF2A1 /* 00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00.jpg; sourceTree = "<group>"; };
 		49A8B39B1DBB855000FFF2A1 /* 000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 000.png; sourceTree = "<group>"; };
 		49A8B39D1DBB873A00FFF2A1 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -222,8 +224,8 @@
 		410E5BC11DB85159005C2513 = {
 			isa = PBXGroup;
 			children = (
-				4DDFE85E53F4E47B3358AA7E /* Frameworks */,
 				E4A706EB638BC91C02369FA3 /* Pods */,
+				4DDFE85E53F4E47B3358AA7E /* Frameworks */,
 				410E5BCB1DB85159005C2513 /* Products */,
 				410E5BCC1DB85159005C2513 /* TY_SecondCoze */,
 				410E5BE61DB85159005C2513 /* TY_SecondCozeTests */,
@@ -490,6 +492,7 @@
 			children = (
 				41E37D631DBA109100FCAD08 /* Unknown.png */,
 				49A8B39D1DBB873A00FFF2A1 /* 1.png */,
+				4941582E1DBD97EB00505112 /* 22.png */,
 				49A8B39B1DBB855000FFF2A1 /* 000.png */,
 				49A8B3991DBB82BD00FFF2A1 /* 00.jpg */,
 			);
@@ -734,6 +737,7 @@
 				49C51D891DB899FC006A5126 /* 0.jpg in Resources */,
 				410E5BD81DB85159005C2513 /* Main.storyboard in Resources */,
 				49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */,
+				4941582F1DBD97EB00505112 /* 22.png in Resources */,
 				4935D92B1DBB419B00BF55A7 /* 2.png in Resources */,
 				410E5C541DB85315005C2513 /* ConnectViewController.xib in Resources */,
 				410E5C5A1DB85315005C2513 /* MineViewController.xib in Resources */,
