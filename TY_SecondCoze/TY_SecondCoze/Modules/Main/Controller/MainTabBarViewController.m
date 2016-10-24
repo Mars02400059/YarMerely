@@ -40,7 +40,7 @@
     
 }
 
-/// 设置视图, 并添加到容量视图控制器
+/// 设置视图, 并添加到容量视图控制器tabBar
 - (void)setViewController:(TYQViewController *)viewController tabBarTitle:(NSString *)tabBarTitle imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName {
     
     TYQNavigationViewController *navigationController = [[TYQNavigationViewController alloc] initWithRootViewController:viewController];
