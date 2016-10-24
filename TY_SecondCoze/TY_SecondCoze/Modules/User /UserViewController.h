@@ -6,8 +6,8 @@
 //  Copyright © 2016年 TengYa. All rights reserved.
 //
 
-#import "TYQViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface UserViewController : TYQViewController
+@interface UserViewController : UIViewController
 
 @end
