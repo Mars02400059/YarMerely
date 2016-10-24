@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "MainTabBarViewController.h"
+#import "sys/utsname.h"
 
 static CGFloat const nameTextFieldX = 40;
 static CGFloat const nameTextFieldHeight = 40;
@@ -164,9 +165,60 @@ static CGFloat const nameTextFieldHeight = 40;
     
 }
 
++ (NSString *)platform {
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    
+    NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSASCIIStringEncoding];
+    
+    if ([platform isEqualToString:@"iPhone1,1"]) return @"iPhone 2G";
+    if ([platform isEqualToString:@"iPhone1,2"]) return @"iPhone 3G";
+    if ([platform isEqualToString:@"iPhone2,1"]) return @"iPhone 3GS";
+    if ([platform isEqualToString:@"iPhone3,1"]) return @"iPhone 4";
+    if ([platform isEqualToString:@"iPhone3,2"]) return @"iPhone 4";
+    if ([platform isEqualToString:@"iPhone3,3"]) return @"iPhone 4";
+    if ([platform isEqualToString:@"iPhone4,1"]) return @"iPhone 4S";
+    if ([platform isEqualToString:@"iPhone5,1"]) return @"iPhone 5";
+    if ([platform isEqualToString:@"iPhone5,2"]) return @"iPhone 5";
+    if ([platform isEqualToString:@"iPhone5,3"]) return @"iPhone 5c";
+    if ([platform isEqualToString:@"iPhone5,4"]) return @"iPhone 5c";
+    if ([platform isEqualToString:@"iPhone6,1"]) return @"iPhone 5s";
+    if ([platform isEqualToString:@"iPhone6,2"]) return @"iPhone 5s";
+    if ([platform isEqualToString:@"iPhone7,1"]) return @"iPhone 6 Plus";
+    if ([platform isEqualToString:@"iPhone7,2"]) return @"iPhone 6";
+    if ([platform isEqualToString:@"iPhone8,1"]) return @"iPhone 6s";
+    if ([platform isEqualToString:@"iPhone8,2"]) return @"iPhone 6s Plus";
+    if ([platform isEqualToString:@"iPhone8,4"]) return @"iPhone SE";
+    if ([platform isEqualToString:@"i386"])      return @"iPhone Simulator";
+    if ([platform isEqualToString:@"x86_64"])    return @"iPhone Simulator";
+    
+    return platform;
+}
+
 #pragma mark --- 对通知中心方法实现
 //键盘出现时候调用的事件
 -(void) keyboadWillShow:(NSNotification *)note{
+    
+    NSString * strModel  = [LoginViewController platform];
+    NSLog(@" ======= %@", strModel);
+    
+    if ([strModel isEqualToString:@"iPhone5,4"])  {
+        
+        NSDictionary *info = [note userInfo];
+        CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;//键盘的frame
+        CGFloat offY = (HEIGHT-keyboardSize.height)-_nameTextField.frame.size.height;//屏幕总高度-键盘高度-UITextField高度
+        CGFloat offy = (HEIGHT-keyboardSize.height)-_passwoksTextField.frame.size.height;
+        CGFloat offL = (HEIGHT -keyboardSize.height) - _loginButton.frame.size.height;
+        [UIView beginAnimations:nil context:NULL];//此处添加动画，使之变化平滑一点
+        [UIView setAnimationDuration:0.3];//设置动画时间 秒为单位
+        _nameTextField.frame = CGRectMake(nameTextFieldX, offY - 120 , WIDTH - nameTextFieldX * 2, nameTextFieldHeight);//UITextField位置的y坐标移动到offY
+        _passwoksTextField.frame = CGRectMake(nameTextFieldX, offy - 65, WIDTH - nameTextFieldX * 2 , nameTextFieldHeight);
+        _loginButton.frame = CGRectMake(nameTextFieldX, offL - 5, WIDTH - nameTextFieldX * 2, nameTextFieldHeight);
+        _logoImageView.alpha = 0;
+        [UIView commitAnimations];//开始动画效果
+
+    }
+    
     NSDictionary *info = [note userInfo];
     CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;//键盘的frame
     CGFloat offY = (HEIGHT-keyboardSize.height)-_nameTextField.frame.size.height;//屏幕总高度-键盘高度-UITextField高度
