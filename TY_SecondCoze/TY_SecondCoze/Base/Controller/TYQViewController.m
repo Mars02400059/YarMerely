@@ -17,22 +17,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.hidden = YES;
+    
+    
+    
+    
+}
+
+- (void)addNavigationBarView {
+
     self.navigationBarView = [[TYQNavigationBarView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 64)];
     _navigationBarView.delegate = self;
-    self.navigationBarView.backgroundColor = [UIColor orangeColor];
+    self.navigationBarView.backgroundColor = [UIColor colorWithRed:0.35 green:0.80 blue:0.98 alpha:1.00];
     [self.view addSubview:_navigationBarView];
-    
 }
 
 - (void)tyq_navigationBarViewLeftButtonAction {
-
+    
 }
 
 - (void)tyq_navigationBarViewRightButtonAction {
-
+    
 }
 
 - (void)didReceiveMemoryWarning {

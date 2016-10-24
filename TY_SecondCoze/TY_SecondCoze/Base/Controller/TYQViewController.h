@@ -16,8 +16,8 @@ TYQNavigationBarViewDelegate
 
 // 自定义假导航
 @property (nonatomic, strong) TYQNavigationBarView *navigationBarView;
-
-
+/// 添加假导航的方法
+- (void)addNavigationBarView;
 
 
 @end

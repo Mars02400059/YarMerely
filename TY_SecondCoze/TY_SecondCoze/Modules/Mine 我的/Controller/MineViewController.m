@@ -8,7 +8,22 @@
 
 #import "MineViewController.h"
 
+static NSString *const cellIdetifeir = @"cell";
+
 @interface MineViewController ()
+<
+UITableViewDelegate,
+UITableViewDataSource
+>
+@property (nonatomic, strong) UITableView *tableView;
+/// 头视图背景图片
+@property (nonatomic, strong) TYQImageView *headImageView;
+/// 头视图背景图片宽度
+@property (nonatomic, assign) CGFloat headImageViewWidth;
+/// 头视图背景图片高度
+@property (nonatomic, assign) CGFloat headImageViewHeight;
+
+
 
 @end
 
@@ -17,7 +32,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor = [UIColor yellowColor];
+    
+    
 
+    [self addSubsView];
+    [self addNavigationBarView];
+    self.navigationBarView.alpha = 0.f;
+    self.navigationBarView.rightButtonBackImage = [UIImage imageNamed:@"设置"];
+}
+
+- (void)addSubsView {
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellIdetifeir];
+    [self.view addSubview:_tableView];
+    
+    self.headImageView = [[TYQImageView alloc] initWithImage:[UIImage imageNamed:@""]];
+    _headImageView.backgroundColor = [UIColor redColor];
+    _headImageView.frame = CGRectMake(0, 0, WIDTH, WIDTH * 0.75);
+    _tableView.tableHeaderView = _headImageView;
+    
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdetifeir];
+    
+    return cell;
 }
 
 

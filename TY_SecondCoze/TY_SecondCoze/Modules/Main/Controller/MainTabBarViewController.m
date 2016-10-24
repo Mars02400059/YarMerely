@@ -37,8 +37,9 @@
     MineViewController *mineViewController = [[MineViewController alloc] init];
     [self setViewController:mineViewController tabBarTitle:@"我的" imageName:@"我的1" selectedImageName:@"我的2"];
     
-    
+       
 }
+
 
 /// 设置视图, 并添加到容量视图控制器tabBar
 - (void)setViewController:(TYQViewController *)viewController tabBarTitle:(NSString *)tabBarTitle imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName {
