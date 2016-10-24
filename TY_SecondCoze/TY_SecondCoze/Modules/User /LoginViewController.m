@@ -200,9 +200,9 @@ static CGFloat const nameTextFieldHeight = 40;
 -(void) keyboadWillShow:(NSNotification *)note{
     
     NSString * strModel  = [LoginViewController platform];
-    NSLog(@" ======= %@", strModel);
+    NSLog(@":%@", strModel);
     
-    if ([strModel isEqualToString:@"iPhone5,4"])  {
+    if ([strModel isEqualToString:@"iPhone 5c"] || [strModel isEqualToString:@"iPhone 5"] || [strModel isEqualToString:@"iPhone 5s"])  {
         
         NSDictionary *info = [note userInfo];
         CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;//键盘的frame
@@ -216,21 +216,24 @@ static CGFloat const nameTextFieldHeight = 40;
         _loginButton.frame = CGRectMake(nameTextFieldX, offL - 5, WIDTH - nameTextFieldX * 2, nameTextFieldHeight);
         _logoImageView.alpha = 0;
         [UIView commitAnimations];//开始动画效果
+        
+
+    } else {
+        NSDictionary *info = [note userInfo];
+        CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;//键盘的frame
+        CGFloat offY = (HEIGHT-keyboardSize.height)-_nameTextField.frame.size.height;//屏幕总高度-键盘高度-UITextField高度
+        CGFloat offy = (HEIGHT-keyboardSize.height)-_passwoksTextField.frame.size.height;
+        CGFloat offL = (HEIGHT -keyboardSize.height) - _loginButton.frame.size.height;
+        [UIView beginAnimations:nil context:NULL];//此处添加动画，使之变化平滑一点
+        [UIView setAnimationDuration:0.3];//设置动画时间 秒为单位
+        _nameTextField.frame = CGRectMake(nameTextFieldX, offY - 120 , WIDTH - nameTextFieldX * 2, nameTextFieldHeight);//UITextField位置的y坐标移动到offY
+        _passwoksTextField.frame = CGRectMake(nameTextFieldX, offy - 65, WIDTH - nameTextFieldX * 2 , nameTextFieldHeight);
+        _loginButton.frame = CGRectMake(nameTextFieldX, offL - 5, WIDTH - nameTextFieldX * 2, nameTextFieldHeight);
+        _logoImageView.alpha = 0.5;
+        [UIView commitAnimations];//开始动画效果
 
     }
     
-    NSDictionary *info = [note userInfo];
-    CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;//键盘的frame
-    CGFloat offY = (HEIGHT-keyboardSize.height)-_nameTextField.frame.size.height;//屏幕总高度-键盘高度-UITextField高度
-    CGFloat offy = (HEIGHT-keyboardSize.height)-_passwoksTextField.frame.size.height;
-    CGFloat offL = (HEIGHT -keyboardSize.height) - _loginButton.frame.size.height;
-    [UIView beginAnimations:nil context:NULL];//此处添加动画，使之变化平滑一点
-    [UIView setAnimationDuration:0.3];//设置动画时间 秒为单位
-    _nameTextField.frame = CGRectMake(nameTextFieldX, offY - 120 , WIDTH - nameTextFieldX * 2, nameTextFieldHeight);//UITextField位置的y坐标移动到offY
-    _passwoksTextField.frame = CGRectMake(nameTextFieldX, offy - 65, WIDTH - nameTextFieldX * 2 , nameTextFieldHeight);
-    _loginButton.frame = CGRectMake(nameTextFieldX, offL - 5, WIDTH - nameTextFieldX * 2, nameTextFieldHeight);
-    _logoImageView.alpha = 0.5;
-    [UIView commitAnimations];//开始动画效果
     
 }
 
