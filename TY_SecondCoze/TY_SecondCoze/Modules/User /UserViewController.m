@@ -56,6 +56,8 @@ titleLabel.font = [UIFont systemFontOfSize:22.f];
     rigisterButton.frame = CGRectMake((WIDTH - 70) / 2 - 10, HEIGHT / 5 * 3, 100, 40);
     rigisterButton.layer.cornerRadius = 10;
     rigisterButton.layer.masksToBounds = YES;
+    rigisterButton.layer.borderColor = [UIColor blueColor].CGColor;
+    rigisterButton.layer.borderWidth = 2.f;
     rigisterButton.backgroundColor = [UIColor cyanColor];
     [rigisterButton setTitle:@"注册" forState:UIControlStateNormal];
     [rigisterButton addTarget:self action:@selector(rigisterButtonAction:) forControlEvents:UIControlEventTouchUpInside];

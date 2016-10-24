@@ -9,6 +9,8 @@
 #import "RegisterViewController.h"
 #import "LoginViewController.h"
 
+static const NSString *titleStr;
+static const NSString *messageStr;
 
 @interface RegisterViewController ()
 
@@ -83,11 +85,12 @@
             
                 NSLog(@"注册成功");
                 [self dismissViewControllerAnimated:YES completion:nil];
+                
             
             } else {
             
-                NSString *titleStr;
-                NSString *messageStr;
+//                NSString *titleStr;
+//                NSString *messageStr;
                 if ([_nameTextField.text isEqualToString:@""]) {
                     titleStr = @"请输入用户名";
                     messageStr = nil;

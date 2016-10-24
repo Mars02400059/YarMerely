@@ -25,6 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    
     [self appendSubsView];
 }
 
@@ -55,11 +56,14 @@
     _nameTextField.placeholder = @"请输入用户名";
     [self.view addSubview:_nameTextField];
     
+    
     CGFloat passwokTextFieldY = nameTextFieldY + nameTextFieldHeight + 20;
     self.passwoksTextField = [[TYQTextField alloc] initWithFrame:CGRectMake(nameTextFieldX, passwokTextFieldY, nameTextFieldWidth, nameTextFieldHeight)];
     _passwoksTextField.secureTextEntry = YES;
     _passwoksTextField.placeholder = @"请输入密码";
     [self.view addSubview:_passwoksTextField];
+    
+    
     
     TYQButton *loginButton = [TYQButton buttonWithType:UIButtonTypeCustom];
     loginButton.frame = CGRectMake(nameTextFieldX, passwokTextFieldY + nameTextFieldHeight + 50, nameTextFieldWidth, 45);
@@ -67,6 +71,7 @@
     [loginButton addTarget:self action:@selector(loginButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [loginButton setTitle:@"登 录" forState:UIControlStateNormal];
     [self.view addSubview:loginButton];
+    
     
 }
 
@@ -102,12 +107,14 @@
                 _passwoksTextField.text = nil;
             }
             
+            
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:titleStr message:messageStr preferredStyle:UIAlertControllerStyleAlert];
             [alertController addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:nil]];
 
             [self presentViewController:alertController animated:YES completion:nil];
         
         }
+        
     } onQueue:nil];
     
     

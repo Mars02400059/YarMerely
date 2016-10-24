@@ -73,6 +73,7 @@ EMChatManagerDelegate
 #warning 先将自动登录功能关掉, 否则影响后续开发
         // 自动登录制作完成
 #if 0
+    
     MainTabBarViewController *mainTabBarViewController = [[MainTabBarViewController alloc] init];
     self.window.rootViewController = mainTabBarViewController;
     
