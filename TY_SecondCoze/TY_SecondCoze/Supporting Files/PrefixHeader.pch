@@ -27,7 +27,7 @@
 #import <MJRefresh.h>
 #import <FMDB.h>
 #import <MBProgressHUD.h>
-
+#import <SVProgressHUD.h>
 #import "SystemUnit.h"
 
 #define WIDTH [UIScreen mainScreen].bounds.size.width

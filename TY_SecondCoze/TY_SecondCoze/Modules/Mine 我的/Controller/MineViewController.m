@@ -149,6 +149,7 @@ UITableViewDataSource
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == self.tableViewArray.count - 1) {
         MineSettingViewController *settingVC = [[MineSettingViewController alloc] init];
+        settingVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:settingVC animated:YES];
     }
     
@@ -156,6 +157,7 @@ UITableViewDataSource
 
 - (void)tyq_navigationBarViewRightButtonAction {
     MineSettingViewController *settingVC = [[MineSettingViewController alloc] init];
+    settingVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:settingVC animated:YES];
 }
 

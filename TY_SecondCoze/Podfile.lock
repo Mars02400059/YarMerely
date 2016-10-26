@@ -26,6 +26,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - SVProgressHUD (2.0.3)
   - TTTAttributedLabel (1.13.4)
 
 DEPENDENCIES:
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - MLEmojiLabel (~> 1.0.2)
   - SDAutoLayout (~> 2.1.7)
   - SDWebImage (~> 3.8.2)
+  - SVProgressHUD (~> 2.0.3)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -47,8 +49,9 @@ SPEC CHECKSUMS:
   MLEmojiLabel: 36d73c19f9975cbf9def24e5bc135263b0337fd8
   SDAutoLayout: e9b36d04b8c0b504762a04d76fbbe5108944297a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
 
-PODFILE CHECKSUM: 7c234d273a75b2af3bdf9456831afe2123af3c99
+PODFILE CHECKSUM: c87b18d05d1b7e06bb04cbc73691c173c42df135
 
 COCOAPODS: 1.0.1

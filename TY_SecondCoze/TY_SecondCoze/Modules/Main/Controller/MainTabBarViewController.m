@@ -16,30 +16,46 @@
 
 
 @interface MainTabBarViewController ()
+<
+EMChatManagerDelegate
+>
 
 @end
 
 @implementation MainTabBarViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    SpeakViewController *speakViewController = [[SpeakViewController alloc] init];
-    [self setViewController:speakViewController tabBarTitle:@"说" imageName:@"说1" selectedImageName:@"说2"];
+    // 聊天管理器
+    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
     
-    MessageViewController *messageViewController = [[MessageViewController alloc] init];
-    [self setViewController:messageViewController tabBarTitle:@"消息" imageName:@"消息1" selectedImageName:@"消息2"];
-    
-    ConnectViewController *connectViewController = [[ConnectViewController alloc] init];
-    [self setViewController:connectViewController tabBarTitle:@"联系人" imageName:@"联系人1"  selectedImageName:@"联系人2"];
-    
-    MineViewController *mineViewController = [[MineViewController alloc] init];
-    [self setViewController:mineViewController tabBarTitle:@"我的" imageName:@"我的1" selectedImageName:@"我的2"];
-    
-       
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+        SpeakViewController *speakViewController = [[SpeakViewController alloc] init];
+        [self setViewController:speakViewController tabBarTitle:@"说" imageName:@"说1" selectedImageName:@"说2"];
+        
+        MessageViewController *messageViewController = [[MessageViewController alloc] init];
+        [self setViewController:messageViewController tabBarTitle:@"消息" imageName:@"消息1" selectedImageName:@"消息2"];
+        
+        ConnectViewController *connectViewController = [[ConnectViewController alloc] init];
+        [self setViewController:connectViewController tabBarTitle:@"联系人" imageName:@"联系人1"  selectedImageName:@"联系人2"];
+        
+        MineViewController *mineViewController = [[MineViewController alloc] init];
+        [self setViewController:mineViewController tabBarTitle:@"我的" imageName:@"我的1" selectedImageName:@"我的2"];
+        
+        
+    }
+    return self;
+}
 
 /// 设置视图, 并添加到容量视图控制器tabBar
 - (void)setViewController:(TYQViewController *)viewController tabBarTitle:(NSString *)tabBarTitle imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName {
