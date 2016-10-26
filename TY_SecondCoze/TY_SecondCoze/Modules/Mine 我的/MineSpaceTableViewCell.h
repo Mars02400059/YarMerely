@@ -10,6 +10,6 @@
 
 @interface MineSpaceTableViewCell : TYQTableViewCell
 
-
+@property (nonatomic, copy) NSString *title;
 
 @end

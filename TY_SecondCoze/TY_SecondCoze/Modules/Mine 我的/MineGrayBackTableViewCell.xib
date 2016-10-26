@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1f-NO-BDS">
-                        <color key="backgroundColor" red="0.95092147435897434" green="0.95092147435897434" blue="0.95092147435897434" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.98273237179487183" green="0.98273237179487183" blue="0.98273237179487183" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>

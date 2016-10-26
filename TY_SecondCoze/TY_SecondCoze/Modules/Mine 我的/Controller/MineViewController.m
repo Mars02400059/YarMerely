@@ -10,9 +10,11 @@
 #import "MineSpaceTableViewCell.h"
 #import "MineGrayBackTableViewCell.h"
 #import "MineImageTableViewCell.h"
+#import "MineSettingViewController.h"
 
-
-static NSString *const cellIdetifeir = @"cell";
+static NSString *const spaceCell = @"spaceCell";
+static NSString *const backCell = @"backCell";
+static NSString *const imageCell = @"imageCell";
 
 @interface MineViewController ()
 <
@@ -33,7 +35,7 @@ UITableViewDataSource
 /// 头视图背景图片高度
 @property (nonatomic, assign) CGFloat headBackImageViewHeight;
 
-
+@property (nonatomic, strong) NSArray *tableViewArray;
 
 @end
 
@@ -63,10 +65,16 @@ UITableViewDataSource
     
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - 50) style:UITableViewStylePlain];
+//    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.backgroundColor = [UIColor clearColor];
-    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellIdetifeir];
+    
+    [_tableView registerNib:[UINib nibWithNibName:@"MineSpaceTableViewCell" bundle:nil] forCellReuseIdentifier:spaceCell];
+    [_tableView registerNib:[UINib nibWithNibName:@"MineGrayBackTableViewCell" bundle:nil] forCellReuseIdentifier:backCell];
+    [_tableView registerNib:[UINib nibWithNibName:@"MineImageTableViewCell" bundle:nil] forCellReuseIdentifier:imageCell];
+
+    
     [self.view addSubview:_tableView];
 
     
@@ -91,14 +99,66 @@ UITableViewDataSource
     
 }
 
+- (NSArray *)tableViewArray {
+    if (nil == _tableViewArray) {
+        _tableViewArray = @[@"", @"", @"收藏", @"设置"];
+    }
+    return _tableViewArray;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (1 == indexPath.row) {
+        return 10.f;
+    }
+    return 50.f;
+    
+//    if (0 == indexPath.row) {
+//        return 50.f;
+//    } else if (1 == indexPath.row) {
+//        return 10.f;
+//    } else {
+//        return 50.f;
+//    }
+
+
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 13;
+    return self.tableViewArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdetifeir];
-    return cell;
+   
+    if (0 == indexPath.row) {
+        MineSpaceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:spaceCell];
+        return cell;
+    } else if (1 == indexPath.row) {
+        MineGrayBackTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:backCell];
+        return cell;
+    } else {
+        MineImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:imageCell];
+        
+        cell.title = self.tableViewArray[indexPath.row];
+        return cell;
+
+        
+    }
+    
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == self.tableViewArray.count - 1) {
+        MineSettingViewController *settingVC = [[MineSettingViewController alloc] init];
+        [self.navigationController pushViewController:settingVC animated:YES];
+    }
+    
+}
+
+- (void)tyq_navigationBarViewRightButtonAction {
+    MineSettingViewController *settingVC = [[MineSettingViewController alloc] init];
+    [self.navigationController pushViewController:settingVC animated:YES];
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     

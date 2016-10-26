@@ -9,10 +9,16 @@
 #import "MineSpaceTableViewCell.h"
 
 @interface MineSpaceTableViewCell ()
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
 @implementation MineSpaceTableViewCell
+
+- (void)setTitle:(NSString *)title {
+    _title = title;
+    _titleLabel.text = title;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];

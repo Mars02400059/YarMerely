@@ -39,14 +39,14 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="wIs-hN-OvG" firstAttribute="leading" secondItem="mkL-0X-4Z5" secondAttribute="trailing" constant="15" id="874-cW-jua"/>
-                    <constraint firstItem="mkL-0X-4Z5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="EcZ-pO-WBR"/>
-                    <constraint firstAttribute="bottom" secondItem="R1l-lr-Z1j" secondAttribute="bottom" constant="8" id="GwJ-oT-Yv2"/>
-                    <constraint firstAttribute="trailing" secondItem="R1l-lr-Z1j" secondAttribute="trailing" constant="15" id="I1w-wG-hM9"/>
+                    <constraint firstItem="mkL-0X-4Z5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="EcZ-pO-WBR"/>
+                    <constraint firstAttribute="bottom" secondItem="R1l-lr-Z1j" secondAttribute="bottom" constant="15" id="GwJ-oT-Yv2"/>
+                    <constraint firstAttribute="trailing" secondItem="R1l-lr-Z1j" secondAttribute="trailing" constant="10" id="I1w-wG-hM9"/>
                     <constraint firstAttribute="bottom" secondItem="mkL-0X-4Z5" secondAttribute="bottom" constant="5" id="Mqr-5h-mbq"/>
                     <constraint firstItem="mkL-0X-4Z5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="TmQ-4C-clW"/>
                     <constraint firstItem="wIs-hN-OvG" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="WXg-gW-tkL"/>
                     <constraint firstItem="wIs-hN-OvG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="ead-Cm-G4j"/>
-                    <constraint firstItem="R1l-lr-Z1j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="uYo-uq-P1H"/>
+                    <constraint firstItem="R1l-lr-Z1j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="uYo-uq-P1H"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

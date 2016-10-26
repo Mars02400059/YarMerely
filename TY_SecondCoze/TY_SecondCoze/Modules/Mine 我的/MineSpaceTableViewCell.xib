@@ -30,6 +30,9 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="awO-Xa-9aS" secondAttribute="bottom" constant="5" id="fkc-Cg-PAj"/>
             </constraints>
+            <connections>
+                <outlet property="titleLabel" destination="awO-Xa-9aS" id="17r-xh-4Lw"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
