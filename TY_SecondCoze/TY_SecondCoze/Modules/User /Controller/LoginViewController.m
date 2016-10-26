@@ -200,7 +200,7 @@ static CGFloat const nameTextFieldHeight = 40;
 -(void) keyboadWillShow:(NSNotification *)note{
     
     NSString * strModel  = [LoginViewController platform];
-    NSLog(@":%@", strModel);
+//    NSLog(@":%@", strModel);
     
     if ([strModel isEqualToString:@"iPhone 5c"] || [strModel isEqualToString:@"iPhone 5"] || [strModel isEqualToString:@"iPhone 5s"])  {
         
