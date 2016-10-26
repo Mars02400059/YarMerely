@@ -37,7 +37,6 @@
 		410E5C571DB85315005C2513 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410E5C471DB85315005C2513 /* MessageViewController.m */; };
 		410E5C581DB85315005C2513 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410E5C481DB85315005C2513 /* MessageViewController.xib */; };
 		410E5C591DB85315005C2513 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410E5C4C1DB85315005C2513 /* MineViewController.m */; };
-		410E5C5A1DB85315005C2513 /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410E5C4D1DB85315005C2513 /* MineViewController.xib */; };
 		410E5C5B1DB85315005C2513 /* SpeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410E5C511DB85315005C2513 /* SpeakViewController.m */; };
 		410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410E5C521DB85315005C2513 /* SpeakViewController.xib */; };
 		41E37D611DBA095700FCAD08 /* TYQImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E37D601DBA095700FCAD08 /* TYQImageView.m */; };
@@ -55,6 +54,13 @@
 		41FC7D8C1DBDEBE700712714 /* 说1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D8A1DBDEBE700712714 /* 说1.png */; };
 		41FC7D931DBE22FC00712714 /* 设置.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D921DBE22FC00712714 /* 设置.png */; };
 		41FC7D951DBE2AAB00712714 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D941DBE2AAB00712714 /* back.png */; };
+		41FC7D9D1DBEE83800712714 /* MineSpaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC7D9B1DBEE83800712714 /* MineSpaceTableViewCell.m */; };
+		41FC7D9E1DBEE83800712714 /* MineSpaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D9C1DBEE83800712714 /* MineSpaceTableViewCell.xib */; };
+		41FC7DA21DBEEA6E00712714 /* MineGrayBackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC7DA01DBEEA6E00712714 /* MineGrayBackTableViewCell.m */; };
+		41FC7DA31DBEEA6E00712714 /* MineGrayBackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7DA11DBEEA6E00712714 /* MineGrayBackTableViewCell.xib */; };
+		41FC7DA71DBEEB1800712714 /* MineImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC7DA51DBEEB1800712714 /* MineImageTableViewCell.m */; };
+		41FC7DA81DBEEB1800712714 /* MineImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7DA61DBEEB1800712714 /* MineImageTableViewCell.xib */; };
+		41FC7DAA1DBEED6F00712714 /* 进入，右.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7DA91DBEED6F00712714 /* 进入，右.png */; };
 		4935D92B1DBB419B00BF55A7 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4935D92A1DBB419B00BF55A7 /* 2.png */; };
 		4935D92D1DBB470B00BF55A7 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4935D92C1DBB470B00BF55A7 /* 3.jpg */; };
 		4941582F1DBD97EB00505112 /* 22.png in Resources */ = {isa = PBXBuildFile; fileRef = 4941582E1DBD97EB00505112 /* 22.png */; };
@@ -155,7 +161,6 @@
 		410E5C481DB85315005C2513 /* MessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
 		410E5C4B1DB85315005C2513 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		410E5C4C1DB85315005C2513 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
-		410E5C4D1DB85315005C2513 /* MineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineViewController.xib; sourceTree = "<group>"; };
 		410E5C501DB85315005C2513 /* SpeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakViewController.h; sourceTree = "<group>"; };
 		410E5C511DB85315005C2513 /* SpeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakViewController.m; sourceTree = "<group>"; };
 		410E5C521DB85315005C2513 /* SpeakViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakViewController.xib; sourceTree = "<group>"; };
@@ -179,6 +184,16 @@
 		41FC7D8A1DBDEBE700712714 /* 说1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "说1.png"; sourceTree = "<group>"; };
 		41FC7D921DBE22FC00712714 /* 设置.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置.png"; sourceTree = "<group>"; };
 		41FC7D941DBE2AAB00712714 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		41FC7D9A1DBEE83800712714 /* MineSpaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineSpaceTableViewCell.h; sourceTree = "<group>"; };
+		41FC7D9B1DBEE83800712714 /* MineSpaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineSpaceTableViewCell.m; sourceTree = "<group>"; };
+		41FC7D9C1DBEE83800712714 /* MineSpaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineSpaceTableViewCell.xib; sourceTree = "<group>"; };
+		41FC7D9F1DBEEA6E00712714 /* MineGrayBackTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineGrayBackTableViewCell.h; sourceTree = "<group>"; };
+		41FC7DA01DBEEA6E00712714 /* MineGrayBackTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineGrayBackTableViewCell.m; sourceTree = "<group>"; };
+		41FC7DA11DBEEA6E00712714 /* MineGrayBackTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineGrayBackTableViewCell.xib; sourceTree = "<group>"; };
+		41FC7DA41DBEEB1800712714 /* MineImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineImageTableViewCell.h; sourceTree = "<group>"; };
+		41FC7DA51DBEEB1800712714 /* MineImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineImageTableViewCell.m; sourceTree = "<group>"; };
+		41FC7DA61DBEEB1800712714 /* MineImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineImageTableViewCell.xib; sourceTree = "<group>"; };
+		41FC7DA91DBEED6F00712714 /* 进入，右.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进入，右.png"; sourceTree = "<group>"; };
 		4935D92A1DBB419B00BF55A7 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		4935D92C1DBB470B00BF55A7 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		4941582E1DBD97EB00505112 /* 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 22.png; sourceTree = "<group>"; };
@@ -474,6 +489,7 @@
 		410E5C491DB85315005C2513 /* Mine 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				41FC7D961DBEE6BB00712714 /* View */,
 				410E5C4A1DB85315005C2513 /* Controller */,
 			);
 			path = "Mine 我的";
@@ -484,7 +500,6 @@
 			children = (
 				410E5C4B1DB85315005C2513 /* MineViewController.h */,
 				410E5C4C1DB85315005C2513 /* MineViewController.m */,
-				410E5C4D1DB85315005C2513 /* MineViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -559,10 +574,27 @@
 		41FC7D8F1DBE212C00712714 /* Mine Image */ = {
 			isa = PBXGroup;
 			children = (
+				41FC7DA91DBEED6F00712714 /* 进入，右.png */,
 				41FC7D941DBE2AAB00712714 /* back.png */,
 				41FC7D921DBE22FC00712714 /* 设置.png */,
 			);
 			name = "Mine Image";
+			sourceTree = "<group>";
+		};
+		41FC7D961DBEE6BB00712714 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				41FC7D9A1DBEE83800712714 /* MineSpaceTableViewCell.h */,
+				41FC7D9B1DBEE83800712714 /* MineSpaceTableViewCell.m */,
+				41FC7D9C1DBEE83800712714 /* MineSpaceTableViewCell.xib */,
+				41FC7D9F1DBEEA6E00712714 /* MineGrayBackTableViewCell.h */,
+				41FC7DA01DBEEA6E00712714 /* MineGrayBackTableViewCell.m */,
+				41FC7DA11DBEEA6E00712714 /* MineGrayBackTableViewCell.xib */,
+				41FC7DA41DBEEB1800712714 /* MineImageTableViewCell.h */,
+				41FC7DA51DBEEB1800712714 /* MineImageTableViewCell.m */,
+				41FC7DA61DBEEB1800712714 /* MineImageTableViewCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		49C51D841DB89970006A5126 /* Resource */ = {
@@ -783,20 +815,23 @@
 				410E5C581DB85315005C2513 /* MessageViewController.xib in Resources */,
 				41FC7D8C1DBDEBE700712714 /* 说1.png in Resources */,
 				49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */,
+				41FC7DAA1DBEED6F00712714 /* 进入，右.png in Resources */,
 				410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */,
 				41FC7D951DBE2AAB00712714 /* back.png in Resources */,
 				410E5BDA1DB85159005C2513 /* Assets.xcassets in Resources */,
 				41FC7D931DBE22FC00712714 /* 设置.png in Resources */,
+				41FC7DA31DBEEA6E00712714 /* MineGrayBackTableViewCell.xib in Resources */,
 				41FC7D801DBDE23B00712714 /* 联系人1.png in Resources */,
 				49C51D891DB899FC006A5126 /* 0.jpg in Resources */,
 				410E5BD81DB85159005C2513 /* Main.storyboard in Resources */,
+				41FC7D9E1DBEE83800712714 /* MineSpaceTableViewCell.xib in Resources */,
 				41FC7D821DBDE2AB00712714 /* 我的1.png in Resources */,
 				49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */,
 				4941582F1DBD97EB00505112 /* 22.png in Resources */,
 				4935D92B1DBB419B00BF55A7 /* 2.png in Resources */,
+				41FC7DA81DBEEB1800712714 /* MineImageTableViewCell.xib in Resources */,
 				410E5C541DB85315005C2513 /* ConnectViewController.xib in Resources */,
 				41FC7D7F1DBDE23B00712714 /* 联系人2.png in Resources */,
-				410E5C5A1DB85315005C2513 /* MineViewController.xib in Resources */,
 				41E37D641DBA109200FCAD08 /* Unknown.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -959,6 +994,7 @@
 				410E5BD21DB85159005C2513 /* AppDelegate.m in Sources */,
 				410E5C1E1DB852FF005C2513 /* TYQLabel.m in Sources */,
 				41E37D611DBA095700FCAD08 /* TYQImageView.m in Sources */,
+				41FC7D9D1DBEE83800712714 /* MineSpaceTableViewCell.m in Sources */,
 				41E37D671DBA133A00FCAD08 /* TYQTextField.m in Sources */,
 				41E37D6C1DBA139100FCAD08 /* TextFieldView.m in Sources */,
 				49C51DF81DB89F7F006A5126 /* UserViewController.m in Sources */,
@@ -970,10 +1006,12 @@
 				410E5C211DB852FF005C2513 /* TYQView.m in Sources */,
 				410E5C531DB85315005C2513 /* ConnectViewController.m in Sources */,
 				410E5C1F1DB852FF005C2513 /* TYQTableViewCell.m in Sources */,
+				41FC7DA71DBEEB1800712714 /* MineImageTableViewCell.m in Sources */,
 				49C51DE01DB89DDC006A5126 /* DBTool.m in Sources */,
 				410E5C591DB85315005C2513 /* MineViewController.m in Sources */,
 				49C51DD61DB89AF7006A5126 /* UIView+EATheme.m in Sources */,
 				410E5C201DB852FF005C2513 /* TYQTableViewController.m in Sources */,
+				41FC7DA21DBEEA6E00712714 /* MineGrayBackTableViewCell.m in Sources */,
 				410E5C331DB8530B005C2513 /* NSString+Regex.m in Sources */,
 				410E5C1D1DB852FF005C2513 /* TYQCollectionViewCell.m in Sources */,
 				410E5C321DB8530B005C2513 /* NSString+Categories.m in Sources */,

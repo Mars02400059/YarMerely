@@ -7,6 +7,10 @@
 //
 
 #import "MineViewController.h"
+#import "MineSpaceTableViewCell.h"
+#import "MineGrayBackTableViewCell.h"
+#import "MineImageTableViewCell.h"
+
 
 static NSString *const cellIdetifeir = @"cell";
 
