@@ -66,6 +66,13 @@
 		4935D92B1DBB419B00BF55A7 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4935D92A1DBB419B00BF55A7 /* 2.png */; };
 		4935D92D1DBB470B00BF55A7 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4935D92C1DBB470B00BF55A7 /* 3.jpg */; };
 		4941582F1DBD97EB00505112 /* 22.png in Resources */ = {isa = PBXBuildFile; fileRef = 4941582E1DBD97EB00505112 /* 22.png */; };
+		4968E42F1DC09E6200257004 /* xin.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E42E1DC09E6200257004 /* xin.png */; };
+		4968E4311DC09E6700257004 /* qun.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E4301DC09E6700257004 /* qun.png */; };
+		4968E4331DC09E6E00257004 /* an.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E4321DC09E6E00257004 /* an.png */; };
+		4968E4371DC0A09D00257004 /* ConnectCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4361DC0A09D00257004 /* ConnectCollectionViewCell.m */; };
+		4968E43A1DC0B07F00257004 /* ConnectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4391DC0B07F00257004 /* ConnectTableViewCell.m */; };
+		4968E43C1DC0C18800257004 /* jia.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E43B1DC0C18800257004 /* jia.png */; };
+		4968E43F1DC0C31600257004 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E43E1DC0C31600257004 /* AddViewController.m */; };
 		49A8B39A1DBB82BD00FFF2A1 /* 00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B3991DBB82BD00FFF2A1 /* 00.jpg */; };
 		49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39B1DBB855000FFF2A1 /* 000.png */; };
 		49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39D1DBB873A00FFF2A1 /* 1.png */; };
@@ -202,6 +209,16 @@
 		4935D92A1DBB419B00BF55A7 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		4935D92C1DBB470B00BF55A7 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		4941582E1DBD97EB00505112 /* 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 22.png; sourceTree = "<group>"; };
+		4968E42E1DC09E6200257004 /* xin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xin.png; sourceTree = "<group>"; };
+		4968E4301DC09E6700257004 /* qun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qun.png; sourceTree = "<group>"; };
+		4968E4321DC09E6E00257004 /* an.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = an.png; sourceTree = "<group>"; };
+		4968E4351DC0A09D00257004 /* ConnectCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectCollectionViewCell.h; sourceTree = "<group>"; };
+		4968E4361DC0A09D00257004 /* ConnectCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectCollectionViewCell.m; sourceTree = "<group>"; };
+		4968E4381DC0B07F00257004 /* ConnectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectTableViewCell.h; sourceTree = "<group>"; };
+		4968E4391DC0B07F00257004 /* ConnectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectTableViewCell.m; sourceTree = "<group>"; };
+		4968E43B1DC0C18800257004 /* jia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jia.png; sourceTree = "<group>"; };
+		4968E43D1DC0C31600257004 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		4968E43E1DC0C31600257004 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		49A8B3991DBB82BD00FFF2A1 /* 00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00.jpg; sourceTree = "<group>"; };
 		49A8B39B1DBB855000FFF2A1 /* 000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 000.png; sourceTree = "<group>"; };
 		49A8B39D1DBB873A00FFF2A1 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -439,6 +456,7 @@
 		410E5C391DB85315005C2513 /* Connect 联系人 */ = {
 			isa = PBXGroup;
 			children = (
+				4968E4341DC09E8800257004 /* View */,
 				410E5C3A1DB85315005C2513 /* Controller */,
 			);
 			path = "Connect 联系人";
@@ -450,6 +468,8 @@
 				410E5C3B1DB85315005C2513 /* ConnectViewController.h */,
 				410E5C3C1DB85315005C2513 /* ConnectViewController.m */,
 				410E5C3D1DB85315005C2513 /* ConnectViewController.xib */,
+				4968E43D1DC0C31600257004 /* AddViewController.h */,
+				4968E43E1DC0C31600257004 /* AddViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -621,6 +641,17 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		4968E4341DC09E8800257004 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4968E4351DC0A09D00257004 /* ConnectCollectionViewCell.h */,
+				4968E4361DC0A09D00257004 /* ConnectCollectionViewCell.m */,
+				4968E4381DC0B07F00257004 /* ConnectTableViewCell.h */,
+				4968E4391DC0B07F00257004 /* ConnectTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		49C51D841DB89970006A5126 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,6 +666,10 @@
 		49C51D851DB89981006A5126 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4968E42E1DC09E6200257004 /* xin.png */,
+				4968E43B1DC0C18800257004 /* jia.png */,
+				4968E4301DC09E6700257004 /* qun.png */,
+				4968E4321DC09E6E00257004 /* an.png */,
 				49C51D881DB899FC006A5126 /* 0.jpg */,
 				4935D92A1DBB419B00BF55A7 /* 2.png */,
 				4935D92C1DBB470B00BF55A7 /* 3.jpg */,
@@ -837,6 +872,8 @@
 				41FC7D7C1DBDE1CC00712714 /* 消息1.png in Resources */,
 				410E5BDD1DB85159005C2513 /* LaunchScreen.storyboard in Resources */,
 				410E5C581DB85315005C2513 /* MessageViewController.xib in Resources */,
+				4968E4331DC09E6E00257004 /* an.png in Resources */,
+				4968E43C1DC0C18800257004 /* jia.png in Resources */,
 				41FC7D8C1DBDEBE700712714 /* 说1.png in Resources */,
 				49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */,
 				41FC7DAA1DBEED6F00712714 /* 进入，右.png in Resources */,
@@ -850,6 +887,8 @@
 				410E5BD81DB85159005C2513 /* Main.storyboard in Resources */,
 				41FC7D9E1DBEE83800712714 /* MineSpaceTableViewCell.xib in Resources */,
 				41FC7D821DBDE2AB00712714 /* 我的1.png in Resources */,
+				4968E4311DC09E6700257004 /* qun.png in Resources */,
+				4968E42F1DC09E6200257004 /* xin.png in Resources */,
 				49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */,
 				413409F61DC0704700C4D466 /* 返回.png in Resources */,
 				4941582F1DBD97EB00505112 /* 22.png in Resources */,
@@ -1031,6 +1070,7 @@
 				410E5BCF1DB85159005C2513 /* main.m in Sources */,
 				410E5C211DB852FF005C2513 /* TYQView.m in Sources */,
 				410E5C531DB85315005C2513 /* ConnectViewController.m in Sources */,
+				4968E4371DC0A09D00257004 /* ConnectCollectionViewCell.m in Sources */,
 				410E5C1F1DB852FF005C2513 /* TYQTableViewCell.m in Sources */,
 				41FC7DA71DBEEB1800712714 /* MineImageTableViewCell.m in Sources */,
 				49C51DE01DB89DDC006A5126 /* DBTool.m in Sources */,
@@ -1038,10 +1078,12 @@
 				49C51DD61DB89AF7006A5126 /* UIView+EATheme.m in Sources */,
 				410E5C201DB852FF005C2513 /* TYQTableViewController.m in Sources */,
 				41FC7DA21DBEEA6E00712714 /* MineGrayBackTableViewCell.m in Sources */,
+				4968E43F1DC0C31600257004 /* AddViewController.m in Sources */,
 				410E5C331DB8530B005C2513 /* NSString+Regex.m in Sources */,
 				410E5C1D1DB852FF005C2513 /* TYQCollectionViewCell.m in Sources */,
 				410E5C321DB8530B005C2513 /* NSString+Categories.m in Sources */,
 				410E5C351DB8530B005C2513 /* UIView+Frame.m in Sources */,
+				4968E43A1DC0B07F00257004 /* ConnectTableViewCell.m in Sources */,
 				410E5C1B1DB852FF005C2513 /* TYQModel.m in Sources */,
 				410E5C1A1DB852FF005C2513 /* TYQViewController.m in Sources */,
 				41FC7D231DBC853C00712714 /* TYQNavigationBarView.m in Sources */,

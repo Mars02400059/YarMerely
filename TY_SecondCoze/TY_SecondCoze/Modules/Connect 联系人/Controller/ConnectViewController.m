@@ -7,11 +7,16 @@
 //
 
 #import "ConnectViewController.h"
+#import "ConnectCollectionViewCell.h"
+#import "ConnectTableViewCell.h"
+#import "AddViewController.h"
 
 @interface ConnectViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *myCollectionView;
 @property (nonatomic, strong) UITableView *myTableView;
+@property (nonatomic, strong) NSArray *imageArray;
+@property (nonatomic, strong) NSArray *wordArray;
 @end
 
 @implementation ConnectViewController
@@ -19,13 +24,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
+
+    self.imageArray = @[@"xin",@"qun",@"an"];
+    self.wordArray = @[@"新朋友",@"群聊",@"暗恋"];
     
     
 #pragma mark --- 创建collectionview
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.itemSize = CGSizeMake((WIDTH - 90) / 3, (WIDTH - 90) / 3);
-    self.myCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, (WIDTH - 90) / 3 + 20) collectionViewLayout:flowLayout];
+    flowLayout.itemSize = CGSizeMake((WIDTH - 90) / 3 - 10, (WIDTH - 90) / 3 - 10);
+    self.myCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, (WIDTH - 90) / 3 + 10) collectionViewLayout:flowLayout];
     _myCollectionView.backgroundColor = [UIColor cyanColor];
     _myCollectionView.contentInset = UIEdgeInsetsMake(10, 20, 10, 20);
     [self.view addSubview:_myCollectionView];
@@ -33,16 +40,19 @@
     _myCollectionView.delegate = self;
     
     
-    [self.myCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellC"];
+    [self.myCollectionView registerClass:[ConnectCollectionViewCell class] forCellWithReuseIdentifier:@"cellC"];
     
 #pragma mark --- 创建tableview
-    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT) style:UITableViewStyleGrouped];
+    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 50) style:UITableViewStyleGrouped];
     _myTableView.dataSource = self;
     _myTableView.delegate = self;
     self.myTableView.tableHeaderView = _myCollectionView;
     [self.view addSubview:_myTableView];
     
-    [self.myTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cellT"];
+    [self.myTableView registerClass:[ConnectTableViewCell class] forCellReuseIdentifier:@"cellT"];
+    
+    [self addNavigationBarView];
+    self.navigationBarView.rightButtonImage = [UIImage imageNamed:@"jia"];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -51,14 +61,15 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return 3;
+    return _imageArray.count;
     
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellC" forIndexPath:indexPath];
+    ConnectCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellC" forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor yellowColor];
+    cell.stringImage = _imageArray[indexPath.row];
+    cell.stringWord = _imageArray[indexPath.row];
     
     return cell;
 }
@@ -72,18 +83,24 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellT"];
+    ConnectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellT"];
     
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 100;
+    return 90;
 }
 
 
-
+#pragma mark ---右按钮方法
+- (void)tyq_navigationBarViewRightButtonAction{
+   
+    AddViewController *addVC = [[AddViewController alloc] init];
+    
+    [self.navigationController pushViewController:addVC animated:YES];
+}
 
 
 
