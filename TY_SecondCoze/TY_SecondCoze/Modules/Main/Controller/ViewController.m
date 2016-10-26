@@ -10,6 +10,9 @@
 #import "UserViewController.h"
 #import "MainTabBarViewController.h"
 
+// 是否第一次进入
+static BOOL accessTime = YES;
+
 @interface ViewController ()
 
 @end
@@ -35,6 +38,12 @@
 }
 - (void)buttonAction:(TYQButton *)button {
     
+    
+    
+    NSUserDefaults * userDef = [NSUserDefaults standardUserDefaults];
+    [userDef setBool:accessTime forKey:@"notFirst"];
+    [userDef synchronize];
+
     
     UserViewController *userViewController = [[UserViewController alloc] init];
     [self presentViewController:userViewController animated:YES completion:nil];
