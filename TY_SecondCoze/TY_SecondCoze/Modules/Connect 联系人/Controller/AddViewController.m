@@ -9,8 +9,7 @@
 #import "AddViewController.h"
 
 @interface AddViewController ()
-@property (nonatomic,strong) TYQTextField *textFiled;
-@property (nonatomic, strong) TYQButton *nearbyButton;
+
 @end
 
 @implementation AddViewController
@@ -20,10 +19,14 @@
     
     self.view.backgroundColor = [UIColor lightGrayColor];
     
+#pragma mark --- FT
     
-    
-    
-    
+    FTPopOverMenuConfiguration *configuration = [FTPopOverMenuConfiguration defaultConfiguration];
+    configuration.textColor = [UIColor redColor];
+    configuration.tintColor = [UIColor whiteColor];
+    configuration.borderColor = [UIColor blackColor];
+    configuration.borderWidth = 3.0f;
+
     
     
 #pragma mark --- 假导航上的按钮
@@ -47,7 +50,17 @@
 
 #pragma mark --- 右按钮实现添加好友功能
 -(void)tyq_navigationBarViewRightButtonAction{
-    NSLog(@"添加好友功能");
+    
+        [FTPopOverMenu showForSender:self.navigationBarView.rightButton withMenu:@[@"aaa",@"bbb",@"ccc"] doneBlock:^(NSInteger selectedIndex) {
+    
+            NSLog(@"%ld",selectedIndex);
+    
+        } dismissBlock:^{
+    
+            NSLog(@"dismiss");
+            
+        }];
+
     
 }
 
