@@ -71,8 +71,10 @@
 		4968E4331DC09E6E00257004 /* an.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E4321DC09E6E00257004 /* an.png */; };
 		4968E4371DC0A09D00257004 /* ConnectCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4361DC0A09D00257004 /* ConnectCollectionViewCell.m */; };
 		4968E43A1DC0B07F00257004 /* ConnectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4391DC0B07F00257004 /* ConnectTableViewCell.m */; };
-		4968E43C1DC0C18800257004 /* jia.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E43B1DC0C18800257004 /* jia.png */; };
 		4968E43F1DC0C31600257004 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E43E1DC0C31600257004 /* AddViewController.m */; };
+		4968E4421DC0DA7500257004 /* FriendDailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4411DC0DA7500257004 /* FriendDailViewController.m */; };
+		4968E4441DC0DBBA00257004 /* jia.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E4431DC0DBBA00257004 /* jia.png */; };
+		4968E4461DC0DD9600257004 /* 附近.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E4451DC0DD9600257004 /* 附近.png */; };
 		49A8B39A1DBB82BD00FFF2A1 /* 00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B3991DBB82BD00FFF2A1 /* 00.jpg */; };
 		49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39B1DBB855000FFF2A1 /* 000.png */; };
 		49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39D1DBB873A00FFF2A1 /* 1.png */; };
@@ -216,9 +218,12 @@
 		4968E4361DC0A09D00257004 /* ConnectCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectCollectionViewCell.m; sourceTree = "<group>"; };
 		4968E4381DC0B07F00257004 /* ConnectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectTableViewCell.h; sourceTree = "<group>"; };
 		4968E4391DC0B07F00257004 /* ConnectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectTableViewCell.m; sourceTree = "<group>"; };
-		4968E43B1DC0C18800257004 /* jia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jia.png; sourceTree = "<group>"; };
 		4968E43D1DC0C31600257004 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		4968E43E1DC0C31600257004 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		4968E4401DC0DA7500257004 /* FriendDailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDailViewController.h; sourceTree = "<group>"; };
+		4968E4411DC0DA7500257004 /* FriendDailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDailViewController.m; sourceTree = "<group>"; };
+		4968E4431DC0DBBA00257004 /* jia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jia.png; sourceTree = "<group>"; };
+		4968E4451DC0DD9600257004 /* 附近.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "附近.png"; sourceTree = "<group>"; };
 		49A8B3991DBB82BD00FFF2A1 /* 00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00.jpg; sourceTree = "<group>"; };
 		49A8B39B1DBB855000FFF2A1 /* 000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 000.png; sourceTree = "<group>"; };
 		49A8B39D1DBB873A00FFF2A1 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -470,6 +475,8 @@
 				410E5C3D1DB85315005C2513 /* ConnectViewController.xib */,
 				4968E43D1DC0C31600257004 /* AddViewController.h */,
 				4968E43E1DC0C31600257004 /* AddViewController.m */,
+				4968E4401DC0DA7500257004 /* FriendDailViewController.h */,
+				4968E4411DC0DA7500257004 /* FriendDailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -666,9 +673,10 @@
 		49C51D851DB89981006A5126 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4968E4451DC0DD9600257004 /* 附近.png */,
 				4968E42E1DC09E6200257004 /* xin.png */,
-				4968E43B1DC0C18800257004 /* jia.png */,
 				4968E4301DC09E6700257004 /* qun.png */,
+				4968E4431DC0DBBA00257004 /* jia.png */,
 				4968E4321DC09E6E00257004 /* an.png */,
 				49C51D881DB899FC006A5126 /* 0.jpg */,
 				4935D92A1DBB419B00BF55A7 /* 2.png */,
@@ -873,12 +881,12 @@
 				410E5BDD1DB85159005C2513 /* LaunchScreen.storyboard in Resources */,
 				410E5C581DB85315005C2513 /* MessageViewController.xib in Resources */,
 				4968E4331DC09E6E00257004 /* an.png in Resources */,
-				4968E43C1DC0C18800257004 /* jia.png in Resources */,
 				41FC7D8C1DBDEBE700712714 /* 说1.png in Resources */,
 				49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */,
 				41FC7DAA1DBEED6F00712714 /* 进入，右.png in Resources */,
 				410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */,
 				41FC7D951DBE2AAB00712714 /* back.png in Resources */,
+				4968E4461DC0DD9600257004 /* 附近.png in Resources */,
 				410E5BDA1DB85159005C2513 /* Assets.xcassets in Resources */,
 				41FC7D931DBE22FC00712714 /* 设置.png in Resources */,
 				41FC7DA31DBEEA6E00712714 /* MineGrayBackTableViewCell.xib in Resources */,
@@ -894,6 +902,7 @@
 				4941582F1DBD97EB00505112 /* 22.png in Resources */,
 				4935D92B1DBB419B00BF55A7 /* 2.png in Resources */,
 				41FC7DA81DBEEB1800712714 /* MineImageTableViewCell.xib in Resources */,
+				4968E4441DC0DBBA00257004 /* jia.png in Resources */,
 				410E5C541DB85315005C2513 /* ConnectViewController.xib in Resources */,
 				41FC7D7F1DBDE23B00712714 /* 联系人2.png in Resources */,
 				41E37D641DBA109200FCAD08 /* Unknown.png in Resources */,
@@ -1074,6 +1083,7 @@
 				410E5C1F1DB852FF005C2513 /* TYQTableViewCell.m in Sources */,
 				41FC7DA71DBEEB1800712714 /* MineImageTableViewCell.m in Sources */,
 				49C51DE01DB89DDC006A5126 /* DBTool.m in Sources */,
+				4968E4421DC0DA7500257004 /* FriendDailViewController.m in Sources */,
 				410E5C591DB85315005C2513 /* MineViewController.m in Sources */,
 				49C51DD61DB89AF7006A5126 /* UIView+EATheme.m in Sources */,
 				410E5C201DB852FF005C2513 /* TYQTableViewController.m in Sources */,
