@@ -43,7 +43,7 @@ UITableViewDataSource
 }
 
 - (void)addTableView {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, 50 * 4 + 10) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, self.view.bounds.size.height - 64) style:UITableViewStylePlain];
     _tableView.scrollEnabled = NO;
     //    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.delegate = self;
@@ -60,12 +60,14 @@ UITableViewDataSource
 }
 - (NSArray *)tableViewArray {
     if (nil == _tableViewArray) {
-        _tableViewArray = @[@"修改密码", @"夜间模式", @"关于我们", @"", @"退出登录"];
+        _tableViewArray = @[@"个人资料", @"修改密码", @"夜间模式", @"关于我们", @"", @"退出登录"];
     }
     return _tableViewArray;
 
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    _tableView.height = (self.tableViewArray.count - 1) * 50 + 10;
+    
     return self.tableViewArray.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -94,6 +96,12 @@ UITableViewDataSource
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == 0) {
+        
+    }
+    
+    
     if (indexPath.row == self.tableViewArray.count - 1) {
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"确定退出登录吗?" message:nil preferredStyle:UIAlertControllerStyleAlert];

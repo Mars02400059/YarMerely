@@ -45,6 +45,9 @@
 		41E37D641DBA109200FCAD08 /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E37D631DBA109100FCAD08 /* Unknown.png */; };
 		41E37D671DBA133A00FCAD08 /* TYQTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E37D661DBA133A00FCAD08 /* TYQTextField.m */; };
 		41E37D6C1DBA139100FCAD08 /* TextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E37D6B1DBA139100FCAD08 /* TextFieldView.m */; };
+		41F144531DC0E2A300C7023D /* MineDatumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F144521DC0E2A300C7023D /* MineDatumViewController.m */; };
+		41F144581DC0E2F500C7023D /* MineDatumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F144561DC0E2F500C7023D /* MineDatumTableViewCell.m */; };
+		41F144591DC0E2F500C7023D /* MineDatumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F144571DC0E2F500C7023D /* MineDatumTableViewCell.xib */; };
 		41FC7D231DBC853C00712714 /* TYQNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC7D221DBC853C00712714 /* TYQNavigationBarView.m */; };
 		41FC7D7B1DBDE1CC00712714 /* 消息2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D791DBDE1CC00712714 /* 消息2.png */; };
 		41FC7D7C1DBDE1CC00712714 /* 消息1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D7A1DBDE1CC00712714 /* 消息1.png */; };
@@ -143,8 +146,8 @@
 		410E5C111DB852FF005C2513 /* TYQLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYQLabel.m; sourceTree = "<group>"; };
 		410E5C121DB852FF005C2513 /* TYQTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYQTableViewCell.h; sourceTree = "<group>"; };
 		410E5C131DB852FF005C2513 /* TYQTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYQTableViewCell.m; sourceTree = "<group>"; };
-		410E5C141DB852FF005C2513 /* TYQTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TYQTableViewController.h; path = ../VIew/TYQTableViewController.h; sourceTree = "<group>"; };
-		410E5C151DB852FF005C2513 /* TYQTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TYQTableViewController.m; path = ../VIew/TYQTableViewController.m; sourceTree = "<group>"; };
+		410E5C141DB852FF005C2513 /* TYQTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYQTableViewController.h; sourceTree = "<group>"; };
+		410E5C151DB852FF005C2513 /* TYQTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYQTableViewController.m; sourceTree = "<group>"; };
 		410E5C161DB852FF005C2513 /* TYQView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYQView.h; sourceTree = "<group>"; };
 		410E5C171DB852FF005C2513 /* TYQView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYQView.m; sourceTree = "<group>"; };
 		410E5C241DB8530B005C2513 /* NSString+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Categories.h"; sourceTree = "<group>"; };
@@ -184,6 +187,11 @@
 		41E37D661DBA133A00FCAD08 /* TYQTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYQTextField.m; sourceTree = "<group>"; };
 		41E37D6A1DBA139100FCAD08 /* TextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldView.h; sourceTree = "<group>"; };
 		41E37D6B1DBA139100FCAD08 /* TextFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldView.m; sourceTree = "<group>"; };
+		41F144511DC0E2A300C7023D /* MineDatumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineDatumViewController.h; sourceTree = "<group>"; };
+		41F144521DC0E2A300C7023D /* MineDatumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineDatumViewController.m; sourceTree = "<group>"; };
+		41F144551DC0E2F500C7023D /* MineDatumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineDatumTableViewCell.h; sourceTree = "<group>"; };
+		41F144561DC0E2F500C7023D /* MineDatumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineDatumTableViewCell.m; sourceTree = "<group>"; };
+		41F144571DC0E2F500C7023D /* MineDatumTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineDatumTableViewCell.xib; sourceTree = "<group>"; };
 		41FC7D211DBC853C00712714 /* TYQNavigationBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYQNavigationBarView.h; sourceTree = "<group>"; };
 		41FC7D221DBC853C00712714 /* TYQNavigationBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYQNavigationBarView.m; sourceTree = "<group>"; };
 		41FC7D791DBDE1CC00712714 /* 消息2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "消息2.png"; sourceTree = "<group>"; };
@@ -281,8 +289,8 @@
 		410E5BC11DB85159005C2513 = {
 			isa = PBXGroup;
 			children = (
-				E4A706EB638BC91C02369FA3 /* Pods */,
 				4DDFE85E53F4E47B3358AA7E /* Frameworks */,
+				E4A706EB638BC91C02369FA3 /* Pods */,
 				410E5BCB1DB85159005C2513 /* Products */,
 				410E5BCC1DB85159005C2513 /* TY_SecondCoze */,
 				410E5BE61DB85159005C2513 /* TY_SecondCozeTests */,
@@ -323,8 +331,8 @@
 		410E5BCD1DB85159005C2513 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				410E5BCE1DB85159005C2513 /* main.m */,
 				416C7F7C1DB9B44500269E3C /* PrefixHeader.pch */,
+				410E5BCE1DB85159005C2513 /* main.m */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -364,10 +372,10 @@
 				410E5C031DB852FF005C2513 /* TYQNavigationViewController.m */,
 				410E5C041DB852FF005C2513 /* TYQTabBarViewController.h */,
 				410E5C051DB852FF005C2513 /* TYQTabBarViewController.m */,
-				410E5C061DB852FF005C2513 /* TYQViewController.h */,
-				410E5C071DB852FF005C2513 /* TYQViewController.m */,
 				410E5C141DB852FF005C2513 /* TYQTableViewController.h */,
 				410E5C151DB852FF005C2513 /* TYQTableViewController.m */,
+				410E5C061DB852FF005C2513 /* TYQViewController.h */,
+				410E5C071DB852FF005C2513 /* TYQViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -388,18 +396,18 @@
 				410E5C0D1DB852FF005C2513 /* TYQButton.m */,
 				410E5C0E1DB852FF005C2513 /* TYQCollectionViewCell.h */,
 				410E5C0F1DB852FF005C2513 /* TYQCollectionViewCell.m */,
-				410E5C101DB852FF005C2513 /* TYQLabel.h */,
-				410E5C111DB852FF005C2513 /* TYQLabel.m */,
-				410E5C121DB852FF005C2513 /* TYQTableViewCell.h */,
-				410E5C131DB852FF005C2513 /* TYQTableViewCell.m */,
-				410E5C161DB852FF005C2513 /* TYQView.h */,
-				410E5C171DB852FF005C2513 /* TYQView.m */,
 				41E37D5F1DBA095700FCAD08 /* TYQImageView.h */,
 				41E37D601DBA095700FCAD08 /* TYQImageView.m */,
-				41E37D651DBA133A00FCAD08 /* TYQTextField.h */,
-				41E37D661DBA133A00FCAD08 /* TYQTextField.m */,
+				410E5C101DB852FF005C2513 /* TYQLabel.h */,
+				410E5C111DB852FF005C2513 /* TYQLabel.m */,
 				41FC7D211DBC853C00712714 /* TYQNavigationBarView.h */,
 				41FC7D221DBC853C00712714 /* TYQNavigationBarView.m */,
+				410E5C121DB852FF005C2513 /* TYQTableViewCell.h */,
+				410E5C131DB852FF005C2513 /* TYQTableViewCell.m */,
+				41E37D651DBA133A00FCAD08 /* TYQTextField.h */,
+				41E37D661DBA133A00FCAD08 /* TYQTextField.m */,
+				410E5C161DB852FF005C2513 /* TYQView.h */,
+				410E5C171DB852FF005C2513 /* TYQView.m */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -456,8 +464,8 @@
 		410E5C391DB85315005C2513 /* Connect 联系人 */ = {
 			isa = PBXGroup;
 			children = (
-				4968E4341DC09E8800257004 /* View */,
 				410E5C3A1DB85315005C2513 /* Controller */,
+				4968E4341DC09E8800257004 /* View */,
 			);
 			path = "Connect 联系人";
 			sourceTree = "<group>";
@@ -465,11 +473,11 @@
 		410E5C3A1DB85315005C2513 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4968E43D1DC0C31600257004 /* AddViewController.h */,
+				4968E43E1DC0C31600257004 /* AddViewController.m */,
 				410E5C3B1DB85315005C2513 /* ConnectViewController.h */,
 				410E5C3C1DB85315005C2513 /* ConnectViewController.m */,
 				410E5C3D1DB85315005C2513 /* ConnectViewController.xib */,
-				4968E43D1DC0C31600257004 /* AddViewController.h */,
-				4968E43E1DC0C31600257004 /* AddViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -514,9 +522,9 @@
 		410E5C491DB85315005C2513 /* Mine 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				410E5C4A1DB85315005C2513 /* Controller */,
 				413409EC1DC05B3900C4D466 /* MineSettings 设置  */,
 				41FC7D961DBEE6BB00712714 /* View */,
-				410E5C4A1DB85315005C2513 /* Controller */,
 			);
 			path = "Mine 我的";
 			sourceTree = "<group>";
@@ -551,30 +559,33 @@
 		413409EC1DC05B3900C4D466 /* MineSettings 设置  */ = {
 			isa = PBXGroup;
 			children = (
+				41F144541DC0E2D200C7023D /* View */,
 				413409ED1DC05B6D00C4D466 /* Controller */,
 			);
-			name = "MineSettings 设置 ";
+			path = "MineSettings 设置 ";
 			sourceTree = "<group>";
 		};
 		413409ED1DC05B6D00C4D466 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				41F144511DC0E2A300C7023D /* MineDatumViewController.h */,
+				41F144521DC0E2A300C7023D /* MineDatumViewController.m */,
 				413409EE1DC05BCD00C4D466 /* MineSettingViewController.h */,
 				413409EF1DC05BCD00C4D466 /* MineSettingViewController.m */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		41E37D621DBA106B00FCAD08 /* User Image */ = {
 			isa = PBXGroup;
 			children = (
-				41E37D631DBA109100FCAD08 /* Unknown.png */,
+				49A8B3991DBB82BD00FFF2A1 /* 00.jpg */,
+				49A8B39B1DBB855000FFF2A1 /* 000.png */,
 				49A8B39D1DBB873A00FFF2A1 /* 1.png */,
 				4941582E1DBD97EB00505112 /* 22.png */,
-				49A8B39B1DBB855000FFF2A1 /* 000.png */,
-				49A8B3991DBB82BD00FFF2A1 /* 00.jpg */,
+				41E37D631DBA109100FCAD08 /* Unknown.png */,
 			);
-			name = "User Image";
+			path = "User Image";
 			sourceTree = "<group>";
 		};
 		41E37D681DBA135300FCAD08 /* Controller */ = {
@@ -587,7 +598,7 @@
 				49C51DF51DB89F7F006A5126 /* UserViewController.h */,
 				49C51DF61DB89F7F006A5126 /* UserViewController.m */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		41E37D691DBA136D00FCAD08 /* View */ = {
@@ -596,49 +607,59 @@
 				41E37D6A1DBA139100FCAD08 /* TextFieldView.h */,
 				41E37D6B1DBA139100FCAD08 /* TextFieldView.m */,
 			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		41F144541DC0E2D200C7023D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				41F144551DC0E2F500C7023D /* MineDatumTableViewCell.h */,
+				41F144561DC0E2F500C7023D /* MineDatumTableViewCell.m */,
+				41F144571DC0E2F500C7023D /* MineDatumTableViewCell.xib */,
+			);
 			name = View;
 			sourceTree = "<group>";
 		};
 		41FC7D6E1DBDE06900712714 /* Main Image */ = {
 			isa = PBXGroup;
 			children = (
-				41FC7D891DBDEBE700712714 /* 说2.png */,
-				41FC7D8A1DBDEBE700712714 /* 说1.png */,
 				41FC7D811DBDE2AB00712714 /* 我的1.png */,
 				41FC7D831DBDE2B500712714 /* 我的2.png */,
-				41FC7D791DBDE1CC00712714 /* 消息2.png */,
 				41FC7D7A1DBDE1CC00712714 /* 消息1.png */,
+				41FC7D791DBDE1CC00712714 /* 消息2.png */,
 				41FC7D7E1DBDE23B00712714 /* 联系人1.png */,
 				41FC7D7D1DBDE23B00712714 /* 联系人2.png */,
+				41FC7D8A1DBDEBE700712714 /* 说1.png */,
+				41FC7D891DBDEBE700712714 /* 说2.png */,
 			);
-			name = "Main Image";
+			path = "Main Image";
 			sourceTree = "<group>";
 		};
 		41FC7D8F1DBE212C00712714 /* Mine Image */ = {
 			isa = PBXGroup;
 			children = (
-				413409F51DC0704700C4D466 /* 返回.png */,
-				41FC7DA91DBEED6F00712714 /* 进入，右.png */,
 				41FC7D941DBE2AAB00712714 /* back.png */,
 				41FC7D921DBE22FC00712714 /* 设置.png */,
+				413409F51DC0704700C4D466 /* 返回.png */,
+				41FC7DA91DBEED6F00712714 /* 进入，右.png */,
 			);
-			name = "Mine Image";
+			path = "Mine Image";
 			sourceTree = "<group>";
 		};
 		41FC7D961DBEE6BB00712714 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				41FC7D9A1DBEE83800712714 /* MineSpaceTableViewCell.h */,
-				41FC7D9B1DBEE83800712714 /* MineSpaceTableViewCell.m */,
-				41FC7D9C1DBEE83800712714 /* MineSpaceTableViewCell.xib */,
 				41FC7D9F1DBEEA6E00712714 /* MineGrayBackTableViewCell.h */,
 				41FC7DA01DBEEA6E00712714 /* MineGrayBackTableViewCell.m */,
 				41FC7DA11DBEEA6E00712714 /* MineGrayBackTableViewCell.xib */,
 				41FC7DA41DBEEB1800712714 /* MineImageTableViewCell.h */,
 				41FC7DA51DBEEB1800712714 /* MineImageTableViewCell.m */,
 				41FC7DA61DBEEB1800712714 /* MineImageTableViewCell.xib */,
+				41FC7D9A1DBEE83800712714 /* MineSpaceTableViewCell.h */,
+				41FC7D9B1DBEE83800712714 /* MineSpaceTableViewCell.m */,
+				41FC7D9C1DBEE83800712714 /* MineSpaceTableViewCell.xib */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		4968E4341DC09E8800257004 /* View */ = {
@@ -649,16 +670,16 @@
 				4968E4381DC0B07F00257004 /* ConnectTableViewCell.h */,
 				4968E4391DC0B07F00257004 /* ConnectTableViewCell.m */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		49C51D841DB89970006A5126 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				41FC7D8F1DBE212C00712714 /* Mine Image */,
-				41FC7D6E1DBDE06900712714 /* Main Image */,
-				41E37D621DBA106B00FCAD08 /* User Image */,
 				49C51D851DB89981006A5126 /* Images */,
+				41FC7D6E1DBDE06900712714 /* Main Image */,
+				41FC7D8F1DBE212C00712714 /* Mine Image */,
+				41E37D621DBA106B00FCAD08 /* User Image */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -666,13 +687,13 @@
 		49C51D851DB89981006A5126 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				4968E42E1DC09E6200257004 /* xin.png */,
-				4968E43B1DC0C18800257004 /* jia.png */,
-				4968E4301DC09E6700257004 /* qun.png */,
-				4968E4321DC09E6E00257004 /* an.png */,
 				49C51D881DB899FC006A5126 /* 0.jpg */,
 				4935D92A1DBB419B00BF55A7 /* 2.png */,
 				4935D92C1DBB470B00BF55A7 /* 3.jpg */,
+				4968E4321DC09E6E00257004 /* an.png */,
+				4968E43B1DC0C18800257004 /* jia.png */,
+				4968E4301DC09E6700257004 /* qun.png */,
+				4968E42E1DC09E6200257004 /* xin.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -723,8 +744,8 @@
 		49C51DE11DB89E6C006A5126 /* User  */ = {
 			isa = PBXGroup;
 			children = (
-				41E37D691DBA136D00FCAD08 /* View */,
 				41E37D681DBA135300FCAD08 /* Controller */,
+				41E37D691DBA136D00FCAD08 /* View */,
 			);
 			path = "User ";
 			sourceTree = "<group>";
@@ -880,6 +901,7 @@
 				410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */,
 				41FC7D951DBE2AAB00712714 /* back.png in Resources */,
 				410E5BDA1DB85159005C2513 /* Assets.xcassets in Resources */,
+				41F144591DC0E2F500C7023D /* MineDatumTableViewCell.xib in Resources */,
 				41FC7D931DBE22FC00712714 /* 设置.png in Resources */,
 				41FC7DA31DBEEA6E00712714 /* MineGrayBackTableViewCell.xib in Resources */,
 				41FC7D801DBDE23B00712714 /* 联系人1.png in Resources */,
@@ -1077,6 +1099,7 @@
 				410E5C591DB85315005C2513 /* MineViewController.m in Sources */,
 				49C51DD61DB89AF7006A5126 /* UIView+EATheme.m in Sources */,
 				410E5C201DB852FF005C2513 /* TYQTableViewController.m in Sources */,
+				41F144581DC0E2F500C7023D /* MineDatumTableViewCell.m in Sources */,
 				41FC7DA21DBEEA6E00712714 /* MineGrayBackTableViewCell.m in Sources */,
 				4968E43F1DC0C31600257004 /* AddViewController.m in Sources */,
 				410E5C331DB8530B005C2513 /* NSString+Regex.m in Sources */,
@@ -1087,6 +1110,7 @@
 				410E5C1B1DB852FF005C2513 /* TYQModel.m in Sources */,
 				410E5C1A1DB852FF005C2513 /* TYQViewController.m in Sources */,
 				41FC7D231DBC853C00712714 /* TYQNavigationBarView.m in Sources */,
+				41F144531DC0E2A300C7023D /* MineDatumViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
