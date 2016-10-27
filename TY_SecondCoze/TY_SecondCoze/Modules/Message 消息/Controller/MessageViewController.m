@@ -28,7 +28,7 @@ UITableViewDataSource
 @implementation MessageViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self tyq_messageArrayChange];
+    [self didUnreadMessagesCountChanged];
 }
 // 通过获取DB中所有会话, 更新消息数组
 - (void)tyq_messageArrayChange {
@@ -45,7 +45,6 @@ UITableViewDataSource
      */
     
     NSArray *conversations = [[EaseMob sharedInstance].chatManager loadAllConversationsFromDatabaseWithAppend2Chat:YES];
-    NSLog(@"哈哈哈哈哈哈哈哈哈哈哈哈哈%@", conversations[0]);
     [self.messageArray addObjectsFromArray:conversations];
     [self.tableView reloadData];
 }
@@ -79,7 +78,6 @@ UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    NSLog(@"%ld", _messageArray.count);
     return self.messageArray.count;
 }
 
