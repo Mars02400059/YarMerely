@@ -82,7 +82,6 @@
 		4968E4421DC0DA7500257004 /* FriendDailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4411DC0DA7500257004 /* FriendDailViewController.m */; };
 		4968E4441DC0DBBA00257004 /* jia.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E4431DC0DBBA00257004 /* jia.png */; };
 		4968E4461DC0DD9600257004 /* 附近.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E4451DC0DD9600257004 /* 附近.png */; };
-		4968E4951DC19E1900257004 /* AddTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4941DC19E1900257004 /* AddTableViewCell.m */; };
 		4968E4981DC1AFA000257004 /* AddManViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4971DC1AFA000257004 /* AddManViewController.m */; };
 		4968E4D41DC1FB5500257004 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4D31DC1FB5500257004 /* NewViewController.m */; };
 		49A8B39A1DBB82BD00FFF2A1 /* 00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B3991DBB82BD00FFF2A1 /* 00.jpg */; };
@@ -247,8 +246,6 @@
 		4968E4411DC0DA7500257004 /* FriendDailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDailViewController.m; sourceTree = "<group>"; };
 		4968E4431DC0DBBA00257004 /* jia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jia.png; sourceTree = "<group>"; };
 		4968E4451DC0DD9600257004 /* 附近.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "附近.png"; sourceTree = "<group>"; };
-		4968E4931DC19E1900257004 /* AddTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTableViewCell.h; sourceTree = "<group>"; };
-		4968E4941DC19E1900257004 /* AddTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTableViewCell.m; sourceTree = "<group>"; };
 		4968E4961DC1AFA000257004 /* AddManViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddManViewController.h; sourceTree = "<group>"; };
 		4968E4971DC1AFA000257004 /* AddManViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddManViewController.m; sourceTree = "<group>"; };
 		4968E4D21DC1FB5500257004 /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
@@ -520,8 +517,6 @@
 		410E5C3A1DB85315005C2513 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4968E43D1DC0C31600257004 /* AddViewController.h */,
-				4968E43E1DC0C31600257004 /* AddViewController.m */,
 				410E5C3B1DB85315005C2513 /* ConnectViewController.h */,
 				410E5C3C1DB85315005C2513 /* ConnectViewController.m */,
 				410E5C3D1DB85315005C2513 /* ConnectViewController.xib */,
@@ -757,8 +752,6 @@
 				4968E4361DC0A09D00257004 /* ConnectCollectionViewCell.m */,
 				4968E4381DC0B07F00257004 /* ConnectTableViewCell.h */,
 				4968E4391DC0B07F00257004 /* ConnectTableViewCell.m */,
-				4968E4931DC19E1900257004 /* AddTableViewCell.h */,
-				4968E4941DC19E1900257004 /* AddTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1168,7 +1161,6 @@
 				413409F01DC05BCD00C4D466 /* MineSettingViewController.m in Sources */,
 				4968E4981DC1AFA000257004 /* AddManViewController.m in Sources */,
 				410E5BD51DB85159005C2513 /* ViewController.m in Sources */,
-				4968E4951DC19E1900257004 /* AddTableViewCell.m in Sources */,
 				410E5C371DB8530B005C2513 /* NSUserDefaultsUtils.m in Sources */,
 				410E5C571DB85315005C2513 /* MessageViewController.m in Sources */,
 				49C51DD51DB89AF7006A5126 /* EAThemeManager.m in Sources */,
