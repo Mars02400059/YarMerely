@@ -8,7 +8,6 @@
 
 #import "AddManViewController.h"
 @interface AddManViewController ()
-
 @property (nonatomic, strong) TYQTextField *myTextFiled;
 @property (nonatomic, strong) TYQButton *myButton;
 
@@ -18,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     self.myTextFiled = [TYQTextField new];
     _myTextFiled.frame = CGRectMake(0, 84, WIDTH, 45);
@@ -55,8 +55,6 @@
     EMError *error = nil;
     BOOL isSuccess = [[EaseMob sharedInstance].chatManager addBuddy:_myTextFiled.text message:@"我想加您为好友" error:&error];
     
-#warning mark --- 代理人执行协议方法
-    [self.myDelegate didReceiveBuddyRequest:_myTextFiled.text message:@"我想加您为好友"];
     
     if (isSuccess && !error) {
         

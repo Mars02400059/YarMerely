@@ -934,7 +934,7 @@
 				TargetAttributes = {
 					410E5BC91DB85159005C2513 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = VYF4743U5J;
+						DevelopmentTeam = QWKQAE7W9B;
 					};
 					410E5BE21DB85159005C2513 = {
 						CreatedOnToolsVersion = 7.1;
@@ -1348,7 +1348,7 @@
 			baseConfigurationReference = 6D73B2430328EBD3979C95F8 /* Pods-TY_SecondCoze.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VYF4743U5J;
+				DEVELOPMENT_TEAM = QWKQAE7W9B;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TY_SecondCoze/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = TY_SecondCoze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1363,7 +1363,7 @@
 			baseConfigurationReference = 24115FC4DA1B556994AF1EE4 /* Pods-TY_SecondCoze.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VYF4743U5J;
+				DEVELOPMENT_TEAM = QWKQAE7W9B;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TY_SecondCoze/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = TY_SecondCoze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
