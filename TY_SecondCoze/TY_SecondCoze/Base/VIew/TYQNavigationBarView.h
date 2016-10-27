@@ -17,6 +17,11 @@
 @end
 
 @interface TYQNavigationBarView : UIView
+
+@property (nonatomic, strong) UIButton *leftButton;
+
+@property (nonatomic, strong) UIButton *rightButton;
+
 // 点击按钮的协议
 @property (nonatomic, assign) id<TYQNavigationBarViewDelegate>delegate;
 // 背景View
