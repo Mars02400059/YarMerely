@@ -18,6 +18,7 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - FTPopOverMenu (1.2.1)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
   - MLEmojiLabel (1.0.2):
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - EaseMobSDKFull (~> 2.2.7)
   - FMDB (~> 2.6.2)
+  - FTPopOverMenu (~> 1.2.1)
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.12)
   - MLEmojiLabel (~> 1.0.2)
@@ -44,6 +46,7 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   EaseMobSDKFull: 574e1c3fcbd541fd1419df750ee642aa6d443c6c
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  FTPopOverMenu: 645bf589f3adb6598efa05cab67cced988d5352f
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MLEmojiLabel: 36d73c19f9975cbf9def24e5bc135263b0337fd8
@@ -52,6 +55,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
 
-PODFILE CHECKSUM: c87b18d05d1b7e06bb04cbc73691c173c42df135
+PODFILE CHECKSUM: cbee55daab7cd97e54cd6378965661ab330e1b88
 
 COCOAPODS: 1.0.1
