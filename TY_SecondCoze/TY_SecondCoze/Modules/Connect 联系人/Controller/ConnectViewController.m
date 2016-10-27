@@ -10,6 +10,7 @@
 #import "ConnectCollectionViewCell.h"
 #import "ConnectTableViewCell.h"
 #import "AddViewController.h"
+#import "FriendDailViewController.h"
 
 @interface ConnectViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -92,7 +93,13 @@
     
     return 90;
 }
-
+#pragma mark --- 跳转到联系人详情
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    FriendDailViewController *fdVC = [FriendDailViewController new];
+    
+    [self.navigationController pushViewController:fdVC animated:YES];
+}
 
 #pragma mark ---右按钮方法
 - (void)tyq_navigationBarViewRightButtonAction{

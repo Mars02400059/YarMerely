@@ -20,24 +20,8 @@
     
     self.view.backgroundColor = [UIColor lightGrayColor];
     
-#pragma mark --- 创建添加联系人的配置(textfiled button)
-    self.textFiled = [[TYQTextField alloc] init];
-    self.textFiled.frame = CGRectMake(0, 80, WIDTH, 60);
-    _textFiled.backgroundColor = [UIColor whiteColor];
-    _textFiled.textAlignment = NSTextAlignmentCenter;
-    _textFiled.placeholder = @"    🔍  请输入你要查找的号码";
-    _textFiled.layer.cornerRadius = 2;
-    _textFiled.layer.masksToBounds = YES;
-    [self.view addSubview:_textFiled];
     
-    self.nearbyButton = [TYQButton buttonWithType:0];
-    _nearbyButton.frame = CGRectMake(0, _textFiled.frame.origin.y + _textFiled.frame.size.height + 20, WIDTH, 60);
-    _nearbyButton.backgroundColor = [UIColor whiteColor];
-    [_nearbyButton setImage:[UIImage imageNamed:@""] forState:0];
-    [_nearbyButton setTitle:@"查看附近的人" forState:0];
-    [_nearbyButton setTitleColor:[UIColor blackColor] forState:0];
-    _nearbyButton.font = [UIFont systemFontOfSize:22];
-    [self.view addSubview:_nearbyButton];
+    
     
     
     
