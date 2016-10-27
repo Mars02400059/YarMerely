@@ -48,6 +48,7 @@
 		41F144601DC18DD300C7023D /* MineInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F1445F1DC18DD300C7023D /* MineInfoViewController.m */; };
 		41F144641DC1907800C7023D /* MineInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F144621DC1907800C7023D /* MineInfoTableViewCell.m */; };
 		41F144651DC1907800C7023D /* MineInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F144631DC1907800C7023D /* MineInfoTableViewCell.xib */; };
+		41F144671DC1A4DF00C7023D /* 默认头像.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F144661DC1A4DF00C7023D /* 默认头像.png */; };
 		41FC7D231DBC853C00712714 /* TYQNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC7D221DBC853C00712714 /* TYQNavigationBarView.m */; };
 		41FC7D7B1DBDE1CC00712714 /* 消息2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D791DBDE1CC00712714 /* 消息2.png */; };
 		41FC7D7C1DBDE1CC00712714 /* 消息1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D7A1DBDE1CC00712714 /* 消息1.png */; };
@@ -92,7 +93,6 @@
 		49C51DF81DB89F7F006A5126 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C51DF61DB89F7F006A5126 /* UserViewController.m */; };
 		65A25D6E919AA967C132EB83 /* libPods-TY_SecondCozeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012D4FE9B8BF6969BDA42652 /* libPods-TY_SecondCozeTests.a */; };
 		7FF6B8A50D61B1F4F0C34DF2 /* libPods-TY_SecondCozeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E777CB2D6A0C4BDF288E6D61 /* libPods-TY_SecondCozeUITests.a */; };
-		EB44BE130F4CEC6B4BB0DA8A /* libPods-TY_SecondCoze.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1462FD82A9F1C15EEEB6E6 /* libPods-TY_SecondCoze.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +182,7 @@
 		413409EF1DC05BCD00C4D466 /* MineSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineSettingViewController.m; sourceTree = "<group>"; };
 		413409F51DC0704700C4D466 /* 返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回.png"; sourceTree = "<group>"; };
 		416C7F7C1DB9B44500269E3C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		41DC6E641DC1AC36002F968F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		41E37D5F1DBA095700FCAD08 /* TYQImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYQImageView.h; sourceTree = "<group>"; };
 		41E37D601DBA095700FCAD08 /* TYQImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYQImageView.m; sourceTree = "<group>"; };
 		41E37D631DBA109100FCAD08 /* Unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unknown.png; sourceTree = "<group>"; };
@@ -194,6 +195,8 @@
 		41F144611DC1907800C7023D /* MineInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineInfoTableViewCell.h; sourceTree = "<group>"; };
 		41F144621DC1907800C7023D /* MineInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineInfoTableViewCell.m; sourceTree = "<group>"; };
 		41F144631DC1907800C7023D /* MineInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineInfoTableViewCell.xib; sourceTree = "<group>"; };
+		41F144661DC1A4DF00C7023D /* 默认头像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "默认头像.png"; sourceTree = "<group>"; };
+		41F1446A1DC1AB9B00C7023D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		41FC7D211DBC853C00712714 /* TYQNavigationBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYQNavigationBarView.h; sourceTree = "<group>"; };
 		41FC7D221DBC853C00712714 /* TYQNavigationBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYQNavigationBarView.m; sourceTree = "<group>"; };
 		41FC7D791DBDE1CC00712714 /* 消息2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "消息2.png"; sourceTree = "<group>"; };
@@ -268,7 +271,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB44BE130F4CEC6B4BB0DA8A /* libPods-TY_SecondCoze.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +513,7 @@
 		410E5C441DB85315005C2513 /* Message 消息 */ = {
 			isa = PBXGroup;
 			children = (
+				41F144681DC1A89E00C7023D /* Chat 聊天 */,
 				410E5C451DB85315005C2513 /* Controller */,
 			);
 			path = "Message 消息";
@@ -643,10 +646,26 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		41F144681DC1A89E00C7023D /* Chat 聊天 */ = {
+			isa = PBXGroup;
+			children = (
+				41F144691DC1A8E800C7023D /* New Group */,
+			);
+			name = "Chat 聊天";
+			sourceTree = "<group>";
+		};
+		41F144691DC1A8E800C7023D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		41FC7D6E1DBDE06900712714 /* Main Image */ = {
 			isa = PBXGroup;
 			children = (
 				41FC7D811DBDE2AB00712714 /* 我的1.png */,
+				41F144661DC1A4DF00C7023D /* 默认头像.png */,
 				41FC7D831DBDE2B500712714 /* 我的2.png */,
 				41FC7D7A1DBDE1CC00712714 /* 消息1.png */,
 				41FC7D791DBDE1CC00712714 /* 消息2.png */,
@@ -777,6 +796,8 @@
 		4DDFE85E53F4E47B3358AA7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41DC6E641DC1AC36002F968F /* CFNetwork.framework */,
+				41F1446A1DC1AB9B00C7023D /* MobileCoreServices.framework */,
 				6E1462FD82A9F1C15EEEB6E6 /* libPods-TY_SecondCoze.a */,
 				012D4FE9B8BF6969BDA42652 /* libPods-TY_SecondCozeTests.a */,
 				E777CB2D6A0C4BDF288E6D61 /* libPods-TY_SecondCozeUITests.a */,
@@ -939,6 +960,7 @@
 				4941582F1DBD97EB00505112 /* 22.png in Resources */,
 				4935D92B1DBB419B00BF55A7 /* 2.png in Resources */,
 				41FC7DA81DBEEB1800712714 /* MineImageTableViewCell.xib in Resources */,
+				41F144671DC1A4DF00C7023D /* 默认头像.png in Resources */,
 				41F144651DC1907800C7023D /* MineInfoTableViewCell.xib in Resources */,
 				4968E4441DC0DBBA00257004 /* jia.png in Resources */,
 				410E5C541DB85315005C2513 /* ConnectViewController.xib in Resources */,

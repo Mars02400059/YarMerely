@@ -83,10 +83,11 @@ UITableViewDataSource
     _headView.backgroundColor = [UIColor clearColor];
     _tableView.tableHeaderView = _headView;
     
-    self.userHeadPortraits = [[TYQImageView alloc] initWithImage:[UIImage imageNamed:@""]];
+    self.userHeadPortraits = [[TYQImageView alloc] initWithImage:[UIImage imageNamed:@"默认头像"]];
     _userHeadPortraits.backgroundColor = [UIColor whiteColor];
     _userHeadPortraits.frame = CGRectMake((_headView.width - 80) / 2, _headView.height - 130, 80, 80);
     _userHeadPortraits.layer.cornerRadius = _userHeadPortraits.width / 2;
+    _userHeadPortraits.clipsToBounds = YES;
     [_headView addSubview:_userHeadPortraits];
     
     self.userNameLabel = [[TYQLabel alloc] initWithFrame:CGRectMake(0, _headView.height - 35, WIDTH, 20)];

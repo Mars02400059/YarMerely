@@ -40,6 +40,10 @@
                     <constraint firstAttribute="bottomMargin" secondItem="fIW-ug-XfK" secondAttribute="bottom" constant="5" id="lAU-Ud-lCz"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="infoLabel" destination="BgL-tY-NqS" id="Eco-2g-df0"/>
+                <outlet property="titleLabel" destination="fIW-ug-XfK" id="pfV-ur-oKo"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

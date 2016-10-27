@@ -7,6 +7,8 @@
 //
 
 #import "MineInfoViewController.h"
+#import "MineInfoTableViewCell.h"
+
 
 static NSString *const Cell = @"cell";
 
@@ -28,8 +30,7 @@ UITableViewDataSource
     // Do any additional setup after loading the view.
     
     [self addTableView];
-    [self addEnsureButton];
-    [self navigationBarView];
+    [self addNavigationBarView];
     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
 }
 - (NSArray *)infoArray {
@@ -42,18 +43,28 @@ UITableViewDataSource
     self.infoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.width, self.infoArray.count * 50) style:UITableViewStylePlain];
     _infoTableView.dataSource = self;
     _infoTableView.delegate = self;
-    
+    [_infoTableView registerNib:[UINib nibWithNibName:@"MineInfoTableViewCell" bundle:nil] forCellReuseIdentifier:Cell];
     [self.view addSubview:_infoTableView];
 
 }
 
-- (void)addEnsureButton {
-    TYQButton *ensureButton = [TYQButton buttonWithType:UIButtonTypeCustom];
-//    ensureButton.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.infoArray.count;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MineInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Cell];
+    cell.titleLabel.text = self.infoArray[indexPath.row];
+    return cell;
+}
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 
+- (void)tyq_navigationBarViewLeftButtonAction {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

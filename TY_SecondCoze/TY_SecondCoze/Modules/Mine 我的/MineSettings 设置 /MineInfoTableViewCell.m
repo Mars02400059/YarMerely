@@ -8,6 +8,7 @@
 
 #import "MineInfoTableViewCell.h"
 
+
 @implementation MineInfoTableViewCell
 
 - (void)awakeFromNib {
