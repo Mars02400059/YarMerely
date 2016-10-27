@@ -8,8 +8,8 @@
 
 #import "NewViewController.h"
 #import "AddManViewController.h"
-#warning mark --- 协议第四步
-@interface NewViewController ()<UITableViewDelegate,UITableViewDataSource,doSomething>
+
+@interface NewViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *myTableView;
 @property (nonatomic, strong) TYQLabel *label;

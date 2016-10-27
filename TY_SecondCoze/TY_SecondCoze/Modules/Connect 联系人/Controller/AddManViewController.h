@@ -8,17 +8,10 @@
 
 #import "TYQViewController.h"
 
-#warning mark --- 协议第一步
-@protocol doSomething <NSObject>
-
-- (void)didReceiveBuddyRequest:(NSString *)username message:(NSString *)message;
-
-@end
 
 @interface AddManViewController : TYQViewController
 
-#warning mark --- 协议第二步
-@property (nonatomic, assign) id<doSomething>myDelegate;
+
 
 
 
