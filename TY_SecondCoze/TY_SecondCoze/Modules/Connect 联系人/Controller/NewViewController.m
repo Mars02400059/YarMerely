@@ -9,14 +9,10 @@
 #import "NewViewController.h"
 #import "AddManViewController.h"
 
-<<<<<<< HEAD
-@interface NewViewController ()<UITableViewDelegate,UITableViewDataSource>
-=======
 @interface NewViewController ()<UITableViewDelegate,UITableViewDataSource,EMChatManagerDelegate>
 
 
 
->>>>>>> 84c3241129641af3c73e0950f50b06ed3651a5c5
 
 @property (nonatomic, strong) UITableView *myTableView;
 @property (nonatomic, strong) TYQLabel *label;
