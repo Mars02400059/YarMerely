@@ -9,7 +9,10 @@
 #import "ConnectViewController.h"
 #import "ConnectCollectionViewCell.h"
 #import "ConnectTableViewCell.h"
-#import "AddViewController.h"
+#import "AddManViewController.h"
+
+#import "NewViewController.h"
+
 #import "FriendDailViewController.h"
 
 @interface ConnectViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -28,6 +31,15 @@
 
     self.imageArray = @[@"xin",@"qun",@"an"];
     self.wordArray = @[@"新朋友",@"群聊",@"暗恋"];
+    
+#pragma mark --- FT
+    
+    FTPopOverMenuConfiguration *configuration = [FTPopOverMenuConfiguration defaultConfiguration];
+    configuration.textColor = [UIColor redColor];
+    configuration.tintColor = [UIColor lightGrayColor];
+    configuration.borderColor = [UIColor blackColor];
+    configuration.borderWidth = 3.0f;
+
     
     
 #pragma mark --- 创建collectionview
@@ -68,13 +80,22 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     ConnectCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellC" forIndexPath:indexPath];
-    
     cell.stringImage = _imageArray[indexPath.row];
     cell.stringWord = _imageArray[indexPath.row];
     
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.item == 0) {
+       
+        NewViewController *newVC = [[NewViewController alloc] init];
+         newVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:newVC animated:YES];
+    }
+    
+}
 
 #pragma mark --- tableview datasource
 
@@ -97,17 +118,40 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     FriendDailViewController *fdVC = [FriendDailViewController new];
-    
+    fdVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:fdVC animated:YES];
 }
 
-#pragma mark ---右按钮方法
-- (void)tyq_navigationBarViewRightButtonAction{
-   
-    AddViewController *addVC = [[AddViewController alloc] init];
+#pragma mark ---右按钮方法(下拉菜单)
+-(void)tyq_navigationBarViewRightButtonAction{
     
-    [self.navigationController pushViewController:addVC animated:YES];
+    [FTPopOverMenu showForSender:self.navigationBarView.rightButton withMenu:@[@"添加联系人",@"添加群",@"随意 "] doneBlock:^(NSInteger selectedIndex) {
+        
+        if (selectedIndex == 0) {
+            
+            AddManViewController *addVC = [AddManViewController new];
+         
+            [self.navigationController pushViewController:addVC animated:YES];
+            
+        }
+        if (selectedIndex == 1) {
+            
+            NSLog(@"添加群");
+        }
+        if (selectedIndex == 2) {
+            
+            NSLog(@"随意");
+        }
+        
+    } dismissBlock:^{
+        
+        NSLog(@"dismiss");
+        
+    }];
+    
+    
 }
+
 
 
 
