@@ -28,7 +28,7 @@ UITableViewDataSource
 @implementation MessageViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self tyq_navigationBarViewLeftButtonAction];
+    [self tyq_messageArrayChange];
 }
 // 通过获取DB中所有会话, 更新消息数组
 - (void)tyq_messageArrayChange {
@@ -79,6 +79,7 @@ UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    NSLog(@"%ld", _messageArray.count);
     return self.messageArray.count;
 }
 
@@ -103,7 +104,7 @@ UITableViewDataSource
  */
 - (void)didUnreadMessagesCountChanged {
     
-    [self tyq_navigationBarViewLeftButtonAction];
+    [self tyq_messageArrayChange];
     // 通过未读消息数在tabBar上显示未读数
     
     NSUInteger unReadMessage = [[EaseMob sharedInstance].chatManager loadTotalUnreadMessagesCountFromDatabase];

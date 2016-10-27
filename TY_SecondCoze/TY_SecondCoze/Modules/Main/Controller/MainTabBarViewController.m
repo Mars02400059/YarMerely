@@ -16,9 +16,9 @@
 
 
 @interface MainTabBarViewController ()
-<
-EMChatManagerDelegate
->
+//<
+//EMChatManagerDelegate
+//>
 
 @end
 
@@ -31,7 +31,7 @@ EMChatManagerDelegate
     // Do any additional setup after loading the view.
     
     // 聊天管理器
-    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
+//    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
     
 }
 
