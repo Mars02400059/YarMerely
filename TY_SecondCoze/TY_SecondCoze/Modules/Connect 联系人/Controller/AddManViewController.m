@@ -8,6 +8,9 @@
 
 #import "AddManViewController.h"
 @interface AddManViewController ()
+<
+EMChatManagerDelegate
+>
 @property (nonatomic, strong) TYQTextField *myTextFiled;
 @property (nonatomic, strong) TYQButton *myButton;
 
@@ -18,6 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
+
     
     self.myTextFiled = [TYQTextField new];
     _myTextFiled.frame = CGRectMake(0, 84, WIDTH, 45);
