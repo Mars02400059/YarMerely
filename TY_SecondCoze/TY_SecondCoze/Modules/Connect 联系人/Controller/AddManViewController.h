@@ -8,11 +8,18 @@
 
 #import "TYQViewController.h"
 
+<<<<<<< HEAD
 
 @interface AddManViewController : TYQViewController
 
 
 
 
+=======
+
+
+@interface AddManViewController : TYQViewController
+
+>>>>>>> 84c3241129641af3c73e0950f50b06ed3651a5c5
 
 @end

@@ -9,7 +9,14 @@
 #import "NewViewController.h"
 #import "AddManViewController.h"
 
+<<<<<<< HEAD
 @interface NewViewController ()<UITableViewDelegate,UITableViewDataSource>
+=======
+@interface NewViewController ()<UITableViewDelegate,UITableViewDataSource,EMChatManagerDelegate>
+
+
+
+>>>>>>> 84c3241129641af3c73e0950f50b06ed3651a5c5
 
 @property (nonatomic, strong) UITableView *myTableView;
 @property (nonatomic, strong) TYQLabel *label;
@@ -21,7 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   
+    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
+
     self.navigationItem.title = @"新朋友";
     
 #pragma mark --- 创建tableview
@@ -36,10 +44,7 @@
     
      [self addNavigationBarView];
      self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
-    
-#warning mark --- 第五步成为代理人
 
-    
     
       // Do any additional setup after loading the view.
 }
@@ -73,15 +78,15 @@
 }
 
 
-#warning mark ---实现协议方法
+
+
+
 - (void)didReceiveBuddyRequest:(NSString *)username message:(NSString *)message{
     
+    NSLog(@"%@", username);
     self.label.text = username;
     
 }
-
-
-
 
 
 
