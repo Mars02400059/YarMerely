@@ -10,4 +10,6 @@
 
 @interface NewViewController : TYQViewController
 
+@property (nonatomic, strong) NSArray *infoArray;
+
 @end

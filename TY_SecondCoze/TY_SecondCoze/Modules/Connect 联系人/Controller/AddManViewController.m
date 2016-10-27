@@ -8,9 +8,9 @@
 
 #import "AddManViewController.h"
 @interface AddManViewController ()
-<
-EMChatManagerDelegate
->
+//<
+//EMChatManagerDelegate
+//>
 @property (nonatomic, strong) TYQTextField *myTextFiled;
 @property (nonatomic, strong) TYQButton *myButton;
 
@@ -22,7 +22,7 @@ EMChatManagerDelegate
     [super viewDidLoad];
     
     
-    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
+//    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
 
     
     self.myTextFiled = [TYQTextField new];
@@ -59,8 +59,7 @@ EMChatManagerDelegate
 -(void)buttonAction:(UIButton *)button{
     
     EMError *error = nil;
-    BOOL isSuccess = [[EaseMob sharedInstance].chatManager addBuddy:_myTextFiled.text message:@"我想加您为好友" error:&error];
-    
+    BOOL isSuccess = [[EaseMob sharedInstance].chatManager addBuddy:self.myTextFiled.text message:@"我想加您为好友" error:&error];
     
     if (isSuccess && !error) {
         

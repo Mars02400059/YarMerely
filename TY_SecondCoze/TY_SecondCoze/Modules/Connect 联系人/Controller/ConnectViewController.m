@@ -15,7 +15,7 @@
 
 #import "FriendDailViewController.h"
 
-@interface ConnectViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface ConnectViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate,EMChatManagerDelegate>
 
 @property (nonatomic, strong) UICollectionView *myCollectionView;
 @property (nonatomic, strong) UITableView *myTableView;
@@ -25,10 +25,16 @@
 
 @implementation ConnectViewController
 
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
 
+    
+    
     self.imageArray = @[@"xin",@"qun",@"an"];
     self.wordArray = @[@"新朋友",@"群聊",@"暗恋"];
     
@@ -91,6 +97,7 @@
     if (indexPath.item == 0) {
        
         NewViewController *newVC = [[NewViewController alloc] init];
+        newVC.infoArray = _infoArray;
          newVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:newVC animated:YES];
     }

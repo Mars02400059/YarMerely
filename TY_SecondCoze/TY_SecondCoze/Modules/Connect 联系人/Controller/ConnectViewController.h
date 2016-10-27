@@ -10,4 +10,7 @@
 
 @interface ConnectViewController : TYQViewController
 
+@property (nonatomic, strong) NSArray *infoArray;
+
+
 @end

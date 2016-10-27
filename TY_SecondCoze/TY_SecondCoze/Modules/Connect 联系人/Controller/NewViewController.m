@@ -8,8 +8,9 @@
 
 #import "NewViewController.h"
 #import "AddManViewController.h"
+#import "InfoModel.h"
 
-@interface NewViewController ()<UITableViewDelegate,UITableViewDataSource,EMChatManagerDelegate>
+@interface NewViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 
 
@@ -24,8 +25,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
+    
 
+    
+    
+    
     self.navigationItem.title = @"新朋友";
     
 #pragma mark --- 创建tableview
@@ -54,7 +58,7 @@
 #pragma tableView dataSouce
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 30;
+    return self.infoArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -64,7 +68,8 @@
     self.label = [[TYQLabel alloc] initWithFrame:CGRectMake(10, 30, WIDTH / 3 * 2, cell.frame.size.height)];
     _label.backgroundColor = [UIColor greenColor];
     [cell.contentView addSubview:_label];
-
+    InfoModel *infoModel = _infoArray[indexPath.row];
+    _label.text = infoModel.username;
     return cell;
 }
 
@@ -77,12 +82,6 @@
 
 
 
-- (void)didReceiveBuddyRequest:(NSString *)username message:(NSString *)message{
-    
-    NSLog(@"%@", username);
-    self.label.text = username;
-    
-}
 
 
 

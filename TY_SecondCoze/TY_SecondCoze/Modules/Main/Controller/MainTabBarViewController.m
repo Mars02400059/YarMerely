@@ -12,13 +12,16 @@
 #import "ConnectViewController.h"
 #import "MineViewController.h"
 #import "TYQNavigationViewController.h"
-
+#import "InfoModel.h"
 
 
 @interface MainTabBarViewController ()
-//<
-//EMChatManagerDelegate
-//>
+<
+EMChatManagerDelegate
+>
+
+// 存储好友申请的数组
+@property (nonatomic, strong) NSMutableArray *sidekickAppleForArray;
 
 @end
 
@@ -31,9 +34,24 @@
     // Do any additional setup after loading the view.
     
     // 聊天管理器
-//    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
+    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
+    self.sidekickAppleForArray = [NSMutableArray array];
     
 }
+
+
+
+- (void)didReceiveBuddyRequest:(NSString *)username message:(NSString *)message{
+    
+    InfoModel *infoModel = [[InfoModel alloc] init];
+    infoModel.username = username;
+    infoModel.message = message;
+    
+    [_sidekickAppleForArray addObject:infoModel];
+    
+}
+
+
 
 - (instancetype)init
 {
@@ -47,6 +65,7 @@
         [self setViewController:messageViewController tabBarTitle:@"消息" imageName:@"消息1" selectedImageName:@"消息2"];
         
         ConnectViewController *connectViewController = [[ConnectViewController alloc] init];
+        connectViewController.infoArray = _sidekickAppleForArray;
         [self setViewController:connectViewController tabBarTitle:@"联系人" imageName:@"联系人1"  selectedImageName:@"联系人2"];
         
         MineViewController *mineViewController = [[MineViewController alloc] init];

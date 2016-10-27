@@ -45,6 +45,7 @@
 		410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410E5C521DB85315005C2513 /* SpeakViewController.xib */; };
 		413409F01DC05BCD00C4D466 /* MineSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413409EF1DC05BCD00C4D466 /* MineSettingViewController.m */; };
 		413409F61DC0704700C4D466 /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 413409F51DC0704700C4D466 /* 返回.png */; };
+		41AE13B21DC22CCE00AF06BF /* InfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AE13B11DC22CCE00AF06BF /* InfoModel.m */; };
 		41E37D611DBA095700FCAD08 /* TYQImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E37D601DBA095700FCAD08 /* TYQImageView.m */; };
 		41E37D641DBA109200FCAD08 /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E37D631DBA109100FCAD08 /* Unknown.png */; };
 		41E37D671DBA133A00FCAD08 /* TYQTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E37D661DBA133A00FCAD08 /* TYQTextField.m */; };
@@ -195,6 +196,8 @@
 		413409EF1DC05BCD00C4D466 /* MineSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineSettingViewController.m; sourceTree = "<group>"; };
 		413409F51DC0704700C4D466 /* 返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回.png"; sourceTree = "<group>"; };
 		416C7F7C1DB9B44500269E3C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		41AE13B01DC22CCE00AF06BF /* InfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoModel.h; sourceTree = "<group>"; };
+		41AE13B11DC22CCE00AF06BF /* InfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoModel.m; sourceTree = "<group>"; };
 		41DC6E641DC1AC36002F968F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		41E37D5F1DBA095700FCAD08 /* TYQImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYQImageView.h; sourceTree = "<group>"; };
 		41E37D601DBA095700FCAD08 /* TYQImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYQImageView.m; sourceTree = "<group>"; };
@@ -533,6 +536,7 @@
 		410E5C3E1DB85315005C2513 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				41AE13AF1DC22CB200AF06BF /* Model */,
 				410E5C3F1DB85315005C2513 /* Controller */,
 			);
 			path = Main;
@@ -622,6 +626,15 @@
 				413409EF1DC05BCD00C4D466 /* MineSettingViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		41AE13AF1DC22CB200AF06BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				41AE13B01DC22CCE00AF06BF /* InfoModel.h */,
+				41AE13B11DC22CCE00AF06BF /* InfoModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		41E37D621DBA106B00FCAD08 /* User Image */ = {
@@ -1173,6 +1186,7 @@
 				410E5C1E1DB852FF005C2513 /* TYQLabel.m in Sources */,
 				41E37D611DBA095700FCAD08 /* TYQImageView.m in Sources */,
 				41FC7D9D1DBEE83800712714 /* MineSpaceTableViewCell.m in Sources */,
+				41AE13B21DC22CCE00AF06BF /* InfoModel.m in Sources */,
 				41E37D671DBA133A00FCAD08 /* TYQTextField.m in Sources */,
 				41E37D6C1DBA139100FCAD08 /* TextFieldView.m in Sources */,
 				41F144601DC18DD300C7023D /* MineInfoViewController.m in Sources */,
