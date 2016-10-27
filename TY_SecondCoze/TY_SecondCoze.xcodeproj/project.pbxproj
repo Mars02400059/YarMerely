@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		410D98431DC1E5A000A5C9FD /* MessageUniparousTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D98411DC1E5A000A5C9FD /* MessageUniparousTableViewCell.m */; };
+		410D98471DC1F5A000A5C9FD /* NSDate+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D98461DC1F5A000A5C9FD /* NSDate+Categories.m */; };
+		410D984A1DC1F62200A5C9FD /* NSUserDefaults+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D98491DC1F62200A5C9FD /* NSUserDefaults+Categories.m */; };
+		410D984D1DC1FE3100A5C9FD /* MessageChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D984C1DC1FE3100A5C9FD /* MessageChatViewController.m */; };
 		410E5BCF1DB85159005C2513 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 410E5BCE1DB85159005C2513 /* main.m */; };
 		410E5BD21DB85159005C2513 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 410E5BD11DB85159005C2513 /* AppDelegate.m */; };
 		410E5BD51DB85159005C2513 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410E5BD41DB85159005C2513 /* ViewController.m */; };
@@ -116,6 +120,14 @@
 		012D4FE9B8BF6969BDA42652 /* libPods-TY_SecondCozeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TY_SecondCozeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24115FC4DA1B556994AF1EE4 /* Pods-TY_SecondCoze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TY_SecondCoze.release.xcconfig"; path = "Pods/Target Support Files/Pods-TY_SecondCoze/Pods-TY_SecondCoze.release.xcconfig"; sourceTree = "<group>"; };
 		2AD0D96C5FA477CBB2631FEF /* Pods-TY_SecondCozeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TY_SecondCozeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TY_SecondCozeTests/Pods-TY_SecondCozeTests.release.xcconfig"; sourceTree = "<group>"; };
+		410D98401DC1E5A000A5C9FD /* MessageUniparousTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageUniparousTableViewCell.h; sourceTree = "<group>"; };
+		410D98411DC1E5A000A5C9FD /* MessageUniparousTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageUniparousTableViewCell.m; sourceTree = "<group>"; };
+		410D98451DC1F5A000A5C9FD /* NSDate+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Categories.h"; sourceTree = "<group>"; };
+		410D98461DC1F5A000A5C9FD /* NSDate+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Categories.m"; sourceTree = "<group>"; };
+		410D98481DC1F62200A5C9FD /* NSUserDefaults+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Categories.h"; sourceTree = "<group>"; };
+		410D98491DC1F62200A5C9FD /* NSUserDefaults+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Categories.m"; sourceTree = "<group>"; };
+		410D984B1DC1FE3100A5C9FD /* MessageChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageChatViewController.h; sourceTree = "<group>"; };
+		410D984C1DC1FE3100A5C9FD /* MessageChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageChatViewController.m; sourceTree = "<group>"; };
 		410E5BCA1DB85159005C2513 /* TY_SecondCoze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TY_SecondCoze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		410E5BCE1DB85159005C2513 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		410E5BD01DB85159005C2513 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -293,6 +305,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		410D983E1DC1E3D900A5C9FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				410D984B1DC1FE3100A5C9FD /* MessageChatViewController.h */,
+				410D984C1DC1FE3100A5C9FD /* MessageChatViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		410D983F1DC1E41400A5C9FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				410D98401DC1E5A000A5C9FD /* MessageUniparousTableViewCell.h */,
+				410D98411DC1E5A000A5C9FD /* MessageUniparousTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		410E5BC11DB85159005C2513 = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +461,10 @@
 		410E5C231DB8530B005C2513 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				410D98451DC1F5A000A5C9FD /* NSDate+Categories.h */,
+				410D98461DC1F5A000A5C9FD /* NSDate+Categories.m */,
+				410D98481DC1F62200A5C9FD /* NSUserDefaults+Categories.h */,
+				410D98491DC1F62200A5C9FD /* NSUserDefaults+Categories.m */,
 				410E5C241DB8530B005C2513 /* NSString+Categories.h */,
 				410E5C251DB8530B005C2513 /* NSString+Categories.m */,
 				410E5C261DB8530B005C2513 /* NSString+Regex.h */,
@@ -513,8 +547,9 @@
 		410E5C441DB85315005C2513 /* Message 消息 */ = {
 			isa = PBXGroup;
 			children = (
-				41F144681DC1A89E00C7023D /* Chat 聊天 */,
 				410E5C451DB85315005C2513 /* Controller */,
+				410D983F1DC1E41400A5C9FD /* View */,
+				41F144681DC1A89E00C7023D /* Chat 聊天 */,
 			);
 			path = "Message 消息";
 			sourceTree = "<group>";
@@ -649,16 +684,17 @@
 		41F144681DC1A89E00C7023D /* Chat 聊天 */ = {
 			isa = PBXGroup;
 			children = (
-				41F144691DC1A8E800C7023D /* New Group */,
+				410D983E1DC1E3D900A5C9FD /* Controller */,
+				41F144691DC1A8E800C7023D /* View */,
 			);
 			name = "Chat 聊天";
 			sourceTree = "<group>";
 		};
-		41F144691DC1A8E800C7023D /* New Group */ = {
+		41F144691DC1A8E800C7023D /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "New Group";
+			name = View;
 			sourceTree = "<group>";
 		};
 		41FC7D6E1DBDE06900712714 /* Main Image */ = {
@@ -1124,6 +1160,7 @@
 				49C51DD51DB89AF7006A5126 /* EAThemeManager.m in Sources */,
 				410E5C361DB8530B005C2513 /* FileManagerUtils.m in Sources */,
 				410E5C191DB852FF005C2513 /* TYQTabBarViewController.m in Sources */,
+				410D984A1DC1F62200A5C9FD /* NSUserDefaults+Categories.m in Sources */,
 				410E5C181DB852FF005C2513 /* TYQNavigationViewController.m in Sources */,
 				41F144641DC1907800C7023D /* MineInfoTableViewCell.m in Sources */,
 				410E5BD21DB85159005C2513 /* AppDelegate.m in Sources */,
@@ -1143,8 +1180,10 @@
 				410E5C531DB85315005C2513 /* ConnectViewController.m in Sources */,
 				4968E4371DC0A09D00257004 /* ConnectCollectionViewCell.m in Sources */,
 				410E5C1F1DB852FF005C2513 /* TYQTableViewCell.m in Sources */,
+				410D98471DC1F5A000A5C9FD /* NSDate+Categories.m in Sources */,
 				41FC7DA71DBEEB1800712714 /* MineImageTableViewCell.m in Sources */,
 				49C51DE01DB89DDC006A5126 /* DBTool.m in Sources */,
+				410D984D1DC1FE3100A5C9FD /* MessageChatViewController.m in Sources */,
 				4968E4421DC0DA7500257004 /* FriendDailViewController.m in Sources */,
 				410E5C591DB85315005C2513 /* MineViewController.m in Sources */,
 				49C51DD61DB89AF7006A5126 /* UIView+EATheme.m in Sources */,
@@ -1157,6 +1196,7 @@
 				410E5C351DB8530B005C2513 /* UIView+Frame.m in Sources */,
 				4968E43A1DC0B07F00257004 /* ConnectTableViewCell.m in Sources */,
 				410E5C1B1DB852FF005C2513 /* TYQModel.m in Sources */,
+				410D98431DC1E5A000A5C9FD /* MessageUniparousTableViewCell.m in Sources */,
 				410E5C1A1DB852FF005C2513 /* TYQViewController.m in Sources */,
 				41FC7D231DBC853C00712714 /* TYQNavigationBarView.m in Sources */,
 			);
