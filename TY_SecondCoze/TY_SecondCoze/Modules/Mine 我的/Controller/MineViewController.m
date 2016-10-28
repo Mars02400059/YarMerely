@@ -41,6 +41,10 @@ UITableViewDataSource
 
 @implementation MineViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [_tableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.

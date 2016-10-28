@@ -45,7 +45,14 @@
 		410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410E5C521DB85315005C2513 /* SpeakViewController.xib */; };
 		413409F01DC05BCD00C4D466 /* MineSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413409EF1DC05BCD00C4D466 /* MineSettingViewController.m */; };
 		413409F61DC0704700C4D466 /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 413409F51DC0704700C4D466 /* 返回.png */; };
+		41976ED71DC3748B00AC8518 /* MessageChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41976ED61DC3748B00AC8518 /* MessageChatTableViewCell.m */; };
+		41976EDB1DC3802900AC8518 /* MessageChatConversationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41976EDA1DC3802900AC8518 /* MessageChatConversationModel.m */; };
 		41AE13B21DC22CCE00AF06BF /* InfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AE13B11DC22CCE00AF06BF /* InfoModel.m */; };
+		41AE13B51DC2DEC900AF06BF /* StationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AE13B41DC2DEC900AF06BF /* StationView.m */; };
+		41AE13CA1DC2F4C000AF06BF /* 聊天语音.png in Resources */ = {isa = PBXBuildFile; fileRef = 41AE13C91DC2F4C000AF06BF /* 聊天语音.png */; };
+		41AE13CC1DC2FEAB00AF06BF /* 聊天键盘.png in Resources */ = {isa = PBXBuildFile; fileRef = 41AE13CB1DC2FEAB00AF06BF /* 聊天键盘.png */; };
+		41AE13CE1DC2FEF900AF06BF /* 聊天加号.png in Resources */ = {isa = PBXBuildFile; fileRef = 41AE13CD1DC2FEF900AF06BF /* 聊天加号.png */; };
+		41AE13D01DC2FF2A00AF06BF /* 聊天表情.png in Resources */ = {isa = PBXBuildFile; fileRef = 41AE13CF1DC2FF2A00AF06BF /* 聊天表情.png */; };
 		41E37D611DBA095700FCAD08 /* TYQImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E37D601DBA095700FCAD08 /* TYQImageView.m */; };
 		41E37D641DBA109200FCAD08 /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E37D631DBA109100FCAD08 /* Unknown.png */; };
 		41E37D671DBA133A00FCAD08 /* TYQTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E37D661DBA133A00FCAD08 /* TYQTextField.m */; };
@@ -196,8 +203,18 @@
 		413409EF1DC05BCD00C4D466 /* MineSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineSettingViewController.m; sourceTree = "<group>"; };
 		413409F51DC0704700C4D466 /* 返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回.png"; sourceTree = "<group>"; };
 		416C7F7C1DB9B44500269E3C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		41976ED51DC3748B00AC8518 /* MessageChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageChatTableViewCell.h; sourceTree = "<group>"; };
+		41976ED61DC3748B00AC8518 /* MessageChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageChatTableViewCell.m; sourceTree = "<group>"; };
+		41976ED91DC3802900AC8518 /* MessageChatConversationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageChatConversationModel.h; sourceTree = "<group>"; };
+		41976EDA1DC3802900AC8518 /* MessageChatConversationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageChatConversationModel.m; sourceTree = "<group>"; };
 		41AE13B01DC22CCE00AF06BF /* InfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoModel.h; sourceTree = "<group>"; };
 		41AE13B11DC22CCE00AF06BF /* InfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoModel.m; sourceTree = "<group>"; };
+		41AE13B31DC2DEC900AF06BF /* StationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationView.h; sourceTree = "<group>"; };
+		41AE13B41DC2DEC900AF06BF /* StationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationView.m; sourceTree = "<group>"; };
+		41AE13C91DC2F4C000AF06BF /* 聊天语音.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "聊天语音.png"; sourceTree = "<group>"; };
+		41AE13CB1DC2FEAB00AF06BF /* 聊天键盘.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "聊天键盘.png"; sourceTree = "<group>"; };
+		41AE13CD1DC2FEF900AF06BF /* 聊天加号.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "聊天加号.png"; sourceTree = "<group>"; };
+		41AE13CF1DC2FF2A00AF06BF /* 聊天表情.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "聊天表情.png"; sourceTree = "<group>"; };
 		41DC6E641DC1AC36002F968F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		41E37D5F1DBA095700FCAD08 /* TYQImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYQImageView.h; sourceTree = "<group>"; };
 		41E37D601DBA095700FCAD08 /* TYQImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYQImageView.m; sourceTree = "<group>"; };
@@ -317,7 +334,7 @@
 				410D984B1DC1FE3100A5C9FD /* MessageChatViewController.h */,
 				410D984C1DC1FE3100A5C9FD /* MessageChatViewController.m */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		410D983F1DC1E41400A5C9FD /* View */ = {
@@ -326,7 +343,7 @@
 				410D98401DC1E5A000A5C9FD /* MessageUniparousTableViewCell.h */,
 				410D98411DC1E5A000A5C9FD /* MessageUniparousTableViewCell.m */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		410E5BC11DB85159005C2513 = {
@@ -469,12 +486,12 @@
 			children = (
 				410D98451DC1F5A000A5C9FD /* NSDate+Categories.h */,
 				410D98461DC1F5A000A5C9FD /* NSDate+Categories.m */,
-				410D98481DC1F62200A5C9FD /* NSUserDefaults+Categories.h */,
-				410D98491DC1F62200A5C9FD /* NSUserDefaults+Categories.m */,
 				410E5C241DB8530B005C2513 /* NSString+Categories.h */,
 				410E5C251DB8530B005C2513 /* NSString+Categories.m */,
 				410E5C261DB8530B005C2513 /* NSString+Regex.h */,
 				410E5C271DB8530B005C2513 /* NSString+Regex.m */,
+				410D98481DC1F62200A5C9FD /* NSUserDefaults+Categories.h */,
+				410D98491DC1F62200A5C9FD /* NSUserDefaults+Categories.m */,
 				410E5C281DB8530B005C2513 /* UIImage+Categories.h */,
 				410E5C291DB8530B005C2513 /* UIImage+Categories.m */,
 				410E5C2A1DB8530B005C2513 /* UIView+Frame.h */,
@@ -520,13 +537,13 @@
 		410E5C3A1DB85315005C2513 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4968E4961DC1AFA000257004 /* AddManViewController.h */,
+				4968E4971DC1AFA000257004 /* AddManViewController.m */,
 				410E5C3B1DB85315005C2513 /* ConnectViewController.h */,
 				410E5C3C1DB85315005C2513 /* ConnectViewController.m */,
 				410E5C3D1DB85315005C2513 /* ConnectViewController.xib */,
 				4968E4401DC0DA7500257004 /* FriendDailViewController.h */,
 				4968E4411DC0DA7500257004 /* FriendDailViewController.m */,
-				4968E4961DC1AFA000257004 /* AddManViewController.h */,
-				4968E4971DC1AFA000257004 /* AddManViewController.m */,
 				4968E4D21DC1FB5500257004 /* NewViewController.h */,
 				4968E4D31DC1FB5500257004 /* NewViewController.m */,
 			);
@@ -536,8 +553,8 @@
 		410E5C3E1DB85315005C2513 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				41AE13AF1DC22CB200AF06BF /* Model */,
 				410E5C3F1DB85315005C2513 /* Controller */,
+				41AE13AF1DC22CB200AF06BF /* Model */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -556,9 +573,9 @@
 		410E5C441DB85315005C2513 /* Message 消息 */ = {
 			isa = PBXGroup;
 			children = (
+				41F144681DC1A89E00C7023D /* Chat 聊天 */,
 				410E5C451DB85315005C2513 /* Controller */,
 				410D983F1DC1E41400A5C9FD /* View */,
-				41F144681DC1A89E00C7023D /* Chat 聊天 */,
 			);
 			path = "Message 消息";
 			sourceTree = "<group>";
@@ -613,8 +630,8 @@
 		413409EC1DC05B3900C4D466 /* MineSettings 设置  */ = {
 			isa = PBXGroup;
 			children = (
-				41F1445B1DC18BAF00C7023D /* PersonalInformation 个人信息 */,
 				413409ED1DC05B6D00C4D466 /* Controller */,
+				41F1445B1DC18BAF00C7023D /* PersonalInformation 个人信息 */,
 			);
 			path = "MineSettings 设置 ";
 			sourceTree = "<group>";
@@ -628,13 +645,33 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		41976ED81DC37FCB00AC8518 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				41976ED91DC3802900AC8518 /* MessageChatConversationModel.h */,
+				41976EDA1DC3802900AC8518 /* MessageChatConversationModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		41AE13AF1DC22CB200AF06BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				41AE13B01DC22CCE00AF06BF /* InfoModel.h */,
 				41AE13B11DC22CCE00AF06BF /* InfoModel.m */,
 			);
-			name = Model;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		41AE13BA1DC2E2E400AF06BF /* Message Image */ = {
+			isa = PBXGroup;
+			children = (
+				41AE13CB1DC2FEAB00AF06BF /* 聊天键盘.png */,
+				41AE13CF1DC2FF2A00AF06BF /* 聊天表情.png */,
+				41AE13CD1DC2FEF900AF06BF /* 聊天加号.png */,
+				41AE13C91DC2F4C000AF06BF /* 聊天语音.png */,
+			);
+			name = "Message Image";
 			sourceTree = "<group>";
 		};
 		41E37D621DBA106B00FCAD08 /* User Image */ = {
@@ -677,7 +714,7 @@
 				41F1445D1DC18C1500C7023D /* Controller */,
 				41F1445C1DC18C1300C7023D /* View */,
 			);
-			name = "PersonalInformation 个人信息";
+			path = "PersonalInformation 个人信息";
 			sourceTree = "<group>";
 		};
 		41F1445C1DC18C1300C7023D /* View */ = {
@@ -687,7 +724,7 @@
 				41F144621DC1907800C7023D /* MineInfoTableViewCell.m */,
 				41F144631DC1907800C7023D /* MineInfoTableViewCell.xib */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		41F1445D1DC18C1500C7023D /* Controller */ = {
@@ -696,30 +733,34 @@
 				41F1445E1DC18DD300C7023D /* MineInfoViewController.h */,
 				41F1445F1DC18DD300C7023D /* MineInfoViewController.m */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		41F144681DC1A89E00C7023D /* Chat 聊天 */ = {
 			isa = PBXGroup;
 			children = (
+				41976ED81DC37FCB00AC8518 /* Model */,
 				410D983E1DC1E3D900A5C9FD /* Controller */,
 				41F144691DC1A8E800C7023D /* View */,
 			);
-			name = "Chat 聊天";
+			path = "Chat 聊天";
 			sourceTree = "<group>";
 		};
 		41F144691DC1A8E800C7023D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				41AE13B31DC2DEC900AF06BF /* StationView.h */,
+				41AE13B41DC2DEC900AF06BF /* StationView.m */,
+				41976ED51DC3748B00AC8518 /* MessageChatTableViewCell.h */,
+				41976ED61DC3748B00AC8518 /* MessageChatTableViewCell.m */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		41FC7D6E1DBDE06900712714 /* Main Image */ = {
 			isa = PBXGroup;
 			children = (
 				41FC7D811DBDE2AB00712714 /* 我的1.png */,
-				41F144661DC1A4DF00C7023D /* 默认头像.png */,
 				41FC7D831DBDE2B500712714 /* 我的2.png */,
 				41FC7D7A1DBDE1CC00712714 /* 消息1.png */,
 				41FC7D791DBDE1CC00712714 /* 消息2.png */,
@@ -727,6 +768,7 @@
 				41FC7D7D1DBDE23B00712714 /* 联系人2.png */,
 				41FC7D8A1DBDEBE700712714 /* 说1.png */,
 				41FC7D891DBDEBE700712714 /* 说2.png */,
+				41F144661DC1A4DF00C7023D /* 默认头像.png */,
 			);
 			path = "Main Image";
 			sourceTree = "<group>";
@@ -772,6 +814,7 @@
 		49C51D841DB89970006A5126 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				41AE13BA1DC2E2E400AF06BF /* Message Image */,
 				49C51D851DB89981006A5126 /* Images */,
 				41FC7D6E1DBDE06900712714 /* Main Image */,
 				41FC7D8F1DBE212C00712714 /* Mine Image */,
@@ -984,6 +1027,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41AE13CE1DC2FEF900AF06BF /* 聊天加号.png in Resources */,
 				41FC7D841DBDE2B500712714 /* 我的2.png in Resources */,
 				41FC7D7B1DBDE1CC00712714 /* 消息2.png in Resources */,
 				41FC7D8B1DBDEBE700712714 /* 说2.png in Resources */,
@@ -996,6 +1040,8 @@
 				41FC7D8C1DBDEBE700712714 /* 说1.png in Resources */,
 				49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */,
 				41FC7DAA1DBEED6F00712714 /* 进入，右.png in Resources */,
+				41AE13CC1DC2FEAB00AF06BF /* 聊天键盘.png in Resources */,
+				41AE13CA1DC2F4C000AF06BF /* 聊天语音.png in Resources */,
 				410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */,
 				41FC7D951DBE2AAB00712714 /* back.png in Resources */,
 				4968E4461DC0DD9600257004 /* 附近.png in Resources */,
@@ -1020,6 +1066,7 @@
 				410E5C541DB85315005C2513 /* ConnectViewController.xib in Resources */,
 				41FC7D7F1DBDE23B00712714 /* 联系人2.png in Resources */,
 				41E37D641DBA109200FCAD08 /* Unknown.png in Resources */,
+				41AE13D01DC2FF2A00AF06BF /* 聊天表情.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1176,6 +1223,7 @@
 				410E5BD51DB85159005C2513 /* ViewController.m in Sources */,
 				410E5C371DB8530B005C2513 /* NSUserDefaultsUtils.m in Sources */,
 				410E5C571DB85315005C2513 /* MessageViewController.m in Sources */,
+				41976ED71DC3748B00AC8518 /* MessageChatTableViewCell.m in Sources */,
 				49C51DD51DB89AF7006A5126 /* EAThemeManager.m in Sources */,
 				410E5C361DB8530B005C2513 /* FileManagerUtils.m in Sources */,
 				410E5C191DB852FF005C2513 /* TYQTabBarViewController.m in Sources */,
@@ -1183,10 +1231,12 @@
 				410E5C181DB852FF005C2513 /* TYQNavigationViewController.m in Sources */,
 				41F144641DC1907800C7023D /* MineInfoTableViewCell.m in Sources */,
 				410E5BD21DB85159005C2513 /* AppDelegate.m in Sources */,
+				41976EDB1DC3802900AC8518 /* MessageChatConversationModel.m in Sources */,
 				410E5C1E1DB852FF005C2513 /* TYQLabel.m in Sources */,
 				41E37D611DBA095700FCAD08 /* TYQImageView.m in Sources */,
 				41FC7D9D1DBEE83800712714 /* MineSpaceTableViewCell.m in Sources */,
 				41AE13B21DC22CCE00AF06BF /* InfoModel.m in Sources */,
+				41AE13B51DC2DEC900AF06BF /* StationView.m in Sources */,
 				41E37D671DBA133A00FCAD08 /* TYQTextField.m in Sources */,
 				41E37D6C1DBA139100FCAD08 /* TextFieldView.m in Sources */,
 				41F144601DC18DD300C7023D /* MineInfoViewController.m in Sources */,

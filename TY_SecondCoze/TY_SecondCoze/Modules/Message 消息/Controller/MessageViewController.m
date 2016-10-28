@@ -46,6 +46,7 @@ UITableViewDataSource
     
     NSArray *conversations = [[EaseMob sharedInstance].chatManager loadAllConversationsFromDatabaseWithAppend2Chat:YES];
     [self.messageArray addObjectsFromArray:conversations];
+    NSLog(@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈%@", _messageArray);
     [self.tableView reloadData];
 }
 
@@ -90,6 +91,8 @@ UITableViewDataSource
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MessageChatViewController *chatVC = [[MessageChatViewController alloc] init];
     chatVC.hidesBottomBarWhenPushed = YES;
+    chatVC.conversation = _messageArray[indexPath.row];
+    
     [self.navigationController pushViewController:chatVC animated:YES];
 }
 
