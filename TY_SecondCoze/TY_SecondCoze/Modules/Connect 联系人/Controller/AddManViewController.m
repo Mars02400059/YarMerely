@@ -8,10 +8,8 @@
 
 #import "AddManViewController.h"
 @interface AddManViewController ()
-//<
-//EMChatManagerDelegate
-//>
 @property (nonatomic, strong) TYQTextField *myTextFiled;
+@property (nonatomic, strong) TYQTextField *messageTextFiled;
 @property (nonatomic, strong) TYQButton *myButton;
 
 @end
@@ -22,17 +20,29 @@
     [super viewDidLoad];
     
     
-//    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
-
-    
     self.myTextFiled = [TYQTextField new];
-    _myTextFiled.frame = CGRectMake(0, 84, WIDTH, 45);
+    _myTextFiled.frame = CGRectMake(10, HEIGHT / 7, WIDTH - 20, 45);
+    _myTextFiled.layer.cornerRadius = 5;
+    _myTextFiled.layer.masksToBounds = YES;
+    _myTextFiled.layer.borderWidth = 1;
     _myTextFiled.placeholder = @"           请输入你要添加的账号";
-    _myTextFiled.backgroundColor = [UIColor redColor];
+    _myTextFiled.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_myTextFiled];
     
+    self.messageTextFiled = [TYQTextField new];
+    _messageTextFiled.frame = CGRectMake(_myTextFiled.frame.origin.x, _myTextFiled.frame.origin.y + _myTextFiled.frame.size.height + 50, WIDTH - 20, HEIGHT / 4);;
+    _messageTextFiled.backgroundColor = [UIColor whiteColor];
+    _messageTextFiled.placeholder = @"           此时此刻说点什么";
+    _messageTextFiled.layer.cornerRadius = 5;
+    _messageTextFiled.layer.masksToBounds = YES;
+    _messageTextFiled.layer.borderWidth = 1;
+    [self.view addSubview:_messageTextFiled];
+    
+    
     self.myButton = [TYQButton buttonWithType:0];
-    _myButton.frame = CGRectMake(0, HEIGHT / 3 * 1, WIDTH, _myTextFiled.frame.size.height);
+    _myButton.frame = CGRectMake(_myTextFiled.frame.origin.x, HEIGHT / 3 * 2, _myTextFiled.frame.size.width, _myTextFiled.frame.size.height);
+    _myButton.layer.cornerRadius = 5;
+    _myButton.layer.masksToBounds = YES;
     _myButton.backgroundColor = [UIColor greenColor];
     [_myButton setTitle:@"确定" forState:0];
     [self.view addSubview:_myButton];
@@ -59,7 +69,7 @@
 -(void)buttonAction:(UIButton *)button{
     
     EMError *error = nil;
-    BOOL isSuccess = [[EaseMob sharedInstance].chatManager addBuddy:self.myTextFiled.text message:@"我想加您为好友" error:&error];
+    BOOL isSuccess = [[EaseMob sharedInstance].chatManager addBuddy:self.myTextFiled.text message:self.messageTextFiled.text error:&error];
     
     if (isSuccess && !error) {
         
@@ -70,7 +80,6 @@
         [self presentViewController:alert animated:YES completion:nil];
 
     }
-    
 }
 
 

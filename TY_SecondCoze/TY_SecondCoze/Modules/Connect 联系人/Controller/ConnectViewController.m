@@ -11,30 +11,52 @@
 #import "ConnectTableViewCell.h"
 #import "AddManViewController.h"
 
+
 #import "NewViewController.h"
 
 #import "FriendDailViewController.h"
 
-@interface ConnectViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate,EMChatManagerDelegate>
+@interface ConnectViewController ()
+<
+UICollectionViewDataSource,
+UICollectionViewDelegate,
+UITableViewDataSource,
+UITableViewDelegate,
+EMChatManagerDelegate
+>
 
 @property (nonatomic, strong) UICollectionView *myCollectionView;
 @property (nonatomic, strong) UITableView *myTableView;
 @property (nonatomic, strong) NSArray *imageArray;
 @property (nonatomic, strong) NSArray *wordArray;
+
+@property (nonatomic, strong) NSArray *listArray;
 @end
 
 @implementation ConnectViewController
 
 
 
+- (NSArray *)listArray {
+    
+    if (nil == _listArray) {
+        EMError *error = nil;
+        NSArray *buddyList = [[EaseMob sharedInstance].chatManager fetchBuddyListWithError:&error];
+        if (!error) {
+            _listArray = buddyList;
+        }
+    }
+    return _listArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
+    
 
-    
-    
+
     self.imageArray = @[@"xin",@"qun",@"an"];
     self.wordArray = @[@"新朋友",@"群聊",@"暗恋"];
     
@@ -62,12 +84,11 @@
     [self.myCollectionView registerClass:[ConnectCollectionViewCell class] forCellWithReuseIdentifier:@"cellC"];
     
 #pragma mark --- 创建tableview
-    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 50) style:UITableViewStyleGrouped];
+    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 50) style:UITableViewStylePlain];
     _myTableView.dataSource = self;
     _myTableView.delegate = self;
     self.myTableView.tableHeaderView = _myCollectionView;
     [self.view addSubview:_myTableView];
-    
     [self.myTableView registerClass:[ConnectTableViewCell class] forCellReuseIdentifier:@"cellT"];
     
     [self addNavigationBarView];
@@ -106,13 +127,24 @@
 
 #pragma mark --- tableview datasource
 
+#if 1
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 50;
+
+    return self.listArray.count;
 }
+
+
+
+
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     ConnectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellT"];
+    
+    cell.infoModel = self.listArray[indexPath.row];
     
     return cell;
 }
@@ -129,6 +161,7 @@
     [self.navigationController pushViewController:fdVC animated:YES];
 }
 
+#endif
 #pragma mark ---右按钮方法(下拉菜单)
 -(void)tyq_navigationBarViewRightButtonAction{
     

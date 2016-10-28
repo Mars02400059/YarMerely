@@ -33,14 +33,19 @@ EMChatManagerDelegate
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // 聊天管理器
+#pragma mark--- 聊天管理器
+    
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
     self.sidekickAppleForArray = [NSMutableArray array];
+    
+#pragma mark --- 主动获取好友列表
+    
+    [[EaseMob sharedInstance].chatManager setIsAutoFetchBuddyList:YES];
     
 }
 
 
-
+#pragma mark --- 调取SDK的方法
 - (void)didReceiveBuddyRequest:(NSString *)username message:(NSString *)message{
     
     InfoModel *infoModel = [[InfoModel alloc] init];
@@ -48,13 +53,28 @@ EMChatManagerDelegate
     infoModel.message = message;
     
     [_sidekickAppleForArray addObject:infoModel];
+}
+
+#pragma mark --- 调取SDK接收好友请求方法
+-(void)didAcceptedByBuddy:(NSString *)username{
     
+    InfoModel *infoModel = [[InfoModel alloc] init];
+     infoModel.username = username;
+    
+}
+#pragma mark --- 调取SDK拒绝好友请求
+- (void)didRejectedByBuddy:(NSString *)username{
+    
+    InfoModel *infoModel = [[InfoModel alloc] init];
+    infoModel.username = username;
+
 }
 
 
 
 - (instancetype)init
 {
+    
     self = [super init];
     if (self) {
         
