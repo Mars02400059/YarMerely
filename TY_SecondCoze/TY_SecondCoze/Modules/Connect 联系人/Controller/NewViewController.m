@@ -9,11 +9,9 @@
 #import "NewViewController.h"
 #import "AddManViewController.h"
 #import "InfoModel.h"
-
+#import "ConnectNewTableviewCell.h"
+#import "ConnetMessageViewController.h"
 @interface NewViewController ()<UITableViewDelegate,UITableViewDataSource>
-
-
-
 
 @property (nonatomic, strong) UITableView *myTableView;
 @property (nonatomic, strong) TYQLabel *label;
@@ -26,21 +24,16 @@
     [super viewDidLoad];
     
     
-
-    
-    
-    
     self.navigationItem.title = @"新朋友";
     
 #pragma mark --- 创建tableview
-    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT) style:UITableViewStyleGrouped];
+    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64) style:UITableViewStylePlain];
     _myTableView.dataSource = self;
     _myTableView.delegate = self;
     [self.view addSubview:_myTableView];
     
-    [self.myTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [self.myTableView registerClass:[ConnectNewTableviewCell class] forCellReuseIdentifier:@"cell"];
     
-
     
      [self addNavigationBarView];
      self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
@@ -63,13 +56,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    ConnectNewTableviewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    self.label = [[TYQLabel alloc] initWithFrame:CGRectMake(10, 30, WIDTH / 3 * 2, cell.frame.size.height)];
-    _label.backgroundColor = [UIColor greenColor];
-    [cell.contentView addSubview:_label];
-    InfoModel *infoModel = _infoArray[indexPath.row];
-    _label.text = infoModel.username;
+    cell.infoModel = _infoArray[indexPath.row];
+    
     return cell;
 }
 
@@ -78,7 +68,16 @@
     return 100;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    ConnetMessageViewController *messageVC = [ConnetMessageViewController new];
+    
+    InfoModel *model = _infoArray[indexPath.row];
+    
+    messageVC.infoModelMessage = model;
+    
+    [self.navigationController pushViewController:messageVC animated:YES];
+}
 
 
 

@@ -36,7 +36,6 @@
 		410E5C361DB8530B005C2513 /* FileManagerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 410E5C2E1DB8530B005C2513 /* FileManagerUtils.m */; };
 		410E5C371DB8530B005C2513 /* NSUserDefaultsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 410E5C301DB8530B005C2513 /* NSUserDefaultsUtils.m */; };
 		410E5C531DB85315005C2513 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410E5C3C1DB85315005C2513 /* ConnectViewController.m */; };
-		410E5C541DB85315005C2513 /* ConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410E5C3D1DB85315005C2513 /* ConnectViewController.xib */; };
 		410E5C551DB85315005C2513 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410E5C411DB85315005C2513 /* MainTabBarViewController.m */; };
 		410E5C571DB85315005C2513 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410E5C471DB85315005C2513 /* MessageViewController.m */; };
 		410E5C581DB85315005C2513 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410E5C481DB85315005C2513 /* MessageViewController.xib */; };
@@ -85,6 +84,8 @@
 		4968E4461DC0DD9600257004 /* 附近.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E4451DC0DD9600257004 /* 附近.png */; };
 		4968E4981DC1AFA000257004 /* AddManViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4971DC1AFA000257004 /* AddManViewController.m */; };
 		4968E4D41DC1FB5500257004 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4D31DC1FB5500257004 /* NewViewController.m */; };
+		4968E4DA1DC23CB100257004 /* ConnectNewTableviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4D91DC23CB100257004 /* ConnectNewTableviewCell.m */; };
+		4968E4DD1DC2455400257004 /* ConnetMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4DC1DC2455400257004 /* ConnetMessageViewController.m */; };
 		49A8B39A1DBB82BD00FFF2A1 /* 00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B3991DBB82BD00FFF2A1 /* 00.jpg */; };
 		49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39B1DBB855000FFF2A1 /* 000.png */; };
 		49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39D1DBB873A00FFF2A1 /* 1.png */; };
@@ -181,7 +182,6 @@
 		410E5C311DB8530B005C2513 /* SystemUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemUnit.h; sourceTree = "<group>"; };
 		410E5C3B1DB85315005C2513 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
 		410E5C3C1DB85315005C2513 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
-		410E5C3D1DB85315005C2513 /* ConnectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectViewController.xib; sourceTree = "<group>"; };
 		410E5C401DB85315005C2513 /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
 		410E5C411DB85315005C2513 /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
 		410E5C461DB85315005C2513 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
@@ -253,6 +253,10 @@
 		4968E4971DC1AFA000257004 /* AddManViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddManViewController.m; sourceTree = "<group>"; };
 		4968E4D21DC1FB5500257004 /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
 		4968E4D31DC1FB5500257004 /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
+		4968E4D81DC23CB100257004 /* ConnectNewTableviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectNewTableviewCell.h; path = ../Controller/ConnectNewTableviewCell.h; sourceTree = "<group>"; };
+		4968E4D91DC23CB100257004 /* ConnectNewTableviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectNewTableviewCell.m; path = ../Controller/ConnectNewTableviewCell.m; sourceTree = "<group>"; };
+		4968E4DB1DC2455400257004 /* ConnetMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnetMessageViewController.h; sourceTree = "<group>"; };
+		4968E4DC1DC2455400257004 /* ConnetMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnetMessageViewController.m; sourceTree = "<group>"; };
 		49A8B3991DBB82BD00FFF2A1 /* 00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00.jpg; sourceTree = "<group>"; };
 		49A8B39B1DBB855000FFF2A1 /* 000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 000.png; sourceTree = "<group>"; };
 		49A8B39D1DBB873A00FFF2A1 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -522,13 +526,14 @@
 			children = (
 				410E5C3B1DB85315005C2513 /* ConnectViewController.h */,
 				410E5C3C1DB85315005C2513 /* ConnectViewController.m */,
-				410E5C3D1DB85315005C2513 /* ConnectViewController.xib */,
 				4968E4401DC0DA7500257004 /* FriendDailViewController.h */,
 				4968E4411DC0DA7500257004 /* FriendDailViewController.m */,
 				4968E4961DC1AFA000257004 /* AddManViewController.h */,
 				4968E4971DC1AFA000257004 /* AddManViewController.m */,
 				4968E4D21DC1FB5500257004 /* NewViewController.h */,
 				4968E4D31DC1FB5500257004 /* NewViewController.m */,
+				4968E4DB1DC2455400257004 /* ConnetMessageViewController.h */,
+				4968E4DC1DC2455400257004 /* ConnetMessageViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -765,6 +770,8 @@
 				4968E4361DC0A09D00257004 /* ConnectCollectionViewCell.m */,
 				4968E4381DC0B07F00257004 /* ConnectTableViewCell.h */,
 				4968E4391DC0B07F00257004 /* ConnectTableViewCell.m */,
+				4968E4D81DC23CB100257004 /* ConnectNewTableviewCell.h */,
+				4968E4D91DC23CB100257004 /* ConnectNewTableviewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1017,7 +1024,6 @@
 				41F144671DC1A4DF00C7023D /* 默认头像.png in Resources */,
 				41F144651DC1907800C7023D /* MineInfoTableViewCell.xib in Resources */,
 				4968E4441DC0DBBA00257004 /* jia.png in Resources */,
-				410E5C541DB85315005C2513 /* ConnectViewController.xib in Resources */,
 				41FC7D7F1DBDE23B00712714 /* 联系人2.png in Resources */,
 				41E37D641DBA109200FCAD08 /* Unknown.png in Resources */,
 			);
@@ -1173,6 +1179,7 @@
 				410E5C341DB8530B005C2513 /* UIImage+Categories.m in Sources */,
 				413409F01DC05BCD00C4D466 /* MineSettingViewController.m in Sources */,
 				4968E4981DC1AFA000257004 /* AddManViewController.m in Sources */,
+				4968E4DA1DC23CB100257004 /* ConnectNewTableviewCell.m in Sources */,
 				410E5BD51DB85159005C2513 /* ViewController.m in Sources */,
 				410E5C371DB8530B005C2513 /* NSUserDefaultsUtils.m in Sources */,
 				410E5C571DB85315005C2513 /* MessageViewController.m in Sources */,
@@ -1219,6 +1226,7 @@
 				410D98431DC1E5A000A5C9FD /* MessageUniparousTableViewCell.m in Sources */,
 				410E5C1A1DB852FF005C2513 /* TYQViewController.m in Sources */,
 				41FC7D231DBC853C00712714 /* TYQNavigationBarView.m in Sources */,
+				4968E4DD1DC2455400257004 /* ConnetMessageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
