@@ -11,59 +11,6 @@
 
 @interface MessageChatConversationModel ()
 
-/************** 文字消息 *******************/
-
-// 文字聊天内容
-@property (nonatomic, copy) NSString *contentText;
-
-// 文字聊天的背景颜色
-@property (nonatomic, strong) UIColor *contentBackGroundColor;
-
-
-/************** 图片消息 *******************/
-
-// 详情大图
-@property (nonatomic, strong) UIImage *contentImage;
-
-// 预览图
-@property (nonatomic, strong) UIImage *contentThumbnailImage;
-
-// 详情大图url
-@property (nonatomic, strong) NSURL *contentImageURL;
-
-// 预览图
-@property (nonatomic, strong) NSURL *contentThumbnailImageURL;
-
-// 预览图尺寸
-@property (nonatomic, assign) CGSize contentThumbnailImageSize;
-
-// 是否横预览
-@property (nonatomic, assign, getter=isVertical) BOOL vertical;
-
-/************** 语音消息 *******************/
-
-// 持续时间
-@property (nonatomic, assign) NSInteger voiceDuration;
-
-// 本地路径
-@property (nonatomic, copy) NSString *voicePath;
-
-
-// 音频图片动态图数组
-@property (nonatomic, strong) NSMutableArray *imageArray;
-
-
-/************** 其他 *******************/
-
-// 头像url
-@property (nonatomic, copy) NSString *userIcon;
-
-// timeStr
-@property (nonatomic, copy) NSString *timeStr;
-
-// 是我还是他
-@property (nonatomic, assign, getter=isMe) BOOL me;
-
 // 消息类型
 @property (nonatomic) MessageBodyType messageBodyType;
 
@@ -76,43 +23,16 @@
     _message = message;
     
     
-    self.imageArray = [NSMutableArray array];
     
-    // 是我还是他
-    NSString *loginUsername = [[EaseMob sharedInstance].chatManager loginInfo][@"username"];
-    if ([loginUsername isEqualToString:message.from]) {
-        self.me = YES;
-        self.userIcon = @"head.jpg";
-        self.contentBackGroundColor = [UIColor cyanColor];
+    // 是我的还是他的
+    NSString *myUsername = [[EaseMob sharedInstance].chatManager loginInfo][@"username"];
+    if ([myUsername isEqualToString:message.from]) {
+        self.isMe = YES;
         
-        for (int i = 1; i <= 3 ; i++) {
-            NSString *imageName = [NSString stringWithFormat:@"me%d.png", i];
-            UIImage *image = [UIImage imageNamed:imageName];
-            [self.imageArray addObject:image];
-        }
-        
-    } else if([loginUsername isEqualToString:message.to]){
-        self.me = NO;
-        self.userIcon = @"head.jpg";
-        self.contentBackGroundColor = [UIColor whiteColor];
-        
-        for (int i = 1; i <= 3 ; i++) {
-            NSString *imageName = [NSString stringWithFormat:@"he%d.png", i];
-            UIImage *image = [UIImage imageNamed:imageName];
-            [self.imageArray addObject:image];
-        }
+    } else if([myUsername isEqualToString:message.to]){
+        self.isMe = NO;
         
     }
-    
-    
-    // 时间戳
-    self.timeStr = [NSDate intervalSinceNow:message.timestamp];
-    
-    
-    
-    
-    
-    
     
     // 解析消息
     id<IEMMessageBody> msgBody = message.messageBodies.firstObject;
@@ -123,9 +43,7 @@
         {
             // 收到的文字消息
             NSString *txt = ((EMTextMessageBody *)msgBody).text;
-            NSLog(@"收到的文字是 txt -- %@",txt);
-            
-            self.contentText = txt;
+            self.textMessage = txt;
         }
             break;
         case eMessageBodyType_Image:
@@ -139,9 +57,7 @@
             NSLog(@"大图的下载状态 -- %lu",(unsigned long)body.attachmentDownloadStatus);
             
             if ([[NSFileManager defaultManager] fileExistsAtPath:body.localPath]) {
-                self.contentImage = [UIImage imageWithContentsOfFile:body.localPath];
             }
-            self.contentImageURL = [NSURL URLWithString:body.remotePath];
             
             
             // 缩略图sdk会自动下载
@@ -152,12 +68,9 @@
             NSLog(@"小图的下载状态 -- %lu",(unsigned long)body.thumbnailDownloadStatus);
             
             if ([[NSFileManager defaultManager] fileExistsAtPath:body.thumbnailLocalPath]) {
-                self.contentThumbnailImage = [UIImage imageWithContentsOfFile:body.thumbnailLocalPath];
                 
             }
-            self.contentThumbnailImageURL = [NSURL URLWithString:body.thumbnailRemotePath];
             
-            self.contentThumbnailImageSize = body.thumbnailSize;
             
         }
             
@@ -184,9 +97,7 @@
             
             
             if ([[NSFileManager defaultManager] fileExistsAtPath:body.localPath]) {
-                self.voicePath = body.localPath;
             }
-            self.voiceDuration = body.duration;
         }
             break;
         case eMessageBodyType_Video:

@@ -7,10 +7,21 @@
 //
 
 #import "MessageChatTableViewCell.h"
+#import "MessageChatConversationModel.h"
+#import "Tools.h"
+#import "BubbleView.h"
 
 @interface MessageChatTableViewCell ()
 
+@property (nonatomic, assign) BOOL isMe;
+// 头像
+@property (nonatomic, strong) TYQButton *iconButton;
+// 消息气泡
+@property (nonatomic, strong) BubbleView *bubbleView;
+// 文字消息
 @property (nonatomic, strong) TYQLabel *mylabel;
+
+
 
 @end
 
@@ -20,14 +31,109 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
+        self.iconButton = [TYQButton buttonWithType:UIButtonTypeCustom];
+        [_iconButton setBackgroundImage:[UIImage imageNamed:@"默认头像"] forState:UIControlStateNormal];
+        [self.contentView addSubview:_iconButton];
+        
+        self.bubbleView = [[BubbleView alloc] init];
+        _bubbleView.numberOfLines = 0;
+        _bubbleView.font = 20;
+        [self.contentView addSubview:_bubbleView];
+        
+        
         self.mylabel = [[TYQLabel alloc] initWithFrame:self.contentView.bounds];
+        _mylabel.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:_mylabel];
     }
     return self;
 }
 
+
+#pragma mark - 自适应气泡
+- (void)setSubsViewFrame:(BOOL)isMe {
+    CGFloat iconX;
+    CGFloat iconWidth = 50.f;
+    CGFloat iconHeight = iconWidth;
+
+    if (isMe == NO) {
+        iconX = 10.f;
+        
+    } else {
+        iconX = WIDTH - 10 - iconWidth;
+        
+    }
+    
+    CGFloat iconY = 10.f;
+  
+
+    _iconButton.frame = CGRectMake(iconX, iconY, iconWidth, iconHeight);
+    
+    
+    CGFloat bubbleX;
+    CGFloat bubbleY = iconY;
+    CGFloat bubbleWidth;
+    CGFloat bubbleHeight;
+    CGFloat border = 15.f;
+    CGFloat bubbleTextWidthMax = WIDTH - (10 * 2 + iconWidth) * 2 - border * 2;
+    
+    CGFloat bubbleTextWidth;
+    CGFloat bubbleTextHeight;
+    CGFloat textWidth = [Tools getTextWidth:_chatModel.textMessage withFontSize:20.f];
+    if (textWidth < bubbleTextWidthMax) {
+        bubbleTextWidth = textWidth;
+        bubbleTextHeight = 22.f;
+    } else {
+        CGFloat textHeight = [Tools getTextHeight:_chatModel.textMessage withWidth:bubbleTextWidthMax withFontSize:20];
+        bubbleTextWidth = bubbleTextWidthMax;
+        bubbleTextHeight = textHeight;
+    }
+    bubbleWidth = bubbleTextWidth + border * 2;
+    bubbleHeight = bubbleTextHeight + border * 2;
+    
+    if (isMe == NO) {
+        bubbleX = iconX + iconWidth + 10.f;
+    } else {
+        bubbleX = iconX - 10 - bubbleWidth;
+    }
+    _bubbleView.isLeft = isMe;
+    
+    _bubbleView.frame = CGRectMake(bubbleX, bubbleY, bubbleWidth, bubbleHeight);
+
+    
+    
+}
+- (void)setChatModel:(MessageChatConversationModel *)chatModel {
+    
+    
+    _chatModel = chatModel;
+    
+    
+    _bubbleView.title = chatModel.textMessage;
+    
+    
+    [self setSubsViewFrame:chatModel.isMe];
+    
+    
+}
+
+#if 0
+
 - (void)setMessage:(EMMessage *)message {
     _message = message;
+    
+    
+    // 是我还是他
+    NSString *loginUsername = [[EaseMob sharedInstance].chatManager loginInfo][@"username"];
+    if ([loginUsername isEqualToString:message.from]) {
+        self.isMe = YES;
+        
+        
+    } else if([loginUsername isEqualToString:message.to]){
+        self.isMe = NO;
+        
+        
+        
+    }
     
     id<IEMMessageBody> msgBody = message.messageBodies.firstObject;
     switch (msgBody.messageBodyType) {
@@ -114,6 +220,6 @@
 
 }
 
-
+#endif
 
 @end

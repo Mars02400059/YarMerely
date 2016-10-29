@@ -7,8 +7,12 @@
 //
 
 #import "TYQTableViewCell.h"
+@class MessageChatConversationModel;
+// 左边好友的Cell
 
 @interface MessageChatTableViewCell : TYQTableViewCell
+
+@property (nonatomic, strong) MessageChatConversationModel *chatModel;
 
 @property (nonatomic , strong) EMMessage *message;
 

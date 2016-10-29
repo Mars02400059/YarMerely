@@ -10,7 +10,7 @@
 #import "StationView.h"
 #import "MessageChatTableViewCell.h"
 #import "MessageChatConversationModel.h"
-
+#import "Tools.h"
 
 // 操作台的高度
 static CGFloat const stationViewHeight = 60.f;
@@ -101,7 +101,40 @@ UITableViewDataSource
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 85.f;
+    
+    
+    MessageChatConversationModel *chatModel = _messageArray[indexPath.row];
+    
+    CGFloat bubbleX;
+    CGFloat bubbleY = 10.f;
+    CGFloat bubbleWidth;
+    CGFloat bubbleHeight;
+    CGFloat border = 15.f;
+    CGFloat bubbleTextWidthMax = WIDTH - (10 * 2 + 50) * 2 - border * 2;
+    
+    CGFloat bubbleTextWidth;
+    CGFloat bubbleTextHeight;
+    CGFloat textWidth = [Tools getTextWidth:chatModel.textMessage withFontSize:20.f];
+    if (textWidth < bubbleTextWidthMax) {
+        bubbleTextWidth = textWidth;
+        bubbleTextHeight = 22.f;
+    } else {
+        CGFloat textHeight = [Tools getTextHeight:chatModel.textMessage withWidth:bubbleTextWidthMax withFontSize:20];
+        bubbleTextWidth = bubbleTextWidthMax;
+        bubbleTextHeight = textHeight;
+    }
+    bubbleWidth = bubbleTextWidth + border * 2;
+    bubbleHeight = bubbleTextHeight + border * 2;
+    
+    if (chatModel.isMe == NO) {
+        bubbleX = 10.f + 50.f + 10.f;
+    } else {
+        bubbleX = 10.f - 10 - bubbleWidth;
+    }
+    
+    
+    
+    return bubbleHeight + 10.f * 2;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
@@ -111,7 +144,7 @@ UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MessageChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Cell];
 
-    cell.message = _messageArray[indexPath.row];
+    cell.chatModel = _messageArray[indexPath.row];
     return cell;
 }
 
@@ -138,7 +171,12 @@ UITableViewDataSource
 #warning 消息ID怎么取???
     NSArray *messageArray = [conversation loadNumbersOfMessages:100 withMessageId:nil];
     
-    [_messageArray addObjectsFromArray:messageArray];
+    for (EMMessage *message in messageArray) {
+        MessageChatConversationModel *messageModel = [[MessageChatConversationModel alloc] init];
+        messageModel.message = message;
+        [_messageArray addObject:messageModel];
+    }
+    
     [_messageTableView reloadData];
 
     
@@ -188,6 +226,7 @@ UITableViewDataSource
 
 }
 //点击return按钮所做的动作：
+
 - (void)tyq_actionTextFieldReturn {
     /*!
      @method
@@ -234,15 +273,12 @@ UITableViewDataSource
             [self tyq_getconversation];
         }
     } onQueue:nil];
-    
+    if (_stationView.importTextField.text.length > 0) {
+        _stationView.importTextField.text = @"";
+    }
 
 }
-////开始编辑：
-//- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-//{
-//    
-//    return YES;
-//}
+
 
 
 -(void)viewDidDisappear:(BOOL)animated{

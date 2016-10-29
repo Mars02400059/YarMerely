@@ -44,7 +44,8 @@
 		410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410E5C521DB85315005C2513 /* SpeakViewController.xib */; };
 		413409F01DC05BCD00C4D466 /* MineSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413409EF1DC05BCD00C4D466 /* MineSettingViewController.m */; };
 		413409F61DC0704700C4D466 /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 413409F51DC0704700C4D466 /* 返回.png */; };
-		418C24C11DC43971002525B9 /* MessageChatFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 418C24C01DC43971002525B9 /* MessageChatFrameModel.m */; };
+		418C24C41DC4A4D9002525B9 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 418C24C31DC4A4D9002525B9 /* Tools.m */; };
+		418C24C71DC4B9FA002525B9 /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 418C24C61DC4B9FA002525B9 /* BubbleView.m */; };
 		41976ED71DC3748B00AC8518 /* MessageChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41976ED61DC3748B00AC8518 /* MessageChatTableViewCell.m */; };
 		41976EDB1DC3802900AC8518 /* MessageChatConversationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41976EDA1DC3802900AC8518 /* MessageChatConversationModel.m */; };
 		41AE13B21DC22CCE00AF06BF /* InfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AE13B11DC22CCE00AF06BF /* InfoModel.m */; };
@@ -205,8 +206,10 @@
 		413409EF1DC05BCD00C4D466 /* MineSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineSettingViewController.m; sourceTree = "<group>"; };
 		413409F51DC0704700C4D466 /* 返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回.png"; sourceTree = "<group>"; };
 		416C7F7C1DB9B44500269E3C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		418C24BF1DC43971002525B9 /* MessageChatFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageChatFrameModel.h; sourceTree = "<group>"; };
-		418C24C01DC43971002525B9 /* MessageChatFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageChatFrameModel.m; sourceTree = "<group>"; };
+		418C24C21DC4A4D9002525B9 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		418C24C31DC4A4D9002525B9 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
+		418C24C51DC4B9FA002525B9 /* BubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleView.h; sourceTree = "<group>"; };
+		418C24C61DC4B9FA002525B9 /* BubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleView.m; sourceTree = "<group>"; };
 		41976ED51DC3748B00AC8518 /* MessageChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageChatTableViewCell.h; sourceTree = "<group>"; };
 		41976ED61DC3748B00AC8518 /* MessageChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageChatTableViewCell.m; sourceTree = "<group>"; };
 		41976ED91DC3802900AC8518 /* MessageChatConversationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageChatConversationModel.h; sourceTree = "<group>"; };
@@ -660,8 +663,6 @@
 			children = (
 				41976ED91DC3802900AC8518 /* MessageChatConversationModel.h */,
 				41976EDA1DC3802900AC8518 /* MessageChatConversationModel.m */,
-				418C24BF1DC43971002525B9 /* MessageChatFrameModel.h */,
-				418C24C01DC43971002525B9 /* MessageChatFrameModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -765,6 +766,8 @@
 				41AE13B41DC2DEC900AF06BF /* StationView.m */,
 				41976ED51DC3748B00AC8518 /* MessageChatTableViewCell.h */,
 				41976ED61DC3748B00AC8518 /* MessageChatTableViewCell.m */,
+				418C24C51DC4B9FA002525B9 /* BubbleView.h */,
+				418C24C61DC4B9FA002525B9 /* BubbleView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -885,6 +888,8 @@
 		49C51DD71DB89D32006A5126 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				418C24C21DC4A4D9002525B9 /* Tools.h */,
+				418C24C31DC4A4D9002525B9 /* Tools.m */,
 				49C51DDE1DB89DDC006A5126 /* DBTool.h */,
 				49C51DDF1DB89DDC006A5126 /* DBTool.m */,
 				49C51DD81DB89D6C006A5126 /* DataBaseTool.h */,
@@ -1004,7 +1009,7 @@
 				TargetAttributes = {
 					410E5BC91DB85159005C2513 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = VYF4743U5J;
+						DevelopmentTeam = QWKQAE7W9B;
 					};
 					410E5BE21DB85159005C2513 = {
 						CreatedOnToolsVersion = 7.1;
@@ -1258,9 +1263,9 @@
 				49C51DF31DB89F69006A5126 /* RegisterViewController.m in Sources */,
 				410E5C5B1DB85315005C2513 /* SpeakViewController.m in Sources */,
 				49C51DEE1DB89F54006A5126 /* LoginViewController.m in Sources */,
+				418C24C41DC4A4D9002525B9 /* Tools.m in Sources */,
 				49C51DDA1DB89D6C006A5126 /* DataBaseTool.m in Sources */,
 				410E5BCF1DB85159005C2513 /* main.m in Sources */,
-				418C24C11DC43971002525B9 /* MessageChatFrameModel.m in Sources */,
 				410E5C211DB852FF005C2513 /* TYQView.m in Sources */,
 				410E5C531DB85315005C2513 /* ConnectViewController.m in Sources */,
 				4968E4371DC0A09D00257004 /* ConnectCollectionViewCell.m in Sources */,
@@ -1274,6 +1279,7 @@
 				49C51DD61DB89AF7006A5126 /* UIView+EATheme.m in Sources */,
 				410E5C201DB852FF005C2513 /* TYQTableViewController.m in Sources */,
 				41FC7DA21DBEEA6E00712714 /* MineGrayBackTableViewCell.m in Sources */,
+				418C24C71DC4B9FA002525B9 /* BubbleView.m in Sources */,
 				410E5C331DB8530B005C2513 /* NSString+Regex.m in Sources */,
 				410E5C1D1DB852FF005C2513 /* TYQCollectionViewCell.m in Sources */,
 				410E5C321DB8530B005C2513 /* NSString+Categories.m in Sources */,
@@ -1430,7 +1436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Lefeng Guo (3JCKL8GQ34)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = VYF4743U5J;
+				DEVELOPMENT_TEAM = QWKQAE7W9B;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TY_SecondCoze/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = TY_SecondCoze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1448,7 +1454,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Lefeng Guo (3JCKL8GQ34)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = VYF4743U5J;
+				DEVELOPMENT_TEAM = QWKQAE7W9B;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TY_SecondCoze/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = TY_SecondCoze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
