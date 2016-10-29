@@ -51,7 +51,6 @@ UITableViewDataSource
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    NSLog(@"77777777777%@",self.infoModel);
     
     // 聊天管理器
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];

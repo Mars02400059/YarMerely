@@ -8,12 +8,10 @@
 // 通过用户名获取单条会话, 提取会话中的消息进行显示, 以及插入新的消息
 
 #import "TYQViewController.h"
-#import "InfoModel.h"
 
 @interface MessageChatViewController : TYQViewController
 
 @property (nonatomic, copy) NSString *titleName;
 
-@property (nonatomic, strong) InfoModel *infoModel;
 
 @end
