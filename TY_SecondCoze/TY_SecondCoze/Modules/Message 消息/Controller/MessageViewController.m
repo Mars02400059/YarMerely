@@ -63,6 +63,7 @@ UITableViewDataSource
     
     [self addTableView];
     [self addNavigationBarView];
+    self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
     
 }
 
@@ -123,6 +124,20 @@ UITableViewDataSource
     }
     
 }
+
+
+-(void)tyq_navigationBarViewLeftButtonAction{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -46,7 +46,7 @@
     _label.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:_label];
     _label.font = [UIFont systemFontOfSize:20];
-    _label.textColor = [UIColor whiteColor];
+    _label.textColor = [UIColor blackColor];
     
 }
 

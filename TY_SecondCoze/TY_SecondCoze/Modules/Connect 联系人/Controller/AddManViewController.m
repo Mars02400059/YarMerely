@@ -68,18 +68,31 @@
 #pragma mark --- button确认按钮(实现添加好友的确定键)
 -(void)buttonAction:(UIButton *)button{
     
-    EMError *error = nil;
-    BOOL isSuccess = [[EaseMob sharedInstance].chatManager addBuddy:self.myTextFiled.text message:self.messageTextFiled.text error:&error];
+   if (![self.myTextFiled.text isEqualToString:@""]) {
+       EMError *error = nil;
+       BOOL isSuccess = [[EaseMob sharedInstance].chatManager addBuddy:self.myTextFiled.text message:self.messageTextFiled.text error:&error];
+       
+       if (isSuccess && !error) {
+           
+           UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请求发送成功" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+           UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+           [alert addAction:action];
+           
+           [self presentViewController:alert animated:YES completion:nil];
+           
+       }
+   }
     
-    if (isSuccess && !error) {
-        
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请求发送成功" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:action];
-        
-        [self presentViewController:alert animated:YES completion:nil];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"不能为空" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:action];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 
-    }
+    
+    
+    
+    
 }
 
 
