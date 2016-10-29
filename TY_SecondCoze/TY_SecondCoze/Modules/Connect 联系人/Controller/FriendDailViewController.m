@@ -145,7 +145,7 @@
     
     MessageChatViewController *messVC = [[MessageChatViewController alloc] init];
     
-    messVC.infoModel = self.infoModel;
+    messVC.titleName = self.infoModel.username;
     
     [self.navigationController pushViewController:messVC animated:YES];
 }

@@ -7,12 +7,10 @@
 //
 
 #import "TYQViewController.h"
-#import "InfoModel.h"
 
 @interface MessageChatViewController : TYQViewController
 
 @property (nonatomic, copy) NSString *titleName;
 
-@property (nonatomic, strong) InfoModel *infoModel;
 
 @end
