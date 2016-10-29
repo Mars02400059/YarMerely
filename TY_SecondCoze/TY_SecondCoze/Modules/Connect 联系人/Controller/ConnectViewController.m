@@ -63,10 +63,10 @@ EMChatManagerDelegate
 #pragma mark --- FT
     
     FTPopOverMenuConfiguration *configuration = [FTPopOverMenuConfiguration defaultConfiguration];
-    configuration.textColor = [UIColor redColor];
+    configuration.textColor = [UIColor whiteColor];
     configuration.tintColor = [UIColor lightGrayColor];
     configuration.borderColor = [UIColor blackColor];
-    configuration.borderWidth = 3.0f;
+    configuration.borderWidth = 1.0f;
 
     
     
@@ -74,7 +74,7 @@ EMChatManagerDelegate
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.itemSize = CGSizeMake((WIDTH - 90) / 3 - 10, (WIDTH - 90) / 3 - 10);
     self.myCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, (WIDTH - 90) / 3 + 10) collectionViewLayout:flowLayout];
-    _myCollectionView.backgroundColor = [UIColor cyanColor];
+    _myCollectionView.backgroundColor = [UIColor whiteColor];
     _myCollectionView.contentInset = UIEdgeInsetsMake(10, 20, 10, 20);
     [self.view addSubview:_myCollectionView];
     _myCollectionView.dataSource = self;
@@ -108,7 +108,7 @@ EMChatManagerDelegate
     
     ConnectCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellC" forIndexPath:indexPath];
     cell.stringImage = _imageArray[indexPath.row];
-    cell.stringWord = _imageArray[indexPath.row];
+    cell.stringWord = _wordArray[indexPath.row];
     
     return cell;
 }
