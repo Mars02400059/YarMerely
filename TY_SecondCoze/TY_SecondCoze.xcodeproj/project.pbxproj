@@ -46,6 +46,8 @@
 		413409F61DC0704700C4D466 /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 413409F51DC0704700C4D466 /* 返回.png */; };
 		418C24C41DC4A4D9002525B9 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 418C24C31DC4A4D9002525B9 /* Tools.m */; };
 		418C24C71DC4B9FA002525B9 /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 418C24C61DC4B9FA002525B9 /* BubbleView.m */; };
+		418C24CF1DC4D8E5002525B9 /* 气泡右.png in Resources */ = {isa = PBXBuildFile; fileRef = 418C24CE1DC4D8E5002525B9 /* 气泡右.png */; };
+		418C24D31DC4DA92002525B9 /* 气泡左.png in Resources */ = {isa = PBXBuildFile; fileRef = 418C24D21DC4DA92002525B9 /* 气泡左.png */; };
 		41976ED71DC3748B00AC8518 /* MessageChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41976ED61DC3748B00AC8518 /* MessageChatTableViewCell.m */; };
 		41976EDB1DC3802900AC8518 /* MessageChatConversationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41976EDA1DC3802900AC8518 /* MessageChatConversationModel.m */; };
 		41AE13B21DC22CCE00AF06BF /* InfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AE13B11DC22CCE00AF06BF /* InfoModel.m */; };
@@ -210,6 +212,8 @@
 		418C24C31DC4A4D9002525B9 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		418C24C51DC4B9FA002525B9 /* BubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleView.h; sourceTree = "<group>"; };
 		418C24C61DC4B9FA002525B9 /* BubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleView.m; sourceTree = "<group>"; };
+		418C24CE1DC4D8E5002525B9 /* 气泡右.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "气泡右.png"; sourceTree = "<group>"; };
+		418C24D21DC4DA92002525B9 /* 气泡左.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "气泡左.png"; sourceTree = "<group>"; };
 		41976ED51DC3748B00AC8518 /* MessageChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageChatTableViewCell.h; sourceTree = "<group>"; };
 		41976ED61DC3748B00AC8518 /* MessageChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageChatTableViewCell.m; sourceTree = "<group>"; };
 		41976ED91DC3802900AC8518 /* MessageChatConversationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageChatConversationModel.h; sourceTree = "<group>"; };
@@ -679,6 +683,8 @@
 		41AE13BA1DC2E2E400AF06BF /* Message Image */ = {
 			isa = PBXGroup;
 			children = (
+				418C24D21DC4DA92002525B9 /* 气泡左.png */,
+				418C24CE1DC4D8E5002525B9 /* 气泡右.png */,
 				41AE13CB1DC2FEAB00AF06BF /* 聊天键盘.png */,
 				41AE13CF1DC2FF2A00AF06BF /* 聊天表情.png */,
 				41AE13CD1DC2FEF900AF06BF /* 聊天加号.png */,
@@ -1062,6 +1068,7 @@
 				41AE13CC1DC2FEAB00AF06BF /* 聊天键盘.png in Resources */,
 				41AE13CA1DC2F4C000AF06BF /* 聊天语音.png in Resources */,
 				410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */,
+				418C24D31DC4DA92002525B9 /* 气泡左.png in Resources */,
 				41FC7D951DBE2AAB00712714 /* back.png in Resources */,
 				4968E4461DC0DD9600257004 /* 附近.png in Resources */,
 				410E5BDA1DB85159005C2513 /* Assets.xcassets in Resources */,
@@ -1074,6 +1081,7 @@
 				41FC7D821DBDE2AB00712714 /* 我的1.png in Resources */,
 				4968E4311DC09E6700257004 /* qun.png in Resources */,
 				4968E42F1DC09E6200257004 /* xin.png in Resources */,
+				418C24CF1DC4D8E5002525B9 /* 气泡右.png in Resources */,
 				49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */,
 				413409F61DC0704700C4D466 /* 返回.png in Resources */,
 				4941582F1DBD97EB00505112 /* 22.png in Resources */,

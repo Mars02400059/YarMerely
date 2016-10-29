@@ -7,6 +7,8 @@
 //
 
 #import "BubbleView.h"
+#import "Tools.h"
+
 
 @interface BubbleView ()
 
@@ -20,18 +22,17 @@
 
 @implementation BubbleView
 
-- (instancetype)init
+- (instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.000];
+        
         self.layer.cornerRadius = 8.f;
         self.titleLabel = [TYQLabel new];
         _titleLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:_titleLabel];
         
         self.triangleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
-        _triangleImageView.backgroundColor = [UIColor grayColor];
         [self addSubview:_triangleImageView];
         
     }
@@ -46,6 +47,30 @@
 - (void)setTitle:(NSString *)title {
     _title = title;
     _titleLabel.text = title;
+    
+    CGFloat bubbleX;
+    CGFloat bubbleWidth;
+    CGFloat bubbleHeight;
+    CGFloat border = 15.f;
+    CGFloat bubbleTextWidthMax = WIDTH - (10 * 2 + 50) * 2 - border * 2;
+    
+    CGFloat bubbleTextWidth;
+    CGFloat bubbleTextHeight;
+    CGFloat textWidth = [Tools getTextWidth:title withFontSize:20.f];
+    if (textWidth < bubbleTextWidthMax) {
+        bubbleTextWidth = textWidth;
+        bubbleTextHeight = 22.f;
+    } else {
+        CGFloat textHeight = [Tools getTextHeight:title withWidth:bubbleTextWidthMax withFontSize:20];
+        bubbleTextWidth = bubbleTextWidthMax;
+        bubbleTextHeight = textHeight;
+    }
+    bubbleWidth = bubbleTextWidth + border * 2;
+    bubbleHeight = bubbleTextHeight + border * 2;
+    
+    bubbleX = 10.f - 10 - bubbleWidth;
+    
+    _triangleImageView.frame = CGRectMake(bubbleWidth - 3, 20, 10, 10);
 }
 
 - (void)setNumberOfLines:(NSInteger)numberOfLines {
@@ -55,13 +80,21 @@
 
 - (void)setIsLeft:(BOOL)isLeft {
     _isLeft = isLeft;
-    NSLog(@"%d", isLeft);
     if (!_isLeft) {
         
-        self.backgroundColor = [UIColor cyanColor];
-        _triangleImageView.x = -5;
+        self.backgroundColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:1.000];
+        _triangleImageView.image = [UIImage imageNamed:@"气泡左"];
+        _triangleImageView.frame = CGRectMake(-7, 20, 10, 10);
 
+    } else {
+        self.backgroundColor = [UIColor colorWithRed:0.57 green:0.95 blue:0.95 alpha:1.000];
+        _triangleImageView.image = [UIImage imageNamed:@"气泡右"];
+        
     }
+    
+}
+
+- (void)tyq_bubbleWidth:(CGFloat)bubbleWidth {
     
 }
 
@@ -69,15 +102,12 @@
     [super layoutSubviews];
     
     self.bubbleWidth = self.width;
-    NSLog(@"%lf", _bubbleWidth);
-
+    
     
     CGFloat border = 15.f;
     
     _titleLabel.frame = CGRectMake(border, border, self.width - border * 2, self.height - border * 2);
     
-    _triangleImageView.frame = CGRectMake(_bubbleWidth + 5, 23, 7, 7);
-
     
 }
 

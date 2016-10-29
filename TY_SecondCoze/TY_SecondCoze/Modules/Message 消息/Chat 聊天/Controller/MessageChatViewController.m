@@ -106,7 +106,6 @@ UITableViewDataSource
     MessageChatConversationModel *chatModel = _messageArray[indexPath.row];
     
     CGFloat bubbleX;
-    CGFloat bubbleY = 10.f;
     CGFloat bubbleWidth;
     CGFloat bubbleHeight;
     CGFloat border = 15.f;
@@ -142,8 +141,13 @@ UITableViewDataSource
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MessageChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Cell];
-
+//    MessageChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Cell];
+    MessageChatTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    if (cell == nil) {
+        cell = [[MessageChatTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:Cell];
+    }
+    
     cell.chatModel = _messageArray[indexPath.row];
     return cell;
 }

@@ -35,7 +35,7 @@
         [_iconButton setBackgroundImage:[UIImage imageNamed:@"默认头像"] forState:UIControlStateNormal];
         [self.contentView addSubview:_iconButton];
         
-        self.bubbleView = [[BubbleView alloc] init];
+        self.bubbleView = [[BubbleView alloc] initWithFrame:CGRectZero];
         _bubbleView.numberOfLines = 0;
         _bubbleView.font = 20;
         [self.contentView addSubview:_bubbleView];
