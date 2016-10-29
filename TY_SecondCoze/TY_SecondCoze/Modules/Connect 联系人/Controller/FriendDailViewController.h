@@ -7,7 +7,9 @@
 //
 
 #import "TYQViewController.h"
-
+#import "InfoModel.h"
 @interface FriendDailViewController : TYQViewController
+
+@property (nonatomic, strong) InfoModel *infoModel;
 
 @end

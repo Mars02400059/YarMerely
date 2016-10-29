@@ -59,7 +59,9 @@
     self.headImageV.backgroundColor = [UIColor redColor];
     
     self.nickNameLabel = [[TYQLabel alloc] initWithFrame:CGRectMake(_headImageV.frame.origin.x + _headImageV.frame.size.width + 10, _headImageV.frame.origin.y, WIDTH / 3, _headImageV.frame.size.height / 2 - 10)];
-    self.nickNameLabel.backgroundColor = [UIColor blueColor];
+    self.nickNameLabel.backgroundColor = [UIColor yellowColor];
+//用户名赋值
+    _nickNameLabel.text = self.infoModel.username;
     
     self.qqLabel = [[TYQLabel alloc] initWithFrame:CGRectMake(_nickNameLabel.frame.origin.x , _nickNameLabel.frame.size.height + _nickNameLabel.frame.origin.y + 5, WIDTH / 3 * 2, _headImageV.frame.size.height / 2)];
     _qqLabel.backgroundColor = [UIColor magentaColor];
@@ -142,6 +144,8 @@
 -(void) buttonAction:(TYQButton *)button{
     
     MessageChatViewController *messVC = [[MessageChatViewController alloc] init];
+    
+    messVC.infoModel = self.infoModel;
     
     [self.navigationController pushViewController:messVC animated:YES];
 }
