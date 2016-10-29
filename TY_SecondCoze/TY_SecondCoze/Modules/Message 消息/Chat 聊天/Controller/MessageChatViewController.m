@@ -217,7 +217,6 @@ UITableViewDataSource
      */
     // 生成message
     
-    NSLog(@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈%@", _titleName);
     EMMessage *message = [[EMMessage alloc] initWithReceiver:_titleName bodies:@[body]];
     message.messageType = eMessageTypeChat;
     //message.messageType = eConversationTypeGroupChat;// 设置为群聊消息
