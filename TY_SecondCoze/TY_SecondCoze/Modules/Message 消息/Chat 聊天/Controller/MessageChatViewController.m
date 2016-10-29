@@ -9,6 +9,7 @@
 #import "MessageChatViewController.h"
 #import "StationView.h"
 #import "MessageChatTableViewCell.h"
+#import "MessageChatConversationModel.h"
 
 
 // 操作台的高度
@@ -18,6 +19,7 @@ static NSString *const Cell = @"cell";
 
 @interface MessageChatViewController ()
 <
+EMChatManagerDelegate,
 UITextFieldDelegate,
 UITableViewDelegate,
 UITableViewDataSource
@@ -29,17 +31,27 @@ UITableViewDataSource
 // 键盘的高度
 @property (nonatomic, assign) CGFloat keyboardHeight;
 // 存消息的数组
-@property (nonatomic, strong) NSArray *messageArray;
+@property (nonatomic, strong) NSMutableArray *messageArray;
 
 
 @end
 
 @implementation MessageChatViewController
 
+- (void)dealloc {
+    [[EaseMob sharedInstance].chatManager removeDelegate:self];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // 聊天管理器
+    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
+
+    
+    self.messageArray = [NSMutableArray array];
     
     [self addTableView];
     [self addstationView];
@@ -47,23 +59,7 @@ UITableViewDataSource
     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
 }
 
-- (NSArray *)messageArray {
-    if (nil == _messageArray) {
-        
-        /*!
-         @method
-         @brief 根据消息id加载它之前的指定条数消息
-         @param aCount 要加载的消息条数
-         @param messageId 消息id，如果传nil就是取最后一条消息
-         @discussion
-         加载后的消息按照升序排列（不包含传入的messageId对应的消息）;
-         @result 加载的消息列表
-         */
-        _messageArray = [_conversation loadNumbersOfMessages:30 withMessageId:_conversation.latestMessage.messageId];
 
-    }
-    return _messageArray;
-}
 
 - (void)addTableView {
 
@@ -98,7 +94,7 @@ UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return self.messageArray.count;
+    return _messageArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -112,6 +108,25 @@ UITableViewDataSource
     
 }
 
+// 获取会话
+- (void)tyq_getconversation {
+    [_messageArray removeAllObjects];
+    
+    EMConversation *conversation = [[EaseMob sharedInstance].chatManager conversationForChatter:_titleName conversationType:eConversationTypeChat];
+    // 数据库中加载消息
+    NSArray *messageArray = [conversation loadAllMessages];
+    
+    
+    
+//    for (EMMessage *message in messageArray) {
+//        MessageChatConversationModel *messageChatConversationModel = [[MessageChatConversationModel alloc] init];
+//        messageChatConversationModel.message = message;
+//        
+//    }
+    
+}
+
+#pragma mark - 键盘相关
 #warning 键盘将要出现或改变, 应该换成出现一个改变一个,
 // 键盘将要出现
 - (void)tyq_KeyboardWillShow:(NSNotification *)notification {

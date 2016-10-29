@@ -12,7 +12,4 @@
 
 @property (nonatomic, copy) NSString *titleName;
 
-@property (nonatomic, strong) EMConversation *conversation;
-
-
 @end

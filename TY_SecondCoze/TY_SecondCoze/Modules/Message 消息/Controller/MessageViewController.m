@@ -91,8 +91,13 @@ UITableViewDataSource
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MessageChatViewController *chatVC = [[MessageChatViewController alloc] init];
     chatVC.hidesBottomBarWhenPushed = YES;
-    chatVC.conversation = _messageArray[indexPath.row];
+    EMConversation *conversation = _messageArray[indexPath.row];
     
+    /*! chatter
+     @property
+     @brief 会话对方的用户名. 如果是群聊, 则是群组的id
+     */
+    chatVC.titleName = conversation.chatter;
     [self.navigationController pushViewController:chatVC animated:YES];
 }
 
