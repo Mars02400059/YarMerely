@@ -20,6 +20,11 @@
 
 @implementation NewViewController
 
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [_myTableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

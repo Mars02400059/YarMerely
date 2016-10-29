@@ -44,23 +44,23 @@
     _messageView.layer.borderWidth = 1;
     [self.view addSubview:_messageView];
     
-    self.okButton = [TYQButton buttonWithType:0];
+    self.okButton = [TYQButton buttonWithType:UIButtonTypeCustom];
     _okButton.backgroundColor = [UIColor greenColor];
     _okButton.frame = CGRectMake(_messageView.frame.origin.x, _messageView.frame.origin.y + _messageView.frame.size.height + 30 ,_messageView.frame.size.width, _peerView.frame.size.height);
     _okButton.layer.cornerRadius = 5;
     _okButton.layer.masksToBounds = YES;
-    [_okButton setTitle:@"同意" forState:0];
+    [_okButton setTitle:@"同意" forState:UIControlStateNormal];
     [self.view addSubview:_okButton];
-    [_okButton addTarget:self action:@selector(agreeButtonAction:) forControlEvents:6];
+    [_okButton addTarget:self action:@selector(agreeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.noButton = [TYQButton buttonWithType:0];
+    self.noButton = [TYQButton buttonWithType:UIButtonTypeCustom];
     _noButton.backgroundColor = [UIColor greenColor];
     _noButton.frame = CGRectMake(_okButton.frame.origin.x, _okButton.frame.origin.y + _okButton.frame.size.height + 20, _okButton.frame.size.width, _peerView.frame.size.height);
     _noButton.layer.cornerRadius = 5;
     _noButton.layer.masksToBounds = YES;
-    [_noButton setTitle:@"拒绝" forState:0];
+    [_noButton setTitle:@"拒绝" forState:UIControlStateNormal];
     [self.view addSubview:_noButton];
-    [_noButton addTarget:self action:@selector(noButtonAction:) forControlEvents:6];
+    [_noButton addTarget:self action:@selector(noButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     
 #pragma mark --- 验证信息内容
     self.messageView.text = _infoModelMessage.message;
