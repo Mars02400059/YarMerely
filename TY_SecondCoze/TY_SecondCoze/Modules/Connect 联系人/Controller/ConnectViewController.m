@@ -161,6 +161,7 @@ EMChatManagerDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     FriendDailViewController *fdVC = [FriendDailViewController new];
+    fdVC.infoModel = _listArray[indexPath.row];
     fdVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:fdVC animated:YES];
 }
