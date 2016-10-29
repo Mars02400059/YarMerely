@@ -9,7 +9,7 @@
 #import "FriendDailViewController.h"
 #import "MineImageTableViewCell.h"
 #import "MineGrayBackTableViewCell.h"
-#import "MessageViewController.h"
+#import "MessageChatViewController.h"
 
 @interface FriendDailViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -75,6 +75,7 @@
     _chatButton.layer.cornerRadius = 10;
     _chatButton.layer.masksToBounds = YES;
     [_chatButton setTitle:@"开始聊天" forState:UIControlStateNormal];
+//    _chatButton setFont:[UIFont ]
     [self.view addSubview:_chatButton];
     [_chatButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
 #pragma mark --- 假导航上的按钮
@@ -140,7 +141,7 @@
 #pragma mark --- 点击开始聊天,进入消息界面
 -(void) buttonAction:(TYQButton *)button{
     
-    MessageViewController *messVC = [[MessageViewController alloc] init];
+    MessageChatViewController *messVC = [[MessageChatViewController alloc] init];
     
     [self.navigationController pushViewController:messVC animated:YES];
 }
