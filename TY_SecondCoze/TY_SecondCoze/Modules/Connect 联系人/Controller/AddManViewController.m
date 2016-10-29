@@ -39,14 +39,14 @@
     [self.view addSubview:_messageTextFiled];
     
     
-    self.myButton = [TYQButton buttonWithType:0];
+    self.myButton = [TYQButton buttonWithType:UIButtonTypeCustom];
     _myButton.frame = CGRectMake(_myTextFiled.frame.origin.x, HEIGHT / 3 * 2, _myTextFiled.frame.size.width, _myTextFiled.frame.size.height);
     _myButton.layer.cornerRadius = 5;
     _myButton.layer.masksToBounds = YES;
     _myButton.backgroundColor = [UIColor greenColor];
-    [_myButton setTitle:@"确定" forState:0];
+    [_myButton setTitle:@"确定" forState:UIControlStateNormal];
     [self.view addSubview:_myButton];
-    [_myButton addTarget:self action:@selector(buttonAction:) forControlEvents:6];
+    [_myButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     
     
     [self addNavigationBarView];
@@ -83,16 +83,12 @@
        }
    }
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"不能为空" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"不能为空啊" message:@"" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
     [alert addAction:action];
     
     [self presentViewController:alert animated:YES completion:nil];
 
-    
-    
-    
-    
 }
 
 

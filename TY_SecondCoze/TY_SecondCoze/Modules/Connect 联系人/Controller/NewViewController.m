@@ -24,7 +24,6 @@
     [super viewDidLoad];
     
     
-    self.navigationItem.title = @"新朋友";
     
 #pragma mark --- 创建tableview
     self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64) style:UITableViewStylePlain];
