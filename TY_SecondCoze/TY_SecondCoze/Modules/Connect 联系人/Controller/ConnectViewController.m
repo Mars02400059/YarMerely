@@ -35,7 +35,11 @@ EMChatManagerDelegate
 
 @implementation ConnectViewController
 
-
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [_myTableView reloadData];
+    
+}
 
 - (NSArray *)listArray {
     

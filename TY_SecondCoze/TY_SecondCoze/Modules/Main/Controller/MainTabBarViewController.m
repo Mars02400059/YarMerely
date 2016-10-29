@@ -17,7 +17,8 @@
 
 @interface MainTabBarViewController ()
 <
-EMChatManagerDelegate
+EMChatManagerDelegate,
+EMChatManagerBuddyDelegate
 >
 
 // 存储好友申请的数组
@@ -38,6 +39,7 @@ EMChatManagerDelegate
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
     self.sidekickAppleForArray = [NSMutableArray array];
     
+
 #pragma mark --- 主动获取好友列表
     
     [[EaseMob sharedInstance].chatManager setIsAutoFetchBuddyList:YES];
@@ -55,18 +57,28 @@ EMChatManagerDelegate
     [_sidekickAppleForArray addObject:infoModel];
 }
 
-#pragma mark --- 调取SDK接收好友请求方法
+#pragma mark --- 调取SDK接收好友请求方法(回调)
 -(void)didAcceptedByBuddy:(NSString *)username{
     
-    InfoModel *infoModel = [[InfoModel alloc] init];
-     infoModel.username = username;
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@ 接受了你的请求", username] message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:nil]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+//    InfoModel *infoModel = [[InfoModel alloc] init];
+//     infoModel.username = username;
     
 }
-#pragma mark --- 调取SDK拒绝好友请求
+#pragma mark --- 调取SDK拒绝好友请求(回调)
 - (void)didRejectedByBuddy:(NSString *)username{
     
-    InfoModel *infoModel = [[InfoModel alloc] init];
-    infoModel.username = username;
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@ 拒绝了你的请求", username] message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:nil]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+//    InfoModel *infoModel = [[InfoModel alloc] init];
+//    infoModel.username = username;
 
 }
 
