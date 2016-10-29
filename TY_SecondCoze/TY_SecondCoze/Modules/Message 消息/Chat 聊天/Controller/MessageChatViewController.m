@@ -43,6 +43,10 @@ UITableViewDataSource
 
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self didUnreadMessagesCountChanged];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -50,6 +54,52 @@ UITableViewDataSource
     // 聊天管理器
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
 
+#pragma mark -  发送一条文本消息
+    
+    /*!
+     @method
+     @brief 以字符串构造文本对象
+     @discussion
+     @param text 文本内容
+     @result 文本对象
+     */
+    EMChatText *txtChat = [[EMChatText alloc] initWithText:@"要发送的消息"];
+    /*!
+     @method
+     @brief 以文本对象创建文本消息体实例
+     @discussion
+     @param aChatText 文本对象
+     @result 文本消息体
+     */
+    EMTextMessageBody *body = [[EMTextMessageBody alloc] initWithChatObject:txtChat];
+    
+    /*!
+     @method
+     @brief 创建消息实例（用于:创建一个新的消息）
+     @discussion 消息实例会在发送过程中内部状态发生更改,比如deliveryState
+     @param receiver 消息接收方
+     @param bodies 消息体列表
+     @result 消息实例
+     */
+    // 生成message
+    EMMessage *message = [[EMMessage alloc] initWithReceiver:@"admin" bodies:@[body]];
+    message.messageType = eMessageTypeChat;
+    //message.messageType = eConversationTypeGroupChat;// 设置为群聊消息
+    //message.messageType = eConversationTypeChatRoom;// 设置为聊天室消息
+    
+    message.deliveryState = eMessageDeliveryState_Delivered;
+    [[EaseMob sharedInstance].chatManager asyncSendMessage:message progress:nil prepare:^(EMMessage *message, EMError *error) {
+        //
+    } onQueue:nil completion:^(EMMessage *message, EMError *error) {
+        //
+        if (!error) {
+            
+            [self tyq_getconversation];
+        }
+    } onQueue:nil];
+    
+#pragma mark - 发送文本消息结束
+    
     
     self.messageArray = [NSMutableArray array];
     
@@ -107,22 +157,25 @@ UITableViewDataSource
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
+// 未读消息数改变的回调
+- (void)didUnreadMessagesCountChanged {
+    [self tyq_getconversation];
+}
 
+
+#pragma mark - 接受消息
+#warning 不实时更新, 需要不停地更新
 // 获取会话
 - (void)tyq_getconversation {
     [_messageArray removeAllObjects];
     
     EMConversation *conversation = [[EaseMob sharedInstance].chatManager conversationForChatter:_titleName conversationType:eConversationTypeChat];
-    // 数据库中加载消息
-    NSArray *messageArray = [conversation loadAllMessages];
+    // 消息id加载消息
+    NSArray *messageArray = [conversation loadNumbersOfMessages:100 withMessageId:nil];
     
-    
-    
-//    for (EMMessage *message in messageArray) {
-//        MessageChatConversationModel *messageChatConversationModel = [[MessageChatConversationModel alloc] init];
-//        messageChatConversationModel.message = message;
-//        
-//    }
+    [_messageArray addObjectsFromArray:messageArray];
+    [_messageTableView reloadData];
+
     
 }
 
