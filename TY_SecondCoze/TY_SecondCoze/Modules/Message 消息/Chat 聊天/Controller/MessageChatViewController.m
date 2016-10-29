@@ -217,12 +217,16 @@ UITableViewDataSource
      @result 消息实例
      */
     // 生成message
+    
+    NSLog(@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈%@", _titleName);
     EMMessage *message = [[EMMessage alloc] initWithReceiver:_titleName bodies:@[body]];
     message.messageType = eMessageTypeChat;
     //message.messageType = eConversationTypeGroupChat;// 设置为群聊消息
     //message.messageType = eConversationTypeChatRoom;// 设置为聊天室消息
     
     message.deliveryState = eMessageDeliveryState_Delivered;
+    [self tyq_getconversation];
+    
     [[EaseMob sharedInstance].chatManager asyncSendMessage:message progress:nil prepare:^(EMMessage *message, EMError *error) {
         //
     } onQueue:nil completion:^(EMMessage *message, EMError *error) {
