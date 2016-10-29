@@ -35,7 +35,6 @@
         {
             // 收到的文字消息
             NSString *txt = ((EMTextMessageBody *)msgBody).text;
-            NSLog(@"收到的文字是 txt -- %@",txt);
             _mylabel.text = txt;
         }
             break;

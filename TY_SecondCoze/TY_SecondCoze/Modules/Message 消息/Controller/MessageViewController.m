@@ -33,6 +33,7 @@ UITableViewDataSource
 // 通过获取DB中所有会话, 更新消息数组
 - (void)tyq_messageArrayChange {
     // 获取消息数组
+
     [_messageArray removeAllObjects];
     
     /*!
@@ -47,6 +48,8 @@ UITableViewDataSource
     NSArray *conversations = [[EaseMob sharedInstance].chatManager loadAllConversationsFromDatabaseWithAppend2Chat:YES];
     [self.messageArray addObjectsFromArray:conversations];
     NSLog(@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈%@", _messageArray);
+    
+    
     [self.tableView reloadData];
 }
 
@@ -63,7 +66,6 @@ UITableViewDataSource
     
     [self addTableView];
     [self addNavigationBarView];
-    self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
     
 }
 

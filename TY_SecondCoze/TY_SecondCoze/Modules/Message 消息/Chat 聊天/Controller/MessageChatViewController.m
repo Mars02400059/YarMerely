@@ -19,8 +19,8 @@ static NSString *const Cell = @"cell";
 
 @interface MessageChatViewController ()
 <
+StationViewDelegate,
 EMChatManagerDelegate,
-UITextFieldDelegate,
 UITableViewDelegate,
 UITableViewDataSource
 >
@@ -54,51 +54,6 @@ UITableViewDataSource
     // 聊天管理器
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
 
-#pragma mark -  发送一条文本消息
-    
-    /*!
-     @method
-     @brief 以字符串构造文本对象
-     @discussion
-     @param text 文本内容
-     @result 文本对象
-     */
-    EMChatText *txtChat = [[EMChatText alloc] initWithText:@"要发送的消息"];
-    /*!
-     @method
-     @brief 以文本对象创建文本消息体实例
-     @discussion
-     @param aChatText 文本对象
-     @result 文本消息体
-     */
-    EMTextMessageBody *body = [[EMTextMessageBody alloc] initWithChatObject:txtChat];
-    
-    /*!
-     @method
-     @brief 创建消息实例（用于:创建一个新的消息）
-     @discussion 消息实例会在发送过程中内部状态发生更改,比如deliveryState
-     @param receiver 消息接收方
-     @param bodies 消息体列表
-     @result 消息实例
-     */
-    // 生成message
-    EMMessage *message = [[EMMessage alloc] initWithReceiver:@"admin" bodies:@[body]];
-    message.messageType = eMessageTypeChat;
-    //message.messageType = eConversationTypeGroupChat;// 设置为群聊消息
-    //message.messageType = eConversationTypeChatRoom;// 设置为聊天室消息
-    
-    message.deliveryState = eMessageDeliveryState_Delivered;
-    [[EaseMob sharedInstance].chatManager asyncSendMessage:message progress:nil prepare:^(EMMessage *message, EMError *error) {
-        //
-    } onQueue:nil completion:^(EMMessage *message, EMError *error) {
-        //
-        if (!error) {
-            
-            [self tyq_getconversation];
-        }
-    } onQueue:nil];
-    
-#pragma mark - 发送文本消息结束
     
     
     self.messageArray = [NSMutableArray array];
@@ -122,6 +77,7 @@ UITableViewDataSource
 
 - (void)addstationView {
     self.stationView = [[StationView alloc] initWithFrame:CGRectMake(0, self.view.height - stationViewHeight, self.view.width, stationViewHeight)];
+    _stationView.delegate = self;
     _stationView.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:1.00];
     _stationView.layer.borderColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:1.000].CGColor;
     _stationView.layer.borderWidth = 1.f;
@@ -142,6 +98,10 @@ UITableViewDataSource
 
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 85.f;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     return _messageArray.count;
@@ -160,22 +120,29 @@ UITableViewDataSource
 // 未读消息数改变的回调
 - (void)didUnreadMessagesCountChanged {
     [self tyq_getconversation];
+    // 设置偏移量, 使最后一条消息显示在底部
+    _messageTableView.contentOffset = CGPointMake(0, 85 * _messageArray.count - _messageTableView.height);
+
 }
 
 
 #pragma mark - 接受消息
-#warning 不实时更新, 需要不停地更新
 // 获取会话
 - (void)tyq_getconversation {
     [_messageArray removeAllObjects];
     
     EMConversation *conversation = [[EaseMob sharedInstance].chatManager conversationForChatter:_titleName conversationType:eConversationTypeChat];
+    
     // 消息id加载消息
+#warning 消息ID怎么取???
     NSArray *messageArray = [conversation loadNumbersOfMessages:100 withMessageId:nil];
     
     [_messageArray addObjectsFromArray:messageArray];
     [_messageTableView reloadData];
 
+    
+    // 最后一个参数  把本对话里的所有消息标记为已读/未读
+    [[[EaseMob sharedInstance].chatManager conversationForChatter:_titleName conversationType:eConversationTypeChat] markAllMessagesAsRead:YES];
     
 }
 
@@ -187,11 +154,14 @@ UITableViewDataSource
 
     NSDictionary *info = [notification userInfo];
     CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;//键盘的frame
+    
     self.keyboardHeight = keyboardSize.height;
     
     _messageTableView.height -= _keyboardHeight;
     
     _stationView.y -= _keyboardHeight;
+    _messageTableView.contentOffset = CGPointMake(0, 85 * _messageArray.count - _messageTableView.height);
+
     
 }
 // 键盘将要消失
@@ -200,7 +170,8 @@ UITableViewDataSource
     _messageTableView.height += _keyboardHeight;
     
     _stationView.y += _keyboardHeight;
-    
+    _messageTableView.contentOffset = CGPointMake(0, 85 * _messageArray.count - _messageTableView.height);
+
 }
 // 隐藏键盘
 - (void)tyq_HideKeyboard {
@@ -210,19 +181,65 @@ UITableViewDataSource
 - (void)tyq_navigationBarViewLeftButtonAction {
     [self.navigationController popViewControllerAnimated:YES];
 }
-//开始编辑：
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-{
-    
-    return YES;
-}
+#pragma mark -  发送一条文本消息
+// 点击加号按钮后传递出来的协议方法
+- (void)tyq_butttonClickSendMessageDelegate {
 
-//点击return按钮所做的动作：
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    return YES;
 }
+//点击return按钮所做的动作：
+- (void)tyq_actionTextFieldReturn {
+    /*!
+     @method
+     @brief 以字符串构造文本对象
+     @discussion
+     @param text 文本内容
+     @result 文本对象
+     */
+    EMChatText *txtChat = [[EMChatText alloc] initWithText:_stationView.importTextField.text];
+    NSLog(@"哈哈哈哈哈哈啊哈哈哈%@", _stationView.importTextField.text);
+    /*!
+     @method
+     @brief 以文本对象创建文本消息体实例
+     @discussion
+     @param aChatText 文本对象
+     @result 文本消息体
+     */
+    EMTextMessageBody *body = [[EMTextMessageBody alloc] initWithChatObject:txtChat];
+    
+    /*!
+     @method
+     @brief 创建消息实例（用于:创建一个新的消息）
+     @discussion 消息实例会在发送过程中内部状态发生更改,比如deliveryState
+     @param receiver 消息接收方
+     @param bodies 消息体列表
+     @result 消息实例
+     */
+    // 生成message
+    EMMessage *message = [[EMMessage alloc] initWithReceiver:_titleName bodies:@[body]];
+    message.messageType = eMessageTypeChat;
+    //message.messageType = eConversationTypeGroupChat;// 设置为群聊消息
+    //message.messageType = eConversationTypeChatRoom;// 设置为聊天室消息
+    
+    message.deliveryState = eMessageDeliveryState_Delivered;
+    [[EaseMob sharedInstance].chatManager asyncSendMessage:message progress:nil prepare:^(EMMessage *message, EMError *error) {
+        //
+    } onQueue:nil completion:^(EMMessage *message, EMError *error) {
+        //
+        if (!error) {
+            
+            [self tyq_getconversation];
+        }
+    } onQueue:nil];
+    
+
+}
+////开始编辑：
+//- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+//{
+//    
+//    return YES;
+//}
+
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];

@@ -9,7 +9,9 @@
 #import "StationView.h"
 
 @interface StationView ()
-
+<
+UITextFieldDelegate
+>
 // 语音
 @property (nonatomic, strong) TYQButton *phoneButton;
 // 表情
@@ -31,6 +33,8 @@
         [self addSubview:_phoneButton];
         
         self.importTextField = [TYQTextField new];
+        _importTextField.clearsOnBeginEditing = YES;
+        _importTextField.delegate = self;
         _importTextField.backgroundColor = [UIColor whiteColor];
         _importTextField.layer.cornerRadius = 10.f;
         _importTextField.layer.borderWidth = 1.f;
@@ -43,12 +47,22 @@
         
         self.moreButton = [TYQButton buttonWithType:UIButtonTypeCustom];
         [_moreButton setImage:[UIImage imageNamed:@"聊天加号"] forState:UIControlStateNormal];
+        [_moreButton addTarget:self action:@selector(moreButtonAction) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_moreButton];
         
     }
     return self;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.delegate tyq_actionTextFieldReturn];
+    
+    return YES;
+}
+
+- (void)moreButtonAction {
+    [self.delegate tyq_butttonClickSendMessageDelegate];
+}
 - (void)layoutSubviews {
     [super layoutSubviews];
     
