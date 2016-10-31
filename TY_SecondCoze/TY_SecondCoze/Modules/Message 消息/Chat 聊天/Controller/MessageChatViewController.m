@@ -207,7 +207,6 @@ UITableViewDataSource
 }
 
 #pragma mark - 键盘相关
-#warning 键盘将要出现或改变, 应该换成出现一个改变一个,
 // 键盘将要出现
 - (void)tyq_KeyboardWillShow:(NSNotification *)notification {
     
