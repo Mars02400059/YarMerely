@@ -27,9 +27,6 @@ UITableViewDataSource
 
 @implementation MessageViewController
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self didUnreadMessagesCountChanged];
-}
 // 通过获取DB中所有会话, 更新消息数组
 - (void)tyq_messageArrayChange {
     // 获取消息数组
@@ -59,7 +56,8 @@ UITableViewDataSource
     // Do any additional setup after loading the view from its nib.
     
     self.messageArray = [NSMutableArray array];
-    
+    [self didUnreadMessagesCountChanged];
+
     
     
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
