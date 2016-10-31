@@ -28,12 +28,29 @@ UITableViewDataSource
 @property (nonatomic, strong) UITableView *messageTableView;
 // 控制台, (语音, 文字输入, 表情....)
 @property (nonatomic, strong) StationView *stationView;
-// 键盘的高度
+// 弹出弹入时键盘的高度
 @property (nonatomic, assign) CGFloat keyboardHeight;
+// 换键盘后新键盘的高度
+@property (nonatomic, assign) CGFloat keyboardXinHeight;
+// 更换新键盘时变化的高度
+@property (nonatomic, assign) CGFloat keyboardChangeHeight;
 // 存消息的数组
 @property (nonatomic, strong) NSMutableArray *messageArray;
 
+@property (nonatomic, assign) CGFloat cellHeight;
+
+@property (nonatomic, assign) CGFloat tableViewCellHeightSum;
+
+@property (nonatomic, assign) NSInteger number;
+// 第几次切换键盘
+@property (nonatomic, assign) NSInteger index;
+
 @property (nonatomic, assign) BOOL result;
+
+@property (nonatomic, assign) BOOL results;
+
+
+
 @end
 
 @implementation MessageChatViewController
@@ -45,6 +62,7 @@ UITableViewDataSource
 
 - (void)viewWillAppear:(BOOL)animated {
     [self didUnreadMessagesCountChanged];
+//    [self ];
 }
 
 - (void)viewDidLoad {
@@ -53,6 +71,8 @@ UITableViewDataSource
     
        self.result = NO;
     
+    self.number = 0;
+    self.index = 1;
     // 聊天管理器
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
 
@@ -106,35 +126,29 @@ UITableViewDataSource
     
     MessageChatConversationModel *chatModel = _messageArray[indexPath.row];
     
-    CGFloat bubbleX;
-    CGFloat bubbleWidth;
     CGFloat bubbleHeight;
     CGFloat border = 15.f;
     CGFloat bubbleTextWidthMax = WIDTH - (10 * 2 + 50) * 2 - border * 2;
     
-    CGFloat bubbleTextWidth;
     CGFloat bubbleTextHeight;
     CGFloat textWidth = [Tools getTextWidth:chatModel.textMessage withFontSize:20.f];
     if (textWidth < bubbleTextWidthMax) {
-        bubbleTextWidth = textWidth;
         bubbleTextHeight = 22.f;
     } else {
         CGFloat textHeight = [Tools getTextHeight:chatModel.textMessage withWidth:bubbleTextWidthMax withFontSize:20];
-        bubbleTextWidth = bubbleTextWidthMax;
         bubbleTextHeight = textHeight;
     }
-    bubbleWidth = bubbleTextWidth + border * 2;
     bubbleHeight = bubbleTextHeight + border * 2;
     
-    if (chatModel.isMe == NO) {
-        bubbleX = 10.f + 50.f + 10.f;
-    } else {
-        bubbleX = 10.f - 10 - bubbleWidth;
+    
+    self.cellHeight = bubbleHeight + 10.f * 2;
+    
+    if (_number == indexPath.row) {
+        self.tableViewCellHeightSum += _cellHeight;
+        _number++;
     }
-    
-    
-    
-    return bubbleHeight + 10.f * 2;
+
+    return _cellHeight;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
@@ -156,11 +170,13 @@ UITableViewDataSource
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
+
 // 未读消息数改变的回调
 - (void)didUnreadMessagesCountChanged {
     [self tyq_getconversation];
+    
     // 设置偏移量, 使最后一条消息显示在底部
-    _messageTableView.contentOffset = CGPointMake(0, 85 * _messageArray.count - _messageTableView.height);
+    _messageTableView.contentOffset = CGPointMake(0, _tableViewCellHeightSum - _messageTableView.height);
 
 }
 
@@ -194,34 +210,30 @@ UITableViewDataSource
 #warning 键盘将要出现或改变, 应该换成出现一个改变一个,
 // 键盘将要出现
 - (void)tyq_KeyboardWillShow:(NSNotification *)notification {
-
-    if (_result == 0) {
-        
-        NSDictionary *info = [notification userInfo];
-        CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;//键盘的frame
-        
-        self.keyboardHeight = keyboardSize.height;
-        
-        _messageTableView.height -= _keyboardHeight;
-        
-        _stationView.y -= _keyboardHeight;
-        _messageTableView.contentOffset = CGPointMake(0, 85 * _messageArray.count - _messageTableView.height);
-        
-        _result = YES;
-    }
-
-
+    
+    NSDictionary *userInfo = notification.userInfo;
+    
+    CGRect endFrame = [userInfo [UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    // 结束变化时的键盘高
+    CGFloat keyboardHeight = endFrame.size.height;
+  
+    _messageTableView.height = HEIGHT - stationViewHeight - keyboardHeight;
+    
+    _stationView.y = HEIGHT - keyboardHeight - stationViewHeight;
+    
+    _messageTableView.contentOffset = CGPointMake(0, _tableViewCellHeightSum - _messageTableView.height);
     
 }
 // 键盘将要消失
 - (void)tyq_KeyboardWillHide:(NSNotification *)notification {
-
-    _messageTableView.height += _keyboardHeight;
     
-    _stationView.y += _keyboardHeight;
-    _messageTableView.contentOffset = CGPointMake(0, 85 * _messageArray.count - _messageTableView.height);
+    _messageTableView.height = HEIGHT - stationViewHeight;
+    
+    _stationView.y = HEIGHT - stationViewHeight;
+    
+    _messageTableView.contentOffset = CGPointMake(0, _tableViewCellHeightSum - _messageTableView.height);
 
-    _result = NO;
+  
 }
 // 隐藏键盘
 - (void)tyq_HideKeyboard {
@@ -232,6 +244,7 @@ UITableViewDataSource
     [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark -  发送一条文本消息
+
 // 点击加号按钮后传递出来的协议方法
 - (void)tyq_butttonClickSendMessageDelegate {
 

@@ -67,10 +67,9 @@
             NSLog(@"小图的W -- %f ,大图的H -- %f",body.thumbnailSize.width,body.thumbnailSize.height);
             NSLog(@"小图的下载状态 -- %lu",(unsigned long)body.thumbnailDownloadStatus);
             
-            if ([[NSFileManager defaultManager] fileExistsAtPath:body.thumbnailLocalPath]) {
-                
-            }
             
+            self.imageUrl = body.remotePath;
+
             
         }
             

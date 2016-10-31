@@ -18,6 +18,8 @@
 
 @property (nonatomic, assign) CGFloat bubbleWidth;
 
+
+
 @end
 
 @implementation BubbleView
@@ -34,6 +36,9 @@
         
         self.triangleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
         [self addSubview:_triangleImageView];
+        
+        self.chatImageView = [UIImageView new];
+        [self addSubview:_chatImageView];
         
     }
     return self;
@@ -107,6 +112,8 @@
     CGFloat border = 15.f;
     
     _titleLabel.frame = CGRectMake(border, border, self.width - border * 2, self.height - border * 2);
+    
+    _chatImageView.frame = CGRectMake(2, 2, self.width - 2 * 2, self.width - 2 * 2);
     
     
 }

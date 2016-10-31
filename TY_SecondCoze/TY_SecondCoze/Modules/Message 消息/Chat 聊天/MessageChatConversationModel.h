@@ -17,10 +17,16 @@
 // 消息类型
 @property (nonatomic, readonly) MessageBodyType messageBodyType;
 
-#pragma mark - 文字消息
+/////// 文字消息
 
 @property (nonatomic, copy) NSString *textMessage;
 
+/////// 图片
+
+// 图片路径
+@property (nonatomic, copy) NSString *imageUrl;
 
 
 @end
+
+

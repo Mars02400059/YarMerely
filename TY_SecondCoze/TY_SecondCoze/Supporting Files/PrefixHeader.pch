@@ -28,6 +28,7 @@
 
 #import <MJRefresh.h>
 #import <FMDB.h>
+#import <UIImageView+WebCache.h>
 #import <MBProgressHUD.h>
 #import <SVProgressHUD.h>
 #import "SystemUnit.h"

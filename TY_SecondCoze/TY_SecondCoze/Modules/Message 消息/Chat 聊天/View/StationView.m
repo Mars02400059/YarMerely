@@ -54,14 +54,10 @@ UITextFieldDelegate
     return self;
 }
 
-
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     
     [self.delegate tyq_actionTextFieldReturn];
-    NSLog(@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈");
-    
     
     return YES;
 }

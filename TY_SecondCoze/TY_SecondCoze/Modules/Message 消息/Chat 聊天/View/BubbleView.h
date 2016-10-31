@@ -18,5 +18,8 @@
 @property (nonatomic, assign) NSInteger numberOfLines;
 
 @property (nonatomic, assign) BOOL isLeft;
+// 图片
+@property (nonatomic, strong) UIImageView *chatImageView;
+
 
 @end
