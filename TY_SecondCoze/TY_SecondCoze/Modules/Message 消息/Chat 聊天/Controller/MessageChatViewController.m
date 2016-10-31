@@ -33,7 +33,7 @@ UITableViewDataSource
 // 存消息的数组
 @property (nonatomic, strong) NSMutableArray *messageArray;
 
-
+@property (nonatomic, assign) BOOL result;
 @end
 
 @implementation MessageChatViewController
@@ -51,6 +51,7 @@ UITableViewDataSource
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+       self.result = NO;
     
     // 聊天管理器
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
@@ -194,16 +195,21 @@ UITableViewDataSource
 // 键盘将要出现
 - (void)tyq_KeyboardWillShow:(NSNotification *)notification {
 
+    if (_result == 0) {
+        
+        NSDictionary *info = [notification userInfo];
+        CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;//键盘的frame
+        
+        self.keyboardHeight = keyboardSize.height;
+        
+        _messageTableView.height -= _keyboardHeight;
+        
+        _stationView.y -= _keyboardHeight;
+        _messageTableView.contentOffset = CGPointMake(0, 85 * _messageArray.count - _messageTableView.height);
+        
+        _result = YES;
+    }
 
-    NSDictionary *info = [notification userInfo];
-    CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;//键盘的frame
-    
-    self.keyboardHeight = keyboardSize.height;
-    
-    _messageTableView.height -= _keyboardHeight;
-    
-    _stationView.y -= _keyboardHeight;
-    _messageTableView.contentOffset = CGPointMake(0, 85 * _messageArray.count - _messageTableView.height);
 
     
 }
@@ -215,6 +221,7 @@ UITableViewDataSource
     _stationView.y += _keyboardHeight;
     _messageTableView.contentOffset = CGPointMake(0, 85 * _messageArray.count - _messageTableView.height);
 
+    _result = NO;
 }
 // 隐藏键盘
 - (void)tyq_HideKeyboard {
