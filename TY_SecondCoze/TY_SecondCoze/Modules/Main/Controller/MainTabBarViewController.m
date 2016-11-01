@@ -57,6 +57,8 @@ EMChatManagerBuddyDelegate
     [_sidekickAppleForArray addObject:infoModel];
 }
 
+
+
 #pragma mark --- 调取SDK接收好友请求方法(回调)
 -(void)didAcceptedByBuddy:(NSString *)username{
     

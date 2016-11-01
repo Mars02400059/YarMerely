@@ -29,7 +29,9 @@ UITextFieldDelegate
     self = [super initWithFrame:frame];
     if (self) {
         self.phoneButton = [TYQButton buttonWithType:UIButtonTypeCustom];
+        _phoneButton.record = NO;
         [_phoneButton setImage:[UIImage imageNamed:@"聊天语音"] forState:UIControlStateNormal];
+        [_phoneButton addTarget:self action:@selector(phoneButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_phoneButton];
         
         self.importTextField = [TYQTextField new];
@@ -42,18 +44,23 @@ UITextFieldDelegate
         [self addSubview:_importTextField];
         
         self.expressionButton = [TYQButton buttonWithType:UIButtonTypeCustom];
+        _expressionButton.record = NO;
         [_expressionButton setImage:[UIImage imageNamed:@"聊天表情"] forState:UIControlStateNormal];
+        [_expressionButton addTarget:self action:@selector(expressionButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_expressionButton];
         
         self.moreButton = [TYQButton buttonWithType:UIButtonTypeCustom];
+        _moreButton.record = NO;
         [_moreButton setImage:[UIImage imageNamed:@"聊天加号"] forState:UIControlStateNormal];
-        [_moreButton addTarget:self action:@selector(moreButtonAction) forControlEvents:UIControlEventTouchUpInside];
+        [_moreButton addTarget:self action:@selector(moreButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_moreButton];
+        
+        
         
     }
     return self;
 }
-
+// 输入框的return按键
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     
@@ -62,9 +69,47 @@ UITextFieldDelegate
     return YES;
 }
 
-- (void)moreButtonAction {
-    [self.delegate tyq_butttonClickSendMessageDelegate];
+/// 加号
+- (void)moreButtonAction:(TYQButton *)moreButton {
+    if (!moreButton.record) {
+        moreButton.record = YES;
+    } else {
+        moreButton.record = NO;
+    }
+    [self.delegate tyq_butttonClickSendMessageDelegate:moreButton.record];
 }
+/// 语音按钮
+- (void)phoneButtonAction:(TYQButton *)phoneButton {
+    if (!phoneButton.record) {
+        [phoneButton setImage:[UIImage imageNamed:@"聊天键盘"] forState:UIControlStateNormal];
+        phoneButton.record = YES;
+        
+        
+    } else {
+        [phoneButton setImage:[UIImage imageNamed:@"聊天语音"] forState:UIControlStateNormal];
+        phoneButton.record = NO;
+    }
+    [self.delegate tyq_phoneFunctionDelegate:phoneButton.record];
+}
+// 表情按钮
+- (void)expressionButtonAction:(TYQButton *)expressionButton {
+    
+    if (!expressionButton.record) {
+        expressionButton.record = YES;
+    } else {
+        expressionButton.record = NO;
+    }
+    [self.delegate tyq_expressionDelegate:expressionButton.record];
+    
+}
+
+- (void)tyq_allButtonRecordReduction {
+    _moreButton.record = NO;
+    _phoneButton.record = NO;
+    _expressionButton.record = NO;
+}
+
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     

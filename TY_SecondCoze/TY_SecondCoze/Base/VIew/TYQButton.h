@@ -10,4 +10,7 @@
 
 @interface TYQButton : UIButton
 
+/// 记录按钮为第几次点击 (无默认值, 自己按需求添加)
+@property (nonatomic, assign) BOOL record;
+
 @end

@@ -116,11 +116,21 @@
             break;
         case eMessageBodyType_Image:
         {
+            
+            CGFloat imageX;
+            CGFloat imageY = iconY;
+            CGFloat imageWidth = _chatModel.imageSize.width;
+            CGFloat imageHeight = _chatModel.imageSize.height;
+//            imageWidth = WIDTH / 2;
+//            imageHeight = imageWidth * 1.2;
+            if (isMe == NO) {
+                imageX = iconX + iconWidth + 10.f;
+            } else {
+                imageX = iconX - 10 - _chatModel.imageSize.width;
+            }
+            
             // 得到一个图片消息body
-            _bubbleView.frame = CGRectMake(40, iconY, 50, 50);
-            
-            
-            
+            _bubbleView.frame = CGRectMake(imageX, imageY, imageWidth, imageHeight);
         }
             break;
         case eMessageBodyType_Location:
@@ -161,10 +171,56 @@
     
     _chatModel = chatModel;
     
-    [_bubbleView.chatImageView sd_setImageWithURL:[NSURL URLWithString:chatModel.imageUrl]];
     
-    _bubbleView.title = chatModel.textMessage;
     
+    
+    switch (chatModel.messageBodyType) {
+        case eMessageBodyType_Text:
+        {
+            // 收到的文字消息
+            _bubbleView.title = chatModel.textMessage;
+
+        }
+            break;
+        case eMessageBodyType_Image:
+        {
+            // 得到一个图片消息body
+            if (chatModel.image) {
+                _bubbleView.chatImageView.image = chatModel.image;
+            } else {
+                
+                [_bubbleView.chatImageView sd_setImageWithURL:chatModel.imageUrl];
+            }
+
+        }
+            break;
+        case eMessageBodyType_Location:
+        {
+            // 经纬度
+        }
+            break;
+        case eMessageBodyType_Voice:
+        {
+            // 音频SDK会自动下载
+            
+        }
+            break;
+        case eMessageBodyType_Video:
+        {
+            // 视频
+            
+        }
+            break;
+        case eMessageBodyType_File:
+        {
+            // 文件
+        }
+            break;
+            
+        default:
+            break;
+    }
+
     
     [self setSubsViewFrame:chatModel.isMe];
     

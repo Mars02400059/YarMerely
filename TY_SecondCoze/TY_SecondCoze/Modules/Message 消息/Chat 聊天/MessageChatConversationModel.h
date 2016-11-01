@@ -23,9 +23,20 @@
 
 /////// 图片
 
-// 图片路径
-@property (nonatomic, copy) NSString *imageUrl;
+// 小图url
+@property (nonatomic, strong) NSURL *imageUrl;
+// 小图本地
+@property (nonatomic, strong) UIImage *image;
+// 小图尺寸
+@property (nonatomic, assign) CGSize imageSize;
 
+
+// 大图本地
+@property (nonatomic, strong) UIImage *strongImage;
+// 大图url
+@property (nonatomic, strong) NSURL *strongImageUrl;
+// 大图尺寸
+@property (nonatomic, assign) CGSize strongSize;
 
 @end
 

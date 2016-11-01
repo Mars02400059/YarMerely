@@ -11,6 +11,8 @@
 #import "MessageChatTableViewCell.h"
 #import "MessageChatConversationModel.h"
 #import "Tools.h"
+#import "MoreFunctionView.h"
+
 
 // 操作台的高度
 static CGFloat const stationViewHeight = 60.f;
@@ -19,6 +21,9 @@ static NSString *const Cell = @"cell";
 
 @interface MessageChatViewController ()
 <
+UINavigationControllerDelegate,
+UIImagePickerControllerDelegate,
+MoreFunctionViewDelegate,
 StationViewDelegate,
 EMChatManagerDelegate,
 UITableViewDelegate,
@@ -28,27 +33,18 @@ UITableViewDataSource
 @property (nonatomic, strong) UITableView *messageTableView;
 // 控制台, (语音, 文字输入, 表情....)
 @property (nonatomic, strong) StationView *stationView;
-// 弹出弹入时键盘的高度
-@property (nonatomic, assign) CGFloat keyboardHeight;
-// 换键盘后新键盘的高度
-@property (nonatomic, assign) CGFloat keyboardXinHeight;
-// 更换新键盘时变化的高度
-@property (nonatomic, assign) CGFloat keyboardChangeHeight;
 // 存消息的数组
 @property (nonatomic, strong) NSMutableArray *messageArray;
-
+// 单个cell高度
 @property (nonatomic, assign) CGFloat cellHeight;
-
+// cell总高度
 @property (nonatomic, assign) CGFloat tableViewCellHeightSum;
-
+// 键盘高度
+@property (nonatomic, assign) CGFloat keyboardHeight;
+// 记录cell
 @property (nonatomic, assign) NSInteger number;
-// 第几次切换键盘
-@property (nonatomic, assign) NSInteger index;
-
-@property (nonatomic, assign) BOOL result;
-
-@property (nonatomic, assign) BOOL results;
-
+/// 更多功能
+@property (nonatomic, strong) MoreFunctionView *moreFunctionView;
 
 
 @end
@@ -57,6 +53,7 @@ UITableViewDataSource
 
 - (void)dealloc {
     [[EaseMob sharedInstance].chatManager removeDelegate:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];//移除观察者
 
 }
 
@@ -69,10 +66,7 @@ UITableViewDataSource
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-       self.result = NO;
-    
     self.number = 0;
-    self.index = 1;
     // 聊天管理器
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
 
@@ -82,6 +76,7 @@ UITableViewDataSource
     
     [self addTableView];
     [self addstationView];
+    [self addMoreFunctionView];
     [self addNavigationBarView];
     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
 }
@@ -116,8 +111,15 @@ UITableViewDataSource
 
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tyq_HideKeyboard)];
     gesture.numberOfTapsRequired = 1;//手势敲击的次数
-    [self.view addGestureRecognizer:gesture];
+    [self.messageTableView addGestureRecognizer:gesture];
 
+}
+- (void)addMoreFunctionView {
+    
+    self.moreFunctionView = [[MoreFunctionView alloc] initWithFrame:CGRectMake(0, HEIGHT, WIDTH, WIDTH / 3)];
+    _moreFunctionView.delegate = self;
+    [self.view addSubview:_moreFunctionView];
+    
 }
 
 
@@ -126,27 +128,77 @@ UITableViewDataSource
     
     MessageChatConversationModel *chatModel = _messageArray[indexPath.row];
     
-    CGFloat bubbleHeight;
-    CGFloat border = 15.f;
-    CGFloat bubbleTextWidthMax = WIDTH - (10 * 2 + 50) * 2 - border * 2;
     
-    CGFloat bubbleTextHeight;
-    CGFloat textWidth = [Tools getTextWidth:chatModel.textMessage withFontSize:20.f];
-    if (textWidth < bubbleTextWidthMax) {
-        bubbleTextHeight = 22.f;
-    } else {
-        CGFloat textHeight = [Tools getTextHeight:chatModel.textMessage withWidth:bubbleTextWidthMax withFontSize:20];
-        bubbleTextHeight = textHeight;
+    switch (chatModel.messageBodyType) {
+        case eMessageBodyType_Text:
+        {
+            // 收到的文字消息
+            
+            CGFloat bubbleHeight;
+            CGFloat border = 15.f;
+            CGFloat bubbleTextWidthMax = WIDTH - (10 * 2 + 50) * 2 - border * 2;
+            
+            CGFloat bubbleTextHeight;
+            CGFloat textWidth = [Tools getTextWidth:chatModel.textMessage withFontSize:20.f];
+            if (textWidth < bubbleTextWidthMax) {
+                bubbleTextHeight = 22.f;
+            } else {
+                CGFloat textHeight = [Tools getTextHeight:chatModel.textMessage withWidth:bubbleTextWidthMax withFontSize:20];
+                bubbleTextHeight = textHeight;
+            }
+            bubbleHeight = bubbleTextHeight + border * 2;
+            
+            
+            self.cellHeight = bubbleHeight + 10.f * 2;
+            
+            if (_number == indexPath.row) {
+                self.tableViewCellHeightSum += _cellHeight;
+                _number++;
+            }
+            
+        }
+            break;
+        case eMessageBodyType_Image:
+        {
+            // 得到一个图片消息body
+            
+            self.cellHeight = chatModel.imageSize.height + 10.f * 2;
+
+            if (_number == indexPath.row) {
+                self.tableViewCellHeightSum += _cellHeight;
+                _number++;
+            }
+            
+        }
+            break;
+        case eMessageBodyType_Location:
+        {
+            // 经纬度
+        }
+            break;
+        case eMessageBodyType_Voice:
+        {
+            // 音频SDK会自动下载
+            
+        }
+            break;
+        case eMessageBodyType_Video:
+        {
+            // 视频
+            
+        }
+            break;
+        case eMessageBodyType_File:
+        {
+            // 文件
+        }
+            break;
+            
+        default:
+            break;
     }
-    bubbleHeight = bubbleTextHeight + border * 2;
     
-    
-    self.cellHeight = bubbleHeight + 10.f * 2;
-    
-    if (_number == indexPath.row) {
-        self.tableViewCellHeightSum += _cellHeight;
-        _number++;
-    }
+
 
     return _cellHeight;
 }
@@ -170,14 +222,21 @@ UITableViewDataSource
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
+// 改变tableView 偏移量的方法
+- (void)tyq_tableViewContentOffsetY {
+    // 设置偏移量, 使最后一条消息显示在底部
+    if (_tableViewCellHeightSum > _messageTableView.height) {
+        _messageTableView.contentOffset = CGPointMake(0, _tableViewCellHeightSum - _messageTableView.height);
+
+    }
+
+}
 
 // 未读消息数改变的回调
 - (void)didUnreadMessagesCountChanged {
     [self tyq_getconversation];
     
-    // 设置偏移量, 使最后一条消息显示在底部
-    _messageTableView.contentOffset = CGPointMake(0, _tableViewCellHeightSum - _messageTableView.height);
-
+    [self tyq_tableViewContentOffsetY];
 }
 
 
@@ -206,6 +265,7 @@ UITableViewDataSource
     
 }
 
+#warning 有时间将键盘变化改成动画
 #pragma mark - 键盘相关
 // 键盘将要出现
 - (void)tyq_KeyboardWillShow:(NSNotification *)notification {
@@ -214,25 +274,25 @@ UITableViewDataSource
     
     CGRect endFrame = [userInfo [UIKeyboardFrameEndUserInfoKey] CGRectValue];
     // 结束变化时的键盘高
-    CGFloat keyboardHeight = endFrame.size.height;
-  
-    _messageTableView.height = HEIGHT - stationViewHeight - keyboardHeight;
+    self.keyboardHeight = endFrame.size.height;
+    _messageTableView.height = HEIGHT - stationViewHeight - _keyboardHeight - 64;
     
-    _stationView.y = HEIGHT - keyboardHeight - stationViewHeight;
-    
-    _messageTableView.contentOffset = CGPointMake(0, _tableViewCellHeightSum - _messageTableView.height);
-    
+    _stationView.y = HEIGHT - _keyboardHeight - stationViewHeight;
+
+    [self tyq_tableViewContentOffsetY];
+    [_stationView tyq_allButtonRecordReduction];
+    _moreFunctionView.y = HEIGHT;
 }
 // 键盘将要消失
 - (void)tyq_KeyboardWillHide:(NSNotification *)notification {
     
-    _messageTableView.height = HEIGHT - stationViewHeight;
+    _messageTableView.height = HEIGHT - stationViewHeight - 64;
     
     _stationView.y = HEIGHT - stationViewHeight;
     
-    _messageTableView.contentOffset = CGPointMake(0, _tableViewCellHeightSum - _messageTableView.height);
-
-  
+    [self tyq_tableViewContentOffsetY];
+//    [_stationView tyq_allButtonRecordReduction];
+    _moreFunctionView.y = HEIGHT;
 }
 // 隐藏键盘
 - (void)tyq_HideKeyboard {
@@ -245,8 +305,56 @@ UITableViewDataSource
 #pragma mark -  发送一条文本消息
 
 // 点击加号按钮后传递出来的协议方法
-- (void)tyq_butttonClickSendMessageDelegate {
+- (void)tyq_butttonClickSendMessageDelegate:(BOOL)record {
+    if (record) {
+        [self tyq_HideKeyboard];
+        _moreFunctionView.y = HEIGHT - _moreFunctionView.height;
+        _stationView.y = HEIGHT - _moreFunctionView.height - stationViewHeight;
+        _messageTableView.height = HEIGHT - _moreFunctionView.height - stationViewHeight;
+        [self tyq_tableViewContentOffsetY];
+    } else {
+        _moreFunctionView.y = HEIGHT;
+        [_stationView.importTextField becomeFirstResponder];
+        [_stationView tyq_allButtonRecordReduction];
+    }
+}
+// 点击表情按钮
+- (void)tyq_expressionDelegate:(BOOL)record {
+    if (record) {
+        
+    } else {
+        
+    }
+}
+// 点击语音按钮
+- (void)tyq_phoneFunctionDelegate:(BOOL)record {
+    if (record) {
+        
+    } else {
+        
+    }
+}
+// 点击添加图片
+- (void)tyq_addPhotoActionDelegate {
+    
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    [self presentViewController:imagePickerController animated:YES completion:nil];
+    
+}
 
+// 选取图片, 发送图片消息
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    EMChatImage *imgChat = [[EMChatImage alloc] initWithUIImage:image displayName:@"嘿嘿嘿"];
+    EMImageMessageBody *body = [[EMImageMessageBody alloc] initWithChatObject:imgChat];
+    
+    // 生成message
+    EMMessage *message = [[EMMessage alloc] initWithReceiver:_titleName bodies:@[body]];
+    message.messageType = eMessageTypeChat; // 设置为单聊消息
+    
+    [self tyq_messageSend:message];
 }
 //点击return按钮所做的动作：
 
@@ -259,7 +367,6 @@ UITableViewDataSource
      @result 文本对象
      */
     EMChatText *txtChat = [[EMChatText alloc] initWithText:_stationView.importTextField.text];
-    NSLog(@"哈哈哈哈哈哈啊哈哈哈%@", _stationView.importTextField.text);
     /*!
      @method
      @brief 以文本对象创建文本消息体实例
@@ -283,7 +390,13 @@ UITableViewDataSource
     message.messageType = eMessageTypeChat;
     //message.messageType = eConversationTypeGroupChat;// 设置为群聊消息
     //message.messageType = eConversationTypeChatRoom;// 设置为聊天室消息
+    [self tyq_messageSend:message];
     
+
+}
+
+// 消息发送
+- (void)tyq_messageSend:(EMMessage *)message {
     message.deliveryState = eMessageDeliveryState_Delivered;
     [self tyq_getconversation];
     
@@ -299,14 +412,6 @@ UITableViewDataSource
     if (_stationView.importTextField.text.length > 0) {
         _stationView.importTextField.text = @"";
     }
-
-}
-
-
-
--(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];//移除观察者
 }
 
 

@@ -42,6 +42,7 @@
 		410E5C591DB85315005C2513 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410E5C4C1DB85315005C2513 /* MineViewController.m */; };
 		410E5C5B1DB85315005C2513 /* SpeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410E5C511DB85315005C2513 /* SpeakViewController.m */; };
 		410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410E5C521DB85315005C2513 /* SpeakViewController.xib */; };
+		4123CD311DC8295700D0D658 /* MoreFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4123CD301DC8295700D0D658 /* MoreFunctionView.m */; };
 		413409F01DC05BCD00C4D466 /* MineSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413409EF1DC05BCD00C4D466 /* MineSettingViewController.m */; };
 		413409F61DC0704700C4D466 /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 413409F51DC0704700C4D466 /* 返回.png */; };
 		418C24C41DC4A4D9002525B9 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 418C24C31DC4A4D9002525B9 /* Tools.m */; };
@@ -204,6 +205,8 @@
 		410E5C501DB85315005C2513 /* SpeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakViewController.h; sourceTree = "<group>"; };
 		410E5C511DB85315005C2513 /* SpeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakViewController.m; sourceTree = "<group>"; };
 		410E5C521DB85315005C2513 /* SpeakViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakViewController.xib; sourceTree = "<group>"; };
+		4123CD2F1DC8295700D0D658 /* MoreFunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreFunctionView.h; sourceTree = "<group>"; };
+		4123CD301DC8295700D0D658 /* MoreFunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreFunctionView.m; sourceTree = "<group>"; };
 		413409EE1DC05BCD00C4D466 /* MineSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineSettingViewController.h; sourceTree = "<group>"; };
 		413409EF1DC05BCD00C4D466 /* MineSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineSettingViewController.m; sourceTree = "<group>"; };
 		413409F51DC0704700C4D466 /* 返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回.png"; sourceTree = "<group>"; };
@@ -774,6 +777,8 @@
 				41976ED61DC3748B00AC8518 /* MessageChatTableViewCell.m */,
 				418C24C51DC4B9FA002525B9 /* BubbleView.h */,
 				418C24C61DC4B9FA002525B9 /* BubbleView.m */,
+				4123CD2F1DC8295700D0D658 /* MoreFunctionView.h */,
+				4123CD301DC8295700D0D658 /* MoreFunctionView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1257,6 +1262,7 @@
 				410D984A1DC1F62200A5C9FD /* NSUserDefaults+Categories.m in Sources */,
 				410E5C181DB852FF005C2513 /* TYQNavigationViewController.m in Sources */,
 				41F144641DC1907800C7023D /* MineInfoTableViewCell.m in Sources */,
+				4123CD311DC8295700D0D658 /* MoreFunctionView.m in Sources */,
 				410E5BD21DB85159005C2513 /* AppDelegate.m in Sources */,
 				41976EDB1DC3802900AC8518 /* MessageChatConversationModel.m in Sources */,
 				410E5C1E1DB852FF005C2513 /* TYQLabel.m in Sources */,
