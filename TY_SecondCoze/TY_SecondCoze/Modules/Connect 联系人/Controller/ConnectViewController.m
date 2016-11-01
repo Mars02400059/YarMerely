@@ -56,6 +56,9 @@ EMChatManagerDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    /*
+     self.title = @"联系人"
+     */
     
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
     

@@ -35,13 +35,12 @@ EMChatManagerBuddyDelegate
     // Do any additional setup after loading the view.
     
 #pragma mark--- 聊天管理器
-    
+    // 添加(聊天管理器)代理
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
     self.sidekickAppleForArray = [NSMutableArray array];
     
 
 #pragma mark --- 主动获取好友列表
-    
     [[EaseMob sharedInstance].chatManager setIsAutoFetchBuddyList:YES];
     
 }
