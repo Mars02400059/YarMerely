@@ -8,6 +8,7 @@
 
 #import "MessageChatConversationModel.h"
 #import "NSDate+Categories.h"
+#import "Tools.h"
 
 @interface MessageChatConversationModel ()
 
@@ -55,23 +56,35 @@
             NSLog(@"大图的secret -- %@"    ,body.secretKey);
             NSLog(@"大图的W -- %f ,大图的H -- %f",body.size.width,body.size.height);
             NSLog(@"大图的下载状态 -- %lu",(unsigned long)body.attachmentDownloadStatus);
-            
             if ([[NSFileManager defaultManager] fileExistsAtPath:body.localPath]) {
+                self.strongImage = [UIImage imageWithContentsOfFile:body.localPath];
             }
-            
+            self.strongImageUrl = [NSURL URLWithString:body.remotePath];
             
             // 缩略图sdk会自动下载
             NSLog(@"小图remote路径 -- %@"   ,body.thumbnailRemotePath);
             NSLog(@"小图local路径 -- %@"    ,body.thumbnailLocalPath);
             NSLog(@"小图的secret -- %@"    ,body.thumbnailSecretKey);
-            NSLog(@"小图的W -- %f ,大图的H -- %f",body.thumbnailSize.width,body.thumbnailSize.height);
+            NSLog(@"小图的W -- %f ,小图的H -- %f",body.thumbnailSize.width,body.thumbnailSize.height);
             NSLog(@"小图的下载状态 -- %lu",(unsigned long)body.thumbnailDownloadStatus);
-            
             if ([[NSFileManager defaultManager] fileExistsAtPath:body.thumbnailLocalPath]) {
+                self.image = [UIImage imageWithContentsOfFile:body.thumbnailLocalPath];
+            }
+            self.imageUrl = [NSURL URLWithString:body.remotePath];
+            
+            CGFloat bubbleTextWidthMax = WIDTH - (10 + 50) * 2 - 15.f * 2;
+            CGFloat Width = bubbleTextWidthMax - 40;
+
+            if (body.thumbnailSize.width > body.thumbnailSize.height) {
                 
+                Width = bubbleTextWidthMax;
+
+            } else {
+                
+                Width = bubbleTextWidthMax / 4 * 3;
             }
             
-            
+            self.imageSize = CGSizeMake(Width, Width / body.thumbnailSize.width * body.thumbnailSize.height);
         }
             
             break;

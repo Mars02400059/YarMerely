@@ -18,6 +18,8 @@
 
 @property (nonatomic, assign) CGFloat bubbleWidth;
 
+
+
 @end
 
 @implementation BubbleView
@@ -26,7 +28,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
         self.layer.cornerRadius = 8.f;
         self.titleLabel = [TYQLabel new];
         _titleLabel.backgroundColor = [UIColor clearColor];
@@ -34,6 +35,11 @@
         
         self.triangleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
         [self addSubview:_triangleImageView];
+        
+        self.chatImageView = [UIImageView new];
+        _chatImageView.clipsToBounds = YES;
+        _chatImageView.layer.cornerRadius = 8.f;
+        [self addSubview:_chatImageView];
         
     }
     return self;
@@ -108,6 +114,7 @@
     
     _titleLabel.frame = CGRectMake(border, border, self.width - border * 2, self.height - border * 2);
     
+    _chatImageView.frame = CGRectMake(2, 2, self.width - 2 * 2, self.height - 2 * 2);
     
 }
 

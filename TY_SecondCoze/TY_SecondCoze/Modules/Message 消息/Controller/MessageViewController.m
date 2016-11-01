@@ -27,13 +27,9 @@ UITableViewDataSource
 
 @implementation MessageViewController
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self didUnreadMessagesCountChanged];
-}
 // 通过获取DB中所有会话, 更新消息数组
 - (void)tyq_messageArrayChange {
     // 获取消息数组
-
     [_messageArray removeAllObjects];
     
     /*!
@@ -47,7 +43,6 @@ UITableViewDataSource
     
     NSArray *conversations = [[EaseMob sharedInstance].chatManager loadAllConversationsFromDatabaseWithAppend2Chat:YES];
     [self.messageArray addObjectsFromArray:conversations];
-    NSLog(@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈%@", _messageArray);
     
     
     [self.tableView reloadData];
@@ -59,8 +54,7 @@ UITableViewDataSource
     // Do any additional setup after loading the view from its nib.
     
     self.messageArray = [NSMutableArray array];
-    
-    
+    [self didUnreadMessagesCountChanged];
     
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
     
@@ -87,7 +81,6 @@ UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MessageUniparousTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Cell];
-//    cell.backgroundColor = [UIColor redColor];
     cell.conversation = _messageArray[indexPath.row];
     return cell;
 }
@@ -104,6 +97,25 @@ UITableViewDataSource
     [self.navigationController pushViewController:chatVC animated:YES];
 }
 
+
+#pragma mark - 删除
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        
+        EMConversation *conversation = _messageArray[indexPath.row];
+        NSString *username = conversation.chatter;
+        
+        [[EaseMob sharedInstance].chatManager removeConversationByChatter:username deleteMessages:YES append2Chat:YES];
+        
+        [self tyq_messageArrayChange];
+    }
+    
+    
+    
+    
+}
 
 /*!
  @method

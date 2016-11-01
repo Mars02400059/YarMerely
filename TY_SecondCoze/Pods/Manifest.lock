@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - BmobSDK (1.7.2)
   - EaseMobSDKFull (2.2.7)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
@@ -32,6 +33,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - BmobSDK (~> 1.7.2)
   - EaseMobSDKFull (~> 2.2.7)
   - FMDB (~> 2.6.2)
   - FTPopOverMenu (~> 1.2.1)
@@ -44,6 +46,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  BmobSDK: e188cb31d6a8417ab668aee821da227d7512b865
   EaseMobSDKFull: 574e1c3fcbd541fd1419df750ee642aa6d443c6c
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   FTPopOverMenu: 645bf589f3adb6598efa05cab67cced988d5352f
@@ -55,6 +58,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
 
-PODFILE CHECKSUM: cbee55daab7cd97e54cd6378965661ab330e1b88
+PODFILE CHECKSUM: 14d45f4cf0146eccc1e6cf46d00ef563dc8bc725
 
 COCOAPODS: 1.0.1
