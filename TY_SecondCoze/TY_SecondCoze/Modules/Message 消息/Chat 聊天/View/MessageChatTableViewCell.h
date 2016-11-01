@@ -8,7 +8,14 @@
 
 #import "TYQTableViewCell.h"
 @class MessageChatConversationModel;
+@class MessageChatTableViewCell;
 // 左边好友的Cell
+
+@protocol MessageChatTableViewCellDelegate <NSObject>
+
+- (void)tyq_bubbleTapGestureRecognizerTableViewCell:(MessageChatTableViewCell *)messageChatTableViewCell;
+
+@end
 
 @interface MessageChatTableViewCell : TYQTableViewCell
 
@@ -16,6 +23,7 @@
 
 @property (nonatomic , strong) EMMessage *message;
 
+@property (nonatomic, assign) id<MessageChatTableViewCellDelegate>delegate;
 
 
 @end

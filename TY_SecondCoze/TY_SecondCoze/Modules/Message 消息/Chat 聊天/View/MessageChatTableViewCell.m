@@ -18,8 +18,6 @@
 @property (nonatomic, strong) TYQButton *iconButton;
 // 消息气泡
 @property (nonatomic, strong) BubbleView *bubbleView;
-// 文字消息
-@property (nonatomic, strong) TYQLabel *mylabel;
 
 
 
@@ -40,11 +38,8 @@
         _bubbleView.font = 20;
         [self.contentView addSubview:_bubbleView];
         
-        
-        self.mylabel = [[TYQLabel alloc] initWithFrame:self.contentView.bounds];
-        _mylabel.backgroundColor = [UIColor clearColor];
-        [self.contentView addSubview:_mylabel];
-        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+        [_bubbleView addGestureRecognizer:tap];
         
     }
     return self;
@@ -53,6 +48,10 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+}
+#pragma mark - 气泡的轻拍手势
+- (void)tapAction:(UITapGestureRecognizer *)tap {
+    [self.delegate tyq_bubbleTapGestureRecognizerTableViewCell:self];
 }
 
 #pragma mark - 自适应气泡
@@ -142,6 +141,32 @@
         {
             // 音频SDK会自动下载
             
+            CGFloat bubbleX;
+            CGFloat bubbleY = iconY;
+            CGFloat bubbleWidth;
+            CGFloat bubbleHeight = 50.f;
+            CGFloat border = 0.5f;
+            
+            if (_chatModel.voiceDuration > 50) {
+                bubbleWidth = 60 + 50 * border;
+            } else if (_chatModel.voiceDuration <= 50 && _chatModel.voiceDuration > 5) {
+                bubbleWidth = 60 + (CGFloat)(_chatModel.voiceDuration - 5) * border;
+
+            } else {
+                bubbleWidth = 60;
+            }
+            
+            if (isMe == NO) {
+                bubbleX = iconX + iconWidth + 10.f;
+            } else {
+                bubbleX = iconX - 10 - bubbleWidth;
+            }
+            _bubbleView.isLeft = isMe;
+            
+            _bubbleView.frame = CGRectMake(bubbleX, bubbleY, bubbleWidth, bubbleHeight);
+            
+
+            
         }
             break;
         case eMessageBodyType_Video:
@@ -202,7 +227,8 @@
         case eMessageBodyType_Voice:
         {
             // 音频SDK会自动下载
-            
+            _bubbleView.title = @"点我播放";
+
         }
             break;
         case eMessageBodyType_Video:
