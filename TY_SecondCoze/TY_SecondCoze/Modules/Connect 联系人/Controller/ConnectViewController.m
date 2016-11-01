@@ -10,8 +10,8 @@
 #import "ConnectCollectionViewCell.h"
 #import "ConnectTableViewCell.h"
 #import "AddManViewController.h"
-
-
+#import "GroupAddViewController.h"
+#import "GroupViewController.h"
 #import "NewViewController.h"
 
 #import "FriendDailViewController.h"
@@ -129,7 +129,15 @@ EMChatManagerDelegate
          newVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:newVC animated:YES];
     }
+    if (indexPath.item == 1) {
+        
+        GroupViewController *groupVC = [[GroupViewController alloc] init];
+        
+        [self.navigationController pushViewController:groupVC animated:YES];
+        
+    }
     
+    return;
 }
 
 #pragma mark --- tableview datasource
@@ -183,8 +191,11 @@ EMChatManagerDelegate
             
         }
         if (selectedIndex == 1) {
+            //添加群
+            GroupAddViewController *groupVC = [[GroupAddViewController alloc] init];
             
-            NSLog(@"添加群");
+            [self.navigationController pushViewController:groupVC animated:YES];
+//            NSLog(@"添加群");
         }
         if (selectedIndex == 2) {
             

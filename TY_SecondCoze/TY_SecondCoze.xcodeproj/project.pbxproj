@@ -98,6 +98,9 @@
 		4968E4D41DC1FB5500257004 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4D31DC1FB5500257004 /* NewViewController.m */; };
 		4968E4DA1DC23CB100257004 /* ConnectNewTableviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4D91DC23CB100257004 /* ConnectNewTableviewCell.m */; };
 		4968E4DD1DC2455400257004 /* ConnetMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4DC1DC2455400257004 /* ConnetMessageViewController.m */; };
+		4968E55C1DC874CB00257004 /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E55B1DC874CB00257004 /* GroupViewController.m */; };
+		4968E55F1DC879C700257004 /* GroupAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E55E1DC879C700257004 /* GroupAddViewController.m */; };
+		4968E5631DC8957A00257004 /* 群.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E5621DC8957A00257004 /* 群.png */; };
 		49A8B39A1DBB82BD00FFF2A1 /* 00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B3991DBB82BD00FFF2A1 /* 00.jpg */; };
 		49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39B1DBB855000FFF2A1 /* 000.png */; };
 		49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39D1DBB873A00FFF2A1 /* 1.png */; };
@@ -288,6 +291,11 @@
 		4968E4D91DC23CB100257004 /* ConnectNewTableviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectNewTableviewCell.m; path = ../Controller/ConnectNewTableviewCell.m; sourceTree = "<group>"; };
 		4968E4DB1DC2455400257004 /* ConnetMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnetMessageViewController.h; sourceTree = "<group>"; };
 		4968E4DC1DC2455400257004 /* ConnetMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnetMessageViewController.m; sourceTree = "<group>"; };
+		4968E55A1DC874CB00257004 /* GroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupViewController.h; sourceTree = "<group>"; };
+		4968E55B1DC874CB00257004 /* GroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupViewController.m; sourceTree = "<group>"; };
+		4968E55D1DC879C700257004 /* GroupAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupAddViewController.h; sourceTree = "<group>"; };
+		4968E55E1DC879C700257004 /* GroupAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupAddViewController.m; sourceTree = "<group>"; };
+		4968E5621DC8957A00257004 /* 群.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "群.png"; sourceTree = "<group>"; };
 		49A8B3991DBB82BD00FFF2A1 /* 00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00.jpg; sourceTree = "<group>"; };
 		49A8B39B1DBB855000FFF2A1 /* 000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 000.png; sourceTree = "<group>"; };
 		49A8B39D1DBB873A00FFF2A1 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -547,6 +555,7 @@
 		410E5C391DB85315005C2513 /* Connect 联系人 */ = {
 			isa = PBXGroup;
 			children = (
+				4968E5581DC8744500257004 /* Group */,
 				410E5C3A1DB85315005C2513 /* Controller */,
 				4968E4341DC09E8800257004 /* View */,
 			);
@@ -699,6 +708,7 @@
 		41E37D621DBA106B00FCAD08 /* User Image */ = {
 			isa = PBXGroup;
 			children = (
+				4968E5621DC8957A00257004 /* 群.png */,
 				49A8B3991DBB82BD00FFF2A1 /* 00.jpg */,
 				49A8B39B1DBB855000FFF2A1 /* 000.png */,
 				49A8B39D1DBB873A00FFF2A1 /* 1.png */,
@@ -837,6 +847,25 @@
 				4968E4D91DC23CB100257004 /* ConnectNewTableviewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4968E5581DC8744500257004 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				4968E5591DC8745700257004 /* Controller */,
+			);
+			name = Group;
+			sourceTree = "<group>";
+		};
+		4968E5591DC8745700257004 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4968E55A1DC874CB00257004 /* GroupViewController.h */,
+				4968E55B1DC874CB00257004 /* GroupViewController.m */,
+				4968E55D1DC879C700257004 /* GroupAddViewController.h */,
+				4968E55E1DC879C700257004 /* GroupAddViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		49C51D841DB89970006A5126 /* Resource */ = {
@@ -1020,7 +1049,7 @@
 				TargetAttributes = {
 					410E5BC91DB85159005C2513 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = QWKQAE7W9B;
+						DevelopmentTeam = VYF4743U5J;
 					};
 					410E5BE21DB85159005C2513 = {
 						CreatedOnToolsVersion = 7.1;
@@ -1057,6 +1086,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4968E5631DC8957A00257004 /* 群.png in Resources */,
 				41AE13CE1DC2FEF900AF06BF /* 聊天加号.png in Resources */,
 				41FC7D841DBDE2B500712714 /* 我的2.png in Resources */,
 				41FC7D7B1DBDE1CC00712714 /* 消息2.png in Resources */,
@@ -1267,6 +1297,7 @@
 				41976EDB1DC3802900AC8518 /* MessageChatConversationModel.m in Sources */,
 				410E5C1E1DB852FF005C2513 /* TYQLabel.m in Sources */,
 				41E37D611DBA095700FCAD08 /* TYQImageView.m in Sources */,
+				4968E55F1DC879C700257004 /* GroupAddViewController.m in Sources */,
 				41FC7D9D1DBEE83800712714 /* MineSpaceTableViewCell.m in Sources */,
 				41AE13B21DC22CCE00AF06BF /* InfoModel.m in Sources */,
 				41AE13B51DC2DEC900AF06BF /* StationView.m in Sources */,
@@ -1275,6 +1306,7 @@
 				41F144601DC18DD300C7023D /* MineInfoViewController.m in Sources */,
 				49C51DF81DB89F7F006A5126 /* UserViewController.m in Sources */,
 				49C51DF31DB89F69006A5126 /* RegisterViewController.m in Sources */,
+				4968E55C1DC874CB00257004 /* GroupViewController.m in Sources */,
 				410E5C5B1DB85315005C2513 /* SpeakViewController.m in Sources */,
 				49C51DEE1DB89F54006A5126 /* LoginViewController.m in Sources */,
 				418C24C41DC4A4D9002525B9 /* Tools.m in Sources */,
@@ -1450,7 +1482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Lefeng Guo (3JCKL8GQ34)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = QWKQAE7W9B;
+				DEVELOPMENT_TEAM = VYF4743U5J;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TY_SecondCoze/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = TY_SecondCoze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1468,7 +1500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Lefeng Guo (3JCKL8GQ34)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = QWKQAE7W9B;
+				DEVELOPMENT_TEAM = VYF4743U5J;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TY_SecondCoze/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = TY_SecondCoze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
