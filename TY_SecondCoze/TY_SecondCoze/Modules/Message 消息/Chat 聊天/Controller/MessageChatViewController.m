@@ -12,7 +12,8 @@
 #import "MessageChatConversationModel.h"
 #import "Tools.h"
 #import "MoreFunctionView.h"
-
+#import "PhoneView.h"
+#import "EMCDDeviceManager.h"
 
 // 操作台的高度
 static CGFloat const stationViewHeight = 60.f;
@@ -21,11 +22,14 @@ static NSString *const Cell = @"cell";
 
 @interface MessageChatViewController ()
 <
+MessageChatTableViewCellDelegate,
+PhoneViewDelegate,
 UINavigationControllerDelegate,
 UIImagePickerControllerDelegate,
 MoreFunctionViewDelegate,
 StationViewDelegate,
 EMChatManagerDelegate,
+EMCallManagerDelegate,
 UITableViewDelegate,
 UITableViewDataSource
 >
@@ -45,6 +49,8 @@ UITableViewDataSource
 @property (nonatomic, assign) NSInteger number;
 /// 更多功能
 @property (nonatomic, strong) MoreFunctionView *moreFunctionView;
+/// 语音功能
+@property (nonatomic, strong) PhoneView *phoneView;
 
 
 @end
@@ -53,6 +59,7 @@ UITableViewDataSource
 
 - (void)dealloc {
     [[EaseMob sharedInstance].chatManager removeDelegate:self];
+    [[EaseMob sharedInstance].callManager removeDelegate:self];
     [[NSNotificationCenter defaultCenter] removeObserver:self];//移除观察者
 
 }
@@ -70,6 +77,8 @@ UITableViewDataSource
     // 聊天管理器
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
 
+    [[EaseMob sharedInstance].callManager addDelegate:self delegateQueue:nil];
+
     
     
     self.messageArray = [NSMutableArray array];
@@ -77,6 +86,7 @@ UITableViewDataSource
     [self addTableView];
     [self addstationView];
     [self addMoreFunctionView];
+    [self addPhoneView];
     [self addNavigationBarView];
     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
 }
@@ -122,6 +132,11 @@ UITableViewDataSource
     
 }
 
+- (void)addPhoneView {
+    self.phoneView = [[PhoneView alloc] initWithFrame:CGRectMake(0, HEIGHT, WIDTH, WIDTH / 2)];
+    _phoneView.delegate = self;
+    [self.view addSubview:_phoneView];
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -179,7 +194,12 @@ UITableViewDataSource
         case eMessageBodyType_Voice:
         {
             // 音频SDK会自动下载
+            self.cellHeight = 50.f + 10.f * 2;
             
+            if (_number == indexPath.row) {
+                self.tableViewCellHeightSum += _cellHeight;
+                _number++;
+            }
         }
             break;
         case eMessageBodyType_Video:
@@ -214,7 +234,7 @@ UITableViewDataSource
     if (cell == nil) {
         cell = [[MessageChatTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:Cell];
     }
-    
+    cell.delegate = self;
     cell.chatModel = _messageArray[indexPath.row];
     return cell;
 }
@@ -222,6 +242,68 @@ UITableViewDataSource
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
+// 点击气泡的协议方法
+
+- (void)tyq_bubbleTapGestureRecognizerTableViewCell:(MessageChatTableViewCell *)messageChatTableViewCell {
+    switch (messageChatTableViewCell.chatModel.messageBodyType) {
+        case eMessageBodyType_Text:
+        {
+            // 收到的文字消息
+        }
+            break;
+        case eMessageBodyType_Image:
+        {
+            // 得到一个图片消息body
+            
+        }
+            break;
+        case eMessageBodyType_Location:
+        {
+            // 经纬度
+        }
+            break;
+        case eMessageBodyType_Voice:
+        {
+            // 音频SDK会自动下载
+            UIButton *contentButton = (UIButton *)messageChatTableViewCell.backgroundView;
+            
+            if ([[EMCDDeviceManager sharedInstance] isPlaying]) {
+                [[EMCDDeviceManager sharedInstance] stopPlaying];
+                [contentButton.imageView stopAnimating];
+            } else {
+                [contentButton.imageView startAnimating];
+                [[EMCDDeviceManager sharedInstance] asyncPlayingWithPath:messageChatTableViewCell.chatModel.voicePath completion:^(NSError *error) {
+                    //
+                    if (!error) {
+                        //
+                        
+                        [contentButton.imageView stopAnimating];
+                        
+                    }
+                }];
+                
+            }
+        }
+            break;
+        case eMessageBodyType_Video:
+        {
+            // 视频
+            
+        }
+            break;
+        case eMessageBodyType_File:
+        {
+            // 文件
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+
+}
+
 // 改变tableView 偏移量的方法
 - (void)tyq_tableViewContentOffsetY {
     // 设置偏移量, 使最后一条消息显示在底部
@@ -282,6 +364,7 @@ UITableViewDataSource
     [self tyq_tableViewContentOffsetY];
     [_stationView tyq_allButtonRecordReduction];
     _moreFunctionView.y = HEIGHT;
+    _phoneView.y = HEIGHT;
 }
 // 键盘将要消失
 - (void)tyq_KeyboardWillHide:(NSNotification *)notification {
@@ -308,9 +391,10 @@ UITableViewDataSource
 - (void)tyq_butttonClickSendMessageDelegate:(BOOL)record {
     if (record) {
         [self tyq_HideKeyboard];
+        _phoneView.y = HEIGHT;
         _moreFunctionView.y = HEIGHT - _moreFunctionView.height;
         _stationView.y = HEIGHT - _moreFunctionView.height - stationViewHeight;
-        _messageTableView.height = HEIGHT - _moreFunctionView.height - stationViewHeight;
+        _messageTableView.height = HEIGHT - _moreFunctionView.height - stationViewHeight - 64;
         [self tyq_tableViewContentOffsetY];
     } else {
         _moreFunctionView.y = HEIGHT;
@@ -329,18 +413,53 @@ UITableViewDataSource
 // 点击语音按钮
 - (void)tyq_phoneFunctionDelegate:(BOOL)record {
     if (record) {
-        
+        [self tyq_HideKeyboard];
+        _moreFunctionView.y = HEIGHT;
+        _phoneView.y = HEIGHT - _phoneView.height;
+        _stationView.y = HEIGHT - _phoneView.height - stationViewHeight;
+        _messageTableView.height = HEIGHT - _phoneView.height - stationViewHeight - 64;
+        [self tyq_tableViewContentOffsetY];
+ 
     } else {
-        
+        _phoneView.y = HEIGHT;
+        [_stationView.importTextField becomeFirstResponder];
+        [_stationView tyq_allButtonRecordReduction];
     }
 }
+/// 点击按住说话
+- (void)tyq_touchesBegan {
+    
+    [[EMCDDeviceManager sharedInstance] asyncStartRecordingWithFileName:_titleName completion:^(NSError *error) {
+        if (!error) {
+            NSLog(@"正在录制");
+        }
+    }];
+}
+/// 松开按钮
+- (void)tyq_touchesEnded {
+    
+    [[EMCDDeviceManager sharedInstance] asyncStopRecordingWithCompletion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
+        if (!error) {
+            EMChatVoice *voice = [[EMChatVoice alloc] initWithFile:recordPath displayName:@"audio"];
+            //    voice.duration = aDuration;
+            EMVoiceMessageBody *body = [[EMVoiceMessageBody alloc] initWithChatObject:voice];
+            
+            // 生成message
+            EMMessage *message = [[EMMessage alloc] initWithReceiver:_titleName bodies:@[body]];
+            message.messageType = eMessageTypeChat; // 设置为单聊消息
+            [self tyq_messageSend:message];
+
+            
+        }
+    }];
+    
+}
+
 // 点击添加图片
 - (void)tyq_addPhotoActionDelegate {
-    
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = self;
     [self presentViewController:imagePickerController animated:YES completion:nil];
-    
 }
 
 // 选取图片, 发送图片消息
