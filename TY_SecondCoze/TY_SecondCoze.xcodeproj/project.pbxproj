@@ -1695,7 +1695,148 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Lefeng Guo (3JCKL8GQ34)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 <<<<<<< HEAD
-				DEVELOPMENT_TEAM = VYF4743U5J;
-
+                DEVELOPMENT_TEAM = QWKQAE7W9B;
+				ENABLE_BITCODE = NO;
+>>>>>>> e032c4c3cfa6571d38afaa20f65fb616efab1a97
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TY_SecondCoze/Supporting Files/PrefixHeader.pch";
+				INFOPLIST_FILE = TY_SecondCoze/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelper/VoiceConvert/opencore-amrnb",
+					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelper/VoiceConvert/opencore-amrwb",
+					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelper-master/VoiceConvert/opencore-amrnb",
+					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelper-master/VoiceConvert/opencore-amrwb",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TengYa.TY-SecondCoze";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		410E5BF91DB85159005C2513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24115FC4DA1B556994AF1EE4 /* Pods-TY_SecondCoze.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lefeng Guo (3JCKL8GQ34)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 <<<<<<< HEAD
-				DEVELOPMENT_TEAM = VYF4743U5J;
+                DEVELOPMENT_TEAM = QWKQAE7W9B;
+				ENABLE_BITCODE = NO;
+>>>>>>> e032c4c3cfa6571d38afaa20f65fb616efab1a97
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TY_SecondCoze/Supporting Files/PrefixHeader.pch";
+				INFOPLIST_FILE = TY_SecondCoze/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelper/VoiceConvert/opencore-amrnb",
+					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelper/VoiceConvert/opencore-amrwb",
+					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelperr/VoiceConvert/opencore-amrnb",
+					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelperr/VoiceConvert/opencore-amrwb",
+					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelper-master/VoiceConvert/opencore-amrnb",
+					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelper-master/VoiceConvert/opencore-amrwb",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TengYa.TY-SecondCoze";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		410E5BFB1DB85159005C2513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E45AD022FDE1920266627974 /* Pods-TY_SecondCozeTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TY_SecondCozeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TengYa.TY-SecondCozeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TY_SecondCoze.app/TY_SecondCoze";
+			};
+			name = Debug;
+		};
+		410E5BFC1DB85159005C2513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AD0D96C5FA477CBB2631FEF /* Pods-TY_SecondCozeTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TY_SecondCozeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TengYa.TY-SecondCozeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TY_SecondCoze.app/TY_SecondCoze";
+			};
+			name = Release;
+		};
+		410E5BFE1DB85159005C2513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D59F710C38244C95A84D28F7 /* Pods-TY_SecondCozeUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = TY_SecondCozeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TengYa.TY-SecondCozeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TY_SecondCoze;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		410E5BFF1DB85159005C2513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEB2328C612563B0CA47F82E /* Pods-TY_SecondCozeUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = TY_SecondCozeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TengYa.TY-SecondCozeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TY_SecondCoze;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		410E5BC51DB85159005C2513 /* Build configuration list for PBXProject "TY_SecondCoze" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				410E5BF51DB85159005C2513 /* Debug */,
+				410E5BF61DB85159005C2513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		410E5BF71DB85159005C2513 /* Build configuration list for PBXNativeTarget "TY_SecondCoze" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				410E5BF81DB85159005C2513 /* Debug */,
+				410E5BF91DB85159005C2513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		410E5BFA1DB85159005C2513 /* Build configuration list for PBXNativeTarget "TY_SecondCozeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				410E5BFB1DB85159005C2513 /* Debug */,
+				410E5BFC1DB85159005C2513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		410E5BFD1DB85159005C2513 /* Build configuration list for PBXNativeTarget "TY_SecondCozeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				410E5BFE1DB85159005C2513 /* Debug */,
+				410E5BFF1DB85159005C2513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 410E5BC21DB85159005C2513 /* Project object */;
+}
