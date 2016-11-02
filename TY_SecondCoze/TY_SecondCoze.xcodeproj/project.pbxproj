@@ -1694,10 +1694,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Lefeng Guo (3JCKL8GQ34)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-<<<<<<< HEAD
-                DEVELOPMENT_TEAM = QWKQAE7W9B;
+				DEVELOPMENT_TEAM = VYF4743U5J;
+				DEVELOPMENT_TEAM = QWKQAE7W9B;
 				ENABLE_BITCODE = NO;
->>>>>>> e032c4c3cfa6571d38afaa20f65fb616efab1a97
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TY_SecondCoze/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = TY_SecondCoze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1722,10 +1721,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Lefeng Guo (3JCKL8GQ34)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-<<<<<<< HEAD
-                DEVELOPMENT_TEAM = QWKQAE7W9B;
+				DEVELOPMENT_TEAM = VYF4743U5J;
+				DEVELOPMENT_TEAM = QWKQAE7W9B;
 				ENABLE_BITCODE = NO;
->>>>>>> e032c4c3cfa6571d38afaa20f65fb616efab1a97
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TY_SecondCoze/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = TY_SecondCoze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
