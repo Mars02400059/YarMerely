@@ -59,6 +59,15 @@
 		413715721DC9740D00DD8B50 /* EMVoiceConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 413715601DC9740C00DD8B50 /* EMVoiceConverter.mm */; };
 		413715731DC9740D00DD8B50 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 413715641DC9740D00DD8B50 /* libopencore-amrnb.a */; };
 		413715741DC9740D00DD8B50 /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 413715681DC9740D00DD8B50 /* libopencore-amrwb.a */; };
+		4137157A1DC98D0200DD8B50 /* RealtimeCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413715781DC98D0200DD8B50 /* RealtimeCallViewController.m */; };
+		4137157B1DC98D0200DD8B50 /* RealtimeCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413715791DC98D0200DD8B50 /* RealtimeCallViewController.xib */; };
+		413715821DC999A900DD8B50 /* 接听.png in Resources */ = {isa = PBXBuildFile; fileRef = 413715801DC999A900DD8B50 /* 接听.png */; };
+		413715831DC999A900DD8B50 /* 挂断.png in Resources */ = {isa = PBXBuildFile; fileRef = 413715811DC999A900DD8B50 /* 挂断.png */; };
+		413715851DC9D57F00DD8B50 /* 准备录音_未按-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 413715841DC9D57F00DD8B50 /* 准备录音_未按-01.png */; };
+		413715871DC9D5C800DD8B50 /* 准备录音_按下-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 413715861DC9D5C800DD8B50 /* 准备录音_按下-01.png */; };
+		413715891DC9D94B00DD8B50 /* 添加图片.png in Resources */ = {isa = PBXBuildFile; fileRef = 413715881DC9D94B00DD8B50 /* 添加图片.png */; };
+		4137158B1DC9DA9A00DD8B50 /* 语音通话.png in Resources */ = {isa = PBXBuildFile; fileRef = 4137158A1DC9DA9A00DD8B50 /* 语音通话.png */; };
+		4137158D1DC9DB1700DD8B50 /* 视频通话.png in Resources */ = {isa = PBXBuildFile; fileRef = 4137158C1DC9DB1700DD8B50 /* 视频通话.png */; };
 		418C24C41DC4A4D9002525B9 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 418C24C31DC4A4D9002525B9 /* Tools.m */; };
 		418C24C71DC4B9FA002525B9 /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 418C24C61DC4B9FA002525B9 /* BubbleView.m */; };
 		418C24CF1DC4D8E5002525B9 /* 气泡右.png in Resources */ = {isa = PBXBuildFile; fileRef = 418C24CE1DC4D8E5002525B9 /* 气泡右.png */; };
@@ -258,6 +267,16 @@
 		413715661DC9740D00DD8B50 /* dec_if.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dec_if.h; sourceTree = "<group>"; };
 		413715671DC9740D00DD8B50 /* if_rom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = if_rom.h; sourceTree = "<group>"; };
 		413715681DC9740D00DD8B50 /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
+		413715771DC98D0200DD8B50 /* RealtimeCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealtimeCallViewController.h; sourceTree = "<group>"; };
+		413715781DC98D0200DD8B50 /* RealtimeCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealtimeCallViewController.m; sourceTree = "<group>"; };
+		413715791DC98D0200DD8B50 /* RealtimeCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RealtimeCallViewController.xib; sourceTree = "<group>"; };
+		413715801DC999A900DD8B50 /* 接听.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "接听.png"; sourceTree = "<group>"; };
+		413715811DC999A900DD8B50 /* 挂断.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "挂断.png"; sourceTree = "<group>"; };
+		413715841DC9D57F00DD8B50 /* 准备录音_未按-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "准备录音_未按-01.png"; sourceTree = "<group>"; };
+		413715861DC9D5C800DD8B50 /* 准备录音_按下-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "准备录音_按下-01.png"; sourceTree = "<group>"; };
+		413715881DC9D94B00DD8B50 /* 添加图片.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "添加图片.png"; sourceTree = "<group>"; };
+		4137158A1DC9DA9A00DD8B50 /* 语音通话.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "语音通话.png"; sourceTree = "<group>"; };
+		4137158C1DC9DB1700DD8B50 /* 视频通话.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "视频通话.png"; sourceTree = "<group>"; };
 		416C7F7C1DB9B44500269E3C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		418C24C21DC4A4D9002525B9 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		418C24C31DC4A4D9002525B9 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
@@ -800,6 +819,24 @@
 			path = "opencore-amrwb";
 			sourceTree = "<group>";
 		};
+		413715751DC98C6E00DD8B50 /* RealtimeCall 实时通话 */ = {
+			isa = PBXGroup;
+			children = (
+				413715761DC98CD000DD8B50 /* Controller */,
+			);
+			name = "RealtimeCall 实时通话";
+			sourceTree = "<group>";
+		};
+		413715761DC98CD000DD8B50 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				413715771DC98D0200DD8B50 /* RealtimeCallViewController.h */,
+				413715781DC98D0200DD8B50 /* RealtimeCallViewController.m */,
+				413715791DC98D0200DD8B50 /* RealtimeCallViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		41976ED81DC37FCB00AC8518 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -821,6 +858,13 @@
 		41AE13BA1DC2E2E400AF06BF /* Message Image */ = {
 			isa = PBXGroup;
 			children = (
+				413715881DC9D94B00DD8B50 /* 添加图片.png */,
+				4137158C1DC9DB1700DD8B50 /* 视频通话.png */,
+				4137158A1DC9DA9A00DD8B50 /* 语音通话.png */,
+				413715841DC9D57F00DD8B50 /* 准备录音_未按-01.png */,
+				413715861DC9D5C800DD8B50 /* 准备录音_按下-01.png */,
+				413715801DC999A900DD8B50 /* 接听.png */,
+				413715811DC999A900DD8B50 /* 挂断.png */,
 				418C24CE1DC4D8E5002525B9 /* 气泡右.png */,
 				418C24D21DC4DA92002525B9 /* 气泡左.png */,
 				41AE13CD1DC2FEF900AF06BF /* 聊天加号.png */,
@@ -896,6 +940,7 @@
 		41F144681DC1A89E00C7023D /* Chat 聊天 */ = {
 			isa = PBXGroup;
 			children = (
+				413715751DC98C6E00DD8B50 /* RealtimeCall 实时通话 */,
 				410D983E1DC1E3D900A5C9FD /* Controller */,
 				41976ED81DC37FCB00AC8518 /* Model */,
 				41F144691DC1A8E800C7023D /* View */,
@@ -1198,6 +1243,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				41AE13CE1DC2FEF900AF06BF /* 聊天加号.png in Resources */,
+				413715851DC9D57F00DD8B50 /* 准备录音_未按-01.png in Resources */,
+				4137158B1DC9DA9A00DD8B50 /* 语音通话.png in Resources */,
 				41FC7D841DBDE2B500712714 /* 我的2.png in Resources */,
 				41FC7D7B1DBDE1CC00712714 /* 消息2.png in Resources */,
 				41FC7D8B1DBDEBE700712714 /* 说2.png in Resources */,
@@ -1205,7 +1252,9 @@
 				4935D92D1DBB470B00BF55A7 /* 3.jpg in Resources */,
 				41FC7D7C1DBDE1CC00712714 /* 消息1.png in Resources */,
 				410E5BDD1DB85159005C2513 /* LaunchScreen.storyboard in Resources */,
+				413715831DC999A900DD8B50 /* 挂断.png in Resources */,
 				410E5C581DB85315005C2513 /* MessageViewController.xib in Resources */,
+				4137157B1DC98D0200DD8B50 /* RealtimeCallViewController.xib in Resources */,
 				4968E4331DC09E6E00257004 /* an.png in Resources */,
 				41FC7D8C1DBDEBE700712714 /* 说1.png in Resources */,
 				49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */,
@@ -1213,8 +1262,10 @@
 				41AE13CC1DC2FEAB00AF06BF /* 聊天键盘.png in Resources */,
 				41AE13CA1DC2F4C000AF06BF /* 聊天语音.png in Resources */,
 				410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */,
+				413715891DC9D94B00DD8B50 /* 添加图片.png in Resources */,
 				418C24D31DC4DA92002525B9 /* 气泡左.png in Resources */,
 				41FC7D951DBE2AAB00712714 /* back.png in Resources */,
+				413715821DC999A900DD8B50 /* 接听.png in Resources */,
 				4968E4461DC0DD9600257004 /* 附近.png in Resources */,
 				410E5BDA1DB85159005C2513 /* Assets.xcassets in Resources */,
 				41FC7D931DBE22FC00712714 /* 设置.png in Resources */,
@@ -1229,11 +1280,13 @@
 				418C24CF1DC4D8E5002525B9 /* 气泡右.png in Resources */,
 				49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */,
 				413409F61DC0704700C4D466 /* 返回.png in Resources */,
+				4137158D1DC9DB1700DD8B50 /* 视频通话.png in Resources */,
 				4941582F1DBD97EB00505112 /* 22.png in Resources */,
 				4935D92B1DBB419B00BF55A7 /* 2.png in Resources */,
 				41FC7DA81DBEEB1800712714 /* MineImageTableViewCell.xib in Resources */,
 				41F144671DC1A4DF00C7023D /* 默认头像.png in Resources */,
 				41F144651DC1907800C7023D /* MineInfoTableViewCell.xib in Resources */,
+				413715871DC9D5C800DD8B50 /* 准备录音_按下-01.png in Resources */,
 				4968E4441DC0DBBA00257004 /* jia.png in Resources */,
 				41FC7D7F1DBDE23B00712714 /* 联系人2.png in Resources */,
 				41E37D641DBA109200FCAD08 /* Unknown.png in Resources */,
@@ -1427,6 +1480,7 @@
 				418C24C41DC4A4D9002525B9 /* Tools.m in Sources */,
 				49C51DDA1DB89D6C006A5126 /* DataBaseTool.m in Sources */,
 				410E5BCF1DB85159005C2513 /* main.m in Sources */,
+				4137157A1DC98D0200DD8B50 /* RealtimeCallViewController.m in Sources */,
 				410E5C211DB852FF005C2513 /* TYQView.m in Sources */,
 				410E5C531DB85315005C2513 /* ConnectViewController.m in Sources */,
 				4968E4371DC0A09D00257004 /* ConnectCollectionViewCell.m in Sources */,

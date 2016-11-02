@@ -109,10 +109,8 @@
             
             
             
-            if ([[NSFileManager defaultManager] fileExistsAtPath:body.localPath]) {
-                self.voicePath = body.localPath;
-            }
-            
+            self.voicePath = body.localPath;
+
             self.voiceDuration = body.duration;
 
         }

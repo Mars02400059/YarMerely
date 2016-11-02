@@ -14,6 +14,8 @@
 #import "MoreFunctionView.h"
 #import "PhoneView.h"
 #import "EMCDDeviceManager.h"
+#import "RealtimeCallViewController.h"
+#import "ViewController.h"
 
 // 操作台的高度
 static CGFloat const stationViewHeight = 60.f;
@@ -126,8 +128,9 @@ UITableViewDataSource
 }
 - (void)addMoreFunctionView {
     
-    self.moreFunctionView = [[MoreFunctionView alloc] initWithFrame:CGRectMake(0, HEIGHT, WIDTH, WIDTH / 3)];
+    self.moreFunctionView = [[MoreFunctionView alloc] initWithFrame:CGRectMake(0, HEIGHT, WIDTH, WIDTH / 2)];
     _moreFunctionView.delegate = self;
+    _moreFunctionView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.00];
     [self.view addSubview:_moreFunctionView];
     
 }
@@ -178,7 +181,7 @@ UITableViewDataSource
             // 得到一个图片消息body
             
             self.cellHeight = chatModel.imageSize.height + 10.f * 2;
-
+            
             if (_number == indexPath.row) {
                 self.tableViewCellHeightSum += _cellHeight;
                 _number++;
@@ -193,7 +196,7 @@ UITableViewDataSource
             break;
         case eMessageBodyType_Voice:
         {
-            // 音频SDK会自动下载
+            // 音频
             self.cellHeight = 50.f + 10.f * 2;
             
             if (_number == indexPath.row) {
@@ -429,7 +432,7 @@ UITableViewDataSource
 /// 点击按住说话
 - (void)tyq_touchesBegan {
     
-    [[EMCDDeviceManager sharedInstance] asyncStartRecordingWithFileName:@"嘿嘿嘿" completion:^(NSError *error) {
+    [[EMCDDeviceManager sharedInstance] asyncStartRecordingWithFileName:_titleName completion:^(NSError *error) {
         if (!error) {
             NSLog(@"正在录制");
         }
@@ -475,6 +478,18 @@ UITableViewDataSource
     
     [self tyq_messageSend:message];
 }
+/// 点击语音通话
+- (void)tyq_addVoiceActionDelegate {
+//    RealtimeCallViewController *realtimeCallVC = [[RealtimeCallViewController alloc] init];
+//    
+//    [self presentViewController:realtimeCallVC animated:YES completion:nil];
+    
+}
+/// 点击视频通话
+- (void)tyq_addVideoActionDelegate {
+    
+}
+
 //点击return按钮所做的动作：
 
 - (void)tyq_actionTextFieldReturn {
