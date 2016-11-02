@@ -47,6 +47,27 @@
 		4123CD371DC88B1900D0D658 /* PhoneButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4123CD361DC88B1900D0D658 /* PhoneButton.m */; };
 		413409F01DC05BCD00C4D466 /* MineSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413409EF1DC05BCD00C4D466 /* MineSettingViewController.m */; };
 		413409F61DC0704700C4D466 /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 413409F51DC0704700C4D466 /* 返回.png */; };
+		413715691DC9740D00DD8B50 /* EMAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4137154B1DC9740C00DD8B50 /* EMAudioPlayerUtil.m */; };
+		4137156A1DC9740D00DD8B50 /* EMAudioRecorderUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4137154D1DC9740C00DD8B50 /* EMAudioRecorderUtil.m */; };
+		4137156B1DC9740D00DD8B50 /* EMCDDeviceManager+Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 4137154F1DC9740C00DD8B50 /* EMCDDeviceManager+Media.m */; };
+		4137156C1DC9740D00DD8B50 /* EMCDDeviceManager+Microphone.m in Sources */ = {isa = PBXBuildFile; fileRef = 413715511DC9740C00DD8B50 /* EMCDDeviceManager+Microphone.m */; };
+		4137156D1DC9740D00DD8B50 /* EMCDDeviceManager+ProximitySensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 413715531DC9740C00DD8B50 /* EMCDDeviceManager+ProximitySensor.m */; };
+		4137156E1DC9740D00DD8B50 /* EMCDDeviceManager+Remind.m in Sources */ = {isa = PBXBuildFile; fileRef = 413715551DC9740C00DD8B50 /* EMCDDeviceManager+Remind.m */; };
+		4137156F1DC9740D00DD8B50 /* EMCDDeviceManagerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 413715581DC9740C00DD8B50 /* EMCDDeviceManagerBase.m */; };
+		413715701DC9740D00DD8B50 /* amrFileCodec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4137155C1DC9740C00DD8B50 /* amrFileCodec.mm */; };
+		413715711DC9740D00DD8B50 /* wav.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4137155E1DC9740C00DD8B50 /* wav.mm */; };
+		413715721DC9740D00DD8B50 /* EMVoiceConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 413715601DC9740C00DD8B50 /* EMVoiceConverter.mm */; };
+		413715731DC9740D00DD8B50 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 413715641DC9740D00DD8B50 /* libopencore-amrnb.a */; };
+		413715741DC9740D00DD8B50 /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 413715681DC9740D00DD8B50 /* libopencore-amrwb.a */; };
+		4137157A1DC98D0200DD8B50 /* RealtimeCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413715781DC98D0200DD8B50 /* RealtimeCallViewController.m */; };
+		4137157B1DC98D0200DD8B50 /* RealtimeCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413715791DC98D0200DD8B50 /* RealtimeCallViewController.xib */; };
+		413715821DC999A900DD8B50 /* 接听.png in Resources */ = {isa = PBXBuildFile; fileRef = 413715801DC999A900DD8B50 /* 接听.png */; };
+		413715831DC999A900DD8B50 /* 挂断.png in Resources */ = {isa = PBXBuildFile; fileRef = 413715811DC999A900DD8B50 /* 挂断.png */; };
+		413715851DC9D57F00DD8B50 /* 准备录音_未按-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 413715841DC9D57F00DD8B50 /* 准备录音_未按-01.png */; };
+		413715871DC9D5C800DD8B50 /* 准备录音_按下-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 413715861DC9D5C800DD8B50 /* 准备录音_按下-01.png */; };
+		413715891DC9D94B00DD8B50 /* 添加图片.png in Resources */ = {isa = PBXBuildFile; fileRef = 413715881DC9D94B00DD8B50 /* 添加图片.png */; };
+		4137158B1DC9DA9A00DD8B50 /* 语音通话.png in Resources */ = {isa = PBXBuildFile; fileRef = 4137158A1DC9DA9A00DD8B50 /* 语音通话.png */; };
+		4137158D1DC9DB1700DD8B50 /* 视频通话.png in Resources */ = {isa = PBXBuildFile; fileRef = 4137158C1DC9DB1700DD8B50 /* 视频通话.png */; };
 		418C24C41DC4A4D9002525B9 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 418C24C31DC4A4D9002525B9 /* Tools.m */; };
 		418C24C71DC4B9FA002525B9 /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 418C24C61DC4B9FA002525B9 /* BubbleView.m */; };
 		418C24CF1DC4D8E5002525B9 /* 气泡右.png in Resources */ = {isa = PBXBuildFile; fileRef = 418C24CE1DC4D8E5002525B9 /* 气泡右.png */; };
@@ -67,18 +88,6 @@
 		41F144641DC1907800C7023D /* MineInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F144621DC1907800C7023D /* MineInfoTableViewCell.m */; };
 		41F144651DC1907800C7023D /* MineInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F144631DC1907800C7023D /* MineInfoTableViewCell.xib */; };
 		41F144671DC1A4DF00C7023D /* 默认头像.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F144661DC1A4DF00C7023D /* 默认头像.png */; };
-		41F1996A1DC8BA58009688C7 /* EMAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F1994C1DC8BA57009688C7 /* EMAudioPlayerUtil.m */; };
-		41F1996B1DC8BA58009688C7 /* EMAudioRecorderUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F1994E1DC8BA57009688C7 /* EMAudioRecorderUtil.m */; };
-		41F1996C1DC8BA58009688C7 /* EMCDDeviceManager+Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F199501DC8BA57009688C7 /* EMCDDeviceManager+Media.m */; };
-		41F1996D1DC8BA58009688C7 /* EMCDDeviceManager+Microphone.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F199521DC8BA57009688C7 /* EMCDDeviceManager+Microphone.m */; };
-		41F1996E1DC8BA58009688C7 /* EMCDDeviceManager+ProximitySensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F199541DC8BA57009688C7 /* EMCDDeviceManager+ProximitySensor.m */; };
-		41F1996F1DC8BA58009688C7 /* EMCDDeviceManager+Remind.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F199561DC8BA57009688C7 /* EMCDDeviceManager+Remind.m */; };
-		41F199701DC8BA58009688C7 /* EMCDDeviceManagerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F199591DC8BA58009688C7 /* EMCDDeviceManagerBase.m */; };
-		41F199711DC8BA58009688C7 /* amrFileCodec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 41F1995D1DC8BA58009688C7 /* amrFileCodec.mm */; };
-		41F199721DC8BA58009688C7 /* wav.mm in Sources */ = {isa = PBXBuildFile; fileRef = 41F1995F1DC8BA58009688C7 /* wav.mm */; };
-		41F199731DC8BA58009688C7 /* EMVoiceConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 41F199611DC8BA58009688C7 /* EMVoiceConverter.mm */; };
-		41F199741DC8BA58009688C7 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F199651DC8BA58009688C7 /* libopencore-amrnb.a */; };
-		41F199751DC8BA58009688C7 /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F199691DC8BA58009688C7 /* libopencore-amrwb.a */; };
 		41FC7D231DBC853C00712714 /* TYQNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC7D221DBC853C00712714 /* TYQNavigationBarView.m */; };
 		41FC7D7B1DBDE1CC00712714 /* 消息2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D791DBDE1CC00712714 /* 消息2.png */; };
 		41FC7D7C1DBDE1CC00712714 /* 消息1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC7D7A1DBDE1CC00712714 /* 消息1.png */; };
@@ -232,6 +241,46 @@
 		413409EE1DC05BCD00C4D466 /* MineSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineSettingViewController.h; sourceTree = "<group>"; };
 		413409EF1DC05BCD00C4D466 /* MineSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineSettingViewController.m; sourceTree = "<group>"; };
 		413409F51DC0704700C4D466 /* 返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回.png"; sourceTree = "<group>"; };
+		413715461DC9740C00DD8B50 /* EMCDDeviceManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCDDeviceManagerDelegate.h; sourceTree = "<group>"; };
+		413715471DC9740C00DD8B50 /* EMCDDeviceManagerProximitySensorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCDDeviceManagerProximitySensorDelegate.h; sourceTree = "<group>"; };
+		413715491DC9740C00DD8B50 /* DemoErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoErrorCode.h; sourceTree = "<group>"; };
+		4137154A1DC9740C00DD8B50 /* EMAudioPlayerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAudioPlayerUtil.h; sourceTree = "<group>"; };
+		4137154B1DC9740C00DD8B50 /* EMAudioPlayerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAudioPlayerUtil.m; sourceTree = "<group>"; };
+		4137154C1DC9740C00DD8B50 /* EMAudioRecorderUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAudioRecorderUtil.h; sourceTree = "<group>"; };
+		4137154D1DC9740C00DD8B50 /* EMAudioRecorderUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAudioRecorderUtil.m; sourceTree = "<group>"; };
+		4137154E1DC9740C00DD8B50 /* EMCDDeviceManager+Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EMCDDeviceManager+Media.h"; sourceTree = "<group>"; };
+		4137154F1DC9740C00DD8B50 /* EMCDDeviceManager+Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EMCDDeviceManager+Media.m"; sourceTree = "<group>"; };
+		413715501DC9740C00DD8B50 /* EMCDDeviceManager+Microphone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EMCDDeviceManager+Microphone.h"; sourceTree = "<group>"; };
+		413715511DC9740C00DD8B50 /* EMCDDeviceManager+Microphone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EMCDDeviceManager+Microphone.m"; sourceTree = "<group>"; };
+		413715521DC9740C00DD8B50 /* EMCDDeviceManager+ProximitySensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EMCDDeviceManager+ProximitySensor.h"; sourceTree = "<group>"; };
+		413715531DC9740C00DD8B50 /* EMCDDeviceManager+ProximitySensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EMCDDeviceManager+ProximitySensor.m"; sourceTree = "<group>"; };
+		413715541DC9740C00DD8B50 /* EMCDDeviceManager+Remind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EMCDDeviceManager+Remind.h"; sourceTree = "<group>"; };
+		413715551DC9740C00DD8B50 /* EMCDDeviceManager+Remind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EMCDDeviceManager+Remind.m"; sourceTree = "<group>"; };
+		413715561DC9740C00DD8B50 /* EMCDDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCDDeviceManager.h; sourceTree = "<group>"; };
+		413715571DC9740C00DD8B50 /* EMCDDeviceManagerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCDDeviceManagerBase.h; sourceTree = "<group>"; };
+		413715581DC9740C00DD8B50 /* EMCDDeviceManagerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMCDDeviceManagerBase.m; sourceTree = "<group>"; };
+		4137155B1DC9740C00DD8B50 /* amrFileCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amrFileCodec.h; sourceTree = "<group>"; };
+		4137155C1DC9740C00DD8B50 /* amrFileCodec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = amrFileCodec.mm; sourceTree = "<group>"; };
+		4137155D1DC9740C00DD8B50 /* wav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wav.h; sourceTree = "<group>"; };
+		4137155E1DC9740C00DD8B50 /* wav.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = wav.mm; sourceTree = "<group>"; };
+		4137155F1DC9740C00DD8B50 /* EMVoiceConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMVoiceConverter.h; sourceTree = "<group>"; };
+		413715601DC9740C00DD8B50 /* EMVoiceConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EMVoiceConverter.mm; sourceTree = "<group>"; };
+		413715621DC9740C00DD8B50 /* interf_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_dec.h; sourceTree = "<group>"; };
+		413715631DC9740D00DD8B50 /* interf_enc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_enc.h; sourceTree = "<group>"; };
+		413715641DC9740D00DD8B50 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
+		413715661DC9740D00DD8B50 /* dec_if.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dec_if.h; sourceTree = "<group>"; };
+		413715671DC9740D00DD8B50 /* if_rom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = if_rom.h; sourceTree = "<group>"; };
+		413715681DC9740D00DD8B50 /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
+		413715771DC98D0200DD8B50 /* RealtimeCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealtimeCallViewController.h; sourceTree = "<group>"; };
+		413715781DC98D0200DD8B50 /* RealtimeCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealtimeCallViewController.m; sourceTree = "<group>"; };
+		413715791DC98D0200DD8B50 /* RealtimeCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RealtimeCallViewController.xib; sourceTree = "<group>"; };
+		413715801DC999A900DD8B50 /* 接听.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "接听.png"; sourceTree = "<group>"; };
+		413715811DC999A900DD8B50 /* 挂断.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "挂断.png"; sourceTree = "<group>"; };
+		413715841DC9D57F00DD8B50 /* 准备录音_未按-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "准备录音_未按-01.png"; sourceTree = "<group>"; };
+		413715861DC9D5C800DD8B50 /* 准备录音_按下-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "准备录音_按下-01.png"; sourceTree = "<group>"; };
+		413715881DC9D94B00DD8B50 /* 添加图片.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "添加图片.png"; sourceTree = "<group>"; };
+		4137158A1DC9DA9A00DD8B50 /* 语音通话.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "语音通话.png"; sourceTree = "<group>"; };
+		4137158C1DC9DB1700DD8B50 /* 视频通话.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "视频通话.png"; sourceTree = "<group>"; };
 		416C7F7C1DB9B44500269E3C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		418C24C21DC4A4D9002525B9 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		418C24C31DC4A4D9002525B9 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
@@ -266,36 +315,6 @@
 		41F144631DC1907800C7023D /* MineInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineInfoTableViewCell.xib; sourceTree = "<group>"; };
 		41F144661DC1A4DF00C7023D /* 默认头像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "默认头像.png"; sourceTree = "<group>"; };
 		41F1446A1DC1AB9B00C7023D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		41F199471DC8BA57009688C7 /* EMCDDeviceManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCDDeviceManagerDelegate.h; sourceTree = "<group>"; };
-		41F199481DC8BA57009688C7 /* EMCDDeviceManagerProximitySensorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCDDeviceManagerProximitySensorDelegate.h; sourceTree = "<group>"; };
-		41F1994A1DC8BA57009688C7 /* DemoErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoErrorCode.h; sourceTree = "<group>"; };
-		41F1994B1DC8BA57009688C7 /* EMAudioPlayerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAudioPlayerUtil.h; sourceTree = "<group>"; };
-		41F1994C1DC8BA57009688C7 /* EMAudioPlayerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAudioPlayerUtil.m; sourceTree = "<group>"; };
-		41F1994D1DC8BA57009688C7 /* EMAudioRecorderUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAudioRecorderUtil.h; sourceTree = "<group>"; };
-		41F1994E1DC8BA57009688C7 /* EMAudioRecorderUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAudioRecorderUtil.m; sourceTree = "<group>"; };
-		41F1994F1DC8BA57009688C7 /* EMCDDeviceManager+Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EMCDDeviceManager+Media.h"; sourceTree = "<group>"; };
-		41F199501DC8BA57009688C7 /* EMCDDeviceManager+Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EMCDDeviceManager+Media.m"; sourceTree = "<group>"; };
-		41F199511DC8BA57009688C7 /* EMCDDeviceManager+Microphone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EMCDDeviceManager+Microphone.h"; sourceTree = "<group>"; };
-		41F199521DC8BA57009688C7 /* EMCDDeviceManager+Microphone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EMCDDeviceManager+Microphone.m"; sourceTree = "<group>"; };
-		41F199531DC8BA57009688C7 /* EMCDDeviceManager+ProximitySensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EMCDDeviceManager+ProximitySensor.h"; sourceTree = "<group>"; };
-		41F199541DC8BA57009688C7 /* EMCDDeviceManager+ProximitySensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EMCDDeviceManager+ProximitySensor.m"; sourceTree = "<group>"; };
-		41F199551DC8BA57009688C7 /* EMCDDeviceManager+Remind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EMCDDeviceManager+Remind.h"; sourceTree = "<group>"; };
-		41F199561DC8BA57009688C7 /* EMCDDeviceManager+Remind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EMCDDeviceManager+Remind.m"; sourceTree = "<group>"; };
-		41F199571DC8BA57009688C7 /* EMCDDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCDDeviceManager.h; sourceTree = "<group>"; };
-		41F199581DC8BA57009688C7 /* EMCDDeviceManagerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCDDeviceManagerBase.h; sourceTree = "<group>"; };
-		41F199591DC8BA58009688C7 /* EMCDDeviceManagerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMCDDeviceManagerBase.m; sourceTree = "<group>"; };
-		41F1995C1DC8BA58009688C7 /* amrFileCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amrFileCodec.h; sourceTree = "<group>"; };
-		41F1995D1DC8BA58009688C7 /* amrFileCodec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = amrFileCodec.mm; sourceTree = "<group>"; };
-		41F1995E1DC8BA58009688C7 /* wav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wav.h; sourceTree = "<group>"; };
-		41F1995F1DC8BA58009688C7 /* wav.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = wav.mm; sourceTree = "<group>"; };
-		41F199601DC8BA58009688C7 /* EMVoiceConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMVoiceConverter.h; sourceTree = "<group>"; };
-		41F199611DC8BA58009688C7 /* EMVoiceConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EMVoiceConverter.mm; sourceTree = "<group>"; };
-		41F199631DC8BA58009688C7 /* interf_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_dec.h; sourceTree = "<group>"; };
-		41F199641DC8BA58009688C7 /* interf_enc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_enc.h; sourceTree = "<group>"; };
-		41F199651DC8BA58009688C7 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
-		41F199671DC8BA58009688C7 /* dec_if.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dec_if.h; sourceTree = "<group>"; };
-		41F199681DC8BA58009688C7 /* if_rom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = if_rom.h; sourceTree = "<group>"; };
-		41F199691DC8BA58009688C7 /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
 		41FC7D211DBC853C00712714 /* TYQNavigationBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYQNavigationBarView.h; sourceTree = "<group>"; };
 		41FC7D221DBC853C00712714 /* TYQNavigationBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYQNavigationBarView.m; sourceTree = "<group>"; };
 		41FC7D791DBDE1CC00712714 /* 消息2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "消息2.png"; sourceTree = "<group>"; };
@@ -384,8 +403,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCE50A40B9B58BB8B9A58F41 /* libPods-TY_SecondCoze.a in Frameworks */,
-				41F199751DC8BA58009688C7 /* libopencore-amrwb.a in Frameworks */,
-				41F199741DC8BA58009688C7 /* libopencore-amrnb.a in Frameworks */,
+				413715741DC9740D00DD8B50 /* libopencore-amrwb.a in Frameworks */,
+				413715731DC9740D00DD8B50 /* libopencore-amrnb.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +746,109 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		413715441DC9740C00DD8B50 /* DeviceHelper */ = {
+			isa = PBXGroup;
+			children = (
+				413715451DC9740C00DD8B50 /* delegates */,
+				413715481DC9740C00DD8B50 /* internal */,
+				413715591DC9740C00DD8B50 /* VoiceConvert */,
+			);
+			path = DeviceHelper;
+			sourceTree = "<group>";
+		};
+		413715451DC9740C00DD8B50 /* delegates */ = {
+			isa = PBXGroup;
+			children = (
+				413715461DC9740C00DD8B50 /* EMCDDeviceManagerDelegate.h */,
+				413715471DC9740C00DD8B50 /* EMCDDeviceManagerProximitySensorDelegate.h */,
+			);
+			path = delegates;
+			sourceTree = "<group>";
+		};
+		413715481DC9740C00DD8B50 /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				413715491DC9740C00DD8B50 /* DemoErrorCode.h */,
+				4137154A1DC9740C00DD8B50 /* EMAudioPlayerUtil.h */,
+				4137154B1DC9740C00DD8B50 /* EMAudioPlayerUtil.m */,
+				4137154C1DC9740C00DD8B50 /* EMAudioRecorderUtil.h */,
+				4137154D1DC9740C00DD8B50 /* EMAudioRecorderUtil.m */,
+				4137154E1DC9740C00DD8B50 /* EMCDDeviceManager+Media.h */,
+				4137154F1DC9740C00DD8B50 /* EMCDDeviceManager+Media.m */,
+				413715501DC9740C00DD8B50 /* EMCDDeviceManager+Microphone.h */,
+				413715511DC9740C00DD8B50 /* EMCDDeviceManager+Microphone.m */,
+				413715521DC9740C00DD8B50 /* EMCDDeviceManager+ProximitySensor.h */,
+				413715531DC9740C00DD8B50 /* EMCDDeviceManager+ProximitySensor.m */,
+				413715541DC9740C00DD8B50 /* EMCDDeviceManager+Remind.h */,
+				413715551DC9740C00DD8B50 /* EMCDDeviceManager+Remind.m */,
+				413715561DC9740C00DD8B50 /* EMCDDeviceManager.h */,
+				413715571DC9740C00DD8B50 /* EMCDDeviceManagerBase.h */,
+				413715581DC9740C00DD8B50 /* EMCDDeviceManagerBase.m */,
+			);
+			path = internal;
+			sourceTree = "<group>";
+		};
+		413715591DC9740C00DD8B50 /* VoiceConvert */ = {
+			isa = PBXGroup;
+			children = (
+				4137155A1DC9740C00DD8B50 /* amrwapper */,
+				4137155F1DC9740C00DD8B50 /* EMVoiceConverter.h */,
+				413715601DC9740C00DD8B50 /* EMVoiceConverter.mm */,
+				413715611DC9740C00DD8B50 /* opencore-amrnb */,
+				413715651DC9740D00DD8B50 /* opencore-amrwb */,
+			);
+			path = VoiceConvert;
+			sourceTree = "<group>";
+		};
+		4137155A1DC9740C00DD8B50 /* amrwapper */ = {
+			isa = PBXGroup;
+			children = (
+				4137155B1DC9740C00DD8B50 /* amrFileCodec.h */,
+				4137155C1DC9740C00DD8B50 /* amrFileCodec.mm */,
+				4137155D1DC9740C00DD8B50 /* wav.h */,
+				4137155E1DC9740C00DD8B50 /* wav.mm */,
+			);
+			path = amrwapper;
+			sourceTree = "<group>";
+		};
+		413715611DC9740C00DD8B50 /* opencore-amrnb */ = {
+			isa = PBXGroup;
+			children = (
+				413715621DC9740C00DD8B50 /* interf_dec.h */,
+				413715631DC9740D00DD8B50 /* interf_enc.h */,
+				413715641DC9740D00DD8B50 /* libopencore-amrnb.a */,
+			);
+			path = "opencore-amrnb";
+			sourceTree = "<group>";
+		};
+		413715651DC9740D00DD8B50 /* opencore-amrwb */ = {
+			isa = PBXGroup;
+			children = (
+				413715661DC9740D00DD8B50 /* dec_if.h */,
+				413715671DC9740D00DD8B50 /* if_rom.h */,
+				413715681DC9740D00DD8B50 /* libopencore-amrwb.a */,
+			);
+			path = "opencore-amrwb";
+			sourceTree = "<group>";
+		};
+		413715751DC98C6E00DD8B50 /* RealtimeCall 实时通话 */ = {
+			isa = PBXGroup;
+			children = (
+				413715761DC98CD000DD8B50 /* Controller */,
+			);
+			name = "RealtimeCall 实时通话";
+			sourceTree = "<group>";
+		};
+		413715761DC98CD000DD8B50 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				413715771DC98D0200DD8B50 /* RealtimeCallViewController.h */,
+				413715781DC98D0200DD8B50 /* RealtimeCallViewController.m */,
+				413715791DC98D0200DD8B50 /* RealtimeCallViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		41976ED81DC37FCB00AC8518 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -748,6 +870,13 @@
 		41AE13BA1DC2E2E400AF06BF /* Message Image */ = {
 			isa = PBXGroup;
 			children = (
+				413715881DC9D94B00DD8B50 /* 添加图片.png */,
+				4137158C1DC9DB1700DD8B50 /* 视频通话.png */,
+				4137158A1DC9DA9A00DD8B50 /* 语音通话.png */,
+				413715841DC9D57F00DD8B50 /* 准备录音_未按-01.png */,
+				413715861DC9D5C800DD8B50 /* 准备录音_按下-01.png */,
+				413715801DC999A900DD8B50 /* 接听.png */,
+				413715811DC999A900DD8B50 /* 挂断.png */,
 				418C24CE1DC4D8E5002525B9 /* 气泡右.png */,
 				418C24D21DC4DA92002525B9 /* 气泡左.png */,
 				41AE13CD1DC2FEF900AF06BF /* 聊天加号.png */,
@@ -824,6 +953,7 @@
 		41F144681DC1A89E00C7023D /* Chat 聊天 */ = {
 			isa = PBXGroup;
 			children = (
+				413715751DC98C6E00DD8B50 /* RealtimeCall 实时通话 */,
 				410D983E1DC1E3D900A5C9FD /* Controller */,
 				41976ED81DC37FCB00AC8518 /* Model */,
 				41F144691DC1A8E800C7023D /* View */,
@@ -848,91 +978,6 @@
 				41AE13B41DC2DEC900AF06BF /* StationView.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		41F199451DC8BA57009688C7 /* DeviceHelper */ = {
-			isa = PBXGroup;
-			children = (
-				41F199461DC8BA57009688C7 /* delegates */,
-				41F199491DC8BA57009688C7 /* internal */,
-				41F1995A1DC8BA58009688C7 /* VoiceConvert */,
-			);
-			path = DeviceHelper;
-			sourceTree = "<group>";
-		};
-		41F199461DC8BA57009688C7 /* delegates */ = {
-			isa = PBXGroup;
-			children = (
-				41F199471DC8BA57009688C7 /* EMCDDeviceManagerDelegate.h */,
-				41F199481DC8BA57009688C7 /* EMCDDeviceManagerProximitySensorDelegate.h */,
-			);
-			path = delegates;
-			sourceTree = "<group>";
-		};
-		41F199491DC8BA57009688C7 /* internal */ = {
-			isa = PBXGroup;
-			children = (
-				41F1994A1DC8BA57009688C7 /* DemoErrorCode.h */,
-				41F1994B1DC8BA57009688C7 /* EMAudioPlayerUtil.h */,
-				41F1994C1DC8BA57009688C7 /* EMAudioPlayerUtil.m */,
-				41F1994D1DC8BA57009688C7 /* EMAudioRecorderUtil.h */,
-				41F1994E1DC8BA57009688C7 /* EMAudioRecorderUtil.m */,
-				41F1994F1DC8BA57009688C7 /* EMCDDeviceManager+Media.h */,
-				41F199501DC8BA57009688C7 /* EMCDDeviceManager+Media.m */,
-				41F199511DC8BA57009688C7 /* EMCDDeviceManager+Microphone.h */,
-				41F199521DC8BA57009688C7 /* EMCDDeviceManager+Microphone.m */,
-				41F199531DC8BA57009688C7 /* EMCDDeviceManager+ProximitySensor.h */,
-				41F199541DC8BA57009688C7 /* EMCDDeviceManager+ProximitySensor.m */,
-				41F199551DC8BA57009688C7 /* EMCDDeviceManager+Remind.h */,
-				41F199561DC8BA57009688C7 /* EMCDDeviceManager+Remind.m */,
-				41F199571DC8BA57009688C7 /* EMCDDeviceManager.h */,
-				41F199581DC8BA57009688C7 /* EMCDDeviceManagerBase.h */,
-				41F199591DC8BA58009688C7 /* EMCDDeviceManagerBase.m */,
-			);
-			path = internal;
-			sourceTree = "<group>";
-		};
-		41F1995A1DC8BA58009688C7 /* VoiceConvert */ = {
-			isa = PBXGroup;
-			children = (
-				41F1995B1DC8BA58009688C7 /* amrwapper */,
-				41F199601DC8BA58009688C7 /* EMVoiceConverter.h */,
-				41F199611DC8BA58009688C7 /* EMVoiceConverter.mm */,
-				41F199621DC8BA58009688C7 /* opencore-amrnb */,
-				41F199661DC8BA58009688C7 /* opencore-amrwb */,
-			);
-			path = VoiceConvert;
-			sourceTree = "<group>";
-		};
-		41F1995B1DC8BA58009688C7 /* amrwapper */ = {
-			isa = PBXGroup;
-			children = (
-				41F1995C1DC8BA58009688C7 /* amrFileCodec.h */,
-				41F1995D1DC8BA58009688C7 /* amrFileCodec.mm */,
-				41F1995E1DC8BA58009688C7 /* wav.h */,
-				41F1995F1DC8BA58009688C7 /* wav.mm */,
-			);
-			path = amrwapper;
-			sourceTree = "<group>";
-		};
-		41F199621DC8BA58009688C7 /* opencore-amrnb */ = {
-			isa = PBXGroup;
-			children = (
-				41F199631DC8BA58009688C7 /* interf_dec.h */,
-				41F199641DC8BA58009688C7 /* interf_enc.h */,
-				41F199651DC8BA58009688C7 /* libopencore-amrnb.a */,
-			);
-			path = "opencore-amrnb";
-			sourceTree = "<group>";
-		};
-		41F199661DC8BA58009688C7 /* opencore-amrwb */ = {
-			isa = PBXGroup;
-			children = (
-				41F199671DC8BA58009688C7 /* dec_if.h */,
-				41F199681DC8BA58009688C7 /* if_rom.h */,
-				41F199691DC8BA58009688C7 /* libopencore-amrwb.a */,
-			);
-			path = "opencore-amrwb";
 			sourceTree = "<group>";
 		};
 		41FC7D6E1DBDE06900712714 /* Main Image */ = {
@@ -1042,7 +1087,7 @@
 		49C51D8A1DB89A51006A5126 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				41F199451DC8BA57009688C7 /* DeviceHelper */,
+				413715441DC9740C00DD8B50 /* DeviceHelper */,
 				49C51DCC1DB89AF7006A5126 /* EATheme */,
 			);
 			path = Lib;
@@ -1233,6 +1278,8 @@
 			files = (
 				4968E5631DC8957A00257004 /* 群.png in Resources */,
 				41AE13CE1DC2FEF900AF06BF /* 聊天加号.png in Resources */,
+				413715851DC9D57F00DD8B50 /* 准备录音_未按-01.png in Resources */,
+				4137158B1DC9DA9A00DD8B50 /* 语音通话.png in Resources */,
 				41FC7D841DBDE2B500712714 /* 我的2.png in Resources */,
 				41FC7D7B1DBDE1CC00712714 /* 消息2.png in Resources */,
 				41FC7D8B1DBDEBE700712714 /* 说2.png in Resources */,
@@ -1240,7 +1287,9 @@
 				4935D92D1DBB470B00BF55A7 /* 3.jpg in Resources */,
 				41FC7D7C1DBDE1CC00712714 /* 消息1.png in Resources */,
 				410E5BDD1DB85159005C2513 /* LaunchScreen.storyboard in Resources */,
+				413715831DC999A900DD8B50 /* 挂断.png in Resources */,
 				410E5C581DB85315005C2513 /* MessageViewController.xib in Resources */,
+				4137157B1DC98D0200DD8B50 /* RealtimeCallViewController.xib in Resources */,
 				4968E4331DC09E6E00257004 /* an.png in Resources */,
 				41FC7D8C1DBDEBE700712714 /* 说1.png in Resources */,
 				49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */,
@@ -1248,8 +1297,10 @@
 				41AE13CC1DC2FEAB00AF06BF /* 聊天键盘.png in Resources */,
 				41AE13CA1DC2F4C000AF06BF /* 聊天语音.png in Resources */,
 				410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */,
+				413715891DC9D94B00DD8B50 /* 添加图片.png in Resources */,
 				418C24D31DC4DA92002525B9 /* 气泡左.png in Resources */,
 				41FC7D951DBE2AAB00712714 /* back.png in Resources */,
+				413715821DC999A900DD8B50 /* 接听.png in Resources */,
 				4968E4461DC0DD9600257004 /* 附近.png in Resources */,
 				410E5BDA1DB85159005C2513 /* Assets.xcassets in Resources */,
 				41FC7D931DBE22FC00712714 /* 设置.png in Resources */,
@@ -1264,11 +1315,13 @@
 				418C24CF1DC4D8E5002525B9 /* 气泡右.png in Resources */,
 				49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */,
 				413409F61DC0704700C4D466 /* 返回.png in Resources */,
+				4137158D1DC9DB1700DD8B50 /* 视频通话.png in Resources */,
 				4941582F1DBD97EB00505112 /* 22.png in Resources */,
 				4935D92B1DBB419B00BF55A7 /* 2.png in Resources */,
 				41FC7DA81DBEEB1800712714 /* MineImageTableViewCell.xib in Resources */,
 				41F144671DC1A4DF00C7023D /* 默认头像.png in Resources */,
 				41F144651DC1907800C7023D /* MineInfoTableViewCell.xib in Resources */,
+				413715871DC9D5C800DD8B50 /* 准备录音_按下-01.png in Resources */,
 				4968E4441DC0DBBA00257004 /* jia.png in Resources */,
 				41FC7D7F1DBDE23B00712714 /* 联系人2.png in Resources */,
 				41E37D641DBA109200FCAD08 /* Unknown.png in Resources */,
@@ -1422,24 +1475,24 @@
 			files = (
 				410E5C551DB85315005C2513 /* MainTabBarViewController.m in Sources */,
 				410E5C1C1DB852FF005C2513 /* TYQButton.m in Sources */,
-				41F199721DC8BA58009688C7 /* wav.mm in Sources */,
+				413715711DC9740D00DD8B50 /* wav.mm in Sources */,
 				49C51DDD1DB89DAE006A5126 /* TimeTool.m in Sources */,
 				410E5C341DB8530B005C2513 /* UIImage+Categories.m in Sources */,
 				4123CD371DC88B1900D0D658 /* PhoneButton.m in Sources */,
 				413409F01DC05BCD00C4D466 /* MineSettingViewController.m in Sources */,
 				4968E4981DC1AFA000257004 /* AddManViewController.m in Sources */,
 				4968E4DA1DC23CB100257004 /* ConnectNewTableviewCell.m in Sources */,
-				41F1996B1DC8BA58009688C7 /* EMAudioRecorderUtil.m in Sources */,
+				4137156A1DC9740D00DD8B50 /* EMAudioRecorderUtil.m in Sources */,
 				410E5BD51DB85159005C2513 /* ViewController.m in Sources */,
 				410E5C371DB8530B005C2513 /* NSUserDefaultsUtils.m in Sources */,
 				410E5C571DB85315005C2513 /* MessageViewController.m in Sources */,
-				41F1996D1DC8BA58009688C7 /* EMCDDeviceManager+Microphone.m in Sources */,
-				41F1996E1DC8BA58009688C7 /* EMCDDeviceManager+ProximitySensor.m in Sources */,
+				4137156C1DC9740D00DD8B50 /* EMCDDeviceManager+Microphone.m in Sources */,
+				4137156D1DC9740D00DD8B50 /* EMCDDeviceManager+ProximitySensor.m in Sources */,
 				41976ED71DC3748B00AC8518 /* MessageChatTableViewCell.m in Sources */,
 				49C51DD51DB89AF7006A5126 /* EAThemeManager.m in Sources */,
 				410E5C361DB8530B005C2513 /* FileManagerUtils.m in Sources */,
 				410E5C191DB852FF005C2513 /* TYQTabBarViewController.m in Sources */,
-				41F199731DC8BA58009688C7 /* EMVoiceConverter.mm in Sources */,
+				413715721DC9740D00DD8B50 /* EMVoiceConverter.mm in Sources */,
 				410D984A1DC1F62200A5C9FD /* NSUserDefaults+Categories.m in Sources */,
 				410E5C181DB852FF005C2513 /* TYQNavigationViewController.m in Sources */,
 				41F144641DC1907800C7023D /* MineInfoTableViewCell.m in Sources */,
@@ -1460,27 +1513,28 @@
 				49C51DF31DB89F69006A5126 /* RegisterViewController.m in Sources */,
 				4968E55C1DC874CB00257004 /* GroupViewController.m in Sources */,
 				410E5C5B1DB85315005C2513 /* SpeakViewController.m in Sources */,
-				41F1996F1DC8BA58009688C7 /* EMCDDeviceManager+Remind.m in Sources */,
+				4137156E1DC9740D00DD8B50 /* EMCDDeviceManager+Remind.m in Sources */,
 				49C51DEE1DB89F54006A5126 /* LoginViewController.m in Sources */,
 				418C24C41DC4A4D9002525B9 /* Tools.m in Sources */,
 				49C51DDA1DB89D6C006A5126 /* DataBaseTool.m in Sources */,
 				410E5BCF1DB85159005C2513 /* main.m in Sources */,
+				4137157A1DC98D0200DD8B50 /* RealtimeCallViewController.m in Sources */,
 				410E5C211DB852FF005C2513 /* TYQView.m in Sources */,
 				410E5C531DB85315005C2513 /* ConnectViewController.m in Sources */,
 				4968E4371DC0A09D00257004 /* ConnectCollectionViewCell.m in Sources */,
 				410E5C1F1DB852FF005C2513 /* TYQTableViewCell.m in Sources */,
 				410D98471DC1F5A000A5C9FD /* NSDate+Categories.m in Sources */,
-				41F199701DC8BA58009688C7 /* EMCDDeviceManagerBase.m in Sources */,
+				4137156F1DC9740D00DD8B50 /* EMCDDeviceManagerBase.m in Sources */,
 				41FC7DA71DBEEB1800712714 /* MineImageTableViewCell.m in Sources */,
 				49C51DE01DB89DDC006A5126 /* DBTool.m in Sources */,
 				410D984D1DC1FE3100A5C9FD /* MessageChatViewController.m in Sources */,
-				41F199711DC8BA58009688C7 /* amrFileCodec.mm in Sources */,
+				413715701DC9740D00DD8B50 /* amrFileCodec.mm in Sources */,
 				4968E4421DC0DA7500257004 /* FriendDailViewController.m in Sources */,
 				410E5C591DB85315005C2513 /* MineViewController.m in Sources */,
 				49C51DD61DB89AF7006A5126 /* UIView+EATheme.m in Sources */,
 				410E5C201DB852FF005C2513 /* TYQTableViewController.m in Sources */,
 				41FC7DA21DBEEA6E00712714 /* MineGrayBackTableViewCell.m in Sources */,
-				41F1996C1DC8BA58009688C7 /* EMCDDeviceManager+Media.m in Sources */,
+				4137156B1DC9740D00DD8B50 /* EMCDDeviceManager+Media.m in Sources */,
 				418C24C71DC4B9FA002525B9 /* BubbleView.m in Sources */,
 				410E5C331DB8530B005C2513 /* NSString+Regex.m in Sources */,
 				410E5C1D1DB852FF005C2513 /* TYQCollectionViewCell.m in Sources */,
@@ -1493,7 +1547,7 @@
 				410D98431DC1E5A000A5C9FD /* MessageUniparousTableViewCell.m in Sources */,
 				410E5C1A1DB852FF005C2513 /* TYQViewController.m in Sources */,
 				41FC7D231DBC853C00712714 /* TYQNavigationBarView.m in Sources */,
-				41F1996A1DC8BA58009688C7 /* EMAudioPlayerUtil.m in Sources */,
+				413715691DC9740D00DD8B50 /* EMAudioPlayerUtil.m in Sources */,
 				4968E4DD1DC2455400257004 /* ConnetMessageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1640,7 +1694,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Lefeng Guo (3JCKL8GQ34)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = VYF4743U5J;
+
+>>>>>>> e032c4c3cfa6571d38afaa20f65fb616efab1a97
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TY_SecondCoze/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = TY_SecondCoze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1649,6 +1704,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelper/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelper/VoiceConvert/opencore-amrwb",
+					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelper-master/VoiceConvert/opencore-amrnb",
+					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelper-master/VoiceConvert/opencore-amrwb",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TengYa.TY-SecondCoze";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1663,7 +1720,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Lefeng Guo (3JCKL8GQ34)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = VYF4743U5J;
+
+>>>>>>> e032c4c3cfa6571d38afaa20f65fb616efab1a97
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TY_SecondCoze/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = TY_SecondCoze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1674,6 +1732,8 @@
 					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelper/VoiceConvert/opencore-amrwb",
 					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelperr/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelperr/VoiceConvert/opencore-amrwb",
+					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelper-master/VoiceConvert/opencore-amrnb",
+					"$(PROJECT_DIR)/TY_SecondCoze/Lib/DeviceHelper-master/VoiceConvert/opencore-amrwb",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TengYa.TY-SecondCoze";
 				PRODUCT_NAME = "$(TARGET_NAME)";

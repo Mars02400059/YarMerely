@@ -9,14 +9,20 @@
 #import "TYQView.h"
 
 @protocol MoreFunctionViewDelegate <NSObject>
-
+/// 点击添加图片按钮
 - (void)tyq_addPhotoActionDelegate;
+
+/// 点击语音通话按钮
+- (void)tyq_addVoiceActionDelegate;
+
+/// 点击视频通话按钮
+- (void)tyq_addVideoActionDelegate;
 
 @end
 
 @interface MoreFunctionView : TYQView
 
-@property (nonatomic, strong) TYQButton *photoButton;
+
 
 @property (nonatomic, assign) id<MoreFunctionViewDelegate>delegate;
 

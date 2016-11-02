@@ -22,6 +22,8 @@
 
 //触发事件开始
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [self setImage:[UIImage imageNamed:@"准备录音_按下-01"]];
     [self.delegate tyq_touchesBegan];
     
 }
@@ -29,9 +31,16 @@
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
 }
+
+
+
 //触发事件结束
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.delegate tyq_touchesEnded];
+    [UIView animateWithDuration:0.3f delay:1.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [self setImage:[UIImage imageNamed:@"准备录音_未按-01"]];
+
+    } completion:nil];
     
 }
 //触发事件被打断

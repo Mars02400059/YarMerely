@@ -35,10 +35,9 @@ PhoneButtonDelegate
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_titleLabel];
         
-        self.phoneButton = [[PhoneButton alloc] initWithImage:[UIImage imageNamed:@""]];
+        self.phoneButton = [[PhoneButton new] initWithImage:[UIImage imageNamed:@"准备录音_未按-01"]];
         _phoneButton.delegate = self;
         _phoneButton.userInteractionEnabled = YES;
-        _phoneButton.backgroundColor = [UIColor redColor];
         [self addSubview:_phoneButton];
     }
     return self;

@@ -107,12 +107,12 @@
             NSLog(@"音频文件的下载状态 -- %lu"   ,body.attachmentDownloadStatus);
             NSLog(@"音频的时间长度 -- %lu"      ,body.duration);
             
+            
+            
             self.voicePath = body.localPath;
-            
+
             self.voiceDuration = body.duration;
-            
-            if ([[NSFileManager defaultManager] fileExistsAtPath:body.localPath]) {
-            }
+
         }
             break;
         case eMessageBodyType_Video:

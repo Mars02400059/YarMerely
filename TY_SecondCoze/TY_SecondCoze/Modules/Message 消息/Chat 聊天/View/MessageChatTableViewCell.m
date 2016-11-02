@@ -227,7 +227,7 @@
         case eMessageBodyType_Voice:
         {
             // 音频SDK会自动下载
-            _bubbleView.title = @"点我播放";
+            _bubbleView.title = [NSString stringWithFormat:@"%lds", chatModel.voiceDuration];
 
         }
             break;
