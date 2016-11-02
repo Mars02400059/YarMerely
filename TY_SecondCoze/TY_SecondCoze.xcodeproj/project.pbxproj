@@ -115,6 +115,7 @@
 		4968E55C1DC874CB00257004 /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E55B1DC874CB00257004 /* GroupViewController.m */; };
 		4968E55F1DC879C700257004 /* GroupAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E55E1DC879C700257004 /* GroupAddViewController.m */; };
 		4968E5631DC8957A00257004 /* 群.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E5621DC8957A00257004 /* 群.png */; };
+		4968E5661DC9C7DC00257004 /* GroupDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E5651DC9C7DC00257004 /* GroupDetailsViewController.m */; };
 		49A8B39A1DBB82BD00FFF2A1 /* 00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B3991DBB82BD00FFF2A1 /* 00.jpg */; };
 		49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39B1DBB855000FFF2A1 /* 000.png */; };
 		49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39D1DBB873A00FFF2A1 /* 1.png */; };
@@ -344,6 +345,8 @@
 		4968E55D1DC879C700257004 /* GroupAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupAddViewController.h; sourceTree = "<group>"; };
 		4968E55E1DC879C700257004 /* GroupAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupAddViewController.m; sourceTree = "<group>"; };
 		4968E5621DC8957A00257004 /* 群.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "群.png"; sourceTree = "<group>"; };
+		4968E5641DC9C7DC00257004 /* GroupDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupDetailsViewController.h; sourceTree = "<group>"; };
+		4968E5651DC9C7DC00257004 /* GroupDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupDetailsViewController.m; sourceTree = "<group>"; };
 		49A8B3991DBB82BD00FFF2A1 /* 00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00.jpg; sourceTree = "<group>"; };
 		49A8B39B1DBB855000FFF2A1 /* 000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 000.png; sourceTree = "<group>"; };
 		49A8B39D1DBB873A00FFF2A1 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -1003,6 +1006,8 @@
 				4968E55B1DC874CB00257004 /* GroupViewController.m */,
 				4968E55D1DC879C700257004 /* GroupAddViewController.h */,
 				4968E55E1DC879C700257004 /* GroupAddViewController.m */,
+				4968E5641DC9C7DC00257004 /* GroupDetailsViewController.h */,
+				4968E5651DC9C7DC00257004 /* GroupDetailsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1442,6 +1447,7 @@
 				410E5BD21DB85159005C2513 /* AppDelegate.m in Sources */,
 				41976EDB1DC3802900AC8518 /* MessageChatConversationModel.m in Sources */,
 				410E5C1E1DB852FF005C2513 /* TYQLabel.m in Sources */,
+				4968E5661DC9C7DC00257004 /* GroupDetailsViewController.m in Sources */,
 				41E37D611DBA095700FCAD08 /* TYQImageView.m in Sources */,
 				4968E55F1DC879C700257004 /* GroupAddViewController.m in Sources */,
 				41FC7D9D1DBEE83800712714 /* MineSpaceTableViewCell.m in Sources */,

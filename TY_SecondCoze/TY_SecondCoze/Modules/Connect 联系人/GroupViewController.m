@@ -7,6 +7,7 @@
 //
 
 #import "GroupViewController.h"
+#import "GroupDetailsViewController.h"
 
 @interface GroupViewController ()
 <
@@ -15,6 +16,8 @@ UITableViewDelegate
 >
 
 @property (nonatomic, strong) UITableView *myTableView;
+
+@property (nonatomic, strong) NSArray *groupArray;//群数组
 
 @end
 
@@ -27,7 +30,18 @@ UITableViewDelegate
      显示的群的列表
      */
     
-    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64) style:UITableViewStylePlain];
+    EMError *error = nil;
+    NSArray *publicGroupList = [[EaseMob sharedInstance].chatManager fetchAllPublicGroupsWithError:&error];
+    if (!error) {
+        
+        NSLog(@" -- 获取成功-- %lu",(unsigned long)publicGroupList.count);
+        
+        self.groupArray = publicGroupList;
+        
+    }
+    
+    
+    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64 - 50) style:UITableViewStylePlain];
     _myTableView.dataSource = self;
     _myTableView.delegate = self;
     [self.view addSubview:_myTableView];
@@ -52,13 +66,27 @@ UITableViewDelegate
 #pragma mark --- tableview的datasouce.delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 20;
+    return _groupArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
+    EMGroup *gro = _groupArray[indexPath.row];
+    
+    NSString *string = gro.groupSubject;
+   
+    cell.textLabel.text = string;
+    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    GroupDetailsViewController *groupVC = [[GroupDetailsViewController alloc] init];
+    EMGroup *gro = _groupArray[indexPath.row];
+    groupVC.emgroup = gro;
+    [self.navigationController pushViewController:groupVC animated:YES];
 }
 
 

@@ -63,8 +63,7 @@
     
     
     [self addNavigationBarView];
-
-    
+    self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
     
     
     // Do any additional setup after loading the view.
@@ -79,22 +78,22 @@
     EMGroup *group = [[EaseMob sharedInstance].chatManager createGroupWithSubject:self.groupTextFiled.text description:@"群组描述" invitees:@[@"6001",@"6002"] initialWelcomeMessage:@"邀请您加入群组" styleSetting:groupStyleSetting error:&error];
     if(!error){
        
-        NSLog(@"创建成功 -- %@",group);
+        NSLog(@"-- 创建成功 -- %@",group);
     
     }
     
     
-    NSLog(@"立即创建");
-    
 }
-
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     [self.view endEditing:YES];
 }
 
-
+-(void)tyq_navigationBarViewLeftButtonAction{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 
 
