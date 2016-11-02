@@ -429,7 +429,7 @@ UITableViewDataSource
 /// 点击按住说话
 - (void)tyq_touchesBegan {
     
-    [[EMCDDeviceManager sharedInstance] asyncStartRecordingWithFileName:_titleName completion:^(NSError *error) {
+    [[EMCDDeviceManager sharedInstance] asyncStartRecordingWithFileName:@"嘿嘿嘿" completion:^(NSError *error) {
         if (!error) {
             NSLog(@"正在录制");
         }

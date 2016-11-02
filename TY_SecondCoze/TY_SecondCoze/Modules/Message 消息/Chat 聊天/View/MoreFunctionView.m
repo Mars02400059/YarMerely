@@ -15,7 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.photoButton = [TYQButton buttonWithType:UIButtonTypeCustom];
-        _photoButton.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.00];
+        _photoButton.backgroundColor = [UIColor redColor];
         [_photoButton setTitle:@"添加图片" forState:UIControlStateNormal];
         [_photoButton setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
         [_photoButton addTarget:self action:@selector(photoButtonAction:) forControlEvents:UIControlEventTouchUpInside];
