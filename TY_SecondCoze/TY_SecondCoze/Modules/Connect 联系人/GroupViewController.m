@@ -31,15 +31,22 @@ UITableViewDelegate
      */
     
     EMError *error = nil;
-    NSArray *publicGroupList = [[EaseMob sharedInstance].chatManager fetchAllPublicGroupsWithError:&error];
+    NSArray *publicGroupList = [[EaseMob sharedInstance].chatManager fetchMyGroupsListWithError:&error];
     if (!error) {
         
         NSLog(@" -- 获取成功-- %lu",(unsigned long)publicGroupList.count);
-        
         self.groupArray = publicGroupList;
+//        if (publicGroupList.count) {
+//            self.groupArray = publicGroupList;
+//        } else {
+//            self.groupArray = @[];
+//        }
+        
+        
         
     }
-    
+//    self.groupArray = @[];
+
     
     self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64 - 50) style:UITableViewStylePlain];
     _myTableView.dataSource = self;
