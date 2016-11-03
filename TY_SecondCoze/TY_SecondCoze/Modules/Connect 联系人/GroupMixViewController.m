@@ -78,7 +78,7 @@
     // Do any additional setup after loading the view.
 }
 
--(void)tyq_navigationBarViewRightButtonAction{
+-(void)tyq_navigationBarViewLeftButtonAction{
     
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -88,7 +88,7 @@
     
     EMError *error = nil;
     // 申请加入需要审核的公开群组
-    [[EaseMob sharedInstance].chatManager applyJoinPublicGroup:@"1478133734132" withGroupname:@"群组名称" message:@"申请信息" error:&error];
+    [[EaseMob sharedInstance].chatManager applyJoinPublicGroup:@"14781337321591" withGroupname:@"群组名称" message:@"申请信息" error:&error];
     if (!error) {
         
         NSLog(@"申请成功");

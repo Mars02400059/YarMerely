@@ -77,7 +77,7 @@
     groupStyleSetting.groupMaxUsersCount = 500; // 创建500人的群，如果不设置，默认是200人。
     groupStyleSetting.groupStyle = eGroupStyle_PublicOpenJoin; // 创建不同类型的群组，这里需要才传入不同的类型
    
-    EMGroup *group = [[EaseMob sharedInstance].chatManager createGroupWithSubject:self.groupTextFiled.text description:@"群组描述" invitees:@[@"6001",@"6002"] initialWelcomeMessage:@"邀请您加入群组" styleSetting:groupStyleSetting error:&error];
+    EMGroup *group = [[EaseMob sharedInstance].chatManager createGroupWithSubject:self.groupTextFiled.text description:@"群组描述" invitees:nil initialWelcomeMessage:@"邀请您加入群组" styleSetting:groupStyleSetting error:&error];
     if(!error){
        
         NSLog(@"-- 创建成功 -- %@",group);
@@ -98,20 +98,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-////右按钮添加人入群
-//- (void)tyq_navigationBarViewRightButtonAction{
-//    
-//    EMError *error = nil;
-//    [[EaseMob sharedInstance].chatManager addOccupants:@[@"8",@"1234"] toGroup:@"1478133734132" welcomeMessage:@"邀请888信息" error:&error];
-//    if (!error) {
-//        
-//        NSLog(@"添加成功");
-//        
-//    }
-//    
-////    NSLog(@"邀请新成员");
-//    
-//}
 
 
 

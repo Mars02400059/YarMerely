@@ -9,8 +9,7 @@
 #import "RegisterViewController.h"
 #import "LoginViewController.h"
 
-static const NSString *titleStr;
-static const NSString *messageStr;
+
 
 static CGFloat const nameTextFieldX = 40;
 static CGFloat const nameTextFieldHeight = 40;
@@ -134,8 +133,8 @@ static CGFloat const nameTextFieldHeight = 40;
             
             } else {
             
-//                NSString *titleStr;
-//                NSString *messageStr;
+                NSString *titleStr;
+                NSString *messageStr;
                 if ([_nameTextField.text isEqualToString:@""]) {
                     titleStr = @"请输入用户名";
                     messageStr = nil;
