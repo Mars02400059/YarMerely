@@ -58,7 +58,7 @@ EMChatManagerBuddyDelegate
 
 
 
-#pragma mark --- 调取SDK接收好友请求方法(回调)
+#pragma mark --- 调取SDK接受好友请求方法(回调)
 -(void)didAcceptedByBuddy:(NSString *)username{
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@ 接受了你的请求", username] message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -82,6 +82,52 @@ EMChatManagerBuddyDelegate
 //    infoModel.username = username;
 
 }
+
+/*!
+ @method
+ @brief 收到加入群组的申请
+ @param groupId         要加入的群组ID
+ @param groupname       申请人的用户名
+ @param username        申请人的昵称
+ @param reason          申请理由
+ @discussion
+ */
+#pragma mark --- 收到进群的申请
+- (void)didReceiveApplyToJoinGroup:(NSString *)groupId
+                         groupname:(NSString *)groupname
+                     applyUsername:(NSString *)username
+                            reason:(NSString *)reason
+                             error:(EMError *)error{
+    /*
+     谁谁谁(用户)申请加入该群
+     */
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@ 申请加入该群", username] message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:nil]];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    
+    NSLog(@"gbiopppaj");
+    
+}
+
+/*!
+ @method
+ @brief 同意加入群组的申请
+ @param groupId   所申请的群组ID
+ @param groupname 申请的群组名称
+ @param username  申请人的用户名
+ @param pError    错误信息
+ */
+- (void)acceptApplyJoinGroup:(NSString *)groupId
+                   groupname:(NSString *)groupname
+                   applicant:(NSString *)username
+                       error:(EMError **)pError{
+    
+    
+    
+    
+}
+
 
 
 

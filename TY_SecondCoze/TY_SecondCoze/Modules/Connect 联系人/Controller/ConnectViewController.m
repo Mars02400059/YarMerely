@@ -14,6 +14,8 @@
 #import "GroupViewController.h"
 #import "NewViewController.h"
 
+#import "GroupMixViewController.h"
+
 #import "FriendDailViewController.h"
 
 @interface ConnectViewController ()
@@ -181,7 +183,7 @@ EMChatManagerDelegate
 #pragma mark ---右按钮方法(下拉菜单)
 -(void)tyq_navigationBarViewRightButtonAction{
     
-    [FTPopOverMenu showForSender:self.navigationBarView.rightButton withMenu:@[@"添加联系人",@"添加群",@"随意 "] doneBlock:^(NSInteger selectedIndex) {
+    [FTPopOverMenu showForSender:self.navigationBarView.rightButton withMenu:@[@"添加联系人",@"创建群",@"个人主动加入"] doneBlock:^(NSInteger selectedIndex) {
         
         if (selectedIndex == 0) {
             
@@ -191,15 +193,19 @@ EMChatManagerDelegate
             
         }
         if (selectedIndex == 1) {
-            //添加群
+            //创建群
             GroupAddViewController *groupVC = [[GroupAddViewController alloc] init];
             
             [self.navigationController pushViewController:groupVC animated:YES];
-//            NSLog(@"添加群");
+
         }
         if (selectedIndex == 2) {
             
-            NSLog(@"随意");
+            GroupMixViewController *mixVC = [[GroupMixViewController alloc] init];
+            
+            [self.navigationController pushViewController:mixVC animated:YES];
+            
+//            NSLog(@"个人主动加入");
         }
         
     } dismissBlock:^{
