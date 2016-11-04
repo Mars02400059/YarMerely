@@ -16,6 +16,7 @@
     // Initialization code
     
     self.titleLabel.numberOfLines = 0;
+//    self.titleLabel.textAlignment =
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

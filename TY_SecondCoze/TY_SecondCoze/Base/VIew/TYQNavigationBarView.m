@@ -51,7 +51,7 @@
     CGFloat buttonX = 5;
     CGFloat Y = 20;
     CGFloat titleX = buttonX + buttonWidth;
-    CGFloat titleWidth = self.height - 2 * titleX;
+    CGFloat titleWidth = self.width - 2 * titleX;
     CGFloat Height = self.height - Y;
     _titleLabel.frame = CGRectMake(titleX, Y, titleWidth, Height);
     _leftButton.frame = CGRectMake(buttonX, Y, buttonWidth, buttonWidth);

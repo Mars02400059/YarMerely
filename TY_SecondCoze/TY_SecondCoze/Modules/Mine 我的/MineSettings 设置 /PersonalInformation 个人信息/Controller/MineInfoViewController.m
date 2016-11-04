@@ -32,7 +32,7 @@ UITableViewDataSource
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         self.object = array[0];
 
-        
+        [_infoTableView reloadData];
     }];
 }
 
@@ -48,12 +48,13 @@ UITableViewDataSource
 }
 - (NSArray *)infoArray {
     if (nil == _infoArray) {
-        _infoArray = @[@"账号", @"昵称", @"性别", @"年龄", @"签名"];
+        _infoArray = @[@"账号:", @"昵称:", @"性别:", @"年龄:", @"签名:"];
     }
     return _infoArray;
 }
 - (void)addTableView {
-    self.infoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.width, self.infoArray.count * 50) style:UITableViewStylePlain];
+    self.infoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.width, self.infoArray.count * 50 + 50) style:UITableViewStylePlain];
+    _infoTableView.scrollEnabled = NO;
     _infoTableView.dataSource = self;
     _infoTableView.delegate = self;
     [_infoTableView registerNib:[UINib nibWithNibName:@"MineInfoTableViewCell" bundle:nil] forCellReuseIdentifier:Cell];
@@ -75,7 +76,7 @@ UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MineInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Cell];
     cell.titleLabel.text = self.infoArray[indexPath.row];
-    if (![[self.object objectForKey:@"nickname"] isEqual:@""]) {
+    if (![[_object objectForKey:@"nickname"] isEqual:@""]) {
         if (0 == indexPath.row) {
             cell.infoLabel.text = [_object objectForKey:@"accountnumber"];
         } else if (1 == indexPath.row) {

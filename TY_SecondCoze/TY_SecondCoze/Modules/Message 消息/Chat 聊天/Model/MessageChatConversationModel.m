@@ -74,17 +74,23 @@
             
             CGFloat bubbleTextWidthMax = WIDTH - (10 + 50) * 2 - 15.f * 2;
             CGFloat Width = bubbleTextWidthMax - 40;
-
-            if (body.thumbnailSize.width > body.thumbnailSize.height) {
-                
-                Width = bubbleTextWidthMax;
+            if (body.thumbnailSize.width == 0) {
+                self.imageSize = CGSizeMake(Width, Width * 1.2);
 
             } else {
                 
-                Width = bubbleTextWidthMax / 4 * 3;
+                if (body.thumbnailSize.width > body.thumbnailSize.height) {
+                    
+                    Width = bubbleTextWidthMax;
+                    
+                } else {
+                    
+                    Width = bubbleTextWidthMax / 4 * 3;
+                }
+                
+                self.imageSize = CGSizeMake(Width, Width / body.thumbnailSize.width * body.thumbnailSize.height);
             }
             
-            self.imageSize = CGSizeMake(Width, Width / body.thumbnailSize.width * body.thumbnailSize.height);
         }
             
             break;
