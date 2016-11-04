@@ -18,6 +18,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIW-ug-XfK">
                         <constraints>
+                            <constraint firstAttribute="height" constant="20" id="QGS-jB-pQJ"/>
                             <constraint firstAttribute="width" constant="70" id="ljx-ot-SCB"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -31,13 +32,13 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="fIW-ug-XfK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="5uy-1f-OJg"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="BgL-tY-NqS" secondAttribute="bottom" constant="5" id="Awb-W9-grp"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="BgL-tY-NqS" secondAttribute="bottom" constant="15" id="Awb-W9-grp"/>
                     <constraint firstItem="BgL-tY-NqS" firstAttribute="leading" secondItem="fIW-ug-XfK" secondAttribute="trailing" constant="7" id="Eiw-pJ-419"/>
                     <constraint firstAttribute="trailingMargin" secondItem="BgL-tY-NqS" secondAttribute="trailing" constant="20" id="KhD-i7-TAF"/>
-                    <constraint firstItem="fIW-ug-XfK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="MVx-AD-b3C"/>
-                    <constraint firstItem="BgL-tY-NqS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="WBT-vT-99Q"/>
+                    <constraint firstItem="BgL-tY-NqS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="WBT-vT-99Q"/>
+                    <constraint firstItem="fIW-ug-XfK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="h9x-Xn-m0M"/>
                     <constraint firstAttribute="bottomMargin" secondItem="fIW-ug-XfK" secondAttribute="bottom" constant="5" id="lAU-Ud-lCz"/>
+                    <constraint firstItem="fIW-ug-XfK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="w1i-aO-mD6"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

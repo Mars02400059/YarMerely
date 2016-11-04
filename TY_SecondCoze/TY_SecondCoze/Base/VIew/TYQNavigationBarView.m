@@ -23,28 +23,20 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        CGFloat buttonWidth = 44;
-        CGFloat buttonX = 5;
-        CGFloat Y = 20;
-        CGFloat titleX = buttonX + buttonWidth;
-        CGFloat titleWidth = frame.size.height - 2 * titleX;
-        CGFloat Height = frame.size.height - Y;
         
         self.backColor = [[UIView alloc] initWithFrame:self.bounds];
         [self addSubview:_backColor];
         
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(titleX, Y, titleWidth, Height)];
+        self.titleLabel = [UILabel new];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.font = [UIFont systemFontOfSize:19.f];
         [self addSubview:_titleLabel];
         
         self.leftButton = [TYQButton buttonWithType:UIButtonTypeCustom];
-        _leftButton.frame = CGRectMake(buttonX, Y, buttonWidth, buttonWidth);
         [_leftButton addTarget:self action:@selector(leftButtonAction) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_leftButton];
         
         self.rightButton = [TYQButton buttonWithType:UIButtonTypeCustom];
-        _rightButton.frame = CGRectMake(frame.size.width - buttonWidth - buttonX, Y, buttonWidth, Height);
         [_rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_rightButton];
         
@@ -52,6 +44,22 @@
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    CGFloat buttonWidth = 44;
+    CGFloat buttonX = 5;
+    CGFloat Y = 20;
+    CGFloat titleX = buttonX + buttonWidth;
+    CGFloat titleWidth = self.height - 2 * titleX;
+    CGFloat Height = self.height - Y;
+    _titleLabel.frame = CGRectMake(titleX, Y, titleWidth, Height);
+    _leftButton.frame = CGRectMake(buttonX, Y, buttonWidth, buttonWidth);
+    _rightButton.frame = CGRectMake(self.width - buttonWidth - buttonX, Y, buttonWidth, Height);
+
+    
+    
+}
 
 - (void)setTitle:(NSString *)title {
     _title = title;

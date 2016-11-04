@@ -60,6 +60,7 @@ UITableViewDataSource
     
     [self addTableView];
     [self addNavigationBarView];
+    self.navigationBarView.title = @"消息";
     
 }
 
