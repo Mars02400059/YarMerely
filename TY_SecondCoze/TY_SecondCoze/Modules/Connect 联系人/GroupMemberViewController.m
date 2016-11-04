@@ -32,7 +32,7 @@
      */
  //   - (NSArray *)fetchOccupantList:(NSString *)groupId error:(EMError **)pError;
     
-//    [[EaseMob sharedInstance].chatManager 
+    [[EaseMob sharedInstance].chatManager asyncFetchOccupantList:<#(NSString *)#> completion:<#^(NSArray *occupantsList, EMError *error)completion#> onQueue:<#(dispatch_queue_t)#>
     
     
     
