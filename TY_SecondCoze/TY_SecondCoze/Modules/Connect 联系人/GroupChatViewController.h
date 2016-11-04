@@ -10,4 +10,6 @@
 
 @interface GroupChatViewController : TYQViewController
 
+@property (nonatomic, strong) EMGroup *emgroup;
+
 @end

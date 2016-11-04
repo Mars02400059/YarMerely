@@ -69,6 +69,8 @@
     
     GroupMemberViewController *memberVC = [[GroupMemberViewController alloc] init];
     
+    memberVC.emgroup = _emgroup;
+    
     [self.navigationController pushViewController:memberVC animated:YES];
 }
 
