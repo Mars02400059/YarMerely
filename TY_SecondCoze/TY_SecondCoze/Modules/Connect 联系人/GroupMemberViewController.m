@@ -11,14 +11,35 @@
 @interface GroupMemberViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *myTableView;
-
+@property (nonatomic, strong) NSMutableArray *occupantsListArray;
 @end
 
 @implementation GroupMemberViewController
 
+- (void)viewDidAppear:(BOOL)animated {
+    [[EaseMob sharedInstance].chatManager asyncFetchOccupantList:_emgroup.groupId completion:^(NSArray *occupantsList, EMError *error) {
+        
+        if (self.occupantsListArray) {
+         
+            [_occupantsListArray removeAllObjects];
+            
+        }
+        
+        [self.occupantsListArray addObjectsFromArray:occupantsList];
+        [_myTableView reloadData];
+        
+        NSLog(@"*****%@",_occupantsListArray);
+        
+    } onQueue: nil];
+    
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
    
+    self.occupantsListArray = [NSMutableArray array];
+    
     /*
      获取群成员
      */
@@ -32,15 +53,9 @@
      */
  //   - (NSArray *)fetchOccupantList:(NSString *)groupId error:(EMError **)pError;
     
-    [[EaseMob sharedInstance].chatManager asyncFetchOccupantList:<#(NSString *)#> completion:<#^(NSArray *occupantsList, EMError *error)completion#> onQueue:<#(dispatch_queue_t)#>
     
     
     
-    
-    
-//    - (void)asyncFetchOccupantList:(NSString *)groupId
-//completion:(void (^)(NSArray *occupantsList,EMError *error))completion
-//onQueue:(dispatch_queue_t)aQueue;
     
     
     self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64) style:UITableViewStylePlain];
@@ -65,12 +80,15 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 10;
+    return _occupantsListArray.count;
+    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    cell.textLabel.text = _occupantsListArray[indexPath.row];
     
     return cell;
 }

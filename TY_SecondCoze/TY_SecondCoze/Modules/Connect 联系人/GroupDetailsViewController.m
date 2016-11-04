@@ -110,6 +110,8 @@ EMChatManagerDelegate
     
     GroupChatViewController *groupVC = [[GroupChatViewController alloc] init];
     
+    groupVC.emgroup = _emgroup;
+    
     [self.navigationController pushViewController:groupVC animated:YES];
     NSLog(@"进入群聊");
 }
