@@ -32,6 +32,15 @@
      */
  //   - (NSArray *)fetchOccupantList:(NSString *)groupId error:(EMError **)pError;
     
+//    [[EaseMob sharedInstance].chatManager 
+    
+    
+    
+    
+    
+//    - (void)asyncFetchOccupantList:(NSString *)groupId
+//completion:(void (^)(NSArray *occupantsList,EMError *error))completion
+//onQueue:(dispatch_queue_t)aQueue;
     
     
     self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64) style:UITableViewStylePlain];
@@ -80,19 +89,10 @@
 
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+
+
 
 @end

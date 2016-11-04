@@ -64,8 +64,7 @@
     
     [self addNavigationBarView];
     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
-    //邀请新成员
-     self.navigationBarView.rightButtonImage = [UIImage imageNamed:@"加号"];
+    
     
     // Do any additional setup after loading the view.
 }
@@ -79,11 +78,7 @@
     groupStyleSetting.groupMaxUsersCount = 500; // 创建500人的群，如果不设置，默认是200人。
     groupStyleSetting.groupStyle = eGroupStyle_PublicOpenJoin; // 创建不同类型的群组，这里需要才传入不同的类型
    
-<<<<<<< HEAD
     EMGroup *group = [[EaseMob sharedInstance].chatManager createGroupWithSubject:self.groupTextFiled.text description:[NSString stringWithFormat:@"欢迎加入%@",self.groupTextFiled.text] invitees:@[] initialWelcomeMessage:@"邀请您加入群组" styleSetting:groupStyleSetting error:&error];
-=======
-    EMGroup *group = [[EaseMob sharedInstance].chatManager createGroupWithSubject:self.groupTextFiled.text description:@"群组描述" invitees:nil initialWelcomeMessage:@"邀请您加入群组" styleSetting:groupStyleSetting error:&error];
->>>>>>> c8f698d06e85ca552da78309367f910290cfc39c
     if(!error){
        
         NSLog(@"-- 创建群成功 -- %@",group);

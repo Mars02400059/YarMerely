@@ -126,33 +126,8 @@ static CGFloat const nameTextFieldHeight = 40;
     
     [[EaseMob sharedInstance].chatManager asyncRegisterNewAccount:_nameTextField.text password:_passwoksTextField.text withCompletion:^(NSString *username, NSString *password, EMError *error) {
             if (!error) {
+            
                 NSLog(@"注册成功");
-                //在GameScore创建一条数据，如果当前没GameScore表，则会创建GameScore表
-                BmobObject *gameScore = [BmobObject objectWithClassName:@"PersonInfo"];
-                // 账号
-                [gameScore setObject:_nameTextField.text forKey:@"accountnumber"];
-                // 设置昵称
-                [gameScore setObject:_nameTextField.text forKey:@"nickname"];
-                // 设置age为18
-                [gameScore setObject:@"18" forKey:@"age"];
-                // 设置性别
-                [gameScore setObject:@"未添加" forKey:@"sex"];
-                // 设置签名
-                [gameScore setObject:@"这个人很懒, 还没设置签名" forKey:@"autograph"];
-                
-                //异步保存到服务器
-                [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-                    if (isSuccessful) {
-                        //创建成功后会返回objectId，updatedAt，createdAt等信息
-                        //创建对象成功，打印对象值
-                        NSLog(@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈%@",gameScore);
-                    } else if (error){
-                        //发生错误后的动作
-                        NSLog(@"%@",error);
-                    } else {
-                        NSLog(@"Unknow error");
-                    }
-                }];
                 [self dismissViewControllerAnimated:YES completion:nil];
                 
             
