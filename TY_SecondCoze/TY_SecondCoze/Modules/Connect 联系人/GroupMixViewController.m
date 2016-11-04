@@ -88,10 +88,17 @@
     
     EMError *error = nil;
     // 申请加入需要审核的公开群组
+<<<<<<< HEAD
     [[EaseMob sharedInstance].chatManager applyJoinPublicGroup:_IdTextFiled.text withGroupname:_nameFiled.text message:_messageFiled.text error:&error];
     if (!error) {
         
         NSLog(@"申请==成功");
+=======
+    [[EaseMob sharedInstance].chatManager applyJoinPublicGroup:@"14781337321591" withGroupname:@"群组名称" message:@"申请信息" error:&error];
+    if (!error) {
+        
+        NSLog(@"申请成功");
+>>>>>>> c8f698d06e85ca552da78309367f910290cfc39c
     
     }
     

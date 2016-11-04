@@ -34,11 +34,26 @@ UITableViewDelegate
     NSArray *publicGroupList = [[EaseMob sharedInstance].chatManager fetchMyGroupsListWithError:&error];
     if (!error) {
         
+<<<<<<< HEAD
         self.groupArray = publicGroupList;
         NSLog(@" -- 获取09成功-- %lu",(unsigned long)publicGroupList.count);
         
     }
 
+=======
+        NSLog(@" -- 获取成功-- %lu",(unsigned long)publicGroupList.count);
+        self.groupArray = publicGroupList;
+//        if (publicGroupList.count) {
+//            self.groupArray = publicGroupList;
+//        } else {
+//            self.groupArray = @[];
+//        }
+        
+        
+        
+    }
+//    self.groupArray = @[];
+>>>>>>> c8f698d06e85ca552da78309367f910290cfc39c
 
     
     self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64 - 50) style:UITableViewStylePlain];
@@ -105,9 +120,6 @@ UITableViewDelegate
 
 */
     
-
-
-
 
 
 - (void)didReceiveMemoryWarning {

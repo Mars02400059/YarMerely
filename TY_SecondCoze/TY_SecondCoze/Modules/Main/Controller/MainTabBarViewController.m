@@ -102,6 +102,7 @@ EMChatManagerBuddyDelegate
 //     谁谁谁(用户)申请加入该群
 //     */
     
+<<<<<<< HEAD
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"确定添加吗?" message:nil preferredStyle:UIAlertControllerStyleAlert];
     //创建一个取消和一个确定按钮
     UIAlertAction *cancelAlert = [UIAlertAction actionWithTitle:@"拒绝" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
@@ -113,6 +114,19 @@ EMChatManagerBuddyDelegate
     UIAlertAction *ensureAlert = [UIAlertAction actionWithTitle:@"接受" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         [[EaseMob sharedInstance].chatManager acceptApplyJoinGroup:groupId groupname:groupname applicant:username error:nil];
+=======
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"确定退出登录吗?" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    //创建一个取消和一个确定按钮
+    UIAlertAction *cancelAlert = [UIAlertAction actionWithTitle:@"拒绝" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        
+        [[EaseMob sharedInstance].chatManager rejectApplyJoinGroup:groupId groupname:@"nhyjn" toApplicant:@"8001" reason:@"拒绝原因"];
+        
+        
+    }];
+    UIAlertAction *ensureAlert = [UIAlertAction actionWithTitle:@"接受" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [[EaseMob sharedInstance].chatManager acceptApplyJoinGroup:groupId groupname:@"" applicant:username error:nil];
+>>>>>>> c8f698d06e85ca552da78309367f910290cfc39c
         
     }];
     //将取消和确定按钮添加进弹框控制器
@@ -122,6 +136,12 @@ EMChatManagerBuddyDelegate
     [self presentViewController:alertController animated:YES completion:nil];
     
 }
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> c8f698d06e85ca552da78309367f910290cfc39c
 
 
 - (instancetype)init

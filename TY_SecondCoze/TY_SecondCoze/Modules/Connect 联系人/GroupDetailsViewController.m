@@ -12,16 +12,21 @@
 #import "InfoModel.h"
 #import "GroupChatViewController.h"
 @interface GroupDetailsViewController ()
-
 <
-EMChatManagerDelegate
+EMChatManagerDelegate,
+UITableViewDataSource,
+UITableViewDelegate
 >
+<<<<<<< HEAD
 
 @property (nonatomic, strong) TYQLabel *groupIdLabel;//请输入群id
 @property (nonatomic, strong) TYQLabel *groupSubjectLabel;//名称
 @property (nonatomic, strong) TYQImageView *groupImageV;
 @property (nonatomic, strong) TYQButton *groupChatButton;
 
+=======
+@property (nonatomic, strong) UITableView *myTableview;
+>>>>>>> c8f698d06e85ca552da78309367f910290cfc39c
 @end
 
 @implementation GroupDetailsViewController
@@ -30,6 +35,7 @@ EMChatManagerDelegate
     [super viewDidLoad];
     
     /*
+<<<<<<< HEAD
      获取群详情,,
      右按钮为退人进群
      /*!
@@ -90,6 +96,25 @@ EMChatManagerDelegate
     [self.view addSubview:_groupChatButton];
     [_groupChatButton addTarget:self action:@selector(groupChatButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     
+=======
+     获取群详情,就是获取群成员
+     */
+//    NSLog(@"888%@",_emgroup.groupId);
+    
+    self.myTableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64) style:UITableViewStylePlain];
+    _myTableview.dataSource = self;
+    _myTableview.delegate = self;
+    [self.view addSubview:_myTableview];
+   
+    [_myTableview registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    
+    
+    
+    
+    [self addNavigationBarView];
+     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
+    
+>>>>>>> c8f698d06e85ca552da78309367f910290cfc39c
     
     
     [self addNavigationBarView];
@@ -97,8 +122,11 @@ EMChatManagerDelegate
     
     // Do any additional setup after loading the view.
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c8f698d06e85ca552da78309367f910290cfc39c
 //左按钮
 -(void)tyq_navigationBarViewLeftButtonAction{
     
@@ -106,6 +134,7 @@ EMChatManagerDelegate
 }
 
 
+<<<<<<< HEAD
 -(void)groupChatButtonAction:(UIButton *)button{
     
     GroupChatViewController *groupVC = [[GroupChatViewController alloc] init];
@@ -115,6 +144,22 @@ EMChatManagerDelegate
 }
 
 
+=======
+#pragma mark --- tableVIew dataSouce,delegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return 10;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    return cell;
+}
+
+
+
+>>>>>>> c8f698d06e85ca552da78309367f910290cfc39c
 
 
 

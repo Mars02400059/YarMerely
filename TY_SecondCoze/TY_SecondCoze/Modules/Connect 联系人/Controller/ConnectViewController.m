@@ -183,7 +183,11 @@ EMChatManagerDelegate
 #pragma mark ---右按钮方法(下拉菜单)
 -(void)tyq_navigationBarViewRightButtonAction{
     
+<<<<<<< HEAD
     [FTPopOverMenu showForSender:self.navigationBarView.rightButton withMenu:@[@"添加联系人",@"创建群",@"个人主动加入群"] doneBlock:^(NSInteger selectedIndex) {
+=======
+    [FTPopOverMenu showForSender:self.navigationBarView.rightButton withMenu:@[@"添加联系人",@"创建群",@"个人主动加入"] doneBlock:^(NSInteger selectedIndex) {
+>>>>>>> c8f698d06e85ca552da78309367f910290cfc39c
         
         if (selectedIndex == 0) {
             
