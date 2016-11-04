@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		410C55D31DCC7CCB0069E4C7 /* MinePersonInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 410C55CB1DCC7CCB0069E4C7 /* MinePersonInfoModel.m */; };
+		410C55D41DCC7CCB0069E4C7 /* RevampPersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410C55CF1DCC7CCB0069E4C7 /* RevampPersonInfoViewController.m */; };
+		410C55D51DCC7CCB0069E4C7 /* PersonInfoTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 410C55D21DCC7CCB0069E4C7 /* PersonInfoTextField.m */; };
+		410C55D71DCC7E510069E4C7 /* 修改.png in Resources */ = {isa = PBXBuildFile; fileRef = 410C55D61DCC7E510069E4C7 /* 修改.png */; };
 		410D98431DC1E5A000A5C9FD /* MessageUniparousTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D98411DC1E5A000A5C9FD /* MessageUniparousTableViewCell.m */; };
 		410D98471DC1F5A000A5C9FD /* NSDate+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D98461DC1F5A000A5C9FD /* NSDate+Categories.m */; };
 		410D984A1DC1F62200A5C9FD /* NSUserDefaults+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 410D98491DC1F62200A5C9FD /* NSUserDefaults+Categories.m */; };
@@ -123,8 +127,10 @@
 		4968E4DD1DC2455400257004 /* ConnetMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E4DC1DC2455400257004 /* ConnetMessageViewController.m */; };
 		4968E55C1DC874CB00257004 /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E55B1DC874CB00257004 /* GroupViewController.m */; };
 		4968E55F1DC879C700257004 /* GroupAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E55E1DC879C700257004 /* GroupAddViewController.m */; };
-		4968E5631DC8957A00257004 /* 群.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E5621DC8957A00257004 /* 群.png */; };
+		4968E5631DC8957A00257004 /* 群1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E5621DC8957A00257004 /* 群1.png */; };
 		4968E5661DC9C7DC00257004 /* GroupDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E5651DC9C7DC00257004 /* GroupDetailsViewController.m */; };
+		4968E5681DCA173700257004 /* 加号.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E5671DCA173700257004 /* 加号.png */; };
+		4968E56E1DCAC55C00257004 /* GroupMixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E56D1DCAC55C00257004 /* GroupMixViewController.m */; };
 		49A8B39A1DBB82BD00FFF2A1 /* 00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B3991DBB82BD00FFF2A1 /* 00.jpg */; };
 		49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39B1DBB855000FFF2A1 /* 000.png */; };
 		49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39D1DBB873A00FFF2A1 /* 1.png */; };
@@ -137,6 +143,10 @@
 		49C51DEE1DB89F54006A5126 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C51DEC1DB89F54006A5126 /* LoginViewController.m */; };
 		49C51DF31DB89F69006A5126 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C51DF11DB89F69006A5126 /* RegisterViewController.m */; };
 		49C51DF81DB89F7F006A5126 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C51DF61DB89F7F006A5126 /* UserViewController.m */; };
+		49ECEBBA1DCC2E250002127F /* QQ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49ECEBB91DCC2E250002127F /* QQ.jpg */; };
+		49ECEBBE1DCC3D020002127F /* GroupChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49ECEBBD1DCC3D020002127F /* GroupChatViewController.m */; };
+		49ECEC231DCC6BB10002127F /* 群.png in Resources */ = {isa = PBXBuildFile; fileRef = 49ECEC221DCC6BB10002127F /* 群.png */; };
+		49ECEC271DCC6C830002127F /* GroupMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49ECEC261DCC6C830002127F /* GroupMemberViewController.m */; };
 		65A25D6E919AA967C132EB83 /* libPods-TY_SecondCozeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012D4FE9B8BF6969BDA42652 /* libPods-TY_SecondCozeTests.a */; };
 		7FF6B8A50D61B1F4F0C34DF2 /* libPods-TY_SecondCozeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E777CB2D6A0C4BDF288E6D61 /* libPods-TY_SecondCozeUITests.a */; };
 		BCE50A40B9B58BB8B9A58F41 /* libPods-TY_SecondCoze.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1462FD82A9F1C15EEEB6E6 /* libPods-TY_SecondCoze.a */; };
@@ -163,6 +173,13 @@
 		012D4FE9B8BF6969BDA42652 /* libPods-TY_SecondCozeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TY_SecondCozeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24115FC4DA1B556994AF1EE4 /* Pods-TY_SecondCoze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TY_SecondCoze.release.xcconfig"; path = "Pods/Target Support Files/Pods-TY_SecondCoze/Pods-TY_SecondCoze.release.xcconfig"; sourceTree = "<group>"; };
 		2AD0D96C5FA477CBB2631FEF /* Pods-TY_SecondCozeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TY_SecondCozeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TY_SecondCozeTests/Pods-TY_SecondCozeTests.release.xcconfig"; sourceTree = "<group>"; };
+		410C55CA1DCC7CCB0069E4C7 /* MinePersonInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinePersonInfoModel.h; sourceTree = "<group>"; };
+		410C55CB1DCC7CCB0069E4C7 /* MinePersonInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MinePersonInfoModel.m; sourceTree = "<group>"; };
+		410C55CE1DCC7CCB0069E4C7 /* RevampPersonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevampPersonInfoViewController.h; sourceTree = "<group>"; };
+		410C55CF1DCC7CCB0069E4C7 /* RevampPersonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevampPersonInfoViewController.m; sourceTree = "<group>"; };
+		410C55D11DCC7CCB0069E4C7 /* PersonInfoTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoTextField.h; sourceTree = "<group>"; };
+		410C55D21DCC7CCB0069E4C7 /* PersonInfoTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoTextField.m; sourceTree = "<group>"; };
+		410C55D61DCC7E510069E4C7 /* 修改.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "修改.png"; sourceTree = "<group>"; };
 		410D98401DC1E5A000A5C9FD /* MessageUniparousTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageUniparousTableViewCell.h; sourceTree = "<group>"; };
 		410D98411DC1E5A000A5C9FD /* MessageUniparousTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageUniparousTableViewCell.m; sourceTree = "<group>"; };
 		410D98451DC1F5A000A5C9FD /* NSDate+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Categories.h"; sourceTree = "<group>"; };
@@ -363,9 +380,12 @@
 		4968E55B1DC874CB00257004 /* GroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupViewController.m; sourceTree = "<group>"; };
 		4968E55D1DC879C700257004 /* GroupAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupAddViewController.h; sourceTree = "<group>"; };
 		4968E55E1DC879C700257004 /* GroupAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupAddViewController.m; sourceTree = "<group>"; };
-		4968E5621DC8957A00257004 /* 群.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "群.png"; sourceTree = "<group>"; };
+		4968E5621DC8957A00257004 /* 群1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "群1.png"; sourceTree = "<group>"; };
 		4968E5641DC9C7DC00257004 /* GroupDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupDetailsViewController.h; sourceTree = "<group>"; };
 		4968E5651DC9C7DC00257004 /* GroupDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupDetailsViewController.m; sourceTree = "<group>"; };
+		4968E5671DCA173700257004 /* 加号.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "加号.png"; sourceTree = "<group>"; };
+		4968E56C1DCAC55C00257004 /* GroupMixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupMixViewController.h; sourceTree = "<group>"; };
+		4968E56D1DCAC55C00257004 /* GroupMixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupMixViewController.m; sourceTree = "<group>"; };
 		49A8B3991DBB82BD00FFF2A1 /* 00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00.jpg; sourceTree = "<group>"; };
 		49A8B39B1DBB855000FFF2A1 /* 000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 000.png; sourceTree = "<group>"; };
 		49A8B39D1DBB873A00FFF2A1 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -389,6 +409,12 @@
 		49C51DF11DB89F69006A5126 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		49C51DF51DB89F7F006A5126 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		49C51DF61DB89F7F006A5126 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		49ECEBB91DCC2E250002127F /* QQ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = QQ.jpg; sourceTree = "<group>"; };
+		49ECEBBC1DCC3D020002127F /* GroupChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupChatViewController.h; sourceTree = "<group>"; };
+		49ECEBBD1DCC3D020002127F /* GroupChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupChatViewController.m; sourceTree = "<group>"; };
+		49ECEC221DCC6BB10002127F /* 群.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "群.png"; sourceTree = "<group>"; };
+		49ECEC251DCC6C830002127F /* GroupMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupMemberViewController.h; sourceTree = "<group>"; };
+		49ECEC261DCC6C830002127F /* GroupMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupMemberViewController.m; sourceTree = "<group>"; };
 		6D73B2430328EBD3979C95F8 /* Pods-TY_SecondCoze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TY_SecondCoze.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TY_SecondCoze/Pods-TY_SecondCoze.debug.xcconfig"; sourceTree = "<group>"; };
 		6E1462FD82A9F1C15EEEB6E6 /* libPods-TY_SecondCoze.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TY_SecondCoze.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB2328C612563B0CA47F82E /* Pods-TY_SecondCozeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TY_SecondCozeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TY_SecondCozeUITests/Pods-TY_SecondCozeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -427,6 +453,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		410C55C91DCC7CCB0069E4C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				410C55CA1DCC7CCB0069E4C7 /* MinePersonInfoModel.h */,
+				410C55CB1DCC7CCB0069E4C7 /* MinePersonInfoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		410C55CC1DCC7CCB0069E4C7 /* RevampPersonInfo 修改信息 */ = {
+			isa = PBXGroup;
+			children = (
+				410C55CD1DCC7CCB0069E4C7 /* Controller */,
+				410C55D01DCC7CCB0069E4C7 /* View */,
+			);
+			path = "RevampPersonInfo 修改信息";
+			sourceTree = "<group>";
+		};
+		410C55CD1DCC7CCB0069E4C7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				410C55CE1DCC7CCB0069E4C7 /* RevampPersonInfoViewController.h */,
+				410C55CF1DCC7CCB0069E4C7 /* RevampPersonInfoViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		410C55D01DCC7CCB0069E4C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				410C55D11DCC7CCB0069E4C7 /* PersonInfoTextField.h */,
+				410C55D21DCC7CCB0069E4C7 /* PersonInfoTextField.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		410D983E1DC1E3D900A5C9FD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -890,8 +952,9 @@
 		41E37D621DBA106B00FCAD08 /* User Image */ = {
 			isa = PBXGroup;
 			children = (
-				4968E5621DC8957A00257004 /* 群.png */,
+				4968E5621DC8957A00257004 /* 群1.png */,
 				49A8B3991DBB82BD00FFF2A1 /* 00.jpg */,
+				49ECEBB91DCC2E250002127F /* QQ.jpg */,
 				49A8B39B1DBB855000FFF2A1 /* 000.png */,
 				49A8B39D1DBB873A00FFF2A1 /* 1.png */,
 				4941582E1DBD97EB00505112 /* 22.png */,
@@ -925,6 +988,8 @@
 		41F1445B1DC18BAF00C7023D /* PersonalInformation 个人信息 */ = {
 			isa = PBXGroup;
 			children = (
+				410C55C91DCC7CCB0069E4C7 /* Model */,
+				410C55CC1DCC7CCB0069E4C7 /* RevampPersonInfo 修改信息 */,
 				41F1445D1DC18C1500C7023D /* Controller */,
 				41F1445C1DC18C1300C7023D /* View */,
 			);
@@ -999,6 +1064,7 @@
 		41FC7D8F1DBE212C00712714 /* Mine Image */ = {
 			isa = PBXGroup;
 			children = (
+				410C55D61DCC7E510069E4C7 /* 修改.png */,
 				41FC7D941DBE2AAB00712714 /* back.png */,
 				41FC7D921DBE22FC00712714 /* 设置.png */,
 				413409F51DC0704700C4D466 /* 返回.png */,
@@ -1039,6 +1105,8 @@
 		4968E5581DC8744500257004 /* Group */ = {
 			isa = PBXGroup;
 			children = (
+				49ECEC241DCC6C4C0002127F /* GroupMember */,
+				49ECEBBB1DCC3CD00002127F /* GroupChat */,
 				4968E5591DC8745700257004 /* Controller */,
 			);
 			name = Group;
@@ -1053,6 +1121,8 @@
 				4968E55E1DC879C700257004 /* GroupAddViewController.m */,
 				4968E5641DC9C7DC00257004 /* GroupDetailsViewController.h */,
 				4968E5651DC9C7DC00257004 /* GroupDetailsViewController.m */,
+				4968E56C1DCAC55C00257004 /* GroupMixViewController.h */,
+				4968E56D1DCAC55C00257004 /* GroupMixViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1077,9 +1147,11 @@
 				4935D92C1DBB470B00BF55A7 /* 3.jpg */,
 				4968E4321DC09E6E00257004 /* an.png */,
 				4968E4431DC0DBBA00257004 /* jia.png */,
+				49ECEC221DCC6BB10002127F /* 群.png */,
 				4968E4301DC09E6700257004 /* qun.png */,
 				4968E42E1DC09E6200257004 /* xin.png */,
 				4968E4451DC0DD9600257004 /* 附近.png */,
+				4968E5671DCA173700257004 /* 加号.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1137,6 +1209,24 @@
 				41E37D691DBA136D00FCAD08 /* View */,
 			);
 			path = "User ";
+			sourceTree = "<group>";
+		};
+		49ECEBBB1DCC3CD00002127F /* GroupChat */ = {
+			isa = PBXGroup;
+			children = (
+				49ECEBBC1DCC3D020002127F /* GroupChatViewController.h */,
+				49ECEBBD1DCC3D020002127F /* GroupChatViewController.m */,
+			);
+			name = GroupChat;
+			sourceTree = "<group>";
+		};
+		49ECEC241DCC6C4C0002127F /* GroupMember */ = {
+			isa = PBXGroup;
+			children = (
+				49ECEC251DCC6C830002127F /* GroupMemberViewController.h */,
+				49ECEC261DCC6C830002127F /* GroupMemberViewController.m */,
+			);
+			name = GroupMember;
 			sourceTree = "<group>";
 		};
 		4DDFE85E53F4E47B3358AA7E /* Frameworks */ = {
@@ -1239,7 +1329,7 @@
 				TargetAttributes = {
 					410E5BC91DB85159005C2513 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = VYF4743U5J;
+						DevelopmentTeam = QWKQAE7W9B;
 					};
 					410E5BE21DB85159005C2513 = {
 						CreatedOnToolsVersion = 7.1;
@@ -1276,7 +1366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4968E5631DC8957A00257004 /* 群.png in Resources */,
+				4968E5631DC8957A00257004 /* 群1.png in Resources */,
 				41AE13CE1DC2FEF900AF06BF /* 聊天加号.png in Resources */,
 				413715851DC9D57F00DD8B50 /* 准备录音_未按-01.png in Resources */,
 				4137158B1DC9DA9A00DD8B50 /* 语音通话.png in Resources */,
@@ -1294,6 +1384,7 @@
 				41FC7D8C1DBDEBE700712714 /* 说1.png in Resources */,
 				49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */,
 				41FC7DAA1DBEED6F00712714 /* 进入，右.png in Resources */,
+				410C55D71DCC7E510069E4C7 /* 修改.png in Resources */,
 				41AE13CC1DC2FEAB00AF06BF /* 聊天键盘.png in Resources */,
 				41AE13CA1DC2F4C000AF06BF /* 聊天语音.png in Resources */,
 				410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */,
@@ -1305,7 +1396,9 @@
 				410E5BDA1DB85159005C2513 /* Assets.xcassets in Resources */,
 				41FC7D931DBE22FC00712714 /* 设置.png in Resources */,
 				41FC7DA31DBEEA6E00712714 /* MineGrayBackTableViewCell.xib in Resources */,
+				4968E5681DCA173700257004 /* 加号.png in Resources */,
 				41FC7D801DBDE23B00712714 /* 联系人1.png in Resources */,
+				49ECEC231DCC6BB10002127F /* 群.png in Resources */,
 				49C51D891DB899FC006A5126 /* 0.jpg in Resources */,
 				410E5BD81DB85159005C2513 /* Main.storyboard in Resources */,
 				41FC7D9E1DBEE83800712714 /* MineSpaceTableViewCell.xib in Resources */,
@@ -1314,6 +1407,7 @@
 				4968E42F1DC09E6200257004 /* xin.png in Resources */,
 				418C24CF1DC4D8E5002525B9 /* 气泡右.png in Resources */,
 				49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */,
+				49ECEBBA1DCC2E250002127F /* QQ.jpg in Resources */,
 				413409F61DC0704700C4D466 /* 返回.png in Resources */,
 				4137158D1DC9DB1700DD8B50 /* 视频通话.png in Resources */,
 				4941582F1DBD97EB00505112 /* 22.png in Resources */,
@@ -1491,6 +1585,7 @@
 				41976ED71DC3748B00AC8518 /* MessageChatTableViewCell.m in Sources */,
 				49C51DD51DB89AF7006A5126 /* EAThemeManager.m in Sources */,
 				410E5C361DB8530B005C2513 /* FileManagerUtils.m in Sources */,
+				49ECEBBE1DCC3D020002127F /* GroupChatViewController.m in Sources */,
 				410E5C191DB852FF005C2513 /* TYQTabBarViewController.m in Sources */,
 				413715721DC9740D00DD8B50 /* EMVoiceConverter.mm in Sources */,
 				410D984A1DC1F62200A5C9FD /* NSUserDefaults+Categories.m in Sources */,
@@ -1505,6 +1600,7 @@
 				4968E55F1DC879C700257004 /* GroupAddViewController.m in Sources */,
 				41FC7D9D1DBEE83800712714 /* MineSpaceTableViewCell.m in Sources */,
 				41AE13B21DC22CCE00AF06BF /* InfoModel.m in Sources */,
+				49ECEC271DCC6C830002127F /* GroupMemberViewController.m in Sources */,
 				41AE13B51DC2DEC900AF06BF /* StationView.m in Sources */,
 				41E37D671DBA133A00FCAD08 /* TYQTextField.m in Sources */,
 				41E37D6C1DBA139100FCAD08 /* TextFieldView.m in Sources */,
@@ -1515,10 +1611,13 @@
 				410E5C5B1DB85315005C2513 /* SpeakViewController.m in Sources */,
 				4137156E1DC9740D00DD8B50 /* EMCDDeviceManager+Remind.m in Sources */,
 				49C51DEE1DB89F54006A5126 /* LoginViewController.m in Sources */,
+				410C55D41DCC7CCB0069E4C7 /* RevampPersonInfoViewController.m in Sources */,
 				418C24C41DC4A4D9002525B9 /* Tools.m in Sources */,
 				49C51DDA1DB89D6C006A5126 /* DataBaseTool.m in Sources */,
 				410E5BCF1DB85159005C2513 /* main.m in Sources */,
+				4968E56E1DCAC55C00257004 /* GroupMixViewController.m in Sources */,
 				4137157A1DC98D0200DD8B50 /* RealtimeCallViewController.m in Sources */,
+				410C55D51DCC7CCB0069E4C7 /* PersonInfoTextField.m in Sources */,
 				410E5C211DB852FF005C2513 /* TYQView.m in Sources */,
 				410E5C531DB85315005C2513 /* ConnectViewController.m in Sources */,
 				4968E4371DC0A09D00257004 /* ConnectCollectionViewCell.m in Sources */,
@@ -1547,6 +1646,7 @@
 				410D98431DC1E5A000A5C9FD /* MessageUniparousTableViewCell.m in Sources */,
 				410E5C1A1DB852FF005C2513 /* TYQViewController.m in Sources */,
 				41FC7D231DBC853C00712714 /* TYQNavigationBarView.m in Sources */,
+				410C55D31DCC7CCB0069E4C7 /* MinePersonInfoModel.m in Sources */,
 				413715691DC9740D00DD8B50 /* EMAudioPlayerUtil.m in Sources */,
 				4968E4DD1DC2455400257004 /* ConnetMessageViewController.m in Sources */,
 			);
@@ -1694,7 +1794,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Lefeng Guo (3JCKL8GQ34)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = VYF4743U5J;
 				DEVELOPMENT_TEAM = QWKQAE7W9B;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TY_SecondCoze/Supporting Files/PrefixHeader.pch";
@@ -1721,7 +1820,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Lefeng Guo (3JCKL8GQ34)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = VYF4743U5J;
 				DEVELOPMENT_TEAM = QWKQAE7W9B;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TY_SecondCoze/Supporting Files/PrefixHeader.pch";

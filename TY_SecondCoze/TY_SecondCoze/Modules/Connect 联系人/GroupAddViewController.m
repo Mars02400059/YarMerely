@@ -38,7 +38,7 @@
     _groupImageV.layer.cornerRadius = 5;
     _groupImageV.layer.masksToBounds = YES;
     _groupImageV.backgroundColor = [UIColor yellowColor];
-    _groupImageV.image = [UIImage imageNamed:@"群"];
+    _groupImageV.image = [UIImage imageNamed:@"群1"];
     [self.view addSubview:_groupImageV];
     
     self.groupLabel = [[TYQLabel alloc] initWithFrame:CGRectMake(_groupTextFiled.frame.origin.x, _groupImageV.frame.origin.y + _groupImageV.frame.size.height + 20, _groupTextFiled.frame.size.width, _groupTextFiled.frame.size.height)];
@@ -69,16 +69,19 @@
     // Do any additional setup after loading the view.
 }
 
+#pragma mark --- 创建群
+
 -(void) buttonAction:(UIButton *)button{
     
     EMError *error = nil;
     EMGroupStyleSetting *groupStyleSetting = [[EMGroupStyleSetting alloc] init];
     groupStyleSetting.groupMaxUsersCount = 500; // 创建500人的群，如果不设置，默认是200人。
     groupStyleSetting.groupStyle = eGroupStyle_PublicOpenJoin; // 创建不同类型的群组，这里需要才传入不同的类型
-    EMGroup *group = [[EaseMob sharedInstance].chatManager createGroupWithSubject:self.groupTextFiled.text description:@"群组描述" invitees:@[@"6001",@"6002"] initialWelcomeMessage:@"邀请您加入群组" styleSetting:groupStyleSetting error:&error];
+   
+    EMGroup *group = [[EaseMob sharedInstance].chatManager createGroupWithSubject:self.groupTextFiled.text description:[NSString stringWithFormat:@"欢迎加入%@",self.groupTextFiled.text] invitees:@[] initialWelcomeMessage:@"邀请您加入群组" styleSetting:groupStyleSetting error:&error];
     if(!error){
        
-        NSLog(@"-- 创建成功 -- %@",group);
+        NSLog(@"-- 创建群成功 -- %@",group);
     
     }
     
@@ -90,6 +93,7 @@
     [self.view endEditing:YES];
 }
 
+//左按钮
 -(void)tyq_navigationBarViewLeftButtonAction{
     
     [self.navigationController popViewControllerAnimated:YES];
@@ -99,19 +103,8 @@
 
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

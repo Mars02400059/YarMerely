@@ -31,15 +31,15 @@ UITableViewDelegate
      */
     
     EMError *error = nil;
-    NSArray *publicGroupList = [[EaseMob sharedInstance].chatManager fetchAllPublicGroupsWithError:&error];
+    NSArray *publicGroupList = [[EaseMob sharedInstance].chatManager fetchMyGroupsListWithError:&error];
     if (!error) {
         
-        NSLog(@" -- 获取成功-- %lu",(unsigned long)publicGroupList.count);
-        
         self.groupArray = publicGroupList;
+        NSLog(@" -- 获取09成功-- %lu",(unsigned long)publicGroupList.count);
         
     }
-    
+
+
     
     self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64 - 50) style:UITableViewStylePlain];
     _myTableView.dataSource = self;
@@ -51,7 +51,7 @@ UITableViewDelegate
     
     [self addNavigationBarView];
   self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
-    
+//    self.navigationBarView.rightButtonImage = [UIImage imageNamed:@"加号"];//右按钮为添加人按钮
     
     
     // Do any additional setup after loading the view.
@@ -77,7 +77,7 @@ UITableViewDelegate
     NSString *string = gro.groupSubject;
    
     cell.textLabel.text = string;
-    
+  
     return cell;
 }
 
@@ -90,6 +90,21 @@ UITableViewDelegate
 }
 
 
+/*
+#pragma mark --- . 添加人进群
+
+-(void)tyq_navigationBarViewRightButtonAction{
+        
+        EMError *error = nil;
+        [[EaseMob sharedInstance].chatManager addOccupants:@[@"8",@"6002"] toGroup:@"1478167384709" welcomeMessage:@"邀请信息" error:&error];
+        if (!error) {
+            
+            NSLog(@"添加^^^^^^成功");
+        }
+}
+
+*/
+    
 
 
 
