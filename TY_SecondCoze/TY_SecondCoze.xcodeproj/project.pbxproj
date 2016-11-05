@@ -143,6 +143,8 @@
 		49ECEBBE1DCC3D020002127F /* GroupChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49ECEBBD1DCC3D020002127F /* GroupChatViewController.m */; };
 		49ECEC231DCC6BB10002127F /* 群.png in Resources */ = {isa = PBXBuildFile; fileRef = 49ECEC221DCC6BB10002127F /* 群.png */; };
 		49ECEC271DCC6C830002127F /* GroupMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49ECEC261DCC6C830002127F /* GroupMemberViewController.m */; };
+		49ECEC291DCCBB900002127F /* 邀请.png in Resources */ = {isa = PBXBuildFile; fileRef = 49ECEC281DCCBB900002127F /* 邀请.png */; };
+		49ECEC2B1DCCBDB20002127F /* 人员新增.png in Resources */ = {isa = PBXBuildFile; fileRef = 49ECEC2A1DCCBDB20002127F /* 人员新增.png */; };
 		65A25D6E919AA967C132EB83 /* libPods-TY_SecondCozeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012D4FE9B8BF6969BDA42652 /* libPods-TY_SecondCozeTests.a */; };
 		7FF6B8A50D61B1F4F0C34DF2 /* libPods-TY_SecondCozeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E777CB2D6A0C4BDF288E6D61 /* libPods-TY_SecondCozeUITests.a */; };
 		BCE50A40B9B58BB8B9A58F41 /* libPods-TY_SecondCoze.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1462FD82A9F1C15EEEB6E6 /* libPods-TY_SecondCoze.a */; };
@@ -404,6 +406,8 @@
 		49ECEC221DCC6BB10002127F /* 群.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "群.png"; sourceTree = "<group>"; };
 		49ECEC251DCC6C830002127F /* GroupMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupMemberViewController.h; sourceTree = "<group>"; };
 		49ECEC261DCC6C830002127F /* GroupMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupMemberViewController.m; sourceTree = "<group>"; };
+		49ECEC281DCCBB900002127F /* 邀请.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "邀请.png"; sourceTree = "<group>"; };
+		49ECEC2A1DCCBDB20002127F /* 人员新增.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "人员新增.png"; sourceTree = "<group>"; };
 		6D73B2430328EBD3979C95F8 /* Pods-TY_SecondCoze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TY_SecondCoze.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TY_SecondCoze/Pods-TY_SecondCoze.debug.xcconfig"; sourceTree = "<group>"; };
 		6E1462FD82A9F1C15EEEB6E6 /* libPods-TY_SecondCoze.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TY_SecondCoze.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB2328C612563B0CA47F82E /* Pods-TY_SecondCozeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TY_SecondCozeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TY_SecondCozeUITests/Pods-TY_SecondCozeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -1101,7 +1105,9 @@
 				4968E4301DC09E6700257004 /* qun.png */,
 				4968E42E1DC09E6200257004 /* xin.png */,
 				4968E4451DC0DD9600257004 /* 附近.png */,
+				49ECEC281DCCBB900002127F /* 邀请.png */,
 				4968E5671DCA173700257004 /* 加号.png */,
+				49ECEC2A1DCCBDB20002127F /* 人员新增.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1335,6 +1341,7 @@
 				49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */,
 				41FC7DAA1DBEED6F00712714 /* 进入，右.png in Resources */,
 				41AE13CC1DC2FEAB00AF06BF /* 聊天键盘.png in Resources */,
+				49ECEC2B1DCCBDB20002127F /* 人员新增.png in Resources */,
 				41AE13CA1DC2F4C000AF06BF /* 聊天语音.png in Resources */,
 				410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */,
 				413715891DC9D94B00DD8B50 /* 添加图片.png in Resources */,
@@ -1346,6 +1353,7 @@
 				41FC7D931DBE22FC00712714 /* 设置.png in Resources */,
 				41FC7DA31DBEEA6E00712714 /* MineGrayBackTableViewCell.xib in Resources */,
 				4968E5681DCA173700257004 /* 加号.png in Resources */,
+				49ECEC291DCCBB900002127F /* 邀请.png in Resources */,
 				41FC7D801DBDE23B00712714 /* 联系人1.png in Resources */,
 				49ECEC231DCC6BB10002127F /* 群.png in Resources */,
 				49C51D891DB899FC006A5126 /* 0.jpg in Resources */,
