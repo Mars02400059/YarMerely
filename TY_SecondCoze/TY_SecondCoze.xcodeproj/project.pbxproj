@@ -71,6 +71,9 @@
 		4137158B1DC9DA9A00DD8B50 /* 语音通话.png in Resources */ = {isa = PBXBuildFile; fileRef = 4137158A1DC9DA9A00DD8B50 /* 语音通话.png */; };
 		4137158D1DC9DB1700DD8B50 /* 视频通话.png in Resources */ = {isa = PBXBuildFile; fileRef = 4137158C1DC9DB1700DD8B50 /* 视频通话.png */; };
 		4174D69A1DCCAFD900D5614F /* 编辑.png in Resources */ = {isa = PBXBuildFile; fileRef = 4174D6991DCCAFD900D5614F /* 编辑.png */; };
+		4174D6A01DCD674100D5614F /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4174D69F1DCD674100D5614F /* UIImage+FixOrientation.m */; };
+		4174D6A31DCD676200D5614F /* CropImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4174D6A21DCD676200D5614F /* CropImageViewController.m */; };
+		4174D6A61DCD677400D5614F /* TKImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4174D6A51DCD677400D5614F /* TKImageView.m */; };
 		418C24C41DC4A4D9002525B9 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 418C24C31DC4A4D9002525B9 /* Tools.m */; };
 		418C24C71DC4B9FA002525B9 /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 418C24C61DC4B9FA002525B9 /* BubbleView.m */; };
 		418C24CF1DC4D8E5002525B9 /* 气泡右.png in Resources */ = {isa = PBXBuildFile; fileRef = 418C24CE1DC4D8E5002525B9 /* 气泡右.png */; };
@@ -295,6 +298,12 @@
 		4137158C1DC9DB1700DD8B50 /* 视频通话.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "视频通话.png"; sourceTree = "<group>"; };
 		416C7F7C1DB9B44500269E3C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4174D6991DCCAFD900D5614F /* 编辑.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "编辑.png"; sourceTree = "<group>"; };
+		4174D69E1DCD674100D5614F /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
+		4174D69F1DCD674100D5614F /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixOrientation.m"; sourceTree = "<group>"; };
+		4174D6A11DCD676200D5614F /* CropImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CropImageViewController.h; sourceTree = "<group>"; };
+		4174D6A21DCD676200D5614F /* CropImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CropImageViewController.m; sourceTree = "<group>"; };
+		4174D6A41DCD677400D5614F /* TKImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKImageView.h; sourceTree = "<group>"; };
+		4174D6A51DCD677400D5614F /* TKImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKImageView.m; sourceTree = "<group>"; };
 		418C24C21DC4A4D9002525B9 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		418C24C31DC4A4D9002525B9 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		418C24C51DC4B9FA002525B9 /* BubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleView.h; sourceTree = "<group>"; };
@@ -633,6 +642,8 @@
 				410D98491DC1F62200A5C9FD /* NSUserDefaults+Categories.m */,
 				410E5C281DB8530B005C2513 /* UIImage+Categories.h */,
 				410E5C291DB8530B005C2513 /* UIImage+Categories.m */,
+				4174D69E1DCD674100D5614F /* UIImage+FixOrientation.h */,
+				4174D69F1DCD674100D5614F /* UIImage+FixOrientation.m */,
 				410E5C2A1DB8530B005C2513 /* UIView+Frame.h */,
 				410E5C2B1DB8530B005C2513 /* UIView+Frame.m */,
 			);
@@ -734,6 +745,7 @@
 		410E5C491DB85315005C2513 /* Mine 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				4174D69B1DCD669700D5614F /* AmendHeadPortrait 修改头像 */,
 				410E5C4A1DB85315005C2513 /* Controller */,
 				413409EC1DC05B3900C4D466 /* MineSettings 设置  */,
 				41FC7D961DBEE6BB00712714 /* View */,
@@ -887,6 +899,33 @@
 				413715791DC98D0200DD8B50 /* RealtimeCallViewController.xib */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		4174D69B1DCD669700D5614F /* AmendHeadPortrait 修改头像 */ = {
+			isa = PBXGroup;
+			children = (
+				4174D69D1DCD66D900D5614F /* View */,
+				4174D69C1DCD66D300D5614F /* Controller */,
+			);
+			name = "AmendHeadPortrait 修改头像";
+			sourceTree = "<group>";
+		};
+		4174D69C1DCD66D300D5614F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4174D6A11DCD676200D5614F /* CropImageViewController.h */,
+				4174D6A21DCD676200D5614F /* CropImageViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4174D69D1DCD66D900D5614F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4174D6A41DCD677400D5614F /* TKImageView.h */,
+				4174D6A51DCD677400D5614F /* TKImageView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		41976ED81DC37FCB00AC8518 /* Model */ = {
@@ -1589,6 +1628,7 @@
 				410E5C5B1DB85315005C2513 /* SpeakViewController.m in Sources */,
 				4137156E1DC9740D00DD8B50 /* EMCDDeviceManager+Remind.m in Sources */,
 				49C51DEE1DB89F54006A5126 /* LoginViewController.m in Sources */,
+				4174D6A31DCD676200D5614F /* CropImageViewController.m in Sources */,
 				418C24C41DC4A4D9002525B9 /* Tools.m in Sources */,
 				49C51DDA1DB89D6C006A5126 /* DataBaseTool.m in Sources */,
 				410E5BCF1DB85159005C2513 /* main.m in Sources */,
@@ -1606,6 +1646,7 @@
 				413715701DC9740D00DD8B50 /* amrFileCodec.mm in Sources */,
 				4968E4421DC0DA7500257004 /* FriendDailViewController.m in Sources */,
 				410E5C591DB85315005C2513 /* MineViewController.m in Sources */,
+				4174D6A61DCD677400D5614F /* TKImageView.m in Sources */,
 				49C51DD61DB89AF7006A5126 /* UIView+EATheme.m in Sources */,
 				410E5C201DB852FF005C2513 /* TYQTableViewController.m in Sources */,
 				41FC7DA21DBEEA6E00712714 /* MineGrayBackTableViewCell.m in Sources */,
@@ -1618,6 +1659,7 @@
 				410E5C351DB8530B005C2513 /* UIView+Frame.m in Sources */,
 				4968E4D41DC1FB5500257004 /* NewViewController.m in Sources */,
 				4968E43A1DC0B07F00257004 /* ConnectTableViewCell.m in Sources */,
+				4174D6A01DCD674100D5614F /* UIImage+FixOrientation.m in Sources */,
 				410E5C1B1DB852FF005C2513 /* TYQModel.m in Sources */,
 				4123CD341DC874AB00D0D658 /* PhoneView.m in Sources */,
 				410D98431DC1E5A000A5C9FD /* MessageUniparousTableViewCell.m in Sources */,

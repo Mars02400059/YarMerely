@@ -11,6 +11,9 @@
 #import "MineGrayBackTableViewCell.h"
 #import "MineImageTableViewCell.h"
 #import "MineSettingViewController.h"
+#import "CropImageViewController.h"
+#import "UIImage+FixOrientation.h"
+
 
 static NSString *const spaceCell = @"spaceCell";
 static NSString *const backCell = @"backCell";
@@ -118,7 +121,18 @@ UITableViewDataSource
 
 - (void)tapGestAction {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"更换头像" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler:) name: @"CropOK" object: nil];
     UIAlertAction *photograph = [UIAlertAction actionWithTitle:@"打开相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        BOOL isCamera = [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear];
+        if (!isCamera) {
+            return ;
+        }
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePicker.delegate = self;
+        [self presentViewController:imagePicker animated:YES completion:^{
+        }];
         
     }];
     UIAlertAction *photoAlbum = [UIAlertAction actionWithTitle:@"从相册选择图片" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -138,6 +152,26 @@ UITableViewDataSource
     [alert addAction:cancel];
     [self presentViewController:alert animated:YES completion:nil];
 }
+
+// 选择图像完成之后
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    
+    UIImage *image = [UIImage fixOrientation:[info objectForKey:UIImagePickerControllerOriginalImage]];
+    CropImageViewController *cropImg = [[CropImageViewController alloc] initWithCropImage:image];
+    self.Imgpicker = picker;
+    [picker presentViewController:cropImg animated:YES completion:^{
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dissmissPickerAction:) name:@"DISSMISSPICKER" object:nil];
+    }];
+    
+    
+}
+- (void)dissmissPickerAction:(NSNotification *)notification{
+    [self.Imgpicker dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)notificationHandler: (NSNotification *)notification {
+    _userHeadPortraits.image = notification.object;
+}
+
 
 - (NSArray *)tableViewArray {
     if (nil == _tableViewArray) {
