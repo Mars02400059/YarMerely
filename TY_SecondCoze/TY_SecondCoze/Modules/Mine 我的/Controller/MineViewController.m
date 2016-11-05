@@ -52,8 +52,20 @@ UITableViewDataSource
 
 - (void)viewWillAppear:(BOOL)animated {
     [_tableView reloadData];
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+    // 添加playerName不是小明的约束条件
+    [bquery whereKey:@"accountnumber" equalTo:[[EaseMob sharedInstance].chatManager loginInfo][@"username"]];
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count) {
+            BmobObject *object = array[0];
+            _userNameLabel.text = [object objectForKey:@"nickname"];
+        }
+    }];
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];//移除观察者
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -96,11 +108,9 @@ UITableViewDataSource
     _headView.backgroundColor = [UIColor clearColor];
     _tableView.tableHeaderView = _headView;
     
-    self.userHeadPortraits = [[TYQImageView alloc] initWithImage:[UIImage imageNamed:@"默认头像"]];
-
+    self.userHeadPortraits = [[TYQImageView alloc] initWithFrame:CGRectMake((_headView.width - 80) / 2, _headView.height - 130, 80, 80)];
     _userHeadPortraits.userInteractionEnabled = YES;
     _userHeadPortraits.backgroundColor = [UIColor whiteColor];
-    _userHeadPortraits.frame = CGRectMake((_headView.width - 80) / 2, _headView.height - 130, 80, 80);
     _userHeadPortraits.layer.cornerRadius = _userHeadPortraits.width / 2;
     _userHeadPortraits.clipsToBounds = YES;
     [_headView addSubview:_userHeadPortraits];
@@ -111,12 +121,22 @@ UITableViewDataSource
     
     self.userNameLabel = [[TYQLabel alloc] initWithFrame:CGRectMake(0, _headView.height - 35, WIDTH, 20)];
     _userNameLabel.textAlignment = NSTextAlignmentCenter;
-    _userNameLabel.text = [[EaseMob sharedInstance].chatManager loginInfo][@"username"];
     _userNameLabel.font = [UIFont systemFontOfSize:19.f];
     _userNameLabel.textColor = [UIColor whiteColor];
     _userNameLabel.backgroundColor = [UIColor clearColor];
     [_headView addSubview:_userNameLabel];
-    
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+    // 添加playerName不是小明的约束条件
+    [bquery whereKey:@"accountnumber" equalTo:[[EaseMob sharedInstance].chatManager loginInfo][@"username"]];
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count) {
+            BmobObject *object = array[0];
+            _userNameLabel.text = [object objectForKey:@"nickname"];
+            BmobFile *file = (BmobFile*)[object objectForKey:@"photoFile"];
+            [_userHeadPortraits sd_setImageWithURL:[NSURL URLWithString:file.url]];
+        }
+    }];
+
 }
 
 - (void)tapGestAction {
@@ -170,6 +190,43 @@ UITableViewDataSource
 }
 - (void)notificationHandler: (NSNotification *)notification {
     _userHeadPortraits.image = notification.object;
+    
+    NSData *data = UIImagePNGRepresentation(notification.object);
+    
+    //图片保存的路径
+    NSString * documentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager createDirectoryAtPath:documentsPath withIntermediateDirectories:YES attributes:nil error:nil];
+    NSString *phonePath = [NSString stringWithFormat:@"/%@.png", [[EaseMob sharedInstance].chatManager loginInfo][@"username"]];
+    [fileManager createFileAtPath:[documentsPath stringByAppendingString:phonePath] contents:data attributes:nil];
+    NSString *filePath = [[NSString alloc]initWithFormat:@"%@%@",documentsPath,  phonePath];
+    
+    BmobFile *file1 = [[BmobFile alloc] initWithFilePath:filePath];
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+    // 添加playerName是当前的约束条件
+    [bquery whereKey:@"accountnumber" equalTo:[[EaseMob sharedInstance].chatManager loginInfo][@"username"]];
+    
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count) {
+            BmobObject *object = array[0];
+            [file1 saveInBackground:^(BOOL isSuccessful, NSError *error) {
+                if (isSuccessful) {
+                    // 关联至已有的记录请使用
+                    [object setObject:file1  forKey:@"photoFile"];
+                    [object updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+                        if (!error) {
+                            
+                        } else {
+                            NSLog(@"草fuck");
+                        }
+                    }];
+                } else {
+                    NSLog(@"caocao草草草");
+                }
+            }];
+        }
+        
+    }];
 }
 
 

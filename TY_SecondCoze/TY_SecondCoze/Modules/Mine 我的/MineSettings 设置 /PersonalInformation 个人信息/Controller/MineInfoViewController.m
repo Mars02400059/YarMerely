@@ -30,9 +30,10 @@ UITableViewDataSource
     // 添加playerName不是小明的约束条件
     [bquery whereKey:@"accountnumber" equalTo: [[EaseMob sharedInstance].chatManager loginInfo][@"username"]];
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        self.object = array[0];
-
-        [_infoTableView reloadData];
+        if (array.count) {
+            self.object = array[0];
+            [_infoTableView reloadData];
+        }
     }];
 }
 
