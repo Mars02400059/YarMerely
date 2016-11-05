@@ -18,6 +18,9 @@ static NSString *const imageCell = @"imageCell";
 
 @interface MineViewController ()
 <
+UIActionSheetDelegate,
+UIImagePickerControllerDelegate,
+UINavigationControllerDelegate,
 UITableViewDelegate,
 UITableViewDataSource
 >
@@ -36,6 +39,9 @@ UITableViewDataSource
 @property (nonatomic, assign) CGFloat headBackImageViewHeight;
 
 @property (nonatomic, strong) NSArray *tableViewArray;
+@property (nonatomic,strong)UIImagePickerController *Imgpicker;
+
+
 
 @end
 
@@ -88,11 +94,17 @@ UITableViewDataSource
     _tableView.tableHeaderView = _headView;
     
     self.userHeadPortraits = [[TYQImageView alloc] initWithImage:[UIImage imageNamed:@"默认头像"]];
+
+    _userHeadPortraits.userInteractionEnabled = YES;
     _userHeadPortraits.backgroundColor = [UIColor whiteColor];
     _userHeadPortraits.frame = CGRectMake((_headView.width - 80) / 2, _headView.height - 130, 80, 80);
     _userHeadPortraits.layer.cornerRadius = _userHeadPortraits.width / 2;
     _userHeadPortraits.clipsToBounds = YES;
     [_headView addSubview:_userHeadPortraits];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestAction)];
+    tap.numberOfTapsRequired = 1;
+    [_userHeadPortraits addGestureRecognizer:tap];
+    
     
     self.userNameLabel = [[TYQLabel alloc] initWithFrame:CGRectMake(0, _headView.height - 35, WIDTH, 20)];
     _userNameLabel.textAlignment = NSTextAlignmentCenter;
@@ -102,6 +114,29 @@ UITableViewDataSource
     _userNameLabel.backgroundColor = [UIColor clearColor];
     [_headView addSubview:_userNameLabel];
     
+}
+
+- (void)tapGestAction {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"更换头像" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *photograph = [UIAlertAction actionWithTitle:@"打开相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    UIAlertAction *photoAlbum = [UIAlertAction actionWithTitle:@"从相册选择图片" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        imagePicker.delegate = self;
+        [self presentViewController:imagePicker animated:YES completion:^{
+        }];
+
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alert addAction:photoAlbum];
+    [alert addAction:photograph];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (NSArray *)tableViewArray {

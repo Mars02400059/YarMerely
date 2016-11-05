@@ -26,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.00];
+    
     
     BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
     // 添加playerName不是小明的约束条件
@@ -42,7 +44,6 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
     [self.view addGestureRecognizer:tap];
-    
 }
 
 - (void)tapAction {
@@ -59,11 +60,11 @@
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"确定修改信息吗?" message:nil preferredStyle:UIAlertControllerStyleAlert];
     //创建一个取消和一个确定按钮
-    UIAlertAction *cancelAlert = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *cancelAlert = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         
     }];
-    UIAlertAction *ensureAlert = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *ensureAlert = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         
         
         BmobQuery *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
@@ -76,9 +77,10 @@
             [object setObject:_autographTextField.text forKey:@"autograph"];
             //异步更新数据
             [object updateInBackground];
-            
+            [self dismissViewControllerAnimated:YES completion:nil];
             
         }];
+
         
     }];
     //将取消和确定按钮添加进弹框控制器
