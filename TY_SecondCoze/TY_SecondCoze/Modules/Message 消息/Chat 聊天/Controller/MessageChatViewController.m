@@ -409,8 +409,13 @@ UITableViewDataSource
 - (void)tyq_expressionDelegate:(BOOL)record {
     if (record) {
         
-    } else {
+         [self tyq_HideKeyboard];
         
+        NSLog(@"7778");
+        
+    } else {
+      
+        NSLog(@"fghjkl");
     }
 }
 // 点击语音按钮

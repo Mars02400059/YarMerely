@@ -54,9 +54,9 @@
  //   - (NSArray *)fetchOccupantList:(NSString *)groupId error:(EMError **)pError;
     
     
+ 
     
-    
-    
+#pragma mark --- 配置UI
     
     self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64) style:UITableViewStylePlain];
     _myTableView.dataSource = self;
@@ -70,8 +70,7 @@
     
     [self addNavigationBarView];
     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
-    
-    
+    self.navigationBarView.rightButtonImage = [UIImage imageNamed:@"人员新增"];
     
     // Do any additional setup after loading the view.
 }
@@ -98,12 +97,16 @@
     NSLog(@"点击方法");
 }
 
+#pragma mark --- 配置左右按钮
 -(void) tyq_navigationBarViewLeftButtonAction{
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-
+-(void)tyq_navigationBarViewRightButtonAction{
+    
+    NSLog(@"邀请新成员");
+}
 
 
 
