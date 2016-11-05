@@ -40,6 +40,7 @@ UITableViewDataSource
     [self addTableView];
     
     [self addNavigationBarView];
+    self.navigationBarView.title = @"设置";
     self.navigationBarView.backColor.alpha = 1.f;
     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
 }

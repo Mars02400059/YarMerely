@@ -119,6 +119,8 @@ static CGFloat const nameTextFieldHeight = 40;
 }
 
 - (void)leftButtonAction:(TYQButton *)leftButton {
+   
+
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -128,8 +130,83 @@ static CGFloat const nameTextFieldHeight = 40;
             if (!error) {
             
                 NSLog(@"注册成功");
-                [self dismissViewControllerAnimated:YES completion:nil];
+                //在GameScore创建一条数据，如果当前没GameScore表，则会创建GameScore表
+                BmobObject *gameScore = [BmobObject objectWithClassName:@"PersonInfo"];
+                // 账号
+                [gameScore setObject:_nameTextField.text forKey:@"accountnumber"];
+                // 设置昵称
+                [gameScore setObject:_nameTextField.text forKey:@"nickname"];
+                // 设置age为18
+                [gameScore setObject:@"18" forKey:@"age"];
+                // 设置性别
+                [gameScore setObject:@"未添加" forKey:@"sex"];
+                // 设置签名
+                [gameScore setObject:@"这个人很懒, 还没设置签名" forKey:@"autograph"];
+    
+                //异步保存到服务器
+                [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+                    if (isSuccessful) {
+                        //创建成功后会返回objectId，updatedAt，createdAt等信息
+                        //创建对象成功，打印对象值
+                        NSLog(@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈%@",gameScore);
+
+                        
+                    } else if (error){
+                        //发生错误后的动作
+                        NSLog(@"取柠檬😁哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈%@",error);
+                    } else {
+                        NSLog(@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈Unknow error");
+                    }
+                }];
                 
+#if 1
+                
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"注册成功" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+                [alertController addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    
+                    UIImage *image = [UIImage imageNamed:@"默认头像"];
+                    NSData *data = UIImagePNGRepresentation(image);;
+                    
+                    //图片保存的路径
+                    NSString * documentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+                    NSFileManager *fileManager = [NSFileManager defaultManager];
+                    [fileManager createDirectoryAtPath:documentsPath withIntermediateDirectories:YES attributes:nil error:nil];
+                    NSString *phonePath = [NSString stringWithFormat:@"/%@.png", _nameTextField.text];
+                    [fileManager createFileAtPath:[documentsPath stringByAppendingString:phonePath] contents:data attributes:nil];
+                    NSString *filePath = [[NSString alloc]initWithFormat:@"%@%@",documentsPath,  phonePath];
+                    NSLog(@"%@", filePath);
+                    BmobFile *file1 = [[BmobFile alloc] initWithFilePath:filePath];
+                    BmobQuery *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+                    // 添加playerName是当前的约束条件
+                    [bquery whereKey:@"accountnumber" equalTo:_nameTextField.text];
+                    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+                        if (array.count) {
+                            BmobObject *object = array[0];
+                            [file1 saveInBackground:^(BOOL isSuccessful, NSError *error) {
+                                if (isSuccessful) {
+                                    // 关联至已有的记录请使用
+                                    [object setObject:file1  forKey:@"photoFile"];
+                                    [object updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+                                        if (!error) {
+                                            
+                                        } else {
+                                            NSLog(@"草fuck");
+                                        }
+                                        }];
+                                } else {
+                                    NSLog(@"caocao草草草");
+                                }
+                            }];
+                        }
+                        
+                    }];
+                    
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }]];
+
+                
+                [self presentViewController:alertController animated:YES completion:nil];
+#endif
             
             } else {
             
@@ -148,8 +225,8 @@ static CGFloat const nameTextFieldHeight = 40;
                     _passwoksTextField.text = nil;
                 }
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:titleStr message:messageStr preferredStyle:UIAlertControllerStyleAlert];
-                
                 [alertController addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:nil]];
+
                 
                 [self presentViewController:alertController animated:YES completion:nil];
 

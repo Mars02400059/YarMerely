@@ -11,6 +11,9 @@
 #import "MineGrayBackTableViewCell.h"
 #import "MineImageTableViewCell.h"
 #import "MineSettingViewController.h"
+#import "CropImageViewController.h"
+#import "UIImage+FixOrientation.h"
+
 
 static NSString *const spaceCell = @"spaceCell";
 static NSString *const backCell = @"backCell";
@@ -18,6 +21,9 @@ static NSString *const imageCell = @"imageCell";
 
 @interface MineViewController ()
 <
+UIActionSheetDelegate,
+UIImagePickerControllerDelegate,
+UINavigationControllerDelegate,
 UITableViewDelegate,
 UITableViewDataSource
 >
@@ -36,6 +42,9 @@ UITableViewDataSource
 @property (nonatomic, assign) CGFloat headBackImageViewHeight;
 
 @property (nonatomic, strong) NSArray *tableViewArray;
+@property (nonatomic,strong)UIImagePickerController *Imgpicker;
+
+
 
 @end
 
@@ -43,8 +52,20 @@ UITableViewDataSource
 
 - (void)viewWillAppear:(BOOL)animated {
     [_tableView reloadData];
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+    // 添加playerName不是小明的约束条件
+    [bquery whereKey:@"accountnumber" equalTo:[[EaseMob sharedInstance].chatManager loginInfo][@"username"]];
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count) {
+            BmobObject *object = array[0];
+            _userNameLabel.text = [object objectForKey:@"nickname"];
+        }
+    }];
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];//移除观察者
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -87,22 +108,127 @@ UITableViewDataSource
     _headView.backgroundColor = [UIColor clearColor];
     _tableView.tableHeaderView = _headView;
     
-    self.userHeadPortraits = [[TYQImageView alloc] initWithImage:[UIImage imageNamed:@"默认头像"]];
+    self.userHeadPortraits = [[TYQImageView alloc] initWithFrame:CGRectMake((_headView.width - 80) / 2, _headView.height - 130, 80, 80)];
+    _userHeadPortraits.userInteractionEnabled = YES;
     _userHeadPortraits.backgroundColor = [UIColor whiteColor];
-    _userHeadPortraits.frame = CGRectMake((_headView.width - 80) / 2, _headView.height - 130, 80, 80);
     _userHeadPortraits.layer.cornerRadius = _userHeadPortraits.width / 2;
     _userHeadPortraits.clipsToBounds = YES;
     [_headView addSubview:_userHeadPortraits];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestAction)];
+    tap.numberOfTapsRequired = 1;
+    [_userHeadPortraits addGestureRecognizer:tap];
+    
     
     self.userNameLabel = [[TYQLabel alloc] initWithFrame:CGRectMake(0, _headView.height - 35, WIDTH, 20)];
     _userNameLabel.textAlignment = NSTextAlignmentCenter;
-    _userNameLabel.text = [[EaseMob sharedInstance].chatManager loginInfo][@"username"];
     _userNameLabel.font = [UIFont systemFontOfSize:19.f];
     _userNameLabel.textColor = [UIColor whiteColor];
     _userNameLabel.backgroundColor = [UIColor clearColor];
     [_headView addSubview:_userNameLabel];
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+    // 添加playerName不是小明的约束条件
+    [bquery whereKey:@"accountnumber" equalTo:[[EaseMob sharedInstance].chatManager loginInfo][@"username"]];
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count) {
+            BmobObject *object = array[0];
+            _userNameLabel.text = [object objectForKey:@"nickname"];
+            BmobFile *file = (BmobFile*)[object objectForKey:@"photoFile"];
+            [_userHeadPortraits sd_setImageWithURL:[NSURL URLWithString:file.url]];
+        }
+    }];
+
+}
+
+- (void)tapGestAction {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"更换头像" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler:) name: @"CropOK" object: nil];
+    UIAlertAction *photograph = [UIAlertAction actionWithTitle:@"打开相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        BOOL isCamera = [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear];
+        if (!isCamera) {
+            return ;
+        }
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePicker.delegate = self;
+        [self presentViewController:imagePicker animated:YES completion:^{
+        }];
+        
+    }];
+    UIAlertAction *photoAlbum = [UIAlertAction actionWithTitle:@"从相册选择图片" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        imagePicker.delegate = self;
+        [self presentViewController:imagePicker animated:YES completion:^{
+        }];
+
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alert addAction:photoAlbum];
+    [alert addAction:photograph];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+// 选择图像完成之后
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    
+    UIImage *image = [UIImage fixOrientation:[info objectForKey:UIImagePickerControllerOriginalImage]];
+    CropImageViewController *cropImg = [[CropImageViewController alloc] initWithCropImage:image];
+    self.Imgpicker = picker;
+    [picker presentViewController:cropImg animated:YES completion:^{
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dissmissPickerAction:) name:@"DISSMISSPICKER" object:nil];
+    }];
+    
     
 }
+- (void)dissmissPickerAction:(NSNotification *)notification{
+    [self.Imgpicker dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)notificationHandler: (NSNotification *)notification {
+    _userHeadPortraits.image = notification.object;
+    
+    NSData *data = UIImagePNGRepresentation(notification.object);
+    
+    //图片保存的路径
+    NSString * documentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager createDirectoryAtPath:documentsPath withIntermediateDirectories:YES attributes:nil error:nil];
+    NSString *phonePath = [NSString stringWithFormat:@"/%@.png", [[EaseMob sharedInstance].chatManager loginInfo][@"username"]];
+    [fileManager createFileAtPath:[documentsPath stringByAppendingString:phonePath] contents:data attributes:nil];
+    NSString *filePath = [[NSString alloc]initWithFormat:@"%@%@",documentsPath,  phonePath];
+    
+    BmobFile *file1 = [[BmobFile alloc] initWithFilePath:filePath];
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+    // 添加playerName是当前的约束条件
+    [bquery whereKey:@"accountnumber" equalTo:[[EaseMob sharedInstance].chatManager loginInfo][@"username"]];
+    
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count) {
+            BmobObject *object = array[0];
+            [file1 saveInBackground:^(BOOL isSuccessful, NSError *error) {
+                if (isSuccessful) {
+                    // 关联至已有的记录请使用
+                    [object setObject:file1  forKey:@"photoFile"];
+                    [object updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+                        if (!error) {
+                            
+                        } else {
+                            NSLog(@"草fuck");
+                        }
+                    }];
+                } else {
+                    NSLog(@"caocao草草草");
+                }
+            }];
+        }
+        
+    }];
+}
+
 
 - (NSArray *)tableViewArray {
     if (nil == _tableViewArray) {
