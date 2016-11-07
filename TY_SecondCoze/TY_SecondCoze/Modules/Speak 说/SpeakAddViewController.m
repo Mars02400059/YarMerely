@@ -124,10 +124,7 @@ UINavigationControllerDelegate
                 //如果文件保存成功，则把文件添加到filetype列
                 if (isSuccessful) {
                     [speak setObject:file1  forKey:@"imagePath"];
-                    //此处相当于新建一条记录,         //关联至已有的记录请使用 [obj updateInBackground];
                     [speak saveInBackground];
-                    //打印file文件的url地址
-                    NSLog(@"file1 url %@",file1.url);
                 }else{
                     //进行处理
                 }

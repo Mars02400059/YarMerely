@@ -48,18 +48,14 @@
 /// 获取一条说, 并且进行显示
 - (void)getSpeak {
     BmobQuery   *bquery = [BmobQuery queryWithClassName:@"Speak"];
-    // 添加playerName不是小明的约束条件
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         if (array.count) {
-            if (array.count) {
-                NSInteger index = arc4random() % array.count;
-                BmobObject *object = array[index];
-                _titleLabel.text = [object objectForKey:@"titleText"];
-                BmobFile *file = (BmobFile*)[object objectForKey:@"imagePath"];
-                [_photoImageView sd_setImageWithURL:[NSURL URLWithString:file.url]];
-                NSLog(@"%@", file.url);
-            }
-            
+            NSInteger index = arc4random() % array.count;
+            BmobObject *object = array[index];
+            _titleLabel.text = [object objectForKey:@"titleText"];
+            BmobFile *file = (BmobFile*)[object objectForKey:@"imagePath"];
+            [_photoImageView sd_setImageWithURL:[NSURL URLWithString:file.url]];
+            NSLog(@"%@", file.url);
         }
     }];
 }

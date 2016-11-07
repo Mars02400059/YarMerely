@@ -137,9 +137,9 @@ static CGFloat const nameTextFieldHeight = 40;
                 // 设置昵称
                 [gameScore setObject:_nameTextField.text forKey:@"nickname"];
                 // 设置age为18
-                [gameScore setObject:@"18" forKey:@"age"];
+                [gameScore setObject:@"不详" forKey:@"age"];
                 // 设置性别
-                [gameScore setObject:@"未添加" forKey:@"sex"];
+                [gameScore setObject:@"不详" forKey:@"sex"];
                 // 设置签名
                 [gameScore setObject:@"这个人很懒, 还没设置签名" forKey:@"autograph"];
                 UIImage *image = [UIImage imageNamed:@"默认头像"];
@@ -169,24 +169,6 @@ static CGFloat const nameTextFieldHeight = 40;
                         //进行处理
                     }
                 }];
-//
-//                //异步保存到服务器
-//                [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-//                    if (isSuccessful) {
-//                        //创建成功后会返回objectId，updatedAt，createdAt等信息
-//                        //创建对象成功，打印对象值
-//                        NSLog(@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈%@",gameScore);
-//
-//                        
-//                    } else if (error){
-//                        //发生错误后的动作
-//                        NSLog(@"取柠檬😁哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈%@",error);
-//                    } else {
-//                        NSLog(@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈Unknow error");
-//                    }
-//                }];
-                
-                
                 
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"注册成功" message:@"" preferredStyle:UIAlertControllerStyleAlert];
                 [alertController addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
