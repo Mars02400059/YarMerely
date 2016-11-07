@@ -63,7 +63,7 @@ UITableViewDataSource
 }
 - (NSArray *)tableViewArray {
     if (nil == _tableViewArray) {
-        _tableViewArray = @[@"个人资料", @"修改密码", @"夜间模式", @"关于我们", @"", @"退出登录"];
+        _tableViewArray = @[@"个人资料", @"夜间模式", @"", @"退出登录"];
     }
     return _tableViewArray;
 

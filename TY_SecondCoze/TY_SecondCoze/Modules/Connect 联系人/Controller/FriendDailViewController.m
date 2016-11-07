@@ -60,8 +60,7 @@
     
     self.nickNameLabel = [[TYQLabel alloc] initWithFrame:CGRectMake(_headImageV.frame.origin.x + _headImageV.frame.size.width + 10, _headImageV.frame.origin.y, WIDTH / 3, _headImageV.frame.size.height / 2 - 10)];
     self.nickNameLabel.backgroundColor = [UIColor yellowColor];
-//用户名赋值
-    _nickNameLabel.text = self.infoModel.username;
+
     
     self.qqLabel = [[TYQLabel alloc] initWithFrame:CGRectMake(_nickNameLabel.frame.origin.x , _nickNameLabel.frame.size.height + _nickNameLabel.frame.origin.y + 5, WIDTH / 3 * 2, _headImageV.frame.size.height / 2)];
     _qqLabel.backgroundColor = [UIColor magentaColor];
@@ -84,10 +83,31 @@
     [self addNavigationBarView];
     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
     
-    
+    [self getControllerInfo];
     
     // Do any additional setup after loading the view.
 }
+
+/// 资料赋值
+- (void)getControllerInfo {
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+    // 添加playerName不是小明的约束条件
+    [bquery whereKey:@"accountnumber" equalTo:_infoModel.username];
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count) {
+            BmobObject *object = array[0];
+            /// 获取指定资料
+            BmobFile *file = [object objectForKey:@"photoFile"];
+            /// 头像
+            [_headImageV sd_setImageWithURL:[NSURL URLWithString:file.url]];
+            /// 昵称
+            _nickNameLabel.text = [object objectForKey:@"nickname"];
+            /// 签名
+            _qqLabel.text = [object objectForKey:@"autograph"];
+            
+        }
+    }];}
+
 
 #pragma mark --- 左按钮方法
 -(void)tyq_navigationBarViewLeftButtonAction{

@@ -202,7 +202,7 @@ UITableViewDataSource
     NSString *filePath = [[NSString alloc]initWithFormat:@"%@%@",documentsPath,  phonePath];
     
     BmobFile *file1 = [[BmobFile alloc] initWithFilePath:filePath];
-    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+    BmobQuery *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
     // 添加playerName是当前的约束条件
     [bquery whereKey:@"accountnumber" equalTo:[[EaseMob sharedInstance].chatManager loginInfo][@"username"]];
     
@@ -227,12 +227,18 @@ UITableViewDataSource
         }
         
     }];
+    
+    
+    
+    
+    
+    
 }
 
 
 - (NSArray *)tableViewArray {
     if (nil == _tableViewArray) {
-        _tableViewArray = @[@"", @"", @"收藏", @"设置"];
+        _tableViewArray = @[@"", @"", @"设置", @"关于我们"];
     }
     return _tableViewArray;
 }
@@ -243,15 +249,6 @@ UITableViewDataSource
         return 10.f;
     }
     return 50.f;
-    
-//    if (0 == indexPath.row) {
-//        return 50.f;
-//    } else if (1 == indexPath.row) {
-//        return 10.f;
-//    } else {
-//        return 50.f;
-//    }
-
 
 }
 
@@ -272,13 +269,11 @@ UITableViewDataSource
         
         cell.title = self.tableViewArray[indexPath.row];
         return cell;
-
-        
     }
     
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == self.tableViewArray.count - 1) {
+    if (indexPath.row == self.tableViewArray.count - 2) {
         MineSettingViewController *settingVC = [[MineSettingViewController alloc] init];
         settingVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:settingVC animated:YES];
