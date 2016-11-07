@@ -60,11 +60,13 @@ UINavigationControllerDelegate
         if (!isCamera) {
             return ;
         }
-        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        imagePicker.delegate = self;
-        [self presentViewController:imagePicker animated:YES completion:^{
+        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+        imagePickerController.delegate = self;
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:imagePickerController animated:YES completion:^{
         }];
+        
+        
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"从相册中选取图片" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
@@ -83,6 +85,7 @@ UINavigationControllerDelegate
 
 // 选择图像完成之后
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     self.image = info[UIImagePickerControllerOriginalImage];
     [_imageButton setImage:_image forState:UIControlStateNormal];
