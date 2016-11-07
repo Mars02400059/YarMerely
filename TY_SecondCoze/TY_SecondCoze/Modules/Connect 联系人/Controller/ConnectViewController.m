@@ -24,7 +24,8 @@ UICollectionViewDataSource,
 UICollectionViewDelegate,
 UITableViewDataSource,
 UITableViewDelegate,
-EMChatManagerDelegate
+EMChatManagerDelegate,
+NewViewControllerDelegate
 >
 
 @property (nonatomic, strong) UICollectionView *myCollectionView;
@@ -128,6 +129,7 @@ EMChatManagerDelegate
        
         NewViewController *newVC = [[NewViewController alloc] init];
         newVC.infoArray = _infoArray;
+        newVC.delegare = self;
          newVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:newVC animated:YES];
     }
@@ -141,6 +143,20 @@ EMChatManagerDelegate
     
     return;
 }
+
+#pragma mark -- 同意好友申请 ,刷新好友列表
+
+- (void)tyq_change {
+    
+    EMError *error = nil;
+    NSArray *buddyList = [[EaseMob sharedInstance].chatManager fetchBuddyListWithError:&error];
+    if (!error) {
+        self.listArray = buddyList;
+        [_myTableView reloadData];
+    }
+
+}
+
 
 #pragma mark --- tableview datasource
 
@@ -220,6 +236,42 @@ EMChatManagerDelegate
 
 
 
+
+
+
+
+#pragma mark --- 调取SDK接受好友请求方法(回调)
+-(void)didAcceptedByBuddy:(NSString *)username{
+    
+ 
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@ 接受了你的请求", username] message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        EMError *error = nil;
+        NSArray *buddyList = [[EaseMob sharedInstance].chatManager fetchBuddyListWithError:&error];
+        if (!error) {
+            self.listArray = buddyList;
+            [_myTableView reloadData];
+        }
+    }]];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    //    InfoModel *infoModel = [[InfoModel alloc] init];
+    //     infoModel.username = username;
+    
+}
+#pragma mark --- 调取SDK拒绝好友请求(回调)
+- (void)didRejectedByBuddy:(NSString *)username{
+    
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@ 拒绝了你的请求", username] message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:nil]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    //    InfoModel *infoModel = [[InfoModel alloc] init];
+    //    infoModel.username = username;
+    
+}
 
 
 

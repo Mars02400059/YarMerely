@@ -79,7 +79,10 @@
     BOOL isSuccess = [[EaseMob sharedInstance].chatManager acceptBuddyRequest:_infoModelMessage.username error:&error];
     if (isSuccess && !error) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"已同意" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *action = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:nil];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.delegate tyq_agreeButtonActionDelegate];
+        }];
+        
         [alert addAction:action];
         
         [self presentViewController:alert animated:YES completion:nil];

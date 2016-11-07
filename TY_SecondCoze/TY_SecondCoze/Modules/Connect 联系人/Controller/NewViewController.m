@@ -11,7 +11,12 @@
 #import "InfoModel.h"
 #import "ConnectNewTableviewCell.h"
 #import "ConnetMessageViewController.h"
-@interface NewViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface NewViewController ()
+<
+UITableViewDelegate,
+UITableViewDataSource,
+ConnetMessageViewControllerDelegate
+>
 
 @property (nonatomic, strong) UITableView *myTableView;
 @property (nonatomic, strong) TYQLabel *label;
@@ -75,7 +80,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     ConnetMessageViewController *messageVC = [ConnetMessageViewController new];
-    
+    messageVC.delegate = self;
     InfoModel *model = _infoArray[indexPath.row];
     
     messageVC.infoModelMessage = model;
@@ -83,7 +88,12 @@
     [self.navigationController pushViewController:messageVC animated:YES];
 }
 
-
+- (void)tyq_agreeButtonActionDelegate {
+    /// 改变好友申请的数据, 刷新本VCtableview, 写不出来就不写了
+    
+    [self.delegare tyq_change];
+    
+}
 
 
 

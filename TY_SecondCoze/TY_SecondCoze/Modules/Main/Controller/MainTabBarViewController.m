@@ -58,30 +58,6 @@ EMChatManagerBuddyDelegate
 
 
 
-#pragma mark --- 调取SDK接受好友请求方法(回调)
--(void)didAcceptedByBuddy:(NSString *)username{
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@ 接受了你的请求", username] message:nil preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:nil]];
-    
-    [self presentViewController:alertController animated:YES completion:nil];
-    
-//    InfoModel *infoModel = [[InfoModel alloc] init];
-//     infoModel.username = username;
-    
-}
-#pragma mark --- 调取SDK拒绝好友请求(回调)
-- (void)didRejectedByBuddy:(NSString *)username{
-    
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@ 拒绝了你的请求", username] message:nil preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:nil]];
-    
-    [self presentViewController:alertController animated:YES completion:nil];
-//    InfoModel *infoModel = [[InfoModel alloc] init];
-//    infoModel.username = username;
-
-}
 
 /*!
  @method

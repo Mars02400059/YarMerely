@@ -8,8 +8,18 @@
 
 #import "TYQViewController.h"
 #import "InfoModel.h"
+
+
+@protocol ConnetMessageViewControllerDelegate <NSObject>
+
+- (void)tyq_agreeButtonActionDelegate;
+
+@end
+
 @interface ConnetMessageViewController : TYQViewController
 
 @property (nonatomic, strong) InfoModel *infoModelMessage;
+
+@property (nonatomic, assign) id<ConnetMessageViewControllerDelegate>delegate;
 
 @end

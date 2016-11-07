@@ -48,6 +48,7 @@
 /// 获取一条说, 并且进行显示
 - (void)getSpeak {
     BmobQuery   *bquery = [BmobQuery queryWithClassName:@"Speak"];
+    
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         if (array.count) {
             NSInteger index = arc4random() % array.count;
