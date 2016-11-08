@@ -65,10 +65,11 @@ UITableViewDataSource
 }
 
 - (void)addTableView {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.width, self.view.height - 64) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64 - 50) style:UITableViewStylePlain];
     _tableView.rowHeight = 85.f;
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableView registerClass:[MessageUniparousTableViewCell class] forCellReuseIdentifier:Cell];
     [self.view addSubview:_tableView];
     
@@ -82,9 +83,22 @@ UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MessageUniparousTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Cell];
-    cell.conversation = _messageArray[indexPath.row];
+    EMConversation *conversation = _messageArray[indexPath.row];
+    cell.conversation = conversation;
+    BmobQuery *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+    [bquery whereKey:@"accountnumber" equalTo:conversation.chatter];
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count) {
+            BmobObject *object = array[0];
+            BmobFile *file = [object objectForKey:@"photoFile"];
+            [cell.myImageView sd_setImageWithURL:[NSURL URLWithString:file.url]];
+            cell.titleLabel.text = [object objectForKey:@"nickname"];
+        }
+    }];
     return cell;
 }
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MessageChatViewController *chatVC = [[MessageChatViewController alloc] init];
     chatVC.hidesBottomBarWhenPushed = YES;
@@ -98,25 +112,6 @@ UITableViewDataSource
     [self.navigationController pushViewController:chatVC animated:YES];
 }
 
-
-#pragma mark - 删除
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
-        
-        EMConversation *conversation = _messageArray[indexPath.row];
-        NSString *username = conversation.chatter;
-        
-        [[EaseMob sharedInstance].chatManager removeConversationByChatter:username deleteMessages:YES append2Chat:YES];
-        
-        [self tyq_messageArrayChange];
-    }
-    
-    
-    
-    
-}
 
 /*!
  @method

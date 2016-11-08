@@ -10,7 +10,6 @@
 
 @interface MineImageTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *photoImaegView;
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
@@ -24,10 +23,7 @@
     // Initialization code
 }
 
-- (void)setPhoto:(UIImage *)photo {
-    _photo = photo;
-    self.photoImaegView.image = photo;
-}
+
 - (void)setTitle:(NSString *)title {
     _title = title;
     self.titleLabel.text = title;

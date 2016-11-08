@@ -33,7 +33,7 @@ EMChatManagerDelegate
     [Bmob registerWithAppKey:@"761a99aa8c7fe5a7c28be89fa511278e"];
 
     
-    [[EaseMob sharedInstance] registerSDKWithAppKey:@"1109161019115107#tenyar" apnsCertName:nil];
+    [[EaseMob sharedInstance] registerSDKWithAppKey:@"	1109161019115107#tenyer" apnsCertName:nil];
     [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     
     // 添加代理

@@ -12,13 +12,7 @@
 
 @interface MessageUniparousTableViewCell ()
 
-@property (nonatomic, strong) TYQImageView *myImageView;
 
-@property (nonatomic, strong) TYQLabel *titleLabel;
-
-@property (nonatomic, strong) TYQLabel *cententLabel;
-
-@property (nonatomic, strong) TYQLabel *timeLabel;
 
 
 @end
@@ -31,7 +25,6 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.myImageView = [TYQImageView new];
-        self.myImageView.image = [UIImage imageNamed:@"默认头像"];
         [self.contentView addSubview:_myImageView];
         
         self.titleLabel = [TYQLabel new];
@@ -60,7 +53,6 @@
 - (void)setConversation:(EMConversation *)conversation {
     _conversation = conversation;
 
-    _titleLabel.text = [conversation chatter];
     // 最后一条消息
     
     id<IEMMessageBody> messageBody = conversation.latestMessage.messageBodies.firstObject;

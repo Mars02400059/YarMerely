@@ -77,6 +77,12 @@
 		4174D6AB1DD001C800D5614F /* SpeakAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4174D6AA1DD001C800D5614F /* SpeakAddViewController.m */; };
 		4174D6AE1DD0164100D5614F /* icon_添加照片.png in Resources */ = {isa = PBXBuildFile; fileRef = 4174D6AD1DD0164100D5614F /* icon_添加照片.png */; };
 		4174D6B01DD061D100D5614F /* 背景.png in Resources */ = {isa = PBXBuildFile; fileRef = 4174D6AF1DD061D100D5614F /* 背景.png */; };
+		4174D6B61DD16C8200D5614F /* MineSpeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4174D6B41DD16C8200D5614F /* MineSpeakViewController.m */; };
+		4174D6B71DD16C8200D5614F /* MineSpeakViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4174D6B51DD16C8200D5614F /* MineSpeakViewController.xib */; };
+		4174D6BB1DD1736100D5614F /* MIneSpeakTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4174D6BA1DD1736100D5614F /* MIneSpeakTableViewCell.m */; };
+		4174D7051DD1B6F200D5614F /* 群头像.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4174D7041DD1B6F200D5614F /* 群头像.jpg */; };
+		4174D7091DD1BBD300D5614F /* ConnectAddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4174D7071DD1BBD300D5614F /* ConnectAddGroupViewController.m */; };
+		4174D70A1DD1BBD300D5614F /* ConnectAddGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4174D7081DD1BBD300D5614F /* ConnectAddGroupViewController.xib */; };
 		418C24C41DC4A4D9002525B9 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 418C24C31DC4A4D9002525B9 /* Tools.m */; };
 		418C24C71DC4B9FA002525B9 /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 418C24C61DC4B9FA002525B9 /* BubbleView.m */; };
 		418C24CF1DC4D8E5002525B9 /* 气泡右.png in Resources */ = {isa = PBXBuildFile; fileRef = 418C24CE1DC4D8E5002525B9 /* 气泡右.png */; };
@@ -317,6 +323,15 @@
 		4174D6AA1DD001C800D5614F /* SpeakAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakAddViewController.m; sourceTree = "<group>"; };
 		4174D6AD1DD0164100D5614F /* icon_添加照片.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_添加照片.png"; sourceTree = "<group>"; };
 		4174D6AF1DD061D100D5614F /* 背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "背景.png"; sourceTree = "<group>"; };
+		4174D6B31DD16C8200D5614F /* MineSpeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineSpeakViewController.h; sourceTree = "<group>"; };
+		4174D6B41DD16C8200D5614F /* MineSpeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineSpeakViewController.m; sourceTree = "<group>"; };
+		4174D6B51DD16C8200D5614F /* MineSpeakViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineSpeakViewController.xib; sourceTree = "<group>"; };
+		4174D6B91DD1736100D5614F /* MIneSpeakTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIneSpeakTableViewCell.h; sourceTree = "<group>"; };
+		4174D6BA1DD1736100D5614F /* MIneSpeakTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIneSpeakTableViewCell.m; sourceTree = "<group>"; };
+		4174D7041DD1B6F200D5614F /* 群头像.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "群头像.jpg"; sourceTree = "<group>"; };
+		4174D7061DD1BBD300D5614F /* ConnectAddGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectAddGroupViewController.h; sourceTree = "<group>"; };
+		4174D7071DD1BBD300D5614F /* ConnectAddGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectAddGroupViewController.m; sourceTree = "<group>"; };
+		4174D7081DD1BBD300D5614F /* ConnectAddGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectAddGroupViewController.xib; sourceTree = "<group>"; };
 		418C24C21DC4A4D9002525B9 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		418C24C31DC4A4D9002525B9 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		418C24C51DC4B9FA002525B9 /* BubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleView.h; sourceTree = "<group>"; };
@@ -699,8 +714,8 @@
 		410E5C391DB85315005C2513 /* Connect 联系人 */ = {
 			isa = PBXGroup;
 			children = (
+				4968E5581DC8744500257004 /* Group  群相关 */,
 				410E5C3A1DB85315005C2513 /* Controller */,
-				4968E5581DC8744500257004 /* Group */,
 				4968E4341DC09E8800257004 /* View */,
 			);
 			path = "Connect 联系人";
@@ -709,16 +724,16 @@
 		410E5C3A1DB85315005C2513 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4968E4961DC1AFA000257004 /* AddManViewController.h */,
-				4968E4971DC1AFA000257004 /* AddManViewController.m */,
 				410E5C3B1DB85315005C2513 /* ConnectViewController.h */,
 				410E5C3C1DB85315005C2513 /* ConnectViewController.m */,
+				4968E4961DC1AFA000257004 /* AddManViewController.h */,
+				4968E4971DC1AFA000257004 /* AddManViewController.m */,
+				4968E4D21DC1FB5500257004 /* NewViewController.h */,
+				4968E4D31DC1FB5500257004 /* NewViewController.m */,
 				4968E4DB1DC2455400257004 /* ConnetMessageViewController.h */,
 				4968E4DC1DC2455400257004 /* ConnetMessageViewController.m */,
 				4968E4401DC0DA7500257004 /* FriendDailViewController.h */,
 				4968E4411DC0DA7500257004 /* FriendDailViewController.m */,
-				4968E4D21DC1FB5500257004 /* NewViewController.h */,
-				4968E4D31DC1FB5500257004 /* NewViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -766,6 +781,7 @@
 		410E5C491DB85315005C2513 /* Mine 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				4174D6B11DD16C4100D5614F /* MySpeak 说过的话 */,
 				4174D69B1DCD669700D5614F /* AmendHeadPortrait 修改头像 */,
 				410E5C4A1DB85315005C2513 /* Controller */,
 				413409EC1DC05B3900C4D466 /* MineSettings 设置  */,
@@ -975,6 +991,34 @@
 			name = "Speak Image";
 			sourceTree = "<group>";
 		};
+		4174D6B11DD16C4100D5614F /* MySpeak 说过的话 */ = {
+			isa = PBXGroup;
+			children = (
+				4174D6B81DD1733F00D5614F /* View */,
+				4174D6B21DD16C5B00D5614F /* Controller */,
+			);
+			name = "MySpeak 说过的话";
+			sourceTree = "<group>";
+		};
+		4174D6B21DD16C5B00D5614F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4174D6B31DD16C8200D5614F /* MineSpeakViewController.h */,
+				4174D6B41DD16C8200D5614F /* MineSpeakViewController.m */,
+				4174D6B51DD16C8200D5614F /* MineSpeakViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4174D6B81DD1733F00D5614F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4174D6B91DD1736100D5614F /* MIneSpeakTableViewCell.h */,
+				4174D6BA1DD1736100D5614F /* MIneSpeakTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		41976ED81DC37FCB00AC8518 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1170,13 +1214,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		4968E5581DC8744500257004 /* Group */ = {
+		4968E5581DC8744500257004 /* Group  群相关 */ = {
 			isa = PBXGroup;
 			children = (
 				4968E5591DC8745700257004 /* Controller */,
 				49ECEBBB1DCC3CD00002127F /* GroupChat */,
 				49ECEC241DCC6C4C0002127F /* GroupMember */,
 			);
+			name = "Group  群相关";
 			path = Group;
 			sourceTree = "<group>";
 		};
@@ -1185,12 +1230,15 @@
 			children = (
 				4968E55D1DC879C700257004 /* GroupAddViewController.h */,
 				4968E55E1DC879C700257004 /* GroupAddViewController.m */,
-				4968E5641DC9C7DC00257004 /* GroupDetailsViewController.h */,
-				4968E5651DC9C7DC00257004 /* GroupDetailsViewController.m */,
 				4968E56C1DCAC55C00257004 /* GroupMixViewController.h */,
 				4968E56D1DCAC55C00257004 /* GroupMixViewController.m */,
+				4174D7061DD1BBD300D5614F /* ConnectAddGroupViewController.h */,
+				4174D7071DD1BBD300D5614F /* ConnectAddGroupViewController.m */,
+				4174D7081DD1BBD300D5614F /* ConnectAddGroupViewController.xib */,
 				4968E55A1DC874CB00257004 /* GroupViewController.h */,
 				4968E55B1DC874CB00257004 /* GroupViewController.m */,
+				4968E5641DC9C7DC00257004 /* GroupDetailsViewController.h */,
+				4968E5651DC9C7DC00257004 /* GroupDetailsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1225,6 +1273,7 @@
 				497A61A71DD190BC00BF466C /* 表情.png */,
 				49ECEC221DCC6BB10002127F /* 群.png */,
 				4968E4451DC0DD9600257004 /* 附近.png */,
+				4174D7041DD1B6F200D5614F /* 群头像.jpg */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1442,6 +1491,7 @@
 				4968E5631DC8957A00257004 /* 群1.png in Resources */,
 				410C55FE1DCCA4150069E4C7 /* RecomposePersonInfoViewController.xib in Resources */,
 				41AE13CE1DC2FEF900AF06BF /* 聊天加号.png in Resources */,
+				4174D7051DD1B6F200D5614F /* 群头像.jpg in Resources */,
 				413715851DC9D57F00DD8B50 /* 准备录音_未按-01.png in Resources */,
 				4137158B1DC9DA9A00DD8B50 /* 语音通话.png in Resources */,
 				41FC7D841DBDE2B500712714 /* 我的2.png in Resources */,
@@ -1487,10 +1537,12 @@
 				49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */,
 				49ECEBBA1DCC2E250002127F /* QQ.jpg in Resources */,
 				413409F61DC0704700C4D466 /* 返回.png in Resources */,
+				4174D6B71DD16C8200D5614F /* MineSpeakViewController.xib in Resources */,
 				4137158D1DC9DB1700DD8B50 /* 视频通话.png in Resources */,
 				4941582F1DBD97EB00505112 /* 22.png in Resources */,
 				497A61A81DD190BC00BF466C /* 表情.png in Resources */,
 				4935D92B1DBB419B00BF55A7 /* 2.png in Resources */,
+				4174D70A1DD1BBD300D5614F /* ConnectAddGroupViewController.xib in Resources */,
 				41FC7DA81DBEEB1800712714 /* MineImageTableViewCell.xib in Resources */,
 				497A61F31DD1B55100BF466C /* 逗表情.png in Resources */,
 				41F144671DC1A4DF00C7023D /* 默认头像.png in Resources */,
@@ -1656,6 +1708,7 @@
 				413409F01DC05BCD00C4D466 /* MineSettingViewController.m in Sources */,
 				4968E4981DC1AFA000257004 /* AddManViewController.m in Sources */,
 				4968E4DA1DC23CB100257004 /* ConnectNewTableviewCell.m in Sources */,
+				4174D6BB1DD1736100D5614F /* MIneSpeakTableViewCell.m in Sources */,
 				4137156A1DC9740D00DD8B50 /* EMAudioRecorderUtil.m in Sources */,
 				410E5BD51DB85159005C2513 /* ViewController.m in Sources */,
 				410E5C371DB8530B005C2513 /* NSUserDefaultsUtils.m in Sources */,
@@ -1706,6 +1759,7 @@
 				41FC7DA71DBEEB1800712714 /* MineImageTableViewCell.m in Sources */,
 				49C51DE01DB89DDC006A5126 /* DBTool.m in Sources */,
 				410D984D1DC1FE3100A5C9FD /* MessageChatViewController.m in Sources */,
+				4174D6B61DD16C8200D5614F /* MineSpeakViewController.m in Sources */,
 				413715701DC9740D00DD8B50 /* amrFileCodec.mm in Sources */,
 				4968E4421DC0DA7500257004 /* FriendDailViewController.m in Sources */,
 				410E5C591DB85315005C2513 /* MineViewController.m in Sources */,
@@ -1726,6 +1780,7 @@
 				4174D6A01DCD674100D5614F /* UIImage+FixOrientation.m in Sources */,
 				410E5C1B1DB852FF005C2513 /* TYQModel.m in Sources */,
 				4123CD341DC874AB00D0D658 /* PhoneView.m in Sources */,
+				4174D7091DD1BBD300D5614F /* ConnectAddGroupViewController.m in Sources */,
 				410D98431DC1E5A000A5C9FD /* MessageUniparousTableViewCell.m in Sources */,
 				4174D6AB1DD001C800D5614F /* SpeakAddViewController.m in Sources */,
 				410E5C1A1DB852FF005C2513 /* TYQViewController.m in Sources */,

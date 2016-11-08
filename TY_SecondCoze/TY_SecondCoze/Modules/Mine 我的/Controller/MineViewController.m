@@ -13,7 +13,7 @@
 #import "MineSettingViewController.h"
 #import "CropImageViewController.h"
 #import "UIImage+FixOrientation.h"
-
+#import "MineSpeakViewController.h"
 
 static NSString *const spaceCell = @"spaceCell";
 static NSString *const backCell = @"backCell";
@@ -70,6 +70,8 @@ UITableViewDataSource
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.view.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:1.000];
+    
     [self addSubsView];
 
     
@@ -90,11 +92,11 @@ UITableViewDataSource
     
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - 50) style:UITableViewStylePlain];
-//    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.backgroundColor = [UIColor clearColor];
-    
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     [_tableView registerNib:[UINib nibWithNibName:@"MineSpaceTableViewCell" bundle:nil] forCellReuseIdentifier:spaceCell];
     [_tableView registerNib:[UINib nibWithNibName:@"MineGrayBackTableViewCell" bundle:nil] forCellReuseIdentifier:backCell];
     [_tableView registerNib:[UINib nibWithNibName:@"MineImageTableViewCell" bundle:nil] forCellReuseIdentifier:imageCell];
@@ -125,8 +127,7 @@ UITableViewDataSource
     _userNameLabel.textColor = [UIColor whiteColor];
     _userNameLabel.backgroundColor = [UIColor clearColor];
     [_headView addSubview:_userNameLabel];
-    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
-    // 添加playerName不是小明的约束条件
+    BmobQuery *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
     [bquery whereKey:@"accountnumber" equalTo:[[EaseMob sharedInstance].chatManager loginInfo][@"username"]];
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         if (array.count) {
@@ -273,6 +274,19 @@ UITableViewDataSource
     
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        MineSpeakViewController *speakVC = [[MineSpeakViewController alloc] init];
+        BmobQuery *bquery = [BmobQuery queryWithClassName:@"Speak"];
+        // 添加playerName不是小明的约束条件
+        [bquery whereKey:@"accountnumber" equalTo:[[EaseMob sharedInstance].chatManager loginInfo][@"username"]];
+        [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+            NSLog(@"%@", array);
+            speakVC.tableViewArrray = array;
+            speakVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:speakVC animated:YES];
+        }];
+        
+    }
     if (indexPath.row == self.tableViewArray.count - 2) {
         MineSettingViewController *settingVC = [[MineSettingViewController alloc] init];
         settingVC.hidesBottomBarWhenPushed = YES;

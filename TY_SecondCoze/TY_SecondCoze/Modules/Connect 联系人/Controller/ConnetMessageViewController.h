@@ -5,6 +5,7 @@
 //  Created by dllo on 16/10/27.
 //  Copyright © 2016年 TengYa. All rights reserved.
 //
+// 处理请求(同意或者拒绝)
 
 #import "TYQViewController.h"
 #import "InfoModel.h"

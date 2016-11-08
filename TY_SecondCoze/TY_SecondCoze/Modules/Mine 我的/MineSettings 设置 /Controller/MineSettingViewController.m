@@ -101,6 +101,7 @@ UITableViewDataSource
     if (indexPath.row == 0) {
         
         MineInfoViewController *infoVC = [[MineInfoViewController alloc] init];
+        infoVC.accountnumber = [[EaseMob sharedInstance].chatManager loginInfo][@"username"];
         [self.navigationController pushViewController:infoVC animated:YES];
     }
     

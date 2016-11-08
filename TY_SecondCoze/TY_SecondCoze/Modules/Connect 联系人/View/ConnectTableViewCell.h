@@ -10,6 +10,7 @@
 #import "InfoModel.h"
 @interface ConnectTableViewCell : TYQTableViewCell
 
-@property (nonatomic, strong) InfoModel *infoModel;
+@property (nonatomic, strong) UIImageView *imageV;
+@property (nonatomic, strong) UILabel *nameLable;
 
 @end

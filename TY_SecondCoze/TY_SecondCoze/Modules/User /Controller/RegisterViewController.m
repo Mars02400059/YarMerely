@@ -154,9 +154,6 @@ static CGFloat const nameTextFieldHeight = 40;
                 NSString *filePath = [[NSString alloc]initWithFormat:@"%@%@",documentsPath,  phonePath];
                 NSLog(@"%@", filePath);
                 BmobFile *file1 = [[BmobFile alloc] initWithFilePath:filePath];
-                BmobQuery *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
-                // 添加playerName是当前的约束条件
-                [bquery whereKey:@"accountnumber" equalTo:_nameTextField.text];
                 [file1 saveInBackground:^(BOOL isSuccessful, NSError *error) {
                     //如果文件保存成功，则把文件添加到filetype列
                     if (isSuccessful) {

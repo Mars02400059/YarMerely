@@ -65,8 +65,6 @@ NewViewControllerDelegate
     
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
     
-
-
     self.imageArray = @[@"xin",@"qun",@"an"];
     self.wordArray = @[@"新朋友",@"群聊",@"暗恋"];
     
@@ -94,7 +92,7 @@ NewViewControllerDelegate
     [self.myCollectionView registerClass:[ConnectCollectionViewCell class] forCellWithReuseIdentifier:@"cellC"];
     
 #pragma mark --- 创建tableview
-    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 50) style:UITableViewStylePlain];
+    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 50 - 64) style:UITableViewStylePlain];
     _myTableView.dataSource = self;
     _myTableView.delegate = self;
     self.myTableView.tableHeaderView = _myCollectionView;
@@ -114,6 +112,7 @@ NewViewControllerDelegate
     return _imageArray.count;
     
 }
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     ConnectCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellC" forIndexPath:indexPath];
@@ -136,7 +135,7 @@ NewViewControllerDelegate
     if (indexPath.item == 1) {
         
         GroupViewController *groupVC = [[GroupViewController alloc] init];
-        
+        groupVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:groupVC animated:YES];
         
     }
@@ -177,8 +176,18 @@ NewViewControllerDelegate
     
     ConnectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellT"];
     
-    cell.infoModel = self.listArray[indexPath.row];
-    
+    BmobQuery *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+    // 添加playerName不是小明的约束条件
+    InfoModel *infoModel = self.listArray[indexPath.row];
+    [bquery whereKey:@"accountnumber" equalTo:infoModel.username];
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count) {
+            BmobObject *object = array[0];
+            BmobFile *file = [object objectForKey:@"photoFile"];
+            [cell.imageV sd_setImageWithURL:[NSURL URLWithString:file.url]];
+            cell.nameLable.text = [object objectForKey:@"nickname"];
+        }
+    }];
     return cell;
 }
 
@@ -190,38 +199,46 @@ NewViewControllerDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     FriendDailViewController *fdVC = [FriendDailViewController new];
-    fdVC.infoModel = _listArray[indexPath.row];
-    fdVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:fdVC animated:YES];
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+    // 添加playerName不是小明的约束条件
+    InfoModel *infoModel = self.listArray[indexPath.row];
+    [bquery whereKey:@"accountnumber" equalTo:infoModel.username];
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count) {
+            BmobObject *object = array[0];
+            fdVC.object = object;
+            fdVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:fdVC animated:YES];
+        }
+    }];
+    
 }
 
 #endif
 #pragma mark ---右按钮方法(下拉菜单)
 -(void)tyq_navigationBarViewRightButtonAction{
     
-    [FTPopOverMenu showForSender:self.navigationBarView.rightButton withMenu:@[@"添加联系人",@"创建群",@"个人主动加入群"] doneBlock:^(NSInteger selectedIndex) {
+    [FTPopOverMenu showForSender:self.navigationBarView.rightButton withMenu:@[@"添加联系人",@"创建群",@"添加群"] doneBlock:^(NSInteger selectedIndex) {
         
         if (selectedIndex == 0) {
             
             AddManViewController *addVC = [AddManViewController new];
-         
+            addVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:addVC animated:YES];
             
         }
         if (selectedIndex == 1) {
             //创建群
             GroupAddViewController *groupVC = [[GroupAddViewController alloc] init];
-            
+            groupVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:groupVC animated:YES];
 
         }
         if (selectedIndex == 2) {
             
             GroupMixViewController *mixVC = [[GroupMixViewController alloc] init];
-            
+            mixVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:mixVC animated:YES];
-            
-//            NSLog(@"个人主动加入");
         }
         
     } dismissBlock:^{

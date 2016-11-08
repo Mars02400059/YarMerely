@@ -52,7 +52,15 @@ UINavigationControllerDelegate
     [_sendButton setTitle:@"发送" forState:UIControlStateNormal];
     [_sendButton addTarget:self action:@selector(sendButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_sendButton];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+    [self.view addGestureRecognizer:tap];
 }
+
+- (void)tapAction {
+    [self.titleTextField resignFirstResponder];
+}
+
 - (void)addButtonAction {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
     [alert addAction:[UIAlertAction actionWithTitle:@"打开相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -87,7 +95,8 @@ UINavigationControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    self.image = info[UIImagePickerControllerOriginalImage];
+    UIImage *myimage = info[UIImagePickerControllerOriginalImage];
+    self.image = [self compressImage:myimage toTargetWidth:480];
     [_imageButton setImage:_image forState:UIControlStateNormal];
     
 }
@@ -122,22 +131,46 @@ UINavigationControllerDelegate
             NSString *phonePath = [NSString stringWithFormat:@"/%@.png", [[EaseMob sharedInstance].chatManager loginInfo][@"username"]];
             [fileManager createFileAtPath:[documentsPath stringByAppendingString:phonePath] contents:data attributes:nil];
             NSString *filePath = [[NSString alloc]initWithFormat:@"%@%@",documentsPath,  phonePath];
+            NSLog(@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈%@", filePath);
             BmobFile *file1 = [[BmobFile alloc] initWithFilePath:filePath];
             [file1 saveInBackground:^(BOOL isSuccessful, NSError *error) {
                 //如果文件保存成功，则把文件添加到filetype列
                 if (isSuccessful) {
                     [speak setObject:file1  forKey:@"imagePath"];
                     [speak saveInBackground];
-                }else{
+                    
+                    
+                } else {
                     //进行处理
+                    NSLog(@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈%@", error);
                 }
             }];
+            
             [self.titleTextField resignFirstResponder];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }
 
 }
+
+/// 压缩图片尺寸
+- (UIImage *)compressImage:(UIImage *)sourceImage toTargetWidth:(CGFloat)targetWidth {
+    CGSize imageSize = sourceImage.size;
+    
+    CGFloat width = imageSize.width;
+    CGFloat height = imageSize.height;
+    
+    CGFloat targetHeight = (targetWidth / width) * height;
+    
+    UIGraphicsBeginImageContext(CGSizeMake(targetWidth, targetHeight));
+    [sourceImage drawInRect:CGRectMake(0, 0, targetWidth, targetHeight)];
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 
 - (void)tyq_navigationBarViewLeftButtonAction {
     [self.titleTextField resignFirstResponder];
@@ -148,14 +181,5 @@ UINavigationControllerDelegate
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

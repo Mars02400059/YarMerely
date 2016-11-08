@@ -8,6 +8,8 @@
 
 #import "GroupViewController.h"
 #import "GroupDetailsViewController.h"
+#import "ConnectTableViewCell.h"
+
 
 @interface GroupViewController ()
 <
@@ -41,9 +43,11 @@ UITableViewDelegate
 
 
     
-    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64 - 50) style:UITableViewStylePlain];
+    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64) style:UITableViewStylePlain];
     _myTableView.dataSource = self;
     _myTableView.delegate = self;
+    [self.myTableView registerClass:[ConnectTableViewCell class] forCellReuseIdentifier:@"cellT"];
+
     [self.view addSubview:_myTableView];
     
 //注册tableview
@@ -64,20 +68,31 @@ UITableViewDelegate
 }
 
 #pragma mark --- tableview的datasouce.delegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70.f;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     return _groupArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    ConnectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellT"];
     
     EMGroup *gro = _groupArray[indexPath.row];
     
-    NSString *string = gro.groupSubject;
-   
-    cell.textLabel.text = string;
-  
+    BmobQuery *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+
+    [bquery whereKey:@"accountnumber" equalTo:gro.groupId];
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count) {
+            BmobObject *object = array[0];
+            BmobFile *file = [object objectForKey:@"photoFile"];
+            [cell.imageV sd_setImageWithURL:[NSURL URLWithString:file.url]];
+            cell.nameLable.text = [object objectForKey:@"nickname"];
+        }
+    }];
     return cell;
 }
 
