@@ -91,7 +91,12 @@
     [[EaseMob sharedInstance].chatManager applyJoinPublicGroup:_IdTextFiled.text withGroupname:_nameFiled.text message:_messageFiled.text error:&error];
     if (!error) {
         
-        NSLog(@"申请==成功");
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"申请已提交" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
     
     }
     

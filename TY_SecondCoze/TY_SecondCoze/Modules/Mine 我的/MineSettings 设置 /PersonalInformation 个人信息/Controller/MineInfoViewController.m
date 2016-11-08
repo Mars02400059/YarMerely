@@ -28,7 +28,7 @@ UITableViewDataSource
 - (void)viewWillAppear:(BOOL)animated {
     BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
     // 添加playerName不是小明的约束条件
-    [bquery whereKey:@"accountnumber" equalTo: [[EaseMob sharedInstance].chatManager loginInfo][@"username"]];
+    [bquery whereKey:@"accountnumber" equalTo: _accountnumber];
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         if (array.count) {
             self.object = array[0];
@@ -43,9 +43,15 @@ UITableViewDataSource
     
     [self addTableView];
     [self addNavigationBarView];
-    self.navigationBarView.title = @"个人信息";
+    self.navigationBarView.title = @"详细信息";
     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
-    self.navigationBarView.rightButtonImage = [UIImage imageNamed:@"编辑"];
+    if ([_accountnumber isEqualToString:[[EaseMob sharedInstance].chatManager loginInfo][@"username"]]) {
+        TYQButton *button = [TYQButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(WIDTH - 49, 20, 44, 44);
+        [button setTitle:@"编辑" forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+    }
 }
 - (NSArray *)infoArray {
     if (nil == _infoArray) {
@@ -101,7 +107,7 @@ UITableViewDataSource
 - (void)tyq_navigationBarViewLeftButtonAction {
     [self.navigationController popViewControllerAnimated:YES];
 }
-- (void)tyq_navigationBarViewRightButtonAction {
+- (void)buttonAction {
     [self presentViewController:[[RecomposePersonInfoViewController alloc] init] animated:YES completion:nil];
 }
 

@@ -10,4 +10,6 @@
 
 @interface MineInfoViewController : TYQViewController
 
+@property (nonatomic, copy) NSString *accountnumber;
+
 @end

@@ -41,7 +41,7 @@ UITableViewDelegate
 
 
     
-    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64 - 50) style:UITableViewStylePlain];
+    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64) style:UITableViewStylePlain];
     _myTableView.dataSource = self;
     _myTableView.delegate = self;
     [self.view addSubview:_myTableView];
@@ -64,6 +64,10 @@ UITableViewDelegate
 }
 
 #pragma mark --- tableview的datasouce.delegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70.f;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     return _groupArray.count;

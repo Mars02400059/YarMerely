@@ -10,6 +10,9 @@
 #import "MineImageTableViewCell.h"
 #import "MineGrayBackTableViewCell.h"
 #import "MessageChatViewController.h"
+#import "MineInfoViewController.h"
+#import "MineSpeakViewController.h"
+
 
 @interface FriendDailViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -31,20 +34,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:1.000];
     
-    self.dataSouce = @[@"",@"备注>",@"标题2"];
+    self.dataSouce = @[@"",@"详细资料",@"说过的话"];
     
 #pragma mark --- 创建tableview
     
     self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT / 2) style:UITableViewStyleGrouped];;
-    _myTableView.backgroundColor = [UIColor whiteColor];
+    _myTableView.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:1.000];
     _myTableView.scrollEnabled = NO;
     _myTableView.dataSource = self;
     _myTableView.delegate = self;
     
     self.headerView = [[TYQView alloc] initWithFrame:CGRectMake(0, 0, WIDTH , 120)];
-    _headerView.backgroundColor = [UIColor lightGrayColor];
+    _headerView.backgroundColor = [UIColor whiteColor];
     _myTableView.tableHeaderView = _headerView;
     [self.view addSubview:_myTableView];
     
@@ -56,15 +59,13 @@
     self.headImageV = [[TYQImageView alloc] initWithFrame:CGRectMake(20, 20, self.headerView.frame.size.height - 40, self.headerView.frame.size.height - 40)];
     _headImageV.layer.cornerRadius = 10;
     _headImageV.layer.masksToBounds = YES;
-    self.headImageV.backgroundColor = [UIColor redColor];
     
-    self.nickNameLabel = [[TYQLabel alloc] initWithFrame:CGRectMake(_headImageV.frame.origin.x + _headImageV.frame.size.width + 10, _headImageV.frame.origin.y, WIDTH / 3, _headImageV.frame.size.height / 2 - 10)];
-    self.nickNameLabel.backgroundColor = [UIColor yellowColor];
+    self.nickNameLabel = [[TYQLabel alloc] initWithFrame:CGRectMake(_headImageV.frame.origin.x + _headImageV.frame.size.width + 10, _headImageV.frame.origin.y, WIDTH / 2, 25)];
+    _nickNameLabel.backgroundColor = [UIColor clearColor];
+    
+    self.qqLabel = [[TYQLabel alloc] initWithFrame:CGRectMake(_nickNameLabel.frame.origin.x , _headImageV.y + _headImageV.height - 50, WIDTH / 3 * 2, 50)];
+    _qqLabel.backgroundColor = [UIColor clearColor];
 
-    
-    self.qqLabel = [[TYQLabel alloc] initWithFrame:CGRectMake(_nickNameLabel.frame.origin.x , _nickNameLabel.frame.size.height + _nickNameLabel.frame.origin.y + 5, WIDTH / 3 * 2, _headImageV.frame.size.height / 2)];
-    _qqLabel.backgroundColor = [UIColor magentaColor];
-    
     [self.headerView addSubview:_qqLabel];
     [self.headerView addSubview:_nickNameLabel];
     [self.headerView addSubview:_headImageV];
@@ -72,11 +73,10 @@
 #pragma mark --- 开始聊天按钮
     self.chatButton = [TYQButton buttonWithType:UIButtonTypeCustom];
     _chatButton.backgroundColor = [UIColor greenColor];
-    _chatButton.frame = CGRectMake(WIDTH / 4, _myTableView.frame.origin.y + _myTableView.frame.size.height + 50, WIDTH - WIDTH / 2, 50);
-    _chatButton.layer.cornerRadius = 10;
+    _chatButton.frame = CGRectMake(25, _myTableView.frame.origin.y + _myTableView.frame.size.height + 20, WIDTH - 50, 50);
+    _chatButton.layer.cornerRadius = 8.f;
     _chatButton.layer.masksToBounds = YES;
     [_chatButton setTitle:@"开始聊天" forState:UIControlStateNormal];
-//    _chatButton setFont:[UIFont ]
     [self.view addSubview:_chatButton];
     [_chatButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
 #pragma mark --- 假导航上的按钮
@@ -90,23 +90,16 @@
 
 /// 资料赋值
 - (void)getControllerInfo {
-    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
-    // 添加playerName不是小明的约束条件
-    [bquery whereKey:@"accountnumber" equalTo:_infoModel.username];
-    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        if (array.count) {
-            BmobObject *object = array[0];
-            /// 获取指定资料
-            BmobFile *file = [object objectForKey:@"photoFile"];
-            /// 头像
-            [_headImageV sd_setImageWithURL:[NSURL URLWithString:file.url]];
-            /// 昵称
-            _nickNameLabel.text = [object objectForKey:@"nickname"];
-            /// 签名
-            _qqLabel.text = [object objectForKey:@"autograph"];
-            
-        }
-    }];}
+    
+    /// 获取指定资料
+    BmobFile *file = [_object objectForKey:@"photoFile"];
+    /// 头像
+    [_headImageV sd_setImageWithURL:[NSURL URLWithString:file.url]];
+    /// 昵称
+    _nickNameLabel.text = [NSString stringWithFormat:@"昵称 : %@", [_object objectForKey:@"nickname"]];
+    /// 签名
+    _qqLabel.text = [NSString stringWithFormat:@"签名 : %@", [_object objectForKey:@"autograph"]];
+}
 
 
 #pragma mark --- 左按钮方法
@@ -132,15 +125,8 @@
     if (indexPath.row == 1 || indexPath.row == 2) {
         
         MineImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellG"];
+        cell.title = _dataSouce[indexPath.row];
         
-        if (indexPath.row == 1) {
-            
-            cell.title = @"标题";
-        }if (indexPath.row == 2) {
-            
-            cell.title = @"备注";
-        }
-
         return cell;
     }
     
@@ -148,12 +134,35 @@
 
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 1) {
+        MineInfoViewController *infoVC = [[MineInfoViewController alloc] init];
+        infoVC.accountnumber = [_object objectForKey:@"accountnumber"];
+        [self.navigationController pushViewController:infoVC animated:YES];
+        
+    }
+    if (indexPath.row == 2) {
+        MineSpeakViewController *speakVC = [[MineSpeakViewController alloc] init];
+        BmobQuery *bquery = [BmobQuery queryWithClassName:@"Speak"];
+        // 添加playerName不是小明的约束条件
+        [bquery whereKey:@"accountnumber" equalTo:[_object objectForKey:@"accountnumber"]];
+        [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+            NSLog(@"%@", array);
+            speakVC.tableViewArrray = array;
+            speakVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:speakVC animated:YES];
+        }];
+    }
+
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.row == 0) {
         
-        return 50.f;
-    }if (indexPath.row == 1 || indexPath.row == 2) {
+        return 20.f;
+    }
+    if (indexPath.row == 1 || indexPath.row == 2) {
         
         return 70.f;
     }
@@ -164,8 +173,8 @@
 -(void) buttonAction:(TYQButton *)button{
     
     MessageChatViewController *messVC = [[MessageChatViewController alloc] init];
-    
-    messVC.titleName = self.infoModel.username;
+#warning 需要改成云存储的对象
+    messVC.titleName = [_object objectForKey:@"accountnumber"];
     
     [self.navigationController pushViewController:messVC animated:YES];
 }

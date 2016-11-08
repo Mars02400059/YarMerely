@@ -82,7 +82,12 @@
     if(!error){
        
         NSLog(@"-- 创建群成功 -- %@",group);
-    
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"创建群成功" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
     }
     
     

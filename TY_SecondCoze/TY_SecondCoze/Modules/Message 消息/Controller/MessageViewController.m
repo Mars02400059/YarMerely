@@ -69,6 +69,7 @@ UITableViewDataSource
     _tableView.rowHeight = 85.f;
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_tableView registerClass:[MessageUniparousTableViewCell class] forCellReuseIdentifier:Cell];
     [self.view addSubview:_tableView];
     
@@ -82,7 +83,18 @@ UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MessageUniparousTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Cell];
-    cell.conversation = _messageArray[indexPath.row];
+    EMConversation *conversation = _messageArray[indexPath.row];
+    cell.conversation = conversation;
+    BmobQuery *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+    [bquery whereKey:@"accountnumber" equalTo:conversation.chatter];
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count) {
+            BmobObject *object = array[0];
+            BmobFile *file = [object objectForKey:@"photoFile"];
+            [cell.myImageView sd_setImageWithURL:[NSURL URLWithString:file.url]];
+            cell.titleLabel.text = [object objectForKey:@"nickname"];
+        }
+    }];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

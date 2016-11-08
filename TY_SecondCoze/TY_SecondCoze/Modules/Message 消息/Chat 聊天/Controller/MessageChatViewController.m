@@ -449,7 +449,8 @@ UITableViewDataSource
     [[EMCDDeviceManager sharedInstance] asyncStopRecordingWithCompletion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
         if (!error) {
             EMChatVoice *voice = [[EMChatVoice alloc] initWithFile:recordPath displayName:@"audio"];
-            //    voice.duration = aDuration;
+            // 录音时长
+            voice.duration = aDuration;
             EMVoiceMessageBody *body = [[EMVoiceMessageBody alloc] initWithChatObject:voice];
             
             // 生成message
