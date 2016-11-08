@@ -32,6 +32,8 @@ UITableViewDataSource
     // 获取消息数组
     [_messageArray removeAllObjects];
     
+    /// 删除所有会话
+//    [[EaseMob sharedInstance].chatManager removeAllConversationsWithDeleteMessages:YES append2Chat:YES];
     /*!
      @method
      @brief 获取当前登录用户的会话列表
