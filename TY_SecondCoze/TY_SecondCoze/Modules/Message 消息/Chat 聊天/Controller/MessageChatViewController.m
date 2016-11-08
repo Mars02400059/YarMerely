@@ -299,9 +299,7 @@ doIt
                     //
                     if (!error) {
                         //
-                        
                         [contentButton.imageView stopAnimating];
-                        
                     }
                 }];
                 
@@ -482,7 +480,13 @@ doIt
             
             // 生成message
             EMMessage *message = [[EMMessage alloc] initWithReceiver:_titleName bodies:@[body]];
-            message.messageType = eMessageTypeChat; // 设置为单聊消息
+            
+            if (_index == 1) {
+                message.messageType = eMessageTypeChat; // 设置为单聊消息
+            }
+            if (_index == 2) {
+                message.messageType = eMessageTypeGroupChat; // 设置为群聊消息
+            }
             [self tyq_messageSend:message];
 
             
@@ -507,8 +511,12 @@ doIt
     
     // 生成message
     EMMessage *message = [[EMMessage alloc] initWithReceiver:_titleName bodies:@[body]];
-    message.messageType = eMessageTypeChat; // 设置为单聊消息
-    
+    if (_index == 1) {
+        message.messageType = eMessageTypeChat; // 设置为单聊消息
+    }
+    if (_index == 2) {
+        message.messageType = eMessageTypeGroupChat; // 设置为群聊消息
+    }
     [self tyq_messageSend:message];
 }
 /// 点击语音通话
@@ -554,9 +562,12 @@ doIt
     // 生成message
     
     EMMessage *message = [[EMMessage alloc] initWithReceiver:_titleName bodies:@[body]];
-    message.messageType = eMessageTypeChat;
-    //message.messageType = eConversationTypeGroupChat;// 设置为群聊消息
-    //message.messageType = eConversationTypeChatRoom;// 设置为聊天室消息
+    if (_index == 1) {
+        message.messageType = eMessageTypeChat; // 设置为单聊消息
+    }
+    if (_index == 2) {
+        message.messageType = eMessageTypeGroupChat; // 设置为群聊消息
+    }
     [self tyq_messageSend:message];
     
 

@@ -175,7 +175,7 @@
     MessageChatViewController *messVC = [[MessageChatViewController alloc] init];
 #warning 需要改成云存储的对象
     messVC.titleName = [_object objectForKey:@"accountnumber"];
-    
+    messVC.index = 1;
     [self.navigationController pushViewController:messVC animated:YES];
 }
 

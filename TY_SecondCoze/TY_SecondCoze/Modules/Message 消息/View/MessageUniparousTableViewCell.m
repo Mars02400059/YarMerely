@@ -12,11 +12,7 @@
 
 @interface MessageUniparousTableViewCell ()
 
-
-
-
 @end
-
 
 @implementation MessageUniparousTableViewCell
 
@@ -120,11 +116,11 @@
     CGFloat labelX = imageViewX + imageViewWidth + 5;
     CGFloat labelWidth = self.contentView.width - labelX - 70;
     CGFloat labelHeight = imageViewHeight / 2;
-    _titleLabel.frame = CGRectMake(labelX, imageViewY, labelWidth / 2, labelHeight);
+    _titleLabel.frame = CGRectMake(labelX, imageViewY, labelWidth - 85, labelHeight);
     
     _cententLabel.frame = CGRectMake(labelX, imageViewY + labelHeight, labelWidth, labelHeight);
     
-    _timeLabel.frame = CGRectMake(self.contentView.width - 100, imageViewY, 70, 30);
+    _timeLabel.frame = CGRectMake(WIDTH - 70, imageViewY, 60, 30);
 
 }
 

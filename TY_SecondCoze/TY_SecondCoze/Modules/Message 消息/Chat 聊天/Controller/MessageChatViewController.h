@@ -13,4 +13,8 @@
 
 @property (nonatomic, copy) NSString *titleName;
 
+
+
+@property (nonatomic, assign) NSInteger index;
+
 @end

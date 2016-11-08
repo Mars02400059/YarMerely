@@ -31,7 +31,7 @@ UITableViewDataSource
 - (void)tyq_messageArrayChange {
     // 获取消息数组
     [_messageArray removeAllObjects];
-    
+#warning 删除聊天记录
     /// 删除所有会话
 //    [[EaseMob sharedInstance].chatManager removeAllConversationsWithDeleteMessages:YES append2Chat:YES];
     /*!
@@ -105,7 +105,33 @@ UITableViewDataSource
     MessageChatViewController *chatVC = [[MessageChatViewController alloc] init];
     chatVC.hidesBottomBarWhenPushed = YES;
     EMConversation *conversation = _messageArray[indexPath.row];
+    /// 判断消息类型
     
+    
+    switch (conversation.conversationType) {
+            
+            // 单聊
+        case eConversationTypeChat:
+        {
+            chatVC.index = 1;
+        }
+            break;
+            // 群聊
+        case eConversationTypeGroupChat:
+        {
+            chatVC.index = 2;
+        }
+            break;
+            // 聊天室
+        case eConversationTypeChatRoom:
+        {
+
+        }
+            break;
+        
+        default:
+            break;
+    }
     /*! chatter
      @property
      @brief 会话对方的用户名. 如果是群聊, 则是群组的id
