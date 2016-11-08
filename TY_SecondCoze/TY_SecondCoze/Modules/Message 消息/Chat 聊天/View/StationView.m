@@ -95,8 +95,11 @@ UITextFieldDelegate
 - (void)expressionButtonAction:(TYQButton *)expressionButton {
     
     if (!expressionButton.record) {
+        [expressionButton setImage:[UIImage imageNamed:@"表情"] forState:UIControlStateNormal];
         expressionButton.record = YES;
+        
     } else {
+        [expressionButton setImage:[UIImage imageNamed:@"聊天表情"] forState:UIControlStateNormal];
         expressionButton.record = NO;
     }
     [self.delegate tyq_expressionDelegate:expressionButton.record];

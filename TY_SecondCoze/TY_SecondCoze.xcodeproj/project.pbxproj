@@ -136,6 +136,10 @@
 		4968E5661DC9C7DC00257004 /* GroupDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E5651DC9C7DC00257004 /* GroupDetailsViewController.m */; };
 		4968E5681DCA173700257004 /* 加号.png in Resources */ = {isa = PBXBuildFile; fileRef = 4968E5671DCA173700257004 /* 加号.png */; };
 		4968E56E1DCAC55C00257004 /* GroupMixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4968E56D1DCAC55C00257004 /* GroupMixViewController.m */; };
+		497A61A31DD1817200BF466C /* EmojiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 497A61A21DD1817200BF466C /* EmojiView.m */; };
+		497A61A61DD181D600BF466C /* MessageEmojiCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 497A61A51DD181D600BF466C /* MessageEmojiCollectionViewCell.m */; };
+		497A61A81DD190BC00BF466C /* 表情.png in Resources */ = {isa = PBXBuildFile; fileRef = 497A61A71DD190BC00BF466C /* 表情.png */; };
+		497A61F31DD1B55100BF466C /* 逗表情.png in Resources */ = {isa = PBXBuildFile; fileRef = 497A61F21DD1B55100BF466C /* 逗表情.png */; };
 		49A8B39A1DBB82BD00FFF2A1 /* 00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B3991DBB82BD00FFF2A1 /* 00.jpg */; };
 		49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39B1DBB855000FFF2A1 /* 000.png */; };
 		49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39D1DBB873A00FFF2A1 /* 1.png */; };
@@ -400,6 +404,12 @@
 		4968E5671DCA173700257004 /* 加号.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "加号.png"; sourceTree = "<group>"; };
 		4968E56C1DCAC55C00257004 /* GroupMixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupMixViewController.h; sourceTree = "<group>"; };
 		4968E56D1DCAC55C00257004 /* GroupMixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupMixViewController.m; sourceTree = "<group>"; };
+		497A61A11DD1817200BF466C /* EmojiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojiView.h; sourceTree = "<group>"; };
+		497A61A21DD1817200BF466C /* EmojiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiView.m; sourceTree = "<group>"; };
+		497A61A41DD181D600BF466C /* MessageEmojiCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageEmojiCollectionViewCell.h; sourceTree = "<group>"; };
+		497A61A51DD181D600BF466C /* MessageEmojiCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageEmojiCollectionViewCell.m; sourceTree = "<group>"; };
+		497A61A71DD190BC00BF466C /* 表情.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "表情.png"; sourceTree = "<group>"; };
+		497A61F21DD1B55100BF466C /* 逗表情.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "逗表情.png"; sourceTree = "<group>"; };
 		49A8B3991DBB82BD00FFF2A1 /* 00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00.jpg; sourceTree = "<group>"; };
 		49A8B39B1DBB855000FFF2A1 /* 000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 000.png; sourceTree = "<group>"; };
 		49A8B39D1DBB873A00FFF2A1 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -1095,6 +1105,10 @@
 				4123CD331DC874AB00D0D658 /* PhoneView.m */,
 				41AE13B31DC2DEC900AF06BF /* StationView.h */,
 				41AE13B41DC2DEC900AF06BF /* StationView.m */,
+				497A61A11DD1817200BF466C /* EmojiView.h */,
+				497A61A21DD1817200BF466C /* EmojiView.m */,
+				497A61A41DD181D600BF466C /* MessageEmojiCollectionViewCell.h */,
+				497A61A51DD181D600BF466C /* MessageEmojiCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1199,16 +1213,16 @@
 			children = (
 				49C51D881DB899FC006A5126 /* 0.jpg */,
 				4935D92A1DBB419B00BF55A7 /* 2.png */,
+				497A61F21DD1B55100BF466C /* 逗表情.png */,
 				4935D92C1DBB470B00BF55A7 /* 3.jpg */,
 				4968E4321DC09E6E00257004 /* an.png */,
 				4968E4431DC0DBBA00257004 /* jia.png */,
 				4968E4301DC09E6700257004 /* qun.png */,
 				4968E42E1DC09E6200257004 /* xin.png */,
-				4968E4451DC0DD9600257004 /* 附近.png */,
 				49ECEC281DCCBB900002127F /* 邀请.png */,
-				4968E5671DCA173700257004 /* 加号.png */,
 				49ECEC2A1DCCBDB20002127F /* 人员新增.png */,
 				4968E5671DCA173700257004 /* 加号.png */,
+				497A61A71DD190BC00BF466C /* 表情.png */,
 				49ECEC221DCC6BB10002127F /* 群.png */,
 				4968E4451DC0DD9600257004 /* 附近.png */,
 			);
@@ -1475,8 +1489,10 @@
 				413409F61DC0704700C4D466 /* 返回.png in Resources */,
 				4137158D1DC9DB1700DD8B50 /* 视频通话.png in Resources */,
 				4941582F1DBD97EB00505112 /* 22.png in Resources */,
+				497A61A81DD190BC00BF466C /* 表情.png in Resources */,
 				4935D92B1DBB419B00BF55A7 /* 2.png in Resources */,
 				41FC7DA81DBEEB1800712714 /* MineImageTableViewCell.xib in Resources */,
+				497A61F31DD1B55100BF466C /* 逗表情.png in Resources */,
 				41F144671DC1A4DF00C7023D /* 默认头像.png in Resources */,
 				41F144651DC1907800C7023D /* MineInfoTableViewCell.xib in Resources */,
 				413715871DC9D5C800DD8B50 /* 准备录音_按下-01.png in Resources */,
@@ -1697,6 +1713,7 @@
 				49C51DD61DB89AF7006A5126 /* UIView+EATheme.m in Sources */,
 				410E5C201DB852FF005C2513 /* TYQTableViewController.m in Sources */,
 				41FC7DA21DBEEA6E00712714 /* MineGrayBackTableViewCell.m in Sources */,
+				497A61A61DD181D600BF466C /* MessageEmojiCollectionViewCell.m in Sources */,
 				4137156B1DC9740D00DD8B50 /* EMCDDeviceManager+Media.m in Sources */,
 				418C24C71DC4B9FA002525B9 /* BubbleView.m in Sources */,
 				410E5C331DB8530B005C2513 /* NSString+Regex.m in Sources */,
@@ -1713,6 +1730,7 @@
 				4174D6AB1DD001C800D5614F /* SpeakAddViewController.m in Sources */,
 				410E5C1A1DB852FF005C2513 /* TYQViewController.m in Sources */,
 				41FC7D231DBC853C00712714 /* TYQNavigationBarView.m in Sources */,
+				497A61A31DD1817200BF466C /* EmojiView.m in Sources */,
 				413715691DC9740D00DD8B50 /* EMAudioPlayerUtil.m in Sources */,
 				4968E4DD1DC2455400257004 /* ConnetMessageViewController.m in Sources */,
 			);
