@@ -100,7 +100,7 @@ UITableViewDataSource
     self.messageTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64 - stationViewHeight) style:UITableViewStylePlain];
     _messageTableView.delegate = self;
     _messageTableView.dataSource = self;
-    [_messageTableView registerClass:[MessageChatTableViewCell class] forCellReuseIdentifier:Cell];
+//    [_messageTableView registerClass:[MessageChatTableViewCell class] forCellReuseIdentifier:Cell];
     [self.view addSubview:_messageTableView];
 }
 
