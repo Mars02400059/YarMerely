@@ -24,6 +24,7 @@ PODS:
   - MJRefresh (3.1.12)
   - MLEmojiLabel (1.0.2):
     - TTTAttributedLabel (~> 1.13.4)
+  - PureLayout (3.0.2)
   - SDAutoLayout (2.1.7)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.12)
   - MLEmojiLabel (~> 1.0.2)
+  - PureLayout (~> 3.0.2)
   - SDAutoLayout (~> 2.1.7)
   - SDWebImage (~> 3.8.2)
   - SVProgressHUD (~> 2.0.3)
@@ -53,11 +55,12 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MLEmojiLabel: 36d73c19f9975cbf9def24e5bc135263b0337fd8
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDAutoLayout: e9b36d04b8c0b504762a04d76fbbe5108944297a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
 
-PODFILE CHECKSUM: 14d45f4cf0146eccc1e6cf46d00ef563dc8bc725
+PODFILE CHECKSUM: 9fb7ebdbd5187f7be64f9e31f63b536112a138a3
 
 COCOAPODS: 1.0.1

@@ -16,6 +16,8 @@
 #import "EMCDDeviceManager.h"
 #import "RealtimeCallViewController.h"
 #import "ViewController.h"
+#import "EmojiView.h"
+
 
 // 操作台的高度
 static CGFloat const stationViewHeight = 60.f;
@@ -33,7 +35,8 @@ StationViewDelegate,
 EMChatManagerDelegate,
 EMCallManagerDelegate,
 UITableViewDelegate,
-UITableViewDataSource
+UITableViewDataSource,
+doIt
 >
 // 消息tableView
 @property (nonatomic, strong) UITableView *messageTableView;
@@ -53,6 +56,9 @@ UITableViewDataSource
 @property (nonatomic, strong) MoreFunctionView *moreFunctionView;
 /// 语音功能
 @property (nonatomic, strong) PhoneView *phoneView;
+
+//表情功能
+@property (nonatomic, strong) EmojiView *emojiView;
 
 
 @end
@@ -81,14 +87,13 @@ UITableViewDataSource
 
     [[EaseMob sharedInstance].callManager addDelegate:self delegateQueue:nil];
 
-    
-    
     self.messageArray = [NSMutableArray array];
     
     [self addTableView];
     [self addstationView];
     [self addMoreFunctionView];
     [self addPhoneView];
+    [self addEmojiView];
     [self addNavigationBarView];
     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
 }
@@ -112,6 +117,12 @@ UITableViewDataSource
     _stationView.layer.borderWidth = 1.f;
     [self.view addSubview:_stationView];
     
+    self.stationView.delegate = self;
+    
+    
+    
+#warning mark ---
+
     
     // 键盘监听
     // 键盘将要出现
@@ -139,6 +150,15 @@ UITableViewDataSource
     self.phoneView = [[PhoneView alloc] initWithFrame:CGRectMake(0, HEIGHT, WIDTH, WIDTH / 2)];
     _phoneView.delegate = self;
     [self.view addSubview:_phoneView];
+}
+
+-(void)addEmojiView {
+    
+    self.emojiView = [[EmojiView alloc] initWithFrame:CGRectMake(0, HEIGHT, WIDTH, WIDTH / 2)];
+    _emojiView.backgroundColor = [UIColor clearColor];
+    _emojiView.delegate = self;
+    [self.view addSubview:_emojiView];
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -409,13 +429,20 @@ UITableViewDataSource
 - (void)tyq_expressionDelegate:(BOOL)record {
     if (record) {
         
-         [self tyq_HideKeyboard];
-        
-        NSLog(@"7778");
+        [self tyq_HideKeyboard];
+        _moreFunctionView.y = HEIGHT;
+        _emojiView.y = HEIGHT - _emojiView.height;
+        _stationView.y = HEIGHT - _emojiView.height - stationViewHeight;
+        _messageTableView.height = HEIGHT - _emojiView.height - stationViewHeight - 64;
+        [self tyq_tableViewContentOffsetY];
         
     } else {
       
-        NSLog(@"fghjkl");
+        _emojiView.y = HEIGHT;
+        [_stationView.importTextField becomeFirstResponder];
+        [_stationView tyq_allButtonRecordReduction];
+
+//        NSLog(@"fghjkl");
     }
 }
 // 点击语音按钮
@@ -553,6 +580,17 @@ UITableViewDataSource
         _stationView.importTextField.text = @"";
     }
 }
+
+
+
+//代理人执行方法
+
+-(void)doSomething:(NSString *)string{
+    
+    _stationView.importTextField.text = string;
+    
+}
+
 
 
 

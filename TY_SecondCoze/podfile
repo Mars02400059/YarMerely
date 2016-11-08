@@ -16,6 +16,8 @@ pod 'FTPopOverMenu', '~> 1.2.1'
 
   pod 'BmobSDK', '~> 1.7.2'
 
+pod 'PureLayout', '~> 3.0.2'
+
 
 pod 'SDAutoLayout', '~> 2.1.7'
 
