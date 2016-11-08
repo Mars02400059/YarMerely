@@ -11,6 +11,8 @@
 #import <EMChatManagerGroupDelegate.h>
 #import "InfoModel.h"
 #import "GroupChatViewController.h"
+#import "MessageChatViewController.h"
+
 @interface GroupDetailsViewController ()
 
 <
@@ -108,9 +110,11 @@ EMChatManagerDelegate
 
 -(void)groupChatButtonAction:(UIButton *)button{
     
-    GroupChatViewController *groupVC = [[GroupChatViewController alloc] init];
+//    GroupChatViewController *groupVC = [[GroupChatViewController alloc] init];
+    MessageChatViewController *groupVC = [[MessageChatViewController alloc] init];
+    groupVC.titleName = _emgroup.groupId;
     
-    groupVC.emgroup = _emgroup;
+  //  groupVC.emgroup = _emgroup;
     
     [self.navigationController pushViewController:groupVC animated:YES];
     NSLog(@"进入群聊");

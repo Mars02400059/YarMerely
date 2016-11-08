@@ -50,7 +50,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="photoImaegView" destination="mkL-0X-4Z5" id="IHM-Il-eTa"/>
+                <outlet property="photoImageView" destination="mkL-0X-4Z5" id="si5-5f-ezZ"/>
                 <outlet property="titleLabel" destination="wIs-hN-OvG" id="3VG-lX-6v5"/>
             </connections>
         </tableViewCell>

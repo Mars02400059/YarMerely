@@ -65,7 +65,7 @@ UITableViewDataSource
 }
 
 - (void)addTableView {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.width, self.view.height - 64) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64 - 50) style:UITableViewStylePlain];
     _tableView.rowHeight = 85.f;
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -97,6 +97,8 @@ UITableViewDataSource
     }];
     return cell;
 }
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MessageChatViewController *chatVC = [[MessageChatViewController alloc] init];
     chatVC.hidesBottomBarWhenPushed = YES;
@@ -110,25 +112,6 @@ UITableViewDataSource
     [self.navigationController pushViewController:chatVC animated:YES];
 }
 
-
-#pragma mark - 删除
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
-        
-        EMConversation *conversation = _messageArray[indexPath.row];
-        NSString *username = conversation.chatter;
-        
-        [[EaseMob sharedInstance].chatManager removeConversationByChatter:username deleteMessages:YES append2Chat:YES];
-        
-        [self tyq_messageArrayChange];
-    }
-    
-    
-    
-    
-}
 
 /*!
  @method

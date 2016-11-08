@@ -19,7 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     self.myTextFiled = [TYQTextField new];
     _myTextFiled.frame = CGRectMake(10, HEIGHT / 7, WIDTH - 20, 45);
     _myTextFiled.layer.cornerRadius = 5;
@@ -40,10 +39,10 @@
     
     
     self.myButton = [TYQButton buttonWithType:UIButtonTypeCustom];
-    _myButton.frame = CGRectMake(_myTextFiled.frame.origin.x, HEIGHT / 3 * 2, _myTextFiled.frame.size.width, _myTextFiled.frame.size.height);
+    _myButton.frame = CGRectMake(_myTextFiled.frame.origin.x, HEIGHT / 3 * 2, _myTextFiled.frame.size.width, 55);
     _myButton.layer.cornerRadius = 5;
     _myButton.layer.masksToBounds = YES;
-    _myButton.backgroundColor = [UIColor greenColor];
+    _myButton.backgroundColor = [UIColor colorWithRed:0.39 green:0.78 blue:0.55 alpha:1.000];
     [_myButton setTitle:@"确定" forState:UIControlStateNormal];
     [self.view addSubview:_myButton];
     [_myButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -69,27 +68,45 @@
 -(void)buttonAction:(UIButton *)button{
     
    if (![self.myTextFiled.text isEqualToString:@""]) {
-       EMError *error = nil;
-       BOOL isSuccess = [[EaseMob sharedInstance].chatManager addBuddy:self.myTextFiled.text message:self.messageTextFiled.text error:&error];
        
-       if (isSuccess && !error) {
-           
-           UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请求发送成功" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-           UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-           [alert addAction:action];
-           
-           [self presentViewController:alert animated:YES completion:nil];
-           
-       }
+       BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+       // 添加playerName不是小明的约束条件
+       [bquery whereKey:@"accountnumber" equalTo:_myTextFiled.text];
+       [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+           if (array.count) {
+               
+               EMError *error = nil;
+               BOOL isSuccess = [[EaseMob sharedInstance].chatManager addBuddy:self.myTextFiled.text message:self.messageTextFiled.text error:&error];
+               
+               if (isSuccess && !error) {
+                   
+                   UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请求发送成功" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+                   UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+                   [alert addAction:action];
+                   
+                   [self presentViewController:alert animated:YES completion:nil];
+                   
+               }
+           } else {
+               UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"您要添加的账号不存在" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+               UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+               [alert addAction:action];
+               
+               [self presentViewController:alert animated:YES completion:nil];
+           }
+       }];
+
+   } else {
+       UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入您要添加的账号" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+       UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+       [alert addAction:action];
+       
+       [self presentViewController:alert animated:YES completion:nil];
+       
+
    }
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"不能为空啊" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-    [alert addAction:action];
-    
-    [self presentViewController:alert animated:YES completion:nil];
-
-}
+    }
 
 
 

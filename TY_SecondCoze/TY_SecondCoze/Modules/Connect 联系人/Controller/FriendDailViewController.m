@@ -72,8 +72,8 @@
     
 #pragma mark --- 开始聊天按钮
     self.chatButton = [TYQButton buttonWithType:UIButtonTypeCustom];
-    _chatButton.backgroundColor = [UIColor greenColor];
-    _chatButton.frame = CGRectMake(25, _myTableView.frame.origin.y + _myTableView.frame.size.height + 20, WIDTH - 50, 50);
+    _chatButton.backgroundColor = [UIColor colorWithRed:0.39 green:0.78 blue:0.55 alpha:1.000];
+    _chatButton.frame = CGRectMake(25, _myTableView.frame.origin.y + _myTableView.frame.size.height + 20, WIDTH - 50, 55);
     _chatButton.layer.cornerRadius = 8.f;
     _chatButton.layer.masksToBounds = YES;
     [_chatButton setTitle:@"开始聊天" forState:UIControlStateNormal];

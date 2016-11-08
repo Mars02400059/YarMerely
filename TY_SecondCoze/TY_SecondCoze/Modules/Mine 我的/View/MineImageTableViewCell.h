@@ -9,8 +9,7 @@
 #import "TYQTableViewCell.h"
 
 @interface MineImageTableViewCell : TYQTableViewCell
-
-@property (nonatomic, strong) UIImage *photo;
+@property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 
 @property (nonatomic, copy) NSString *title;
 

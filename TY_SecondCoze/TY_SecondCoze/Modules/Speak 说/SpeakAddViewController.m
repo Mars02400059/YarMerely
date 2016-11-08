@@ -52,7 +52,15 @@ UINavigationControllerDelegate
     [_sendButton setTitle:@"发送" forState:UIControlStateNormal];
     [_sendButton addTarget:self action:@selector(sendButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_sendButton];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+    [self.view addGestureRecognizer:tap];
 }
+
+- (void)tapAction {
+    [self.titleTextField resignFirstResponder];
+}
+
 - (void)addButtonAction {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
     [alert addAction:[UIAlertAction actionWithTitle:@"打开相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
