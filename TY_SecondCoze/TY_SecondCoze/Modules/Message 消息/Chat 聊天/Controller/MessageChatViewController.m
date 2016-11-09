@@ -96,6 +96,16 @@ doIt
     [self addEmojiView];
     [self addNavigationBarView];
     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+    // 添加playerName不是小明的约束条件
+    [bquery whereKey:@"accountnumber" equalTo:_titleName];
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count) {
+            BmobObject *object = array[0];
+            self.navigationBarView.title = [object objectForKey:@"nickname"];
+        }
+    }];
+    
 }
 
 

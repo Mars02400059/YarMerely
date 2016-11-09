@@ -50,7 +50,8 @@
     
     [self addNavigationBarView];
     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
-    
+    self.navigationBarView.title = @"添加好友";
+
     
     
     

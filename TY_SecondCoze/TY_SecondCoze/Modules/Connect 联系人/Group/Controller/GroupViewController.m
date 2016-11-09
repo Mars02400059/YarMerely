@@ -55,6 +55,7 @@ UITableViewDelegate
     
     [self addNavigationBarView];
   self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
+    self.navigationBarView.title = @"群列表";
 //    self.navigationBarView.rightButtonImage = [UIImage imageNamed:@"加号"];//右按钮为添加人按钮
     
     

@@ -128,7 +128,8 @@ static CGFloat const nameTextFieldHeight = 40;
     
     [[EaseMob sharedInstance].chatManager asyncRegisterNewAccount:_nameTextField.text password:_passwoksTextField.text withCompletion:^(NSString *username, NSString *password, EMError *error) {
             if (!error) {
-            
+                
+                [[EaseMob sharedInstance].chatManager removeAllConversationsWithDeleteMessages:YES append2Chat:YES];
                 NSLog(@"注册成功");
                 //在GameScore创建一条数据，如果当前没GameScore表，则会创建GameScore表
                 BmobObject *gameScore = [BmobObject objectWithClassName:@"PersonInfo"];
