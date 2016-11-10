@@ -194,7 +194,7 @@ doIt
             bubbleHeight = bubbleTextHeight + border * 2;
             
             
-            self.cellHeight = bubbleHeight + 10.f * 2;
+            self.cellHeight = bubbleHeight + 10.f * 2 + 15;
             
             if (_number == indexPath.row) {
                 self.tableViewCellHeightSum += _cellHeight;
@@ -207,7 +207,7 @@ doIt
         {
             // 得到一个图片消息body
             
-            self.cellHeight = chatModel.imageSize.height + 10.f * 2;
+            self.cellHeight = chatModel.imageSize.height + 10.f * 2 + 15;
             
             if (_number == indexPath.row) {
                 self.tableViewCellHeightSum += _cellHeight;
@@ -224,7 +224,7 @@ doIt
         case eMessageBodyType_Voice:
         {
             // 音频
-            self.cellHeight = 50.f + 10.f * 2;
+            self.cellHeight = 50.f + 10.f * 2 + 15;
             
             if (_number == indexPath.row) {
                 self.tableViewCellHeightSum += _cellHeight;
@@ -250,7 +250,7 @@ doIt
     
 
 
-    return _cellHeight + 15;
+    return _cellHeight;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
