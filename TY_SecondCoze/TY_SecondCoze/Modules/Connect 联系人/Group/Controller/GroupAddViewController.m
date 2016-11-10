@@ -64,7 +64,7 @@
     
     [self addNavigationBarView];
     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
-    self.navigationBarView.title = @"创建群";
+    
     
     // Do any additional setup after loading the view.
 }

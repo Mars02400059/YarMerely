@@ -17,7 +17,7 @@
 #import "RealtimeCallViewController.h"
 #import "ViewController.h"
 #import "EmojiView.h"
-
+#import "CameraViewController.h"
 
 // 操作台的高度
 static CGFloat const stationViewHeight = 60.f;
@@ -96,16 +96,6 @@ doIt
     [self addEmojiView];
     [self addNavigationBarView];
     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
-    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
-    // 添加playerName不是小明的约束条件
-    [bquery whereKey:@"accountnumber" equalTo:_titleName];
-    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        if (array.count) {
-            BmobObject *object = array[0];
-            self.navigationBarView.title = [object objectForKey:@"nickname"];
-        }
-    }];
-    
 }
 
 
@@ -127,10 +117,7 @@ doIt
     _stationView.layer.borderWidth = 1.f;
     [self.view addSubview:_stationView];
     
-    self.stationView.delegate = self;
-    
-    
-    
+  
 #warning mark ---
 
     
@@ -164,7 +151,7 @@ doIt
 
 -(void)addEmojiView {
     
-    self.emojiView = [[EmojiView alloc] initWithFrame:CGRectMake(0, HEIGHT, WIDTH, WIDTH / 2)];
+    self.emojiView = [[EmojiView alloc] initWithFrame:CGRectMake(0, HEIGHT, WIDTH, 210)];
     _emojiView.backgroundColor = [UIColor clearColor];
     _emojiView.delegate = self;
     [self.view addSubview:_emojiView];
@@ -507,9 +494,10 @@ doIt
 
 // 点击添加图片
 - (void)tyq_addPhotoActionDelegate {
-    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-    imagePickerController.delegate = self;
-    [self presentViewController:imagePickerController animated:YES completion:nil];
+//    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+//    imagePickerController.delegate = self;
+//    [self presentViewController:imagePickerController animated:YES completion:nil];
+    NSLog(@"相册");
 }
 
 // 选取图片, 发送图片消息
@@ -535,11 +523,32 @@ doIt
 //    
 //    [self presentViewController:realtimeCallVC animated:YES completion:nil];
     
+    NSLog(@"语音");
+    
 }
 /// 点击视频通话
 - (void)tyq_addVideoActionDelegate {
-    
+ 
+        NSLog(@"照相的相机");
 }
+
+- (void)tyq_addcameraActionDelegate {
+    
+    CameraViewController *cameraVC = [[CameraViewController alloc] init];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    [self.navigationController pushViewController:cameraVC animated:YES];
+
+    NSLog(@"视频按钮");
+}
+
 
 //点击return按钮所做的动作：
 

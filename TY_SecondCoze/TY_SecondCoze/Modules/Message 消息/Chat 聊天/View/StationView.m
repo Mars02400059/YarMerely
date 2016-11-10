@@ -84,6 +84,7 @@ UITextFieldDelegate
         [phoneButton setImage:[UIImage imageNamed:@"聊天键盘"] forState:UIControlStateNormal];
         phoneButton.record = YES;
         
+        
     } else {
         [phoneButton setImage:[UIImage imageNamed:@"聊天语音"] forState:UIControlStateNormal];
         phoneButton.record = NO;

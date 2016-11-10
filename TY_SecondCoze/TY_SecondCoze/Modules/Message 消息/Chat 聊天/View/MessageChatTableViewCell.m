@@ -15,7 +15,7 @@
 
 @property (nonatomic, assign) BOOL isMe;
 // 头像
-@property (nonatomic, strong) TYQImageView *iconImageView;
+@property (nonatomic, strong) TYQButton *iconButton;
 // 消息气泡
 @property (nonatomic, strong) BubbleView *bubbleView;
 
@@ -29,9 +29,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-        self.iconImageView = [TYQImageView new];
-//        [_iconButton setBackgroundImage:[UIImage imageNamed:@"默认头像"] forState:UIControlStateNormal];
-        [self.contentView addSubview:_iconImageView];
+        self.iconButton = [TYQButton buttonWithType:UIButtonTypeCustom];
+        [_iconButton setBackgroundImage:[UIImage imageNamed:@"默认头像"] forState:UIControlStateNormal];
+        [self.contentView addSubview:_iconButton];
         
         self.bubbleView = [[BubbleView alloc] initWithFrame:CGRectZero];
         _bubbleView.numberOfLines = 0;
@@ -73,7 +73,7 @@
     CGFloat iconY = 10.f;
     
     
-    _iconImageView.frame = CGRectMake(iconX, iconY, iconWidth, iconHeight);
+    _iconButton.frame = CGRectMake(iconX, iconY, iconWidth, iconHeight);
     
     switch (_chatModel.messageBodyType) {
         case eMessageBodyType_Text:
@@ -195,16 +195,8 @@
 
     
     _chatModel = chatModel;
-    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
-    // 添加playerName不是小明的约束条件
-    [bquery whereKey:@"accountnumber" equalTo:chatModel.message.from];
-    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        if (array.count) {
-            BmobObject *object = array[0];
-            BmobFile *file = [object objectForKey:@"photoFile"];
-            [_iconImageView sd_setImageWithURL:[NSURL URLWithString:file.url]];
-        }
-    }];
+    
+    
     
     
     switch (chatModel.messageBodyType) {

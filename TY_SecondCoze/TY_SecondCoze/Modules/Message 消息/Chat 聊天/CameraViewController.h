@@ -1,13 +1,13 @@
 //
-//  SpeakAddViewController.h
+//  CameraViewController.h
 //  TY_SecondCoze
 //
-//  Created by mars on 16/11/7.
+//  Created by dllo on 16/11/9.
 //  Copyright © 2016年 TengYa. All rights reserved.
 //
 
 #import "TYQViewController.h"
 
-@interface SpeakAddViewController : TYQViewController
+@interface CameraViewController : TYQViewController
 
 @end
