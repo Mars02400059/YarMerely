@@ -240,7 +240,7 @@ doIt
     
 
 
-    return _cellHeight;
+    return _cellHeight + 15;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
@@ -254,6 +254,7 @@ doIt
     if (cell == nil) {
         cell = [[MessageChatTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:Cell];
     }
+    cell.index = _index;
     cell.delegate = self;
     cell.chatModel = _messageArray[indexPath.row];
     return cell;

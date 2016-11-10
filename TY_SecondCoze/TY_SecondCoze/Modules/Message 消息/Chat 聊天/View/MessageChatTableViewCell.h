@@ -19,6 +19,8 @@
 
 @interface MessageChatTableViewCell : TYQTableViewCell
 
+@property (nonatomic, assign) NSInteger index;
+
 @property (nonatomic, strong) MessageChatConversationModel *chatModel;
 
 @property (nonatomic , strong) EMMessage *message;
