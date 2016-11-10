@@ -145,6 +145,11 @@
 		497A61A61DD181D600BF466C /* MessageEmojiCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 497A61A51DD181D600BF466C /* MessageEmojiCollectionViewCell.m */; };
 		497A61A81DD190BC00BF466C /* 表情.png in Resources */ = {isa = PBXBuildFile; fileRef = 497A61A71DD190BC00BF466C /* 表情.png */; };
 		497A61F31DD1B55100BF466C /* 逗表情.png in Resources */ = {isa = PBXBuildFile; fileRef = 497A61F21DD1B55100BF466C /* 逗表情.png */; };
+		497A622B1DD2B19500BF466C /* 相机-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 497A622A1DD2B19500BF466C /* 相机-2.png */; };
+		497A623C1DD2FCAE00BF466C /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497A623B1DD2FCAE00BF466C /* CameraViewController.m */; };
+		497A623E1DD3080300BF466C /* 静音.png in Resources */ = {isa = PBXBuildFile; fileRef = 497A623D1DD3080300BF466C /* 静音.png */; };
+		497A62401DD3098100BF466C /* 免提.png in Resources */ = {isa = PBXBuildFile; fileRef = 497A623F1DD3098100BF466C /* 免提.png */; };
+		497A62421DD30E8C00BF466C /* callBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 497A62411DD30E8C00BF466C /* callBg@2x.png */; };
 		49A8B39A1DBB82BD00FFF2A1 /* 00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B3991DBB82BD00FFF2A1 /* 00.jpg */; };
 		49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39B1DBB855000FFF2A1 /* 000.png */; };
 		49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39D1DBB873A00FFF2A1 /* 1.png */; };
@@ -423,6 +428,12 @@
 		497A61A51DD181D600BF466C /* MessageEmojiCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageEmojiCollectionViewCell.m; sourceTree = "<group>"; };
 		497A61A71DD190BC00BF466C /* 表情.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "表情.png"; sourceTree = "<group>"; };
 		497A61F21DD1B55100BF466C /* 逗表情.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "逗表情.png"; sourceTree = "<group>"; };
+		497A622A1DD2B19500BF466C /* 相机-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "相机-2.png"; sourceTree = "<group>"; };
+		497A623A1DD2FCAE00BF466C /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		497A623B1DD2FCAE00BF466C /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		497A623D1DD3080300BF466C /* 静音.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "静音.png"; sourceTree = "<group>"; };
+		497A623F1DD3098100BF466C /* 免提.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "免提.png"; sourceTree = "<group>"; };
+		497A62411DD30E8C00BF466C /* callBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "callBg@2x.png"; sourceTree = "<group>"; };
 		49A8B3991DBB82BD00FFF2A1 /* 00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00.jpg; sourceTree = "<group>"; };
 		49A8B39B1DBB855000FFF2A1 /* 000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 000.png; sourceTree = "<group>"; };
 		49A8B39D1DBB873A00FFF2A1 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -1049,6 +1060,7 @@
 				41AE13C91DC2F4C000AF06BF /* 聊天语音.png */,
 				41AE13CB1DC2FEAB00AF06BF /* 聊天键盘.png */,
 				4137158C1DC9DB1700DD8B50 /* 视频通话.png */,
+				497A622A1DD2B19500BF466C /* 相机-2.png */,
 				4137158A1DC9DA9A00DD8B50 /* 语音通话.png */,
 			);
 			path = "Message Image";
@@ -1126,6 +1138,7 @@
 				410D983E1DC1E3D900A5C9FD /* Controller */,
 				41976ED81DC37FCB00AC8518 /* Model */,
 				413715751DC98C6E00DD8B50 /* RealtimeCall 实时通话 */,
+				497A622C1DD2B27900BF466C /* Camera 时时视频 */,
 				41F144691DC1A8E800C7023D /* View */,
 			);
 			path = "Chat 聊天";
@@ -1240,6 +1253,24 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		497A622C1DD2B27900BF466C /* Camera 时时视频 */ = {
+			isa = PBXGroup;
+			children = (
+				497A622D1DD2B2AA00BF466C /* Controller */,
+			);
+			name = "Camera 时时视频";
+			sourceTree = "<group>";
+		};
+		497A622D1DD2B2AA00BF466C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				497A623A1DD2FCAE00BF466C /* CameraViewController.h */,
+				497A623B1DD2FCAE00BF466C /* CameraViewController.m */,
+				497A62411DD30E8C00BF466C /* callBg@2x.png */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		49C51D841DB89970006A5126 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1271,6 +1302,8 @@
 				49ECEC221DCC6BB10002127F /* 群.png */,
 				4968E4451DC0DD9600257004 /* 附近.png */,
 				4174D7041DD1B6F200D5614F /* 群头像.jpg */,
+				497A623D1DD3080300BF466C /* 静音.png */,
+				497A623F1DD3098100BF466C /* 免提.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1485,6 +1518,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				497A623E1DD3080300BF466C /* 静音.png in Resources */,
 				4968E5631DC8957A00257004 /* 群1.png in Resources */,
 				410C55FE1DCCA4150069E4C7 /* RecomposePersonInfoViewController.xib in Resources */,
 				41AE13CE1DC2FEF900AF06BF /* 聊天加号.png in Resources */,
@@ -1496,7 +1530,9 @@
 				41FC7D8B1DBDEBE700712714 /* 说2.png in Resources */,
 				49A8B39A1DBB82BD00FFF2A1 /* 00.jpg in Resources */,
 				4935D92D1DBB470B00BF55A7 /* 3.jpg in Resources */,
+				497A62401DD3098100BF466C /* 免提.png in Resources */,
 				41FC7D7C1DBDE1CC00712714 /* 消息1.png in Resources */,
+				497A622B1DD2B19500BF466C /* 相机-2.png in Resources */,
 				410E5BDD1DB85159005C2513 /* LaunchScreen.storyboard in Resources */,
 				413715831DC999A900DD8B50 /* 挂断.png in Resources */,
 				410E5C581DB85315005C2513 /* MessageViewController.xib in Resources */,
@@ -1512,6 +1548,7 @@
 				410E5C5C1DB85315005C2513 /* SpeakViewController.xib in Resources */,
 				413715891DC9D94B00DD8B50 /* 添加图片.png in Resources */,
 				418C24D31DC4DA92002525B9 /* 气泡左.png in Resources */,
+				497A62421DD30E8C00BF466C /* callBg@2x.png in Resources */,
 				4174D6AE1DD0164100D5614F /* icon_添加照片.png in Resources */,
 				41FC7D951DBE2AAB00712714 /* back.png in Resources */,
 				413715821DC999A900DD8B50 /* 接听.png in Resources */,
@@ -1710,6 +1747,7 @@
 				410E5C371DB8530B005C2513 /* NSUserDefaultsUtils.m in Sources */,
 				410E5C571DB85315005C2513 /* MessageViewController.m in Sources */,
 				4137156C1DC9740D00DD8B50 /* EMCDDeviceManager+Microphone.m in Sources */,
+				497A623C1DD2FCAE00BF466C /* CameraViewController.m in Sources */,
 				4137156D1DC9740D00DD8B50 /* EMCDDeviceManager+ProximitySensor.m in Sources */,
 				41976ED71DC3748B00AC8518 /* MessageChatTableViewCell.m in Sources */,
 				49C51DD51DB89AF7006A5126 /* EAThemeManager.m in Sources */,

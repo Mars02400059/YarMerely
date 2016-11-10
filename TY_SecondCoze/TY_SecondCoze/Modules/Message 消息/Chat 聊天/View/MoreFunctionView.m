@@ -17,6 +17,9 @@
 /// 视频通话
 @property (nonatomic, strong) TYQButton *videoCallButton;
 
+///添加相机
+@property (nonatomic, strong) TYQButton *cameraButton;
+
 @end
 
 
@@ -56,6 +59,19 @@
         [_videoCallButton addTarget:self action:@selector(videoButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_videoCallButton];
         
+        self.cameraButton = [TYQButton buttonWithType:UIButtonTypeCustom];
+        _cameraButton.backgroundColor = [UIColor whiteColor];
+        _cameraButton.layer.cornerRadius = 8.f;
+        _cameraButton.clipsToBounds = YES;
+        _cameraButton.layer.borderColor = [UIColor grayColor].CGColor;
+        _cameraButton.layer.borderWidth = 0.5f;
+        [_cameraButton setImage:[UIImage imageNamed:@"相机-2"] forState:UIControlStateNormal];
+        [_cameraButton addTarget:self action:@selector(cameraButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_cameraButton];
+
+        
+        
+        
     }
     return self;
 }
@@ -70,6 +86,10 @@
     [self.delegate tyq_addVideoActionDelegate];
 }
 
+-(void)cameraButtonAction:(TYQButton *)cameraButton {
+    [self.delegate tyq_addcameraActionDelegate];
+}
+
 
 
 - (void)layoutSubviews {
@@ -79,18 +99,17 @@
     CGFloat Width = (WIDTH - X * 5) / 4;
     CGFloat Height = Width;
     _photoButton.frame = CGRectMake(X, Y, Width, Height);
-    
-    _voiceCallButton.frame = CGRectMake(X * 2 + Width, Y, Width, Height);
-    _videoCallButton.frame = CGRectMake(X * 3 + Width * 2, Y, Width, Height);
-    
+
+    _cameraButton.frame = CGRectMake(X * 2 + Width, Y, Width, Height);
+    _voiceCallButton.frame = CGRectMake(X * 3 + Width * 2, Y, Width, Height);
+    _videoCallButton.frame = CGRectMake(X * 4 + Width * 3, Y, Width, Height);
+//    _voiceCallButton.frame = CGRectMake(X * 2 + Width, Y, Width, Height);
+//    _videoCallButton.frame = CGRectMake(X * 3 + Width * 2, Y, Width, Height);
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+
+
+
+
 
 @end

@@ -18,6 +18,9 @@
 /// 点击视频通话按钮
 - (void)tyq_addVideoActionDelegate;
 
+///照相机
+- (void)tyq_addcameraActionDelegate;
+
 @end
 
 @interface MoreFunctionView : TYQView
