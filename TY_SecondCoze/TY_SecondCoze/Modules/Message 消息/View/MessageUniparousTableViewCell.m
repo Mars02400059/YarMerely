@@ -114,11 +114,11 @@
     _myImageView.frame = CGRectMake(imageViewX, imageViewY, imageViewWidth, imageViewHeight);
     
     CGFloat labelX = imageViewX + imageViewWidth + 5;
-    CGFloat labelWidth = self.contentView.width - labelX - 70;
+    CGFloat labelWidth = WIDTH - labelX - 70;
     CGFloat labelHeight = imageViewHeight / 2;
-    _titleLabel.frame = CGRectMake(labelX, imageViewY, labelWidth - 85, labelHeight);
+    _titleLabel.frame = CGRectMake(labelX, imageViewY, labelWidth, labelHeight);
     
-    _cententLabel.frame = CGRectMake(labelX, imageViewY + labelHeight, labelWidth, labelHeight);
+    _cententLabel.frame = CGRectMake(labelX, imageViewY + labelHeight, labelWidth + 45, labelHeight);
     
     _timeLabel.frame = CGRectMake(WIDTH - 70, imageViewY, 60, 30);
 
