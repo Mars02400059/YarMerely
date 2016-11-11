@@ -10,12 +10,28 @@
 
 @implementation TYQView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+
+-(instancetype)initWithFrame:(CGRect)frame{
+    
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        
+        
+        self.dk_backgroundColorPicker = DKColorPickerWithRGB(0xFFFAFA,0xBEBEBE);
+//        self.navigationController.navigationBar.dk_barTintColorPicker = DKColorPickerWithRGB(0x1E90FF,0xCDCDB4);
+//        self.navigationController.navigationBar.dk_tintColorPicker = DKColorPickerWithRGB(0xFAFAD2,0x1C1C1C);
+        
+
+        
+    }
+    return self;
 }
-*/
+
+
+
+
+
+
 
 @end

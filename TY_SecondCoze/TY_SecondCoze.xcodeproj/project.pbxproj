@@ -150,6 +150,11 @@
 		497A623E1DD3080300BF466C /* 静音.png in Resources */ = {isa = PBXBuildFile; fileRef = 497A623D1DD3080300BF466C /* 静音.png */; };
 		497A62401DD3098100BF466C /* 免提.png in Resources */ = {isa = PBXBuildFile; fileRef = 497A623F1DD3098100BF466C /* 免提.png */; };
 		497A62421DD30E8C00BF466C /* callBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 497A62411DD30E8C00BF466C /* callBg@2x.png */; };
+		497A62451DD40A1100BF466C /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497A62441DD40A1100BF466C /* CallViewController.m */; };
+		497A62471DD425A300BF466C /* callRing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 497A62461DD425A300BF466C /* callRing.mp3 */; };
+		497A62E81DD4681300BF466C /* ON.png in Resources */ = {isa = PBXBuildFile; fileRef = 497A62E71DD4681300BF466C /* ON.png */; };
+		497A62EA1DD4681C00BF466C /* OFF.png in Resources */ = {isa = PBXBuildFile; fileRef = 497A62E91DD4681C00BF466C /* OFF.png */; };
+		497A62EC1DD46C5E00BF466C /* yejian.png in Resources */ = {isa = PBXBuildFile; fileRef = 497A62EB1DD46C5E00BF466C /* yejian.png */; };
 		49A8B39A1DBB82BD00FFF2A1 /* 00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B3991DBB82BD00FFF2A1 /* 00.jpg */; };
 		49A8B39C1DBB855000FFF2A1 /* 000.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39B1DBB855000FFF2A1 /* 000.png */; };
 		49A8B39E1DBB873A00FFF2A1 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B39D1DBB873A00FFF2A1 /* 1.png */; };
@@ -434,6 +439,12 @@
 		497A623D1DD3080300BF466C /* 静音.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "静音.png"; sourceTree = "<group>"; };
 		497A623F1DD3098100BF466C /* 免提.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "免提.png"; sourceTree = "<group>"; };
 		497A62411DD30E8C00BF466C /* callBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "callBg@2x.png"; sourceTree = "<group>"; };
+		497A62431DD40A0A00BF466C /* CallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallViewController.h; sourceTree = "<group>"; };
+		497A62441DD40A1100BF466C /* CallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallViewController.m; sourceTree = "<group>"; };
+		497A62461DD425A300BF466C /* callRing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = callRing.mp3; sourceTree = "<group>"; };
+		497A62E71DD4681300BF466C /* ON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ON.png; sourceTree = "<group>"; };
+		497A62E91DD4681C00BF466C /* OFF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OFF.png; sourceTree = "<group>"; };
+		497A62EB1DD46C5E00BF466C /* yejian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yejian.png; sourceTree = "<group>"; };
 		49A8B3991DBB82BD00FFF2A1 /* 00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00.jpg; sourceTree = "<group>"; };
 		49A8B39B1DBB855000FFF2A1 /* 000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 000.png; sourceTree = "<group>"; };
 		49A8B39D1DBB873A00FFF2A1 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -1191,6 +1202,9 @@
 				41FC7D921DBE22FC00712714 /* 设置.png */,
 				413409F51DC0704700C4D466 /* 返回.png */,
 				41FC7DA91DBEED6F00712714 /* 进入，右.png */,
+				497A62E71DD4681300BF466C /* ON.png */,
+				497A62E91DD4681C00BF466C /* OFF.png */,
+				497A62EB1DD46C5E00BF466C /* yejian.png */,
 			);
 			path = "Mine Image";
 			sourceTree = "<group>";
@@ -1264,8 +1278,11 @@
 		497A622D1DD2B2AA00BF466C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				497A62431DD40A0A00BF466C /* CallViewController.h */,
+				497A62441DD40A1100BF466C /* CallViewController.m */,
 				497A623A1DD2FCAE00BF466C /* CameraViewController.h */,
 				497A623B1DD2FCAE00BF466C /* CameraViewController.m */,
+				497A62461DD425A300BF466C /* callRing.mp3 */,
 				497A62411DD30E8C00BF466C /* callBg@2x.png */,
 			);
 			name = Controller;
@@ -1524,6 +1541,7 @@
 				41AE13CE1DC2FEF900AF06BF /* 聊天加号.png in Resources */,
 				4174D7051DD1B6F200D5614F /* 群头像.jpg in Resources */,
 				413715851DC9D57F00DD8B50 /* 准备录音_未按-01.png in Resources */,
+				497A62471DD425A300BF466C /* callRing.mp3 in Resources */,
 				4137158B1DC9DA9A00DD8B50 /* 语音通话.png in Resources */,
 				41FC7D841DBDE2B500712714 /* 我的2.png in Resources */,
 				41FC7D7B1DBDE1CC00712714 /* 消息2.png in Resources */,
@@ -1531,6 +1549,7 @@
 				49A8B39A1DBB82BD00FFF2A1 /* 00.jpg in Resources */,
 				4935D92D1DBB470B00BF55A7 /* 3.jpg in Resources */,
 				497A62401DD3098100BF466C /* 免提.png in Resources */,
+				497A62E81DD4681300BF466C /* ON.png in Resources */,
 				41FC7D7C1DBDE1CC00712714 /* 消息1.png in Resources */,
 				497A622B1DD2B19500BF466C /* 相机-2.png in Resources */,
 				410E5BDD1DB85159005C2513 /* LaunchScreen.storyboard in Resources */,
@@ -1551,7 +1570,9 @@
 				497A62421DD30E8C00BF466C /* callBg@2x.png in Resources */,
 				4174D6AE1DD0164100D5614F /* icon_添加照片.png in Resources */,
 				41FC7D951DBE2AAB00712714 /* back.png in Resources */,
+				497A62EA1DD4681C00BF466C /* OFF.png in Resources */,
 				413715821DC999A900DD8B50 /* 接听.png in Resources */,
+				497A62EC1DD46C5E00BF466C /* yejian.png in Resources */,
 				4968E4461DC0DD9600257004 /* 附近.png in Resources */,
 				410E5BDA1DB85159005C2513 /* Assets.xcassets in Resources */,
 				41FC7D931DBE22FC00712714 /* 设置.png in Resources */,
@@ -1814,6 +1835,7 @@
 				4174D6A01DCD674100D5614F /* UIImage+FixOrientation.m in Sources */,
 				410E5C1B1DB852FF005C2513 /* TYQModel.m in Sources */,
 				4123CD341DC874AB00D0D658 /* PhoneView.m in Sources */,
+				497A62451DD40A1100BF466C /* CallViewController.m in Sources */,
 				4174D7091DD1BBD300D5614F /* ConnectAddGroupViewController.m in Sources */,
 				410D98431DC1E5A000A5C9FD /* MessageUniparousTableViewCell.m in Sources */,
 				4174D6AB1DD001C800D5614F /* SpeakAddViewController.m in Sources */,

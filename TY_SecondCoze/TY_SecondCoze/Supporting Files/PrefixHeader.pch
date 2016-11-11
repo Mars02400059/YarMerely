@@ -34,12 +34,20 @@
 #import <SVProgressHUD.h>
 #import "SystemUnit.h"
 #import <FTPopOverMenu.h>
+#import <DKNightVersion.h>
+
+
+//#define nightNotificationName @"night"
+//#define userDefaultsKey @"isNiaght"
+
 
 #define WIDTH [UIScreen mainScreen].bounds.size.width
 
 #define HEIGHT [UIScreen mainScreen].bounds.size.height
 
-
+//#define PQRGBA(R/*红*/, G/*绿*/, B/*蓝*/, A/*透明*/) \
+//[UIColor colorWithRed:R/255.f green:G/255.f blue:B/255.f alpha:A]
+//
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

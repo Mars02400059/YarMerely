@@ -10,18 +10,16 @@
 
 @implementation TYQImageView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+-(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
+    
     if (self) {
-#warning 图片添加了背景占位颜色
         
-    //self.backgroundColor = [UIColor redColor];
-        
+        self.dk_backgroundColorPicker = DKColorPickerWithRGB(0xFFFFFF,0xC1CDCD);
     }
+    
     return self;
 }
-
 
 
 /*

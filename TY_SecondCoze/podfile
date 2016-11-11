@@ -12,6 +12,9 @@ target 'TY_SecondCoze' do
 pod 'MLEmojiLabel', '~> 1.0.2'
 
 
+pod 'DKNightVersion', '~> 2.4.0'
+
+
 pod 'FTPopOverMenu', '~> 1.2.1'
 
   pod 'BmobSDK', '~> 1.7.2'

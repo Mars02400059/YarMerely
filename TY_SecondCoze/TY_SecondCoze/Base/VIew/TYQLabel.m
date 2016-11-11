@@ -15,7 +15,9 @@
     self = [super initWithFrame:frame];
     if (self) {
 #warning 基类label添加了背景颜色
-        self.backgroundColor = [UIColor grayColor];
+//        self.backgroundColor = [UIColor grayColor];
+        
+        self.dk_backgroundColorPicker = DKColorPickerWithRGB(0xFFFAFA,0xBEBEBE);
     }
     return self;
 }
