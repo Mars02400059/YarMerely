@@ -19,10 +19,11 @@
 
 @interface MessageChatTableViewCell : TYQTableViewCell
 
-/// 聊天类型 : 1 为单聊 , 2 为群聊
 @property (nonatomic, assign) NSInteger index;
 
 @property (nonatomic, strong) MessageChatConversationModel *chatModel;
+
+@property (nonatomic , strong) EMMessage *message;
 
 @property (nonatomic, assign) id<MessageChatTableViewCellDelegate>delegate;
 

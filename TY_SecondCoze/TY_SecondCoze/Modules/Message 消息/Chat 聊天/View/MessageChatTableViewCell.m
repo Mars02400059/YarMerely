@@ -15,11 +15,11 @@
 
 @property (nonatomic, assign) BOOL isMe;
 // 头像
-@property (nonatomic, strong) TYQImageView *iconImageView;
+@property (nonatomic, strong) TYQButton *iconButton;
 // 消息气泡
 @property (nonatomic, strong) BubbleView *bubbleView;
-
-
+// 名字
+@property (nonatomic, strong) TYQLabel *nameLabel;
 
 @end
 
@@ -29,9 +29,14 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-        self.iconImageView = [TYQImageView new];
-//        [_iconButton setBackgroundImage:[UIImage imageNamed:@"默认头像"] forState:UIControlStateNormal];
-        [self.contentView addSubview:_iconImageView];
+        self.nameLabel = [TYQLabel new];
+        _nameLabel.backgroundColor = [UIColor clearColor];
+        _nameLabel.font = [UIFont systemFontOfSize:15.f];
+        
+        
+        self.iconButton = [TYQButton buttonWithType:UIButtonTypeCustom];
+        [_iconButton setBackgroundImage:[UIImage imageNamed:@"默认头像"] forState:UIControlStateNormal];
+        [self.contentView addSubview:_iconButton];
         
         self.bubbleView = [[BubbleView alloc] initWithFrame:CGRectZero];
         _bubbleView.numberOfLines = 0;
@@ -70,10 +75,10 @@
         
     }
     
-    CGFloat iconY = 10.f;
+    CGFloat iconY = 25.f;
     
     
-    _iconImageView.frame = CGRectMake(iconX, iconY, iconWidth, iconHeight);
+    _iconButton.frame = CGRectMake(iconX, iconY, iconWidth, iconHeight);
     
     switch (_chatModel.messageBodyType) {
         case eMessageBodyType_Text:
@@ -195,16 +200,26 @@
 
     
     _chatModel = chatModel;
-    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
-    // 添加playerName不是小明的约束条件
-    [bquery whereKey:@"accountnumber" equalTo:chatModel.message.from];
-    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        if (array.count) {
-            BmobObject *object = array[0];
-            BmobFile *file = [object objectForKey:@"photoFile"];
-            [_iconImageView sd_setImageWithURL:[NSURL URLWithString:file.url]];
+    
+    if (_index == 2) {
+        _nameLabel.frame = CGRectMake(10, 0, WIDTH - 20, 15);
+        [self.contentView addSubview:_nameLabel];
+        BmobQuery   *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
+        // 添加playerName不是小明的约束条件
+        [bquery whereKey:@"accountnumber" equalTo:chatModel.message.groupSenderName];
+        [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+            if (array.count) {
+                BmobObject *object = array[0];
+                _nameLabel.text = [object objectForKey:@"nickname"];
+            }
+        }];
+        
+        if (chatModel.isMe) {
+            _nameLabel.textAlignment = NSTextAlignmentRight;
+        } else {
+            _nameLabel.textAlignment = NSTextAlignmentLeft;
         }
-    }];
+    }
     
     
     switch (chatModel.messageBodyType) {

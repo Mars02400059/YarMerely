@@ -58,8 +58,7 @@ ConnectAddGroupViewControllerDelegate
     
     [self addNavigationBarView];
     self.navigationBarView.leftButtonImage = [UIImage imageNamed:@"返回"];
-    self.navigationBarView.title = @"申请进群";
-
+    
     
     
     // Do any additional setup after loading the view.

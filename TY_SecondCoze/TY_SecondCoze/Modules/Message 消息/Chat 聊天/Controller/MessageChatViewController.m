@@ -18,7 +18,10 @@
 #import "ViewController.h"
 #import "EmojiView.h"
 #import "CameraViewController.h"
+<<<<<<< HEAD
 #import "CallViewController.h"
+=======
+>>>>>>> 6f3caf987a4a0b9fd41658580eac3dd6347d092c
 
 // 操作台的高度
 static CGFloat const stationViewHeight = 60.f;
@@ -196,7 +199,7 @@ doIt
             bubbleHeight = bubbleTextHeight + border * 2;
             
             
-            self.cellHeight = bubbleHeight + 10.f * 2;
+            self.cellHeight = bubbleHeight + 10.f * 2 + 15;
             
             if (_number == indexPath.row) {
                 self.tableViewCellHeightSum += _cellHeight;
@@ -209,7 +212,7 @@ doIt
         {
             // 得到一个图片消息body
             
-            self.cellHeight = chatModel.imageSize.height + 10.f * 2;
+            self.cellHeight = chatModel.imageSize.height + 10.f * 2 + 15;
             
             if (_number == indexPath.row) {
                 self.tableViewCellHeightSum += _cellHeight;
@@ -226,7 +229,7 @@ doIt
         case eMessageBodyType_Voice:
         {
             // 音频
-            self.cellHeight = 50.f + 10.f * 2;
+            self.cellHeight = 50.f + 10.f * 2 + 15;
             
             if (_number == indexPath.row) {
                 self.tableViewCellHeightSum += _cellHeight;
@@ -266,7 +269,11 @@ doIt
     if (cell == nil) {
         cell = [[MessageChatTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:Cell];
     }
+<<<<<<< HEAD
     
+=======
+    cell.index = _index;
+>>>>>>> 6f3caf987a4a0b9fd41658580eac3dd6347d092c
     cell.delegate = self;
     cell.chatModel = _messageArray[indexPath.row];
     return cell;
@@ -542,6 +549,7 @@ doIt
 /// 点击视频通话
 - (void)tyq_addVideoActionDelegate {
  
+<<<<<<< HEAD
     BOOL isopen = [self canVideo];
     EMError *error = nil;
     EMCallSession *callSession = nil;
@@ -583,6 +591,29 @@ doIt
 }
 
 
+=======
+        NSLog(@"照相的相机");
+}
+
+- (void)tyq_addcameraActionDelegate {
+    
+    CameraViewController *cameraVC = [[CameraViewController alloc] init];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    [self.navigationController pushViewController:cameraVC animated:YES];
+
+    NSLog(@"视频按钮");
+}
+
+
+>>>>>>> 6f3caf987a4a0b9fd41658580eac3dd6347d092c
 //点击return按钮所做的动作：
 
 - (void)tyq_actionTextFieldReturn {
