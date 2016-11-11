@@ -18,10 +18,9 @@
 #import "ViewController.h"
 #import "EmojiView.h"
 #import "CameraViewController.h"
-<<<<<<< HEAD
+
 #import "CallViewController.h"
-=======
->>>>>>> 6f3caf987a4a0b9fd41658580eac3dd6347d092c
+
 
 // 操作台的高度
 static CGFloat const stationViewHeight = 60.f;
@@ -269,11 +268,9 @@ doIt
     if (cell == nil) {
         cell = [[MessageChatTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:Cell];
     }
-<<<<<<< HEAD
-    
-=======
+
     cell.index = _index;
->>>>>>> 6f3caf987a4a0b9fd41658580eac3dd6347d092c
+
     cell.delegate = self;
     cell.chatModel = _messageArray[indexPath.row];
     return cell;
@@ -549,7 +546,7 @@ doIt
 /// 点击视频通话
 - (void)tyq_addVideoActionDelegate {
  
-<<<<<<< HEAD
+
     BOOL isopen = [self canVideo];
     EMError *error = nil;
     EMCallSession *callSession = nil;
@@ -586,25 +583,14 @@ doIt
 - (void)tyq_addcameraActionDelegate {
     
 
-    
-    
-}
 
 
-=======
         NSLog(@"照相的相机");
-}
 
+}
 - (void)tyq_addcameraActionDelegate {
     
     CameraViewController *cameraVC = [[CameraViewController alloc] init];
-    
-    
-    
-    
-    
-    
-    
     
     
     [self.navigationController pushViewController:cameraVC animated:YES];
@@ -613,7 +599,6 @@ doIt
 }
 
 
->>>>>>> 6f3caf987a4a0b9fd41658580eac3dd6347d092c
 //点击return按钮所做的动作：
 
 - (void)tyq_actionTextFieldReturn {
