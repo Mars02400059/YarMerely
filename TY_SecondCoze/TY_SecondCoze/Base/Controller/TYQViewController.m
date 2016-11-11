@@ -22,11 +22,6 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.view.dk_backgroundColorPicker = DKColorPickerWithRGB(0xFFFFFF,0xC1CDCD);
-    
-    self.navigationController.navigationBar.dk_barTintColorPicker = DKColorPickerWithKey(BAR);
-
-
     
     
 }
@@ -46,42 +41,6 @@
 - (void)tyq_navigationBarViewRightButtonAction {
     
 }
-
-
-//通知方法
-//notification参数保存着通知传递多来的参数值
-//NSNotification该类里有object属性专门是保存参数值的,因此参数类型需要写成NSNotification类
-//因为NSNotificationCenter类没有object属性,就拿不到值
-//- (void)night:(NSNotification *)night{
-//    self.view.backgroundColor =  PQRGBA(181, 181, 181, 1);
-//    self.navigationController.navigationBar.barTintColor =   PQRGBA(54, 54, 54, 1);
-//    self.tabBarController.tabBar.barTintColor =   PQRGBA(54, 54, 54, 1);
-//    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isNight"];
-//    
-//    
-//}
-- (void)day:(NSNotification *)day{
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:135 / 255.0 green:180 / 255.0 blue:229 / 255.0 alpha:1];
-    self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:135 / 255.0 green:180 / 255.0 blue:229 / 255.0 alpha:0.7];
-    [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"isNight"];
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -92,7 +92,6 @@ UITableViewDataSource
     
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - 50) style:UITableViewStylePlain];
-     self.tableView.dk_backgroundColorPicker = DKColorPickerWithRGB(0xFFFAFA,0xBEBEBE);
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.backgroundColor = [UIColor clearColor];
@@ -259,18 +258,16 @@ UITableViewDataSource
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+   
     if (0 == indexPath.row) {
         MineSpaceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:spaceCell];
-        cell.contentView.dk_backgroundColorPicker = DKColorPickerWithRGB(0xFFFAFA,0xBEBEBE);
         return cell;
     } else if (1 == indexPath.row) {
         MineGrayBackTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:backCell];
-        cell.contentView.dk_backgroundColorPicker = DKColorPickerWithRGB(0xFFFAFA,0xBEBEBE);
         return cell;
     } else {
         MineImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:imageCell];
-        cell.contentView.dk_backgroundColorPicker = DKColorPickerWithRGB(0xFFFAFA,0xBEBEBE);
+        
         cell.title = self.tableViewArray[indexPath.row];
         return cell;
     }

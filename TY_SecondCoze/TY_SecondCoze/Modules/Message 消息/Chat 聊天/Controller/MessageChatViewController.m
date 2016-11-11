@@ -19,9 +19,6 @@
 #import "EmojiView.h"
 #import "CameraViewController.h"
 
-#import "CallViewController.h"
-
-
 // 操作台的高度
 static CGFloat const stationViewHeight = 60.f;
 
@@ -118,7 +115,6 @@ doIt
     self.messageTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64 - stationViewHeight) style:UITableViewStylePlain];
     _messageTableView.delegate = self;
     _messageTableView.dataSource = self;
-    _messageTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //    [_messageTableView registerClass:[MessageChatTableViewCell class] forCellReuseIdentifier:Cell];
     [self.view addSubview:_messageTableView];
 }
@@ -268,9 +264,7 @@ doIt
     if (cell == nil) {
         cell = [[MessageChatTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:Cell];
     }
-
     cell.index = _index;
-
     cell.delegate = self;
     cell.chatModel = _messageArray[indexPath.row];
     return cell;
@@ -546,51 +540,19 @@ doIt
 /// 点击视频通话
 - (void)tyq_addVideoActionDelegate {
  
-
-    BOOL isopen = [self canVideo];
-    EMError *error = nil;
-    EMCallSession *callSession = nil;
-    if (!isopen) {
-        NSLog(@"不能打开视频");
-        return ;
-    }
-    //这里发送视频请求                                                       //userName
-    callSession = [[EaseMob sharedInstance].callManager asyncMakeVideoCall:@"用户名" timeout:50 error:&error];
-    //请求完以后,开始做下面的
-    if (callSession && !error) {
-        
-        [[EaseMob sharedInstance].callManager removeDelegate:self];
-        
-        CallViewController *callController = [[CallViewController alloc] initWithSession:callSession isIncoming:NO];
-        callController.modalPresentationStyle = UIModalPresentationOverFullScreen;
-        [self presentViewController:callController animated:NO completion:nil];
-        
-        
-    }
-    
-    if (error) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"error", @"error") message:error.description delegate:nil cancelButtonTitle:NSLocalizedString(@"ok", @"OK") otherButtonTitles:nil, nil];
-        [alertView show];
-    }
-    
-    NSLog(@"视频按钮");
-
-}
-
-
-#warning mark --- 点击视频按钮(跳转到CallViewController)
-
-- (void)tyq_addcameraActionDelegate {
-    
-
-
-
         NSLog(@"照相的相机");
-
 }
+
 - (void)tyq_addcameraActionDelegate {
     
     CameraViewController *cameraVC = [[CameraViewController alloc] init];
+    
+    
+    
+    
+    
+    
+    
     
     
     [self.navigationController pushViewController:cameraVC animated:YES];
@@ -669,58 +631,6 @@ doIt
     _stationView.importTextField.text = string;
     
 }
-
-
-
-#pragma mar]k --- 判断是否打开相机(视频相机)
--(BOOL)canVideo{
-    BOOL canvideo = YES;
-    NSString *mediaType = AVMediaTypeVideo;// Or AVMediaTypeAudio
-    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
-    NSLog(@"---cui--authStatus--------%ld",(long)authStatus);
-    // This status is normally not visible—the AVCaptureDevice class methods for discovering devices do not return devices the user is restricted from accessing.
-    if(authStatus ==AVAuthorizationStatusRestricted){//此应用程序没有被授权访问的照片数据。可能是家长控制权限。
-        NSLog(@"Restricted");
-        canvideo = NO;
-        return canvideo;
-    }else if(authStatus == AVAuthorizationStatusDenied){//用户已经明确否认了这一照片数据的应用程序访问.
-        // The user has explicitly denied permission for media capture.
-        NSLog(@"Denied");     //应该是这个，如果不允许的话
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                        message:@"请在设备的\"设置-隐私-相机\"中允许访问相机。"
-                                                       delegate:self
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil];
-        [alert show];
-        alert = nil;
-        canvideo = NO;
-        return canvideo;
-    }
-    else if(authStatus == AVAuthorizationStatusAuthorized){//允许访问,用户已授权应用访问照片数据.
-        // The user has explicitly granted permission for media capture, or explicit user permission is not necessary for the media type in question.
-        NSLog(@"Authorized");
-        canvideo = YES;
-        return canvideo;
-    }else if(authStatus == AVAuthorizationStatusNotDetermined){//用户尚未做出了选择这个应用程序的问候
-        // Explicit user permission is required for media capture, but the user has not yet granted or denied such permission.
-        [AVCaptureDevice requestAccessForMediaType:mediaType completionHandler:^(BOOL granted) {//请求访问照相功能.
-            //应该在打开视频前就访问照相功能,不然下面返回不了值啊.
-            if(granted){//点击允许访问时调用
-                //用户明确许可与否，媒体需要捕获，但用户尚未授予或拒绝许可。
-                NSLog(@"Granted access to %@", mediaType);
-                
-            }
-            else {
-                NSLog(@"Not granted access to %@", mediaType);
-            }
-        }];
-    }else {
-        NSLog(@"Unknown authorization status");
-        canvideo = NO;
-    }
-    return canvideo;
-}
-
 
 
 

@@ -28,10 +28,6 @@ UITableViewDataSource
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *tableViewArray;
 
-#warning mark --- 设置夜间
-@property(nonatomic,strong)UIButton *button;
-@property(nonatomic,strong)UIImageView *imageV;
-@property(nonatomic,strong)UILabel *cellLabel;//cell上铺的label
 
 @end
 
@@ -40,10 +36,6 @@ UITableViewDataSource
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
-     self.navigationController.navigationBar.dk_barTintColorPicker = DKColorPickerWithKey(BAR);
-    
     self.view.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:1.000];
     [self addTableView];
     
@@ -59,7 +51,7 @@ UITableViewDataSource
     //    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.delegate = self;
     _tableView.dataSource = self;
-//    _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.backgroundColor = [UIColor clearColor];
     
     [_tableView registerNib:[UINib nibWithNibName:@"MineSpaceTableViewCell" bundle:nil] forCellReuseIdentifier:spaceCell];
     [_tableView registerNib:[UINib nibWithNibName:@"MineGrayBackTableViewCell" bundle:nil] forCellReuseIdentifier:backCell];
@@ -89,43 +81,12 @@ UITableViewDataSource
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 1) {
+    if (indexPath.row < self.tableViewArray.count - 2) {
         MineImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:imageCell];
         cell.title = self.tableViewArray[indexPath.row];
-        
-        
-        self.cellLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, WIDTH - 30, 50)];
-        cell.backgroundColor = [UIColor clearColor];
-        //self.cellLabel.backgroundColor = [UIColor greenColor];
-        self.cellLabel.textAlignment = NSTextAlignmentCenter;
-        self.cellLabel.textColor = [UIColor colorWithRed:0 green:193 blue:207 alpha:1];
-        [cell addSubview:self.cellLabel];
-        
-        cell.textLabel.textColor = [UIColor colorWithRed:0 green:193 blue:207 alpha:1];
-        self.button = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.button.frame = CGRectMake(WIDTH - 70, 10, 60, 30);
-        [self.button addTarget:self action:@selector(buttonAction:) forControlEvents:(UIControlEventTouchUpInside)];
-        //self.button.backgroundColor = [UIColor colorWithRed:0 green:193 blue:207 alpha:1];
-        
-        self.imageV = [[UIImageView alloc] initWithFrame:self.button.bounds];
-        [self.button addSubview:self.imageV];
-        self.imageV.image = [UIImage imageNamed:@"ON"];
-        self.imageV.contentMode = UIViewContentModeScaleAspectFit;
-        
-        [cell addSubview:self.button];
-       
         return cell;
         
-    }
-    if (indexPath.row == 0) {
-        
-        MineImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:imageCell];
-        cell.title = self.tableViewArray[indexPath.row];
-
-        return cell;
-    }
-    
-    else if (indexPath.row == self.tableViewArray.count - 1) {
+    } else if (indexPath.row == self.tableViewArray.count - 1) {
         MineSpaceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:spaceCell];
         cell.title = self.tableViewArray[indexPath.row];
         return cell;
@@ -171,27 +132,6 @@ UITableViewDataSource
     }
 }
 
-
-#pragma mark 点击事件
-
--(void)buttonAction:(UIButton *)button{
-    
-    if ([self.dk_manager.themeVersion isEqualToString:DKThemeVersionNight]) {
-        [self.dk_manager dawnComing];
-        self.imageV.image = [UIImage imageNamed:@"ON"];
-
-        NSLog(@"白天");
-    }else{
-        [self.dk_manager nightFalling];
-        self.imageV.image = [UIImage imageNamed:@"OFF"];
-
-        NSLog(@"黑天");
-    }
-    
-}
-
-
-
 - (void)tyq_navigationBarViewLeftButtonAction {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -201,9 +141,14 @@ UITableViewDataSource
     // Dispose of any resources that can be recreated.
 }
 
+/*
+#pragma mark - Navigation
 
-
-
-
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

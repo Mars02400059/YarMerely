@@ -15,19 +15,6 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - BmobSDK (1.7.2)
-  - DKNightVersion (2.4.0):
-    - DKNightVersion/Core (= 2.4.0)
-    - DKNightVersion/CoreAnimation (= 2.4.0)
-    - DKNightVersion/UIKit (= 2.4.0)
-  - DKNightVersion/Core (2.4.0):
-    - DKNightVersion/Core/DeallocBlockExecutor (= 2.4.0)
-    - DKNightVersion/Core/extobjc (= 2.4.0)
-  - DKNightVersion/Core/DeallocBlockExecutor (2.4.0)
-  - DKNightVersion/Core/extobjc (2.4.0)
-  - DKNightVersion/CoreAnimation (2.4.0):
-    - DKNightVersion/Core
-  - DKNightVersion/UIKit (2.4.0):
-    - DKNightVersion/Core
   - EaseMobSDKFull (2.2.7)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
@@ -48,7 +35,6 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - BmobSDK (~> 1.7.2)
-  - DKNightVersion (~> 2.4.0)
   - EaseMobSDKFull (~> 2.2.7)
   - FMDB (~> 2.6.2)
   - FTPopOverMenu (~> 1.2.1)
@@ -63,7 +49,6 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   BmobSDK: e188cb31d6a8417ab668aee821da227d7512b865
-  DKNightVersion: a46e6623767216cbff843192f9eac1a5aa177a44
   EaseMobSDKFull: 574e1c3fcbd541fd1419df750ee642aa6d443c6c
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   FTPopOverMenu: 645bf589f3adb6598efa05cab67cced988d5352f
@@ -76,6 +61,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
 
-PODFILE CHECKSUM: 28ad6d3bfbbf142b5bb6b259cc46f5080c9593b0
+PODFILE CHECKSUM: 9fb7ebdbd5187f7be64f9e31f63b536112a138a3
 
 COCOAPODS: 1.0.1

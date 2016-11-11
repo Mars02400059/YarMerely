@@ -68,7 +68,6 @@ UITableViewDataSource
 
 - (void)addTableView {
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT - 64 - 50) style:UITableViewStylePlain];
-     self.tableView.dk_backgroundColorPicker = DKColorPickerWithRGB(0xFFFFFF,0xC1CDCD);
     _tableView.rowHeight = 85.f;
     _tableView.delegate = self;
     _tableView.dataSource = self;

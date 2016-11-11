@@ -63,7 +63,6 @@ NewViewControllerDelegate
      self.title = @"联系人"
      */
     
-   
     [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
     
     self.imageArray = @[@"xin",@"qun",@"an"];
@@ -116,8 +115,6 @@ NewViewControllerDelegate
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    collectionView.dk_backgroundColorPicker = DKColorPickerWithRGB(0xFFFFFF,0xC1CDCD);
-
     ConnectCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellC" forIndexPath:indexPath];
     cell.stringImage = _imageArray[indexPath.row];
     cell.stringWord = _wordArray[indexPath.row];
@@ -126,7 +123,7 @@ NewViewControllerDelegate
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-
+    
     if (indexPath.item == 0) {
        
         NewViewController *newVC = [[NewViewController alloc] init];
@@ -178,8 +175,7 @@ NewViewControllerDelegate
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     ConnectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellT"];
-    tableView.dk_backgroundColorPicker = DKColorPickerWithRGB(0xFFFFFF,0xC1CDCD);
-
+    
     BmobQuery *bquery = [BmobQuery queryWithClassName:@"PersonInfo"];
     // 添加playerName不是小明的约束条件
     InfoModel *infoModel = self.listArray[indexPath.row];
